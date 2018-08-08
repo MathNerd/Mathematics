@@ -1,0 +1,281 @@
+
+<!DOCTYPE html><html> <head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ["script","noscript","style","textarea","code"]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script><script type="text/javascript" async="true"></script><style type="text/css"></style></head><body>##Proof of Case (1):##
+
+We will show that indeed $\inf\limits_{n\in\mathbb{N}}|a_n-L|\gt 0$:
+
+Because $\forall n\in\mathbb{N}, L\neq a_n$, We get that in particular $L\neq 0$ and thus we have two possibilities: $L\gt 0$ or $L\lt 0$
+
+If $L\gt 0$, Then we can define an increasing sequence of natural numbers $\{n_k\}_{k=1}^\infty$ as follows: $\forall k\in\mathbb{N}, n_k := 8k+1$, And thus we can consider the subsequence $\{a_{n_k}\}_{k=1}^\infty$ of the sequence $\{a_n\}_{n=1}^\infty$ that corrsepsonds to this index sequence $\{n_k\}_{k=1}^\infty$, Now since $\forall k\in\mathbb{N}, n_k\equiv 1\pmod{8}$, We can conclude by definition of the sequence $\{a_n\}_{n=1}^\infty$ that $\forall k\in\mathbb{N}, a_{n_k}=\frac{n_k}{\sqrt{2}}$.
+
+Now since it is clear that $\lim\limits_{k\to \infty} (8k+1)=\infty$, And since $\frac{1}{\sqrt{2}}\gt 0$ we can conclude that $\lim\limits_{k\to\infty}\frac{8k+1}{\sqrt{2}}=\infty$, And thus $\lim\limits_{k\to\infty}\frac{n_k}{\sqrt{2}}=\infty$ which implies that $\lim\limits_{k\to\infty}a_{n_k}=\infty$.
+
+Now by definition of limit at $\infty$, We get that $\exists K\in\mathbb{N},\forall K\lt k\in\mathbb{N},L\lt a_{n_k}$, Now if we choose any $k_0\in\mathbb{N}$ that satisfies $K\lt k_0$ we get that for this particular $k_0$ we have $L\lt a_{n_{k_0}}$.
+
+Now let’s define $N:={n_{k_0}}+8$ (We add this $8$ inorder to ensure that $L$ will be an element in the set $B$ that will be defined below very soon), It is clear that $N\in\mathbb{N}$.
+
+We will show that for this particular $N$ we have $N\equiv 1\pmod{8}$, $9\leq N$ and $L\lt a_N=\frac{N}{\sqrt{2}}$:
+
+Since $n_{k_0}\equiv 1\pmod{8}$ and since $8\equiv 0\pmod{8}$ we get that $n_{k_0}+8\equiv 1\pmod{8}$, And therefore $N\equiv 1\pmod{8}$ as was to be shown.
+
+Now since $n_{k_0}\in\mathbb{N}$, We get that $1\leq n_{k_0}$, And thus $9\leq n_{k_0}+8$, Which implies that $9\leq N$ as was to be shown.
+
+Now by definition of the sequence $\{a_n\}_{n=1}^\infty$ and by using the fact $N\equiv 1\pmod{8}$ that we’ve just shown, We get that $a_N=\frac{N}{\sqrt{2}}$, Now since $0\lt 8$, We get $n_{k_0}\lt n_{k_0}+8$, But because $N=n_{k_0}+8$, We conclude $n_{k_0}\lt N$, Now by dividing this inequality by $\sqrt{2}\gt 0$ we get $\frac{n_{k_0}}{\sqrt{2}}\lt \frac{N}{\sqrt{2}}$, But since $a_{n_{k_0}}=\frac{n_{k_0}}{\sqrt{2}}$ and since $a_N=\frac{N}{\sqrt{2}}$, We can conclude that $a_{n_{k_0}}\lt a_N$, Now since $L\lt a_{n_{k_0}}$ we can conclude by transitivity of the $\lt $ relation that $L\lt a_N$ as was to be shown.
+
+Now let’s define a set $B:=\{|a_n-L||n\in\{1,...,N\}\}$, Since $B$ is a non-empty finite set of real numbers we get that its minimum $\min(B)=\min\limits_{n\in\{1,...,N\}}|a_n-L|$ exists and is an element in $B$, I.e. $\min(B)=\min\limits_{n\in\{1,...,N\}}|a_n-L|\in B$, Now since $\forall n\in\mathbb{N}, |a_n-L|\gt 0$ we get that in particular $\forall n\in\{1,...,N\},|a_n-L|\gt 0$, Which implies that $\forall b\in B, b\gt 0$, And thus, In particular for $\min(B)=\min\limits_{n\in\{1,...,N\}}|a_n-L|\in B$ we have $\min(B)=\min\limits_{n\in\{1,...,N\}}|a_n-L|\gt 0$.
+
+Now we’ll show that $L\in B$:
+
+Since $4\leq 9$ and since $9\leq N$, We get that $4\leq N$, And thus $4\in\{1,...,N\}$, And we can conclude that $|a_4-L|\in B$, But since $4\equiv 4\pmod{8}$, We get $a_4=0$, And thus $|a_4-L|=|0-L|=|-L|=|L|$, And we conclude that $|L|\in B$, But because $L\gt 0$ we get that $|L|=L$, And so $L\in B$ as was to be shown.
+
+
+Now we’ll prove that $\forall n\in\mathbb{N}, \min\limits_{n\in\{1,...,N\}}|a_n-L|\leq |a_n-L|$:
+
+Let $n\in\mathbb{N}$, Then there are two cases: $n\leq N$ or $N\lt n$
+
+**If** $n\leq N$, Then we get that $n\in\{1,...,N\}$, And thus $|a_n-L|\in B$, And we can conclude that $\min\limits_{n\in\{1,...,N\}}|a_n-L|=\min(B)\leq |a_n-L|$.
+
+**If** $N\lt n$, Then there are five cases: $a_n=0$, $a_n=\frac{n}{\sqrt{2}}$, $a_n=n$, $a_n=-\frac{n}{\sqrt{2}}$ or $a_n=-n$
+
+If $a_n=0$, Then we get that $|a_n-L|=|0-L|=|-L|=|L|=L$, And as we’ve already shown that $L\in B$, We can conclude that $|a_n-L|\in B$, And thus $\min\limits_{n\in\{1,...,N\}}|a_n-L|=\min(B)\leq |a_n-L|$.
+
+If $a_n=\frac{n}{\sqrt{2}}$, Then because $N\lt n$, We get by dividing this inequality by $\sqrt{2}\gt 0$, That $\frac{N}{\sqrt{2}}\lt \frac{n}{\sqrt{2}}$, But since $a_N=\frac{N}{\sqrt{2}}$ we conclude that $a_N\lt a_n$, And thus **(#)** $a_N-L\lt a_n-L$, But because $L\lt a_N$ we get that $0\lt a_N-L$, Which implies that $0\lt a_n-L$, And thus $|a_N-L|=a_N-L$ And $|a_n-L|=a_n-L$ and we can conclude by **(#)** that $|a_N-L|\lt |a_n-L|$, Now because $|a_N-L|\in B$, We get that $\min\limits_{n\in\{1,...,N\}}|a_n-L|=\min(B)\leq |a_N-L|$, And we conclude that $\min\limits_{n\in\{1,...,N\}}|a_n-L|\lt |a_n-L|$.
+
+
+If $a_n=n$, Then because $1\lt \sqrt{2}$, We get $\frac{1}{\sqrt{2}}\lt 1$, And by multiplying this inequality by $N\gt 0$, We get $\frac{N}{\sqrt{2}}\lt N$, But since $N\lt n$, We get $\frac{N}{\sqrt{2}}\lt n$, But since $a_N=\frac{N}{\sqrt{2}}$ we conclude that $a_N\lt a_n$, And thus **(#)** $a_N-L\lt a_n-L$, But because $L\lt a_N$ we get that $0\lt a_N-L$, Which implies that $0\lt a_n-L$, And thus $|a_N-L|=a_N-L$ And $|a_n-L|=a_n-L$ and we can conclude by **(#)** that $|a_N-L|\lt |a_n-L|$, Now because $|a_N-L|\in B$, We get that $\min\limits_{n\in\{1,...,N\}}|a_n-L|=\min(B)\leq |a_N-L|$, And we conclude that $\min\limits_{n\in\{1,...,N\}}|a_n-L|\lt |a_n-L|$.
+
+If $a_n=-\frac{n}{\sqrt{2}}$, Then we get $|a_n-L|=|-\frac{n}{\sqrt{2}}-L|=|\frac{n}{\sqrt{2}}+L|$, But since $n\gt 0$, We get that $\frac{n}{\sqrt{2}}\gt 0$, And since $L\gt 0$, We can conclude that $\frac{n}{\sqrt{2}}+L\gt 0$, And so $|\frac{n}{\sqrt{2}}+L|=\frac{n}{\sqrt{2}}+L$, And we can conclude that $|a_n-L|=\frac{n}{\sqrt{2}}+L$, But since $\frac{n}{\sqrt{2}}\gt 0$, We get that $\frac{n}{\sqrt{2}}+L\gt L$, And we can conclude that $|a_n-L|\gt L$, But since $L\in B$, We get that  $\min\limits_{n\in\{1,...,N\}}|a_n-L|=\min(B)\leq L$, And thus $\min\limits_{n\in\{1,...,N\}}|a_n-L|\lt  |a_n-L|$.
+
+If $a_n=-n$, Then we get $|a_n-L|=|-n-L|=|n+L|$, But since $n\gt 0$ and $L\gt 0$, We get that $n+L\gt 0$, And so $|n+L|=n+L$, And we can conclude that $|a_n-L|=n+L$, But since $n\gt 0$, We get that $n+L\gt L$, And we can conclude that $|a_n-L|\gt L$, But since $L\in B$, We get that  $\min\limits_{n\in\{1,...,N\}}|a_n-L|=\min(B)\leq L$, And thus $\min\limits_{n\in\{1,...,N\}}|a_n-L|\lt  |a_n-L|$.
+
+Thus we’ve shown that in each of those five cases we have $\min\limits_{n\in\{1,...,N\}}|a_n-L|\leq |a_n-L|$ as was to be shown.
+
+Now we’ll prove that $\inf\limits_{n\in\mathbb{N}} |a_n-L|=\min\limits_{n\in\{1,...,N\}}|a_n-L|$ :
+
+Since $\min\limits_{n\in\{1,...,N\}}|a_n-L|\in B$ and since $B\subseteq A$, We get that $\min\limits_{n\in\{1,...,N\}}|a_n-L|\in A$, But because what we’ve just shown, I.e. that  $\forall n\in\mathbb{N}, \min\limits_{n\in\{1,...,N\}}|a_n-L|\leq |a_n-L|$, We conclude that  $ \min\limits_{n\in\{1,...,N\}}|a_n-L|$ is the minimum element of $A$, I.e. $A$ has a minimum and its minimum satisfies  $\min\limits_{n\in\mathbb{N}}|a_n-L|=\min(A)=\min\limits_{n\in\{1,...,N\}}|a_n-L|$, But because we’ve already shown that $\min\limits_{n\in\{1,...,N\}}|a_n-L|\gt 0$, We conclude that $\min\limits_{n\in\mathbb{N}}|a_n-L|\gt 0$, But because $\min\limits_{n\in\mathbb{N}}|a_n-L|=\inf\limits_{n\in\mathbb{N}}|a_n-L|$, We conclude that $\inf\limits_{n\in\mathbb{N}}|a_n-L|\gt 0$ as was to be shown.
+
+The case for $L\lt 0$ can be proved in a similar way.
+
+Q.E.D.
+
+----------
+
+##Proof of Case (2):##
+
+(**Note:** we consider only the case of $L\neq 0$ as we’ve already dealt with the case $L=0$ in the text of the question itself)
+
+We will show that indeed $\inf\limits_{m\neq n\in\mathbb{N}}|a_n-L|\gt 0$:
+
+First we’ll prove that $\forall m\neq n\in\mathbb{N}, L\neq a_n$:
+
+Suppose by contradiction that $\exists m\neq n\in\mathbb{N}, L = a_n$, Since $L=a_m$, We get that $a_n=a_m$, And thus by definition of the sequence $\{a_n\}_{n=1}^\infty$, We get that **(#)** $n \sin\frac{\pi n}{4}=m\sin\frac{\pi m}{4}$, Now since in this case $L\neq 0$ and since $L=a_n$ , We get that $a_n\neq 0$, And thus $n\sin\frac{\pi n}{4}\neq 0$, And we conclude that it must be the case that $\sin\frac{\pi n}{4}\neq 0$, Also since $m\in\mathbb{N}$ we get that $m\neq 0$, And we can conclude that $m \sin \frac{\pi n}{4}\neq 0$, Now by dividing the equality **(#)** by this non-zero number we get $\frac{n \sin\frac{\pi n}{4}}{m \sin \frac{\pi n}{4}}=\frac{m\sin\frac{\pi m}{4}}{m \sin \frac{\pi n}{4}}$ Which is equivalent to **(##)** $\frac{n}{m}=\frac{\sin \frac{\pi m}{4}}{\sin \frac{\pi n}{4}}$, Now since $\forall q\in\mathbb{N}, \sin\frac{\pi q}{4}=0,\pm 1,\pm \frac{1}{\sqrt{2}}$, We have in particular that $\sin\frac{\pi m}{4}=0,\pm 1,\pm \frac{1}{\sqrt{2}}$ and $\sin\frac{\pi n}{4}=0,\pm 1,\pm \frac{1}{\sqrt{2}}$, But since we’ve already shown that $\sin\frac{\pi n}{4}\neq 0$, We get that $\sin\frac{\pi n}{4}=\pm 1,\pm \frac{1}{\sqrt{2}}$, Now we’ll show that $\sin\frac{\pi m}{4}\neq 0$, Because If we suppose by contradiction that indeed $\sin\frac{\pi m}{4}=0$ , Then we get by equation **(##)** that $\frac{n}{m}=\frac{0}{sin\frac{\pi n}{4}} = 0$ and thus $n=m\times 0=0$ which contradicts the fact that $n\in\mathbb{N}$, Thus it must be the case that $\sin\frac{\pi m}{4}\neq 0$, And we conclude that $\sin\frac{\pi m}{4}=\pm 1,\pm \frac{1}{\sqrt{2}}$, And therefore $\frac{\sin\frac{\pi m}{4}}{\sin\frac{\pi n}{4}}=\frac{\pm 1}{\pm 1},\frac{\pm 1}{\pm\frac{1}{\sqrt{2}}},\frac{\pm\frac{1}{\sqrt{2}}}{\pm 1},\frac{\pm\frac{1}{\sqrt{2}}}{\pm\frac{1}{\sqrt{2}}}=\pm 1, \pm \sqrt{2}, \pm \frac{1}{\sqrt{2}}$, And by equality **(##)** we conclude that $\frac{n}{m}=\pm 1,\pm \sqrt{2},\pm \frac{1}{\sqrt{2}}$, Now since $m,n\in\mathbb{N}$ we get that $\frac{n}{m}$ must be a rational number, I.e. $\frac{n}{m}\in\mathbb{Q}$, And thus it must be the case that $\frac{n}{m}\neq \pm \sqrt{2},\pm\frac{1}{\sqrt{2}}$, Also we’ll show that $\frac{n}{m}\neq -1$, Because if we suppose by contradiction that indeed $\frac{n}{m}=-1$, Then we would get that $n=-m$, But since $n\in\mathbb{N}$ we get that $0\lt n$ and thus $0\lt -m$ which implies that $m\lt 0$, But since $m\in\mathbb{N}$  we get that $0\lt m$ and  therefore we got thatA $0\lt m\lt 0$ which implies that $0\lt 0$ and we’ve reached a contradiction, Thus it must be the case that $\frac{n}{m}\neq -1$.
+
+In summary we’ve shown that it must be the case that $\frac{n}{m}=\pm 1,\pm \sqrt{2},\pm \frac{1}{\sqrt{2}}$, And that it must be the case that $\frac{n}{m}\neq  -1,\pm \sqrt{2},\pm \frac{1}{\sqrt{2}}$, And therefore we conclude that it must be the case that $\frac{n}{m}=1$ and we conclude that $m=n$, But this contradicts the fact that $m\neq n$, And thus it must be the case that $\forall m\neq n\in\mathbb{N}, L\neq a_n$ as was to be shown.
+
+Now since $L\neq 0$ we get that there are two possibilities: $L\gt 0$ or $L\lt 0$
+
+If $L\gt 0$, Then we can define an increasing sequence of natural numbers $\{n_k\}_{k=1}^\infty$ as follows: $\forall k\in\mathbb{N}, n_k := 8k+1$, And thus we can consider the subsequence $\{a_{n_k}\}_{k=1}^\infty$ of the sequence $\{a_n\}_{n=1}^\infty$ that corrsepsonds to this index sequence $\{n_k\}_{k=1}^\infty$, Now since $\forall k\in\mathbb{N}, n_k\equiv 1\pmod{8}$, We can conclude by definition of the sequence $\{a_n\}_{n=1}^\infty$ that $\forall k\in\mathbb{N}, a_{n_k}=\frac{n_k}{\sqrt{2}}$.
+
+Now since it is clear that $\lim\limits_{k\to \infty} (8k+1)=\infty$, And since $\frac{1}{\sqrt{2}}\gt 0$ we can conclude that $\lim\limits_{k\to\infty}\frac{8k+1}{\sqrt{2}}=\infty$, And thus $\lim\limits_{k\to\infty}\frac{n_k}{\sqrt{2}}=\infty$ which implies that $\lim\limits_{k\to\infty}a_{n_k}=\infty$.
+
+Now by definition of limit at $\infty$, We get that $\exists K\in\mathbb{N},\forall K\lt k\in\mathbb{N},L\lt a_{n_k}$, Now if we choose any $k_0\in\mathbb{N}$ that satisfies $K\lt k_0$ we get that for this particular $k_0$ we have $L\lt a_{n_{k_0}}$.
+
+Now let’s define $M:=m+9-m\mod 8$, We’ll show that $m\lt M\in\mathbb{N}$ and that $M\mod 8=1$: 
+
+Since $0\leq m\mod 8\leq 7$, We get that $-7\leq -m\mod 8\leq 0$, And by adding $9$ we get $2=9-7\leq 9-m\mod 8\leq 9+0=9$, Now by adding $m$ we get $m+2\leq m+9-m\mod 8\leq m+9$, And thus $m+2\leq M\leq m+9$, But since $0\lt 2$ we get that $m\lt m+2$, And we can conclude that $m\lt M$, Also since $m,9,m\mod 8\in\mathbb{Z}$ we conclude that $m+9-m\mod 8\in\mathbb{Z}$ and thus $M\in\mathbb{Z}$, Now since $m\in\mathbb{N}$ we get that $0\lt m$, And by the fact $m\lt M$ that we’ve just shown, We conclude that $0\lt M$, And thus $M\in\mathbb{N}$, And in summary we’ve got that $m\lt M\in\mathbb{N}$ as was to be shown.
+
+Now we have:
+
+**(###)** $M\mod 8 = (m+9-m\mod 8)\mod 8=((m+9)\mod 8- (m \mod 8)\mod 8)\mod 8=((m\mod 8+9\mod 8)\mod 8 - (m\mod 8))\mod 8=((m\mod 8+1)\mod 8-m\mod 8)\mod 8$, 
+
+And now there are two possibilities $0\leq m\mod 8\leq 6$ or $m\mod 8=7$:
+
+If $0\leq m\mod 8\leq 6$, Then $1\leq m\mod 8+1\leq 7$, And thus $(m\mod 8+1)\mod 8=m\mod 8+1$, And we conclude by **(###)** that $M\mod 8=(m\mod 8+ 1-m\mod 8)\mod 8=1\mod 8=1$.
+
+If $m\mod 8=7$, Then $M\mod 8= ((7+1)\mod 8-7)\mod 8=(8\mod 8-7)\mod 8=(0-7)\mod 8 =(-7)\mod 8=1$.
+
+Thus we see that it is always the case that $M\mod 8=1$ as was to be shown.
+
+Now let’s define $N:=\max (M,{n_{k_0}})+8$ (We add this $8$ inorder to ensure that $L$ will be an element in the set $B$ that will be defined below very soon), Since $M,n_{k_0}\in\mathbb{N}$, We get that $\max(M,n_{k_0})\in\mathbb{N}$, And since $8\in\mathbb{N}$, We can conclude that $\max(M,n_{k_0})+8\in\mathbb{N}$, And thus $N\in\mathbb{N}$.
+
+We will show that for this particular $N$ we have $N\equiv 1\pmod{8}$, $9\leq N$, $L\lt a_N=\frac{N}{\sqrt{2}}$ and $m\lt N$:
+
+Since $M\equiv 1\pmod{8}$, And Since $n_{k_0}\equiv 1\pmod{8}$, We get that $\max(M,n_{k_0})\equiv 1\pmod{8}$, Also since $8\equiv 0\pmod{8}$ we get that $\max(M,n_{k_0})+8\equiv 1\pmod{8}$, And therefore $N\equiv 1\pmod{8}$ as was to be shown.
+
+Now since $\max(M,n_{k_0})\in\mathbb{N}$, We get that $1\leq \max (M,n_{k_0})$, And thus $9\leq \max (M,n_{k_0})+8$, Which implies that $9\leq N$ as was to be shown.
+
+Now by definition of the sequence $\{a_n\}_{n=1}^\infty$ and by using the fact $N\equiv 1\pmod{8}$ that we’ve just shown, We get that $a_N=\frac{N}{\sqrt{2}}$, Now since $0\lt 8$, We get $\max (M,n_{k_0})\lt \max (M,n_{k_0})+8$, But because $N=\max (M,n_{k_0})+8$, We conclude $\max(M,n_{k_0})\lt N$, But Since $n_{k_0}\leq \max (M,n_{k_0})$, We get that $n_{k_0}\lt N$, Now by dividing this inequality by $\sqrt{2}\gt 0$ we get $\frac{n_{k_0}}{\sqrt{2}}\lt \frac{N}{\sqrt{2}}$, But since $a_{n_{k_0}}=\frac{n_{k_0}}{\sqrt{2}}$ and since $a_N=\frac{N}{\sqrt{2}}$, We can conclude that $a_{n_{k_0}}\lt a_N$, Now since $L\lt a_{n_{k_0}}$ we can conclude that $L\lt a_N$ as was to be shown.
+
+Now since $0\lt 8$, We get $\max (M,n_{k_0})\lt \max (M,n_{k_0})+8$, But because $N=\max (M,n_{k_0})+8$, We conclude $\max(M,n_{k_0})\lt N$, But since $M\leq \max (M,n_{k_0})$, We get that $M\lt N$, But because we’ve already shown that $m\lt M$ we can conclude that $m\lt N$ as was to be shown.
+
+Now let’s define a set $B:=\{|a_n-L||n\in\{1,...,N\}\backslash\{m\}\}$, We’ll show that $L\in B$ and that $|a_N-L|\in B$:
+
+Since $4\leq 9$ and since $9\leq N$, We get that $4\leq N$, And thus $4\in\{1,...,N\}$, Now we’ll show that $4\notin\{m\}$, Because if we suppose by contradiction that $4\in\{m\}$, Then we’ll get that $4=m$, And thus $a_m=a_4$, But since $4\equiv 4 \pmod{8}$, We get by definition of the sequence $\{a_n\}_{n=1}^\infty$ that $a_4=0$, And thus $a_m=0$, But since $a_m=L$ we get that $L=0$ which contradicts the fact that $L\neq 0$, And thus it must be the case that $4\notin\{m\}$, And we can conclude that $4\in\{1,...,N\}\backslash\{m\}$, And therefore we can conclude that $|a_4-L|\in B$, But since $|a_4-L|=|0-L|=|-L|=|L|$, We conclude that $|L|\in B$, But because $L\gt 0$ we get that $|L|=L$, And so $L\in B$ as was to be shown
+
+Also since $N\in\{1,...,N\}$ And since $N\notin\{m\}$, Because if we suppose by contradiction that $N\in\{m\}$, Then we’ll get that $N=m$, But as we’ve already shown that $m\lt N$, We conclude that $m\lt m$ and we’ve reached a contradiction, Thus it must be the case that $N\notin\{m\}$, And we can conclude that $N\in\{1,...,N\}\backslash \{m\}$, And thus $|a_N-L|\in B$ as was to be shown.
+
+Now since $B$ is a non-empty (as we’ve just shown that $L\in B$) finite set of real numbers we get that its minimum $\min(B)=\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|$ exists and is an element in $B$, I.e. $\min(B)=\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\in B$, Now since we’ve shown that $\forall m\neq n\in\mathbb{N}, a_n\neq L$, We conclude that $\forall m\neq n\in\mathbb{N}, a_n-L\neq 0$, Which implies that $\forall m\neq n\in\mathbb{N}, |a_n-L|\gt 0$, And thus we get that in particular $\forall n\in\{1,...,N\}\backslash\{m\},|a_n-L|\gt 0$, Which implies that $\forall b\in B, b\gt 0$, And thus, In particular for $\min(B)=\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\in B$ we have $\min(B)=\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\gt 0$.
+
+Now we’ll prove that $\forall m\neq n\in\mathbb{N}, \min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\leq |a_n-L|$:
+
+Let $m\neq n\in\mathbb{N}$, Then there are two cases: $n\leq N$ or $N\lt n$
+
+**If** $n\leq N$, Then we get that $n\in\{1,...,N\}$, But as $n\neq m$, We get that $n\notin \{m\}$, And thus $n\in\{1,...,N\}\backslash\{m\}$, And we conclude that $|a_n-L|\in B$, And therefore we can conclude that $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|=\min(B)\leq |a_n-L|$.
+
+**If** $N\lt n$, Then there are five cases: $a_n=0$, $a_n=\frac{n}{\sqrt{2}}$, $a_n=n$, $a_n=-\frac{n}{\sqrt{2}}$ or $a_n=-n$
+
+If $a_n=0$, Then we get that $|a_n-L|=|0-L|=|-L|=|L|=L$, And as we’ve already shown that $L\in B$, We can conclude that $|a_n-L|\in B$, And thus $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|=\min(B)\leq |a_n-L|$.
+
+If $a_n=\frac{n}{\sqrt{2}}$, Then because $N\lt n$, We get by dividing this inequality by $\sqrt{2}\gt 0$, That $\frac{N}{\sqrt{2}}\lt \frac{n}{\sqrt{2}}$, But since $a_N=\frac{N}{\sqrt{2}}$, We conclude that $a_N\lt a_n$, And thus **(§)** $a_N-L\lt a_n-L$, But because $L\lt a_N$, We get that $0\lt a_N-L$, Which implies that $0\lt a_n-L$, And thus $|a_N-L|=a_N-L$ and $|a_n-L|=a_n-L$, And we can conclude by **(§)** that $|a_N-L|\lt |a_n-L|$, Now because we’ve already shown that $|a_N-L|\in B$, We get that $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|=\min(B)\leq |a_N-L|$, And we conclude that $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\lt |a_n-L|$.
+
+
+If $a_n=n$, Then because $1\lt \sqrt{2}$, We get $\frac{1}{\sqrt{2}}\lt 1$, And by multiplying this inequality by $N\gt 0$, We get $\frac{N}{\sqrt{2}}\lt N$, But since $N\lt n$, We get $\frac{N}{\sqrt{2}}\lt n$, But since $a_N=\frac{N}{\sqrt{2}}$, We conclude that $a_N\lt a_n$, And thus **(§)** $a_N-L\lt a_n-L$, But because $L\lt a_N$, We get that $0\lt a_N-L$, Which implies that $0\lt a_n-L$, And thus $|a_N-L|=a_N-L$ and $|a_n-L|=a_n-L$, And we can conclude by **(§)** that $|a_N-L|\lt |a_n-L|$, Now because we’ve already shown that $|a_N-L|\in B$, We get that $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|=\min(B)\leq |a_N-L|$, And we conclude that $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\lt |a_n-L|$.
+
+If $a_n=-\frac{n}{\sqrt{2}}$, Then we get $|a_n-L|=|-\frac{n}{\sqrt{2}}-L|=|\frac{n}{\sqrt{2}}+L|$, But since $n\gt 0$, We get that $\frac{n}{\sqrt{2}}\gt 0$, And since $L\gt 0$, We can conclude that $\frac{n}{\sqrt{2}}+L\gt 0$, And so $|\frac{n}{\sqrt{2}}+L|=\frac{n}{\sqrt{2}}+L$, And we can conclude that $|a_n-L|=\frac{n}{\sqrt{2}}+L$, But since $\frac{n}{\sqrt{2}}\gt 0$, We get that $\frac{n}{\sqrt{2}}+L\gt L$, And we can conclude that $|a_n-L|\gt L$, But since $L\in B$, We get that  $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|=\min(B)\leq L$, And thus $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\lt  |a_n-L|$.
+
+If $a_n=-n$, Then we get $|a_n-L|=|-n-L|=|n+L|$, But since $n\gt 0$ and $L\gt 0$, We get that $n+L\gt 0$, And so $|n+L|=n+L$, And we can conclude that $|a_n-L|=n+L$, But since $n\gt 0$, We get that $n+L\gt L$, And we can conclude that $|a_n-L|\gt L$, But since $L\in B$, We get that  $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|=\min(B)\leq L$, And thus $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\lt  |a_n-L|$.
+
+Thus we’ve shown that in each of those five cases we have $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\leq |a_n-L|$ as was to be shown.
+
+Now we’ll prove that $\inf\limits_{m\neq n\in\mathbb{N}} |a_n-L|=\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|$ :
+
+Since $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\in B$ and since $B\subseteq A$, We get that $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\in A$, But because what we’ve just shown, I.e. that  $\forall m\neq n\in\mathbb{N}, \min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\leq |a_n-L|$, We conclude that  $ \min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|$ is the minimum element of $A$, I.e. $A$ has a minimum and its minimum satisfies  $\min\limits_{m\neq n\in\mathbb{N}}|a_n-L|=\min(A)=\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|$, But because we’ve already shown that $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|\gt 0$, We conclude that $\min\limits_{m\neq n\in\mathbb{N}}|a_n-L|\gt 0$, But because $\min\limits_{m\neq n\in\mathbb{N}}|a_n-L|=\inf\limits_{m\neq n\in\mathbb{N}}|a_n-L|$, We conclude that $\inf\limits_{m\neq n\in\mathbb{N}}|a_n-L|\gt 0$ as was to be shown.
+
+The case for $L\lt 0$ can be proved in a similar way.
+
+Q.E.D.
+
+----------
+
+##Practically Calculating the Infimums:##
+
+If we want to practically calculate the infimums $\inf\limits_{n\in\mathbb{N}}|a_n-L|$ and $\inf\limits_{m\neq n\in\mathbb{N}}|a_n-L|$ that we got in cases **(1)** and **(2)** (only the case in which $L\neq 0$) respectively, Then we will make use of the facts that in case **(1)** we have $\inf\limits_{n\in\mathbb{N}} |a_n-L|=\min\limits_{n\in\{1,...,N\}}|a_n-L|$ and in case **(2)** (only the case in which $L\neq 0$) we have $\inf\limits_{m\neq n\in\mathbb{N}} |a_n-L|=\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|$, Therefore inorder to get the value of the appropriate infimum we will just calculate the value of $\min\limits_{n\in\{1,...,N\}}|a_n-L|$ or $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|$ depending on wether we are dealing with case **(1)** or case **(2)** (only the case in which $L\neq 0$).
+
+We will consider only the case of $L\gt 0$:
+
+First let’s define  $max\_index := \lceil\sqrt{2}L\rceil$, We’ll show that $max\_index\in\mathbb{N}$:
+
+Since $L\gt 0$ and $\sqrt{2}\gt 0$, We get that $\sqrt{2}L\gt 0$, And thus $0\lt \lceil \sqrt{2}L\rceil\in\mathbb{Z}$, And therefore we can conclude that $\lceil \sqrt{2}L\rceil\in\mathbb{N}$, And thus $max\_index\in\mathbb{N}$ as was to be shown.
+
+Now we’ll prove that **(#)** $\forall max\_index \lt  n\in\mathbb{N}, L\neq a_n$:
+
+Let $max\_index \lt n\in\mathbb{N}$, Then by definition of $max\_index$, We get that $\lceil\sqrt{2}L\rceil\lt n$, But since $\sqrt{2}L\leq\lceil\sqrt{2}L\rceil$, We conclude that $\sqrt{2}L\lt n$, And thus **(§)** $L\lt \frac{n}{\sqrt{2}}$.
+
+Now there are five cases for $a_n$: $a_n=0$, $a_n=\frac{n}{\sqrt{2}}$, $a_n=n$, $a_n=-\frac{n}{\sqrt{2}}$ or $a_n=-n$
+
+If $a_n=0$, Then we can conclude by the fact $L\gt 0$ that $L\gt a_n$, And thus in particular $L\neq a_n$.
+
+If $a_n=\frac{n}{\sqrt{2}}$, Then we can conclude by **(§)** that  $L\lt \frac{n}{\sqrt{2}}$, And thus $L\lt a_n$, And we get that in particular $L\neq a_n$.
+
+If $a_n=n$, Then we can conclude by **(§)** that  $L\lt \frac{n}{\sqrt{2}}$, But since $1\lt \sqrt{2}$, We get $\frac{1}{\sqrt{2}}\lt 1$, And by multiplying this inequality by $n\gt 0$ (as $n\in\mathbb{N}$), We get that $\frac{n}{\sqrt{2}}\lt n$, And thus we can conclude that $L\lt n$, Which implies that $L\lt a_n$, And thus in particular $L\neq a_n$.
+
+If $a_n=-\frac{n}{\sqrt{2}}$, Then we get by the fact $0\lt \frac{n}{\sqrt{2}}$ that $-\frac{n}{\sqrt{2}}\lt 0$, And thus $a_n\lt 0$, But since $0\lt L$, We conclude that $a_n\lt L$, And thus in particular we have $L\neq a_n$.
+
+If $a_n=-n$, Then we get by the fact $0\lt n$ that $-n\lt 0$, And thus $a_n\lt 0$, But since $0\lt L$, We conclude that $a_n\lt L$, And thus in particular we have $L\neq a_n$.
+
+Thus we’ve shown that in each of those five cases we have $L\neq a_n$ as was to be shown.
+
+By **(#)** we conclude that in order for us to check wether $\exists m\in\mathbb{N}, L=a_m$, It is enough for us to check wether $\exists m\in\{1,...,max\_index\},L=a_m$.
+
+By taking this observation into account, We can program an algorithm that will determine if $L$ equals an element in the sequence $\{a_n\}_{n=1}^\infty$, And if it is, It will return the index of the first occurrence of $L$ in the sequence $\{a_n\}_{n=1}^\infty$, And if not it will return an index of $-1$, I.e. a non-existing index that will indicate that $L$ does not equal any element of the sequence $\{a_n\}_{n=1}^\infty$.
+<pre class="prettyprint">
+    // Checks wether the argument equals an element in the sequence,
+    // If it is, The function will return the index in which it was found,
+    // And if it was not, It will return -1.
+
+    int search_for(double L)
+    {
+        // The maximal index that must be examined:
+        int max_index = ceil(sqrt(2) * L);
+        
+        // The index at which it was found (if was found):
+        int index = 1;
+        
+        // Indicates wether the value was found at the current interation:
+        bool is_found = false;
+        
+        do
+        {
+            if(a(index) == L)
+                is_found = true;
+            else
+                index++;
+        }
+        while (!is_found  && index \lt = max_index);
+        
+        if (!is_found)
+            index = -1;
+        
+        return index;
+    }
+</pre>
+Now, We will use this algorithm in order to check wether $L$ equals an element in the sequence, If it is not, Then we are dealing with case **(1)** and the following algorithm will return the value of $\min\limits_{n\in\{1,...,N\}}|a_n-L|$, And if it is, Then we are dealing with case **(2)** (with $L\neq 0$) And the following algorithm will return the value of $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|$, And thus, We will get the exact values of the infimums.
+<pre class="prettyprint">
+    double infimum(double L)
+    {
+       double minimal_distance; // Will hold in the end the value of the appropriate infimum.
+       int m; // Holds the first index for which $L=a_m$ if any.
+       int k0; // Holds the index that its existence was guaranteed in cases (1) and (2).
+       int nk0; // Holds the element of the sequence $\{n_k\}$ at the index $k_0$. 
+       int M; // Holds the value of $M$ as defined in case (2) [Used only if we are dealing with case (2)].
+       int N; // Holds the greatest index that must be considered inorder to evaluate the minimums.
+    
+       // We have to choose an index $k_0$ that will ensure that $L\lt a_{n_{k_0}}$, 
+       // And the $k_0$ defined this way will satisfy it.
+       k0 = ceil((sqrt(2)*L-1)/8)+1;
+    
+       // The $k_0$’s element of the sequence $\{n_k\}$.
+       nk0 = 8*k0+1;
+    
+       // Searches for the first index for which $L=a_m$ if any.
+       m = search_for(L);
+       
+       // L equals some element in the sequence and thus $m\gt 0$:
+       if (m \gt  0)
+       {
+           // Since we are dealing here with case (2), 
+           // We will define $M$ and $N$ as they were defined in case (2).
+           M = m + 9 - m%8;
+           N = max(M,nk0)+8;
+       }
+
+       // L does not equal any element in the sequence and thus $m=-1$.
+       else
+       {
+           // Since we are dealing here with case (1),
+           // We will define $N$ as it was defined in case (1).
+           N = nk0 + 8;
+       }
+       
+       // The following chunk of code will calculate the appropriate minimum based   
+       // on wether we are dealing with case (1) or case (2).
+       // Note:
+       // If we are dealing with case (1), Then we know that $m=-1$, 
+       // And thus the condition $i\neq m$ in the for loop header will never be satisfied,
+       // And in the end $minimal_distance$ will hold the value $\min\limits_{n\in\{1,...,N\}}|a_n-L|$
+       // And if we are dealing with case (2), Then we know that $m\in\{1,...,N\}$,
+       // And thus the condition $i\neq m$ in the for loop header will skip over the
+       // index $m$, And in the end $minimal_distance$ will hold the value  $\min\limits_{n\in\{1,...,N\}\backslash\{m\}}|a_n-L|$ 
+       minimal_distance = INFINITY;
+       for (int i = 1; i != m && i \lt = N; i++)
+       {
+           double current_distance = abs(a(i) - L);
+           if (current_distance \lt  minimal_distance)
+               minimal_distance = current_distance;
+       }
+       
+       return minimal_distance;
+    }
+</pre>
+Note: The algorithms work only for the case $L\gt 0$ and for the case $L\lt 0$ some modifications are needed inorder for the algorithm to work in this case.
+
+By putting the whole program together we get:
+
+https://github.com/MathNerd/Projects/blob/master/calculate_infimums.c
+
+</body></html>
