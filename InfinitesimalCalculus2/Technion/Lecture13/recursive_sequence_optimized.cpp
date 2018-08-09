@@ -34,7 +34,7 @@ int main()
 {
     std::cout.precision(17);
     
-    for (int i = 1; i<=50; i++)
+    for (int i = 1; i <= 30; i++)
         std::cout << "a(" << i << ") = " << a(i) << std::endl;
        
     return 0; 
