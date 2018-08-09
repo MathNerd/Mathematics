@@ -1,0 +1,22 @@
+
+
+Theorem VII.29 (Bolzano-weierstrass)
+
+1. Every bounded sequence has at least one subsequential finite limit.
+2. Every unbounded above sequence has a subsequential limit of $+\infty$.
+3. Every unbounded below sequence has a subsequential limit of $-\infty$. 
+
+Proof
+
+First we’ll define the *midpoint function* $mid:\mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$ as:
+
+$\forall a,b\in\mathbb{R}, mid(a,b):=\frac{a+b}{2}$
+
+Now we’ll show that $\forall a,b\in\mathbb{R}, a\leq b\rightarrow a\leq mid(a,b)\leq b$:
+
+Let $a,b\in\mathbb{R}$ be such that $a\leq b$, Then $2a=a+a\leq a+b$, And thus $a\leq \frac{a+b}{2}=mid(a,b)$, Also $a+b\leq b+b=2b$, And thus $mid(a,b)=\frac{a+b}{2}\leq b$, By combining both inequalities we get $a\leq mid(a,b)\leq b$ as was to be shown.
+
+Now we’ll show that $\forall a,b\in\mathbb{R}, b-mid(a,b)=mid(a,b)-a=\frac{1}{2}(b-a)$:
+
+Let $a,b\in\mathbb{R}$, Then $b-mid(a,b)=b-\frac{a+b}{2}=\frac{2b-a-b}{2}=\frac{b-a}{2}$, Also $mid(a,b)-a=\frac{a+b}{2}-a=\frac{a+b-2a}{2}=\frac{b-a}{2}$, By combining those two equalities we get $b-mid(a,b)=mid(a,b)-a=\frac{1}{2}(b-a)$ as was to be shown.
+
