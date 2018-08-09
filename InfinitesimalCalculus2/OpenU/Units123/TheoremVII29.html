@@ -62,13 +62,19 @@ Case **(2)**: If $\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I,
 
 **For** $k=2$:
 
-Let $t_1:=mid(r_1,s_1)$, Since $r_1\leq s_1$, We conclude that $r_1\leq mid(r_1,s_1)\leq s_1$, And thus $r_1\leq t_1\leq s_1$, And we conclude that $[r_1,t_1]\cup [t_1,s_1]=[r_1,s_1]$, Now Since $\exists I_1\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I_1, a_n\in [r_1,s_1]$, We’ll get that there are two cases:
+Let $t_1:=mid(r_1,s_1)$, Since $r_1\leq s_1$, We conclude that $r_1\leq mid(r_1,s_1)\leq s_1$, And thus $r_1\leq t_1\leq s_1$, And we conclude that $[r_1,t_1]\cup [t_1,s_1]=[r_1,s_1]$, Now Since $\forall n\in I_1, a_n\in [r_1,s_1]$, We’ll get that there are two cases:
 
  **(1)** $\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [r_1,t_1] \bigvee$ **(2)** $ \exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [t_1, s_1]$
 
 Because if we suppose by contradiction that $$\lnot\Big((\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [r_1,t_1]) \bigvee (\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [t_1, s_1])\Big)\equiv \\ \equiv (\forall I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\exists n\in I, a_n\notin [r_1,t_1]) \bigwedge (\forall I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\exists n\in I, a_n\notin [t_1, s_1])\equiv \\ \equiv (\exists N_1\in\mathbb{N},\forall N_1\lt n\in\mathbb{N}, a_n\notin [r_1,s_1])\bigwedge (\exists N_2\in\mathbb{N},\forall N_2\lt n\in\mathbb{N}, a_n\notin [t_1,s_1])$$
 
-Then by taking $n_0:=\max(N_1,N_2)+1$, We get that $N_1,N_2\lt n_0\in\mathbb{N}$, And thus we can conclude that $a_{n_0}\notin [r_1,t_1]$ and $a_{n_0}\notin [t_0,s]$, Which implies that $a_{n_0}\notin [r_1,t_1]\cup [t_0,s]$, But since $[r_1,t_1]\cup [t_1,s_1]=[r_1,s_1]$, We conclude that $a_{n_0}\notin [r_1,s_1]$, Thus we’ve shown that $\exists n_0\in\mathbb{N},a_{n_0}\in [r_1,s_1]$, But this contradicts the fact that $\forall n\in\mathbb{N},a_n\in [r_1,s_1]$, And thus it must be the case that $$(\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [r_1,t_1]) \bigvee (\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [t_1, s_1])$$ as was to be shown.
+Then by taking $N:=\max(N_1,N_2)+1$, We get that $N_1,N_2\lt N\in\mathbb{N}$, Now let’s define the set $A:=\{1,...,N\}$ and define the set $B:=I_1\backslash A$, Since $A\subseteq \mathbb{N}$ and since $I_1\subseteq \mathbb{B}$, We get that $I_1\backslash A\subseteq \mathbb{N}$, And thus $B\subseteq \mathbb{N}$, Also since $|A|=N\in\mathbb{N}$ (I.e. $A$ is a finite set) and since $|I_1|=\aleph_0$,  We get that $|I_1\backslash A|=\aleph_0$, And thus $|B|=\aleph_0$, And we can conclude that $B\neq \emptyset$, And thus $\exists n_0\in\mathbb{N}, n_0\in B$, But this implies that $n_0\in I_1\backslash A$, And thus $n_0\in I_1$ and $n_0\notin A$, Now since $n_0\in I_1$ and since $\forall n\in I_1, a_n\in [r_1,s_1]$, We conclude that in particular $a_{n_0}\in [r_1,s_1]$,
+Now we’ll show that $N\lt n_0$, Because If we suppose by contradiction that $n_0\leq N$, Then we conclude that $n_0\in\{1,...,N\}=A$ which contradicts the fact that $n_0\notin A$, Thus it must be the case that $N\lt n_0$ as was to be shown.
+
+
+
+
+And thus we can conclude that $a_{n_0}\notin [r_1,t_1]$ and $a_{n_0}\notin [t_0,s]$, Which implies that $a_{n_0}\notin [r_1,t_1]\cup [t_0,s]$, But since $[r_1,t_1]\cup [t_1,s_1]=[r_1,s_1]$, We conclude that $a_{n_0}\notin [r_1,s_1]$, Thus we’ve shown that $\exists n_0\in\mathbb{N},a_{n_0}\in [r_1,s_1]$, But this contradicts the fact that $\forall n\in\mathbb{N},a_n\in [r_1,s_1]$, And thus it must be the case that $$(\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [r_1,t_1]) \bigvee (\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [t_1, s_1])$$ as was to be shown.
 
 Case **(1)**: If $\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [r_1,t_1]$, We’ll Set $r_2:=r_1$, $s_1:=t_1$ and $I_2:=I$, And we’ll get by the fact $r_1\leq t_1\leq s_1$ that $r_2\leq s_2$.
 
