@@ -12,7 +12,6 @@ double a(int n)
         return SAVED_VALUE(n);
     else if (n > SAVED_VALUES_COUNT)
     {
-        //printf("n = %d\n",n);
         double a_prev = a(n-1);
         double a_current = a_prev*a_prev + 0.25;
         
@@ -35,7 +34,7 @@ int main()
 {
     std::cout.precision(17);
     
-    for (int i = 1; i<=110; i++)
+    for (int i = 1; i<=50; i++)
         std::cout << "a(" << i << ") = " << a(i) << std::endl;
        
     return 0; 
