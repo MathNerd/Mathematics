@@ -1,5 +1,4 @@
 
-
 Theorem VII.29 (Bolzano-weierstrass)
 
 1. Every bounded sequence has at least one subsequential finite limit.
@@ -19,4 +18,25 @@ Let $a,b\in\mathbb{R}$ be such that $a\leq b$, Then $2a=a+a\leq a+b$, And thus $
 Now we’ll show that $\forall a,b\in\mathbb{R}, b-mid(a,b)=mid(a,b)-a=\frac{1}{2}(b-a)$:
 
 Let $a,b\in\mathbb{R}$, Then $b-mid(a,b)=b-\frac{a+b}{2}=\frac{2b-a-b}{2}=\frac{b-a}{2}$, Also $mid(a,b)-a=\frac{a+b}{2}-a=\frac{a+b-2a}{2}=\frac{b-a}{2}$, By combining those two equalities we get $b-mid(a,b)=mid(a,b)-a=\frac{1}{2}(b-a)$ as was to be shown.
+
+Let $\{a_n\in\mathbb{R}\}_{n=1}^\infty$ be a bounded sequence of real numbers, Then $\exists r,s\in\mathbb{R}, \forall n\in\mathbb{N},r\leq a_n\leq s$, And in particular we have $r\leq s$, We’ll show that $\exists t\in\mathbb{R},t\in\mathscr{L}\big(\{a_n\in\mathbb{R}\}_{n=1}^\infty\big)$:
+
+We’ll build by induction on $k\in\mathbb{N}$ two sequences $\{r_k\in\mathbb{R}\}_{k=1}^\infty$ and $\{s_k\in\mathbb{R}\}_{k=1}^\infty$ such that they will satisfy:
+
+1. $\forall k\in\mathbb{N}, r_k\leq r_{k+1}$.
+2. $\forall k\in\mathbb{N}, s_k\geq s_{k+1}$.
+3. $\forall k\in\mathbb{N}, r_k\leq s_k$.
+4. $\forall k\in\mathbb{N}, s_k-r_k=\frac{1}{2}(s-r)$.
+
+for $k=1$:
+
+Let $t_0:=mid(r,s)$, Since $r\leq s$, We conclude that $r\leq mid(r,s)\leq s$, And thus $r\leq t_0\leq s$, And we conclude that $[r,t_0]\cup [t_0,s]=[r,s]$, Now Since $\forall n\in\mathbb{N}, r\leq a_n\leq s$, We conclude that $\forall n\in\mathbb{N},a_n\in [r,s]$, ??? And thus $\forall n\in\mathbb{N},a_n\in [r,t_0]\cup [t_0,s]$ ???,
+
+Now we’ll show that there are two cases:
+
+ **(1)** $\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [r,t_0] \bigvee$ **(2)** $ \exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [t_0, s]$
+
+Because if we suppose by contradiction that $$\lnot\Big((\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [r,t_0]) \bigvee (\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [t_0, s])\Big)\equiv \\ \equiv (\forall I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\exists n\in I, a_n\notin [r,t_0]) \bigwedge (\forall I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\exists n\in I, a_n\notin [t_0, s])\equiv \\ \equiv (\exists N_1\in\mathbb{N},\forall N_1\lt n\in\mathbb{N}, a_n\notin [r,t_0])\bigwedge (\exists N_2\in\mathbb{N},\forall N_2\lt n\in\mathbb{N}, a_n\notin [t_0,s])$$
+
+Then by taking $n_0:=\max(N_1,N_2)+1$, We get that $N_1,N_2\lt n_0\in\mathbb{N}$, And thus we can conclude that $a_{n_0}\notin [r,t_0]$ and $a_{n_0}\notin [t_0,s]$, Which implies that $a_{n_0}\notin [r,t_0]\cup [t_0,s]$, But since $[r,t_0]\cup [t_0,s]=[r,s]$, We conclude that $a_{n_0}\notin [r,s]$, This we’ve shown that $\exists n_0\in\mathbb{N},a_{n_0}\in [r,s]$, But this contradicts the fact that $\forall n\in\mathbb{N},a_n\in [r,s]$, And thus it must be the case that $$(\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [r,t_0]) \bigvee (\exists I\in\mathscr{P}_{\aleph_0}(\mathbb{N}),\forall n\in I, a_n\in [t_0, s])$$ as was to be shown.
 
