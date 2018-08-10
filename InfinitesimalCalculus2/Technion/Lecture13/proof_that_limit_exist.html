@@ -28,3 +28,21 @@ Since $2^{n-1}=2^{1-1}=2^0=1$, And since $n!=1!=1$, We conclude that $2^{n-1}\le
 Now suppose that for some $n=k\in\mathbb{N}$, We have $2^{k-1}\leq k!$, And we’ll prove that for $n=k+1$ we have $2^{(k+1)-1}=(k+1)!$:
 
 Since $k\in\mathbb{N}$, We conclude that $1\leq k$, And thus $0\lt 2\leq k+1$, But since $2^{k-1}\leq k!$ (this is the induction hypothesis), We get by multiplying this inequality by $k+1\gt 0$ that $(k+1)2^{k-1}\leq (k+1)k!=(k+1)!$, Now by multiplying the inequality $2\leq k+1$ by $2^{k-1}>0$, We get that $2^k= 2\cdot 2^{k-1}\leq (k+1)2^{k-1}$, But since we’ve already shown that $(k+1)2^{k-1}\leq(k+1)!$, We conclude that $2^k\leq (k+1)!$, But because $2^{(k+1)-1}=2^k$, We conclude that $2^{(k+1)-1}\leq (k+1)!$ as was to be shown and the proof by induction is completed.
+
+Now we’ll prove **(fact 4)** $\forall n\in\mathbb{N}, \frac{1}{n!}\leq\frac{1}{2^{n-1}}$:
+
+Let $n\in\mathbb{N}$, Since $2^{n-1}\gt 0$ and since $n!\gt 0$, We can conclude that $2^{n-1}\cdot n!\gt 0$, Also by **(fact 3)** we get that $2^{n-1}\leq n!$, And thus by dividing this inequality by $2^{n-1}\cdot n!\gt 0$, We conclude that $\frac{1}{n!}=\frac{2^{n-1}}{2^{n-1}\cdot n!}\leq \frac{n!}{2^{n-1}\cdot n!}=\frac{1}{2^{n-1}}$ as was to be shown.
+
+Now we’ll prove that **(fact 5)** $\forall n\in\mathbb{N}, \sum_\limits{k=1}^n\frac{1}{k!}\leq \sum_\limits{k=1}^n\frac{1}{2^{k-1}}=2(1-\frac{1}{2^n})<2$:
+
+Let $n\in\mathbb{N}$, By **(fact 4)** we get that in particular $\forall k\in\{1,...,n\}, \frac{1}{k!}\leq \frac{1}{2^{k-1}}$, And thus we can conclude that $\sum_\limits{k=1}^n\frac{1}{k!}\leq\sum_\limits{k=1}^n\frac{1}{2^{n-1}}$.
+
+Now let’s define a geometric sequence $\{g_m\in\mathbb{R}\}_{m=1}^\infty$, By the rules $g_1:=1$ and $\forall m\in\mathbb{N},g_m:=g_1 \cdot q^{m-1}$, Now we’ll show that $\forall m\in\mathbb{N}, g_m=\frac{1}{2^{m-1}}$: 
+
+Let $m\in\mathbb{N}$, Then $g_m=g_1\cdot q^{n-1}=1\cdot (\frac{1}{2})^{n-1}=\frac{1}{2^{n-1}}$ as was to be shown.
+
+Thus we get by the forumula for sum of geometric sequence (see *Beni Goren, Algebra, Book 4, Page 91*) that $$\sum_\limits{k=1}^n\frac{1}{2^{n-1}}=\sum_\limits{k=1}^n g_k=\frac{g_1(q^n-1)}{q-1}=\frac{1\cdot ((\frac{1}{2})^n-1)}{\frac{1}{2}-1}=\frac{\frac{1}{2^n}-1}{-\frac{1}{2}}=\frac{1-\frac{1}{2^n}}{\frac{1}{2}}=2(1-\frac{1}{2^n})$$
+
+Now since $0\lt 2^n$, We get $0\lt\frac{1}{2^n}$ And thus $-\frac{1}{2^n}<0$, And by adding $1$, We conclude that $1-\frac{1}{2^n}\lt 1$, And by multiplying by $2$, We conclude that $2(1-\frac{1}{2^n})\lt 2$.
+
+In summary we got that $ \sum_\limits{k=1}^n\frac{1}{k!}\leq \sum_\limits{k=1}^n\frac{1}{2^{k-1}}=2(1-\frac{1}{2^n})<2$ as was to be shown.
