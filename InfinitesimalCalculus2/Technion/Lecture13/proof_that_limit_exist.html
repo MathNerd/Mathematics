@@ -1,0 +1,14 @@
+Let $\{a_n\in\mathbb{R}\}_{n=1}^\infty$, Be the sequence defined by the rule $\forall n\in\mathbb{N}, a_n:=(1+\frac{1}{n})^n$, Prove that $\forall n\in\mathbb{N}, 2\leq a_n\lt 3$, And that $\forall n\in\mathbb{N},a_n\lt a_{n+1}$, And use these facts to conclude that $\lim\limits_{n\to \infty}a_n$ exists.
+
+
+----------
+
+First we’ll prove that $\forall n\in\mathbb{N},\forall k\in\{0,...,n\},0\lt \frac{P(n,k)}{n^k}\leq 1$:
+
+Let $n\in\mathbb{N}$ and $k\in\{0,...,n\}$, There are two cases **(1)** $k=0$ or **(2)** $k\neq 0$:
+
+Case **(1)**: If $k=0$, Then we get  $P(n,k)=P(n,0)=1$, And that $n^k=n^0=1$, And thus we have $\frac{P(n,k)}{n^k}=\frac{1}{1}=1$, But since $0\lt 1\leq 1$, We conclude that $0\lt\frac{P(n,k)}{n^k}\leq 1$.
+
+Case **(2)**: If $k\neq 0$, Then we get that $k\in\{1,...,n\}$, We’ll prove that $\forall i\in\{1,...,k\},0\lt\frac{n-i+1}{n}\leq 1$:
+
+Let $i\in\{1,...,k\}$, Then we have $1\leq i\leq k$, But since $k\in\{1,...,n\}$, We have $k\leq n$, And thus we can conclude that $1\leq i\leq n$, And by multiplying this inequality by $-1$, We get $-n\leq -i\leq -1$, And by adding $n$ to this inequality, We get $0=n-n\leq n-i \leq n-1$, And now after adding $1$ to the inequality, We get **(§)** $1\leq n-i+1\leq n$, Now since $n\in\mathbb{N}$, We get that $0\lt n$, And thus by dividing the inequality **(§)** by $n$, We conclude that $\frac{1}{n}\leq\frac{n-i+1}{n}\leq\frac{n}{n}=1$, But since $0\lt\frac{1}{n}$, We concoude that $0\lt\frac{n-i+1}{n}\leq 1$ as was to be shown.
