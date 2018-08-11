@@ -95,3 +95,8 @@ Therefore we see from cases **(1)** and **(2)** that it is always the case that 
 
 Thus we got that $a_n\lt 3$ and that $2\leq a_n$, And we conclude that $2\leq a_n\lt 3$ as was to be shown.
 
+Now we’ll prove:
+
+**(fact 9)** $\forall n\in\mathbb{N},a_n\lt a_{n+1}$
+
+Let $n\in\mathbb{N}$, Thus we get $n+1\in\mathbb{N}$, And we can define a vector $\vec{x}\in\mathbb{R}^{n+1}$ as follows $x_1:=1$ and $\forall i \in\{2,...,n+1\},x_i := 1+\frac{1}{n}$, It is clear that because $n\gt 0$, We have $\forall i\in\{1,...,n+1\}, x_i\gt 0$, And thus $\vec{x}\in\mathbb{R}_+^{n+1}$, And we can use the *AM-GM inequality* to conclude that $G(n+1,\vec{x})\leq A(n+1,\vec{x})$, But since $G(n+1,\vec{x})=\sqrt[n+1]{\prod_\limits{i=1}^{n+1}}x_i$
