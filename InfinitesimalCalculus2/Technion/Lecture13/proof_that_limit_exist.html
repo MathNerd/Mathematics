@@ -15,7 +15,7 @@ Case **(2)**: If $k\neq 0$, Then we get that $k\in\{1,...,n\}$, We’ll prove th
 
 Let $i\in\{1,...,k\}$, Then we have $1\leq i\leq k$, But since $k\in\{1,...,n\}$, We have $k\leq n$, And thus we can conclude that $1\leq i\leq n$, And by multiplying this inequality by $-1$, We get $-n\leq -i\leq -1$, And by adding $n$ to this inequality, We get $0=n-n\leq n-i \leq n-1$, And now after adding $1$ to the inequality, We get **(§)** $1\leq n-i+1\leq n$, Now since $n\in\mathbb{N}$, We get that $ n\gt 0$, And thus by dividing the inequality **(§)** by $n\gt 0$, We conclude that $\frac{1}{n}\leq\frac{n-i+1}{n}\leq\frac{n}{n}=1$, But since $0\lt n$, We get that $0\lt\frac{1}{n}$, And thus we can conclude that $0\lt\frac{n-i+1}{n}\leq 1$ as was to be shown.
 
-Now, Since we have $\forall i\in\{1,...,k\},0\lt\frac{n-i+1}{n}\leq 1$, We can conclude by multiplying all of those inequalities together that $0<\prod_\limits{i=1}^k\frac{n-i+1}{n}\leq 1^k=1$, But since $\prod_\limits{i=1}^k\frac{n-i+1}{n}=\frac{\prod_\limits{i=1}^k (n-i +1)}{\prod_\limits{i=1}^k n}=\frac{P(n,k)}{n^k}$, We conclude that $0\lt \frac{P(n,k)}{n^k}\leq 1$.
+Now, Since we have $\forall i\in\{1,...,k\},0\lt\frac{n-i+1}{n}\leq 1$, We can conclude by multiplying all of those inequalities together that $0\lt \prod_\limits{i=1}^k\frac{n-i+1}{n}\leq 1^k=1$, But since $\prod_\limits{i=1}^k\frac{n-i+1}{n}=\frac{\prod_\limits{i=1}^k (n-i +1)}{\prod_\limits{i=1}^k n}=\frac{P(n,k)}{n^k}$, We conclude that $0\lt \frac{P(n,k)}{n^k}\leq 1$.
 
 Thus from cases **(1)** and **(2)** we see that is always the case that $0\lt\frac{P(n,k)}{n^k}\leq 1$  as was to be shown.
 
@@ -41,7 +41,7 @@ Since $2^{n-1}=2^{1-1}=2^0=1$, And since $n!=1!=1$, We conclude that $2^{n-1}\le
 
 Now suppose that for some $n=k\in\mathbb{N}$, We have $2^{k-1}\leq k!$, And we’ll prove that for $n=k+1$ we have: $2^{(k+1)-1}\leq (k+1)!$
 
-Since $k\in\mathbb{N}$, We conclude that $1\leq k$, And thus $0\lt 2\leq k+1$, But since $2^{k-1}\leq k!$ (this is the induction hypothesis), We get by multiplying this inequality by $k+1\gt 0$ that **(§)** $(k+1)2^{k-1}\leq (k+1)k!=(k+1)!$, Now by multiplying the inequality $2\leq k+1$ by $2^{k-1}>0$, We get that **(§§)** $2^k= 2\cdot 2^{k-1}\leq (k+1)2^{k-1}$, And by combining **(§)** and **(§§)**, We conclude that $2^k\leq (k+1)!$, But because $2^{(k+1)-1}=2^k$, We conclude that $2^{(k+1)-1}\leq (k+1)!$ as was to be shown and the proof by induction is completed.
+Since $k\in\mathbb{N}$, We conclude that $1\leq k$, And thus $0\lt 2\leq k+1$, But since $2^{k-1}\leq k!$ (this is the induction hypothesis), We get by multiplying this inequality by $k+1\gt 0$ that **(§)** $(k+1)2^{k-1}\leq (k+1)k!=(k+1)!$, Now by multiplying the inequality $2\leq k+1$ by $2^{k-1}\gt 0$, We get that **(§§)** $2^k= 2\cdot 2^{k-1}\leq (k+1)2^{k-1}$, And by combining **(§)** and **(§§)**, We conclude that $2^k\leq (k+1)!$, But because $2^{(k+1)-1}=2^k$, We conclude that $2^{(k+1)-1}\leq (k+1)!$ as was to be shown and the proof by induction is completed.
 
 Now we’ll prove that:
 
@@ -51,7 +51,7 @@ Let $n\in\mathbb{N}$, Since $2^{n-1}\gt 0$ and since $n!\gt 0$, We can conclude 
 
 And now we’ll prove that:
 
- **(fact 6)** $\forall n\in\mathbb{N}, \sum_\limits{k=1}^n\frac{1}{k!}\leq \sum_\limits{k=1}^n\frac{1}{2^{k-1}}=2(1-\frac{1}{2^n})<2$:
+ **(fact 6)** $\forall n\in\mathbb{N}, \sum_\limits{k=1}^n\frac{1}{k!}\leq \sum_\limits{k=1}^n\frac{1}{2^{k-1}}=2(1-\frac{1}{2^n})\lt 2$:
 
 Let $n\in\mathbb{N}$, By **(fact 5)** we get $\forall k\in\mathbb{N},\frac{1}{k!}\leq\frac{1}{2^{k-1}}$, And because $\{1,...,n\}\subseteq \mathbb{N}$, We get that in particular $\forall k\in\{1,...,n\}, \frac{1}{k!}\leq\frac{1}{2^{k-1}}$, And thus we can conclude by summing all of those inequalities together that $\sum_\limits{k=1}^n\frac{1}{k!}\leq\sum_\limits{k=1}^n\frac{1}{2^{k-1}}$.
 
