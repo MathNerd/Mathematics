@@ -1,4 +1,4 @@
-Let $\{a_n\in\mathbb{R}\}_{n=1}^\infty$, Be the sequence defined by the rule $\forall n\in\mathbb{N}, a_n:=(1+\frac{1}{n})^n$, Prove that $\forall n\in\mathbb{N}, 2\leq a_n\lt 3$, And that $\forall n\in\mathbb{N},a_n\leq a_{n+1}$, And use these facts to conclude that $\lim\limits_{n\to \infty}a_n$ exists.
+Let $\{a_n\in\mathbb{R}\}_{n=1}^\infty$, Be the sequence defined by the rule $\forall n\in\mathbb{N}, a_n:=(1+\frac{1}{n})^n$, Prove that $\forall n\in\mathbb{N}, 2\leq a_n\lt 3$, And that $\forall n\in\mathbb{N},a_n\leq a_{n+1}$, And use these facts to conclude that $\lim\limits_{n\to \infty}a_n$ exists and $2\leq\lim_\limits{n\to\infty}a_n\leq 3$.
 
 
 ----------
@@ -33,15 +33,15 @@ Let $n\in\mathbb{N}$, By **(fact 2)** we get that $\forall k\in\{0,...,n\},0\lt 
 
 Now we’ll prove by induction that:
 
- **(fact 4)** $\forall n\in\mathbb{N}, 2^{n-1}\leq n!$:
+ **(fact 4)** $\forall n\in\mathbb{N}, 2^{n-1}\leq n!$
 
-For $n=1$, We have to show that $2^{n-1}\leq n!$:
+For $n=1$, We have to show that: $2^{n-1}\leq n!$
 
 Since $2^{n-1}=2^{1-1}=2^0=1$, And since $n!=1!=1$, We conclude that $2^{n-1}\leq n!$.
 
-Now suppose that for some $n=k\in\mathbb{N}$, We have $2^{k-1}\leq k!$, And we’ll prove that for $n=k+1$ we have $2^{(k+1)-1}\leq (k+1)!$:
+Now suppose that for some $n=k\in\mathbb{N}$, We have $2^{k-1}\leq k!$, And we’ll prove that for $n=k+1$ we have: $2^{(k+1)-1}\leq (k+1)!$
 
-Since $k\in\mathbb{N}$, We conclude that $1\leq k$, And thus $0\lt 2\leq k+1$, But since $2^{k-1}\leq k!$ (this is the induction hypothesis), We get by multiplying this inequality by $k+1\gt 0$ that $(k+1)2^{k-1}\leq (k+1)k!=(k+1)!$, Now by multiplying the inequality $2\leq k+1$ by $2^{k-1}>0$, We get that $2^k= 2\cdot 2^{k-1}\leq (k+1)2^{k-1}$, But since we’ve already shown that $(k+1)2^{k-1}\leq(k+1)!$, We conclude that $2^k\leq (k+1)!$, But because $2^{(k+1)-1}=2^k$, We conclude that $2^{(k+1)-1}\leq (k+1)!$ as was to be shown and the proof by induction is completed.
+Since $k\in\mathbb{N}$, We conclude that $1\leq k$, And thus $0\lt 2\leq k+1$, But since $2^{k-1}\leq k!$ (this is the induction hypothesis), We get by multiplying this inequality by $k+1\gt 0$ that **(§)** $(k+1)2^{k-1}\leq (k+1)k!=(k+1)!$, Now by multiplying the inequality $2\leq k+1$ by $2^{k-1}>0$, We get that **(§§)** $2^k= 2\cdot 2^{k-1}\leq (k+1)2^{k-1}$, And by combining **(§)** and **(§§)**, We conclude that $2^k\leq (k+1)!$, But because $2^{(k+1)-1}=2^k$, We conclude that $2^{(k+1)-1}\leq (k+1)!$ as was to be shown and the proof by induction is completed.
 
 Now we’ll prove that:
 
@@ -57,9 +57,9 @@ Let $n\in\mathbb{N}$, By **(fact 5)** we get $\forall k\in\mathbb{N},\frac{1}{k!
 
 Now let’s define a geometric sequence $\{g_m\in\mathbb{R}\}_{m=1}^\infty$, By the rules $g_1:=1$ and $\forall m\in\mathbb{N},g_m:=g_1 \cdot q^{m-1}$ where $q:=\frac{1}{2}$, Now we’ll show that $\forall m\in\mathbb{N}, g_m=\frac{1}{2^{m-1}}$: 
 
-Let $m\in\mathbb{N}$, Then $g_m=g_1\cdot q^{n-1}=1\cdot (\frac{1}{2})^{n-1}=\frac{1}{2^{n-1}}$ as was to be shown.
+Let $m\in\mathbb{N}$, Then $g_m=g_1\cdot q^{m-1}=1\cdot (\frac{1}{2})^{m-1}=\frac{1}{2^{m-1}}$ as was to be shown.
 
-Thus we get by the formula for the sum of the first $n$ elements of the geometric sequence (see *Beni Goren, Algebra, Book 4, Page 91*) that $$\sum_\limits{k=1}^n\frac{1}{2^{k-1}}=\sum_\limits{k=1}^n g_k=\frac{g_1(q^n-1)}{q-1}=\frac{1\cdot ((\frac{1}{2})^n-1)}{\frac{1}{2}-1}=\frac{\frac{1}{2^n}-1}{-\frac{1}{2}}=\frac{1-\frac{1}{2^n}}{\frac{1}{2}}=2(1-\frac{1}{2^n})$$
+Thus we get by the formula for the sum of the first $n$ elements of the geometric sequence (see *Beni Goren, Algebra, Book 4, Page 91*) that: $$\sum_\limits{k=1}^n\frac{1}{2^{k-1}}=\sum_\limits{k=1}^n g_k=\frac{g_1(q^n-1)}{q-1}=\frac{1\cdot ((\frac{1}{2})^n-1)}{\frac{1}{2}-1}=\frac{\frac{1}{2^n}-1}{-\frac{1}{2}}=\frac{1-\frac{1}{2^n}}{\frac{1}{2}}=2(1-\frac{1}{2^n})$$
 
 Now since $0\lt 2^n$, We get $0\lt\frac{1}{2^n}$ And thus $-\frac{1}{2^n}\lt 0$, And by adding $1$, We conclude that $1-\frac{1}{2^n}\lt 1$, And by multiplying by $2$, We conclude that $2(1-\frac{1}{2^n})\lt 2$.
 
@@ -77,7 +77,7 @@ And now we can prove that:
 
 Let $n\in\mathbb{N}$, Then we get by definition of the sequence $\{a_n\in\mathbb{R}\}_{n=1}^\infty$ and by using the *binomial theorem* that:
 
-$a_n=(1+\frac{1}{n})^n=(\frac{1}{n}+1)^n=\sum_\limits{k=0}^n\binom{n}{k}(\frac{1}{n})^k\cdot 1^{n-k}=\sum_\limits{k=0}^n\binom{n}{k}\frac{1}{2^k}=\sum_\limits{k=0}^n(\frac{P(n,k)}{k!}\cdot\frac{1}{n^k})=\sum_\limits{k=0}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})$
+$a_n=(1+\frac{1}{n})^n=(\frac{1}{n}+1)^n=\sum_\limits{k=0}^n\binom{n}{k}(\frac{1}{n})^k\cdot 1^{n-k}=\sum_\limits{k=0}^n\binom{n}{k}\frac{1}{n^k}=\sum_\limits{k=0}^n(\frac{P(n,k)}{k!}\cdot\frac{1}{n^k})=\sum_\limits{k=0}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})$
 
 Now by **(fact 3)** we get that $\sum_\limits{k=0}^n (\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})\leq\sum_\limits{k=0}^n\frac{1}{k!} $, Also by **(fact 7)** we get that $\sum_\limits{k=0}^n\frac{1}{k!}\lt 3$, And thus we can conclude that $a_n\lt 3$.
 
@@ -85,9 +85,9 @@ Now, Since $n\in\mathbb{N}$, We get that there are two cases **(1)** $n=1$ or **
 
 Case **(1)**: If $n=1$, Then we have $a_n=\sum_\limits{k=0}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})=\sum_\limits{k=0}^1(\frac{1}{k!}\cdot\frac{P(1,k)}{1^k})=\frac{1}{0!}\cdot\frac{P(1,0)}{1^0}+\frac{1}{1!}\cdot\frac{P(1,1)}{1^1}=\frac{1}{1}\cdot\frac{1}{1}+\frac{1}{1}\cdot\frac{1}{1}=1+1=2$, And thus we conclude that $2\leq a_n$.
 
-Case **(2)**: If $n\geq 2$, Then we have
+Case **(2)**: If $n\geq 2$, Then we can write
 
- **(§)** $a_n=\sum_\limits{k=0}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})=\frac{1}{0!}\cdot\frac{P(n,0)}{n^0}+\frac{1}{1!}\cdot\frac{P(n,1)}{n^1}+\sum_\limits{k=2}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})=\frac{1}{1}\cdot\frac{1}{1}+\frac{1}{1}\cdot\frac{n}{n}+\frac{1}{k!}\cdot\frac{P(n,k)}{n^k}=2+\frac{1}{k!}\cdot\frac{P(n,k)}{n^k}$
+ **(§)** $a_n=\sum_\limits{k=0}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})=\frac{1}{0!}\cdot\frac{P(n,0)}{n^0}+\frac{1}{1!}\cdot\frac{P(n,1)}{n^1}+\sum_\limits{k=2}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})=\frac{1}{1}\cdot\frac{1}{1}+\frac{1}{1}\cdot\frac{n}{n}+\sum_\limits{k=2}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})=2+\sum_\limits{k=2}^n(\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})$
 
 Now by **(fact 2)** we get that $\forall k\in\{0,...,n\},0\lt \frac{1}{k!}\cdot\frac{P(n,k)}{n^k}$, And thus we have in particular that $\forall k\in\{2,...,n\},0\lt \frac{1}{k!}\cdot\frac{P(n,k)}{n^k}$, And by summing together all of those inequalities we can conclude that $0=\sum_\limits{k=2}^n0\lt \sum_\limits{k=2}^n (\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})$, And by adding $2$ to this inequality we get that $2\lt 2+\sum_\limits{k=2}^n (\frac{1}{k!}\cdot\frac{P(n,k)}{n^k})$, And by **(§)** we conclude that $2\lt a_n$, And thus in particular $2\leq a_n$.
 
@@ -99,9 +99,15 @@ Now we’ll prove:
 
 **(fact 9)** $\forall n\in\mathbb{N},a_n\leq a_{n+1}$
 
-Let $n\in\mathbb{N}$, Thus we get $n+1\in\mathbb{N}$, And we can define a vector $\vec{x}\in\mathbb{R}^{n+1}$ as follows $x_1:=1$ and $\forall i \in\{2,...,n+1\},x_i := 1+\frac{1}{n}$, It is clear that because $n\gt 0$, We have $\forall i\in\{1,...,n+1\}, x_i\gt 0$, And thus $\vec{x}\in\mathbb{R}_+^{n+1}$, And we can use the *AM-GM inequality* to conclude that $G(n+1,\vec{x})\leq A(n+1,\vec{x})$, Now since $G(n+1,\vec{x})=\sqrt[n+1]{\prod_\limits{i=1}^{n+1}x_i}=\sqrt[n+1]{x_1\cdot\prod_\limits{i=2}^{n+1}x_i}=\sqrt[n+1]{1\cdot\prod_\limits{i=2}^{n+1}(1+\frac{1}{n})}=\sqrt[n+1]{(1+\frac{1}{n})^n}$, And since $A(n+1,\vec{x})=\frac{\sum_\limits{i=1}^{n +1} x_i}{n+1}=\frac{x_1+\sum_\limits{i=2}^{n+1}x_i}{n+1}=\frac{ 1+\sum_\limits{i=2}^{n+1}(1+\frac{1}{n})}{n+1}=\frac{1+n(1+\frac{1}{n})}{n+1}=\frac{1+n+1}{n+1}=1+\frac{1}{n+1}$
-, And thus we conclude that $\sqrt[n+1]{(1+\frac{1}{n})^n}\leq 1+\frac{1}{n+1}$, And by raising the inequality to the $n+1$’st power (we are allowed to do that as the left hand side of the inequality is positive), We get $(1+\frac{1}{n})^n\leq (1+\frac{1}{n+1})^{n+1}$, But since $a_n=(1+\frac{1}{n})^n$ and $a_{n+1}=(1+\frac{1}{n+1})^{n+1}$, We conclude that $a_n\leq a_{n+1}$ as was to be shown.
+Let $n\in\mathbb{N}$, Thus we get $n+1\in\mathbb{N}$, And we can define a vector $\vec{x}\in\mathbb{R}^{n+1}$ as follows $x_1:=1$ and $\forall i \in\{2,...,n+1\},x_i := 1+\frac{1}{n}$, It is clear that because $n\gt 0$, We have $\forall i\in\{1,...,n+1\}, x_i\gt 0$, And thus $\vec{x}\in\mathbb{R}_+^{n+1}$, And we can use the *AM-GM inequality* to conclude that $G(n+1,\vec{x})\leq A(n+1,\vec{x})$,
 
-Thus we’ve shown that the sequence $\{a_n\}_{n=1}^\infty$ is an increasing bounded sequence and thus its limit exist as was to be shown.
+Now since: $$G(n+1,\vec{x})=\sqrt[n+1]{\prod_\limits{i=1}^{n+1}x_i}=\sqrt[n+1]{x_1\cdot\prod_\limits{i=2}^{n+1}x_i}=\sqrt[n+1]{1\cdot\prod_\limits{i=2}^{n+1}(1+\frac{1}{n})}=\sqrt[n+1]{(1+\frac{1}{n})^n}$$
+
+And since:
+$$A(n+1,\vec{x})=\frac{\sum_\limits{i=1}^{n +1} x_i}{n+1}=\frac{x_1+\sum_\limits{i=2}^{n+1}x_i}{n+1}=\frac{ 1+\sum_\limits{i=2}^{n+1}(1+\frac{1}{n})}{n+1}=\frac{1+n(1+\frac{1}{n})}{n+1}=\frac{1+n+1}{n+1}=1+\frac{1}{n+1}$$
+
+We conclude that $\sqrt[n+1]{(1+\frac{1}{n})^n}\leq 1+\frac{1}{n+1}$, And by raising the inequality to the $(n+1)$’st power (we are allowed to do that as the left hand side of the inequality is positive), We get $(1+\frac{1}{n})^n\leq (1+\frac{1}{n+1})^{n+1}$, But since $a_n=(1+\frac{1}{n})^n$ and $a_{n+1}=(1+\frac{1}{n+1})^{n+1}$, We conclude that $a_n\leq a_{n+1}$ as was to be shown.
+
+Thus we’ve shown that the sequence $\{a_n\}_{n=1}^\infty$ is an increasing bounded sequence and thus its limit exist, Now as we’ve already shown that $\forall n\in\mathbb{N}, 2\leq a_n\lt 3$, We can conclude by using *Theorem VII.9* in the book *Infinitesimal Calculus 2, Units 1-2-3, Page 24* that $2\leq\lim_\limits{n\to\infty}a_n\leq 3$ as was to be shown.
 
 Q.E.D.
