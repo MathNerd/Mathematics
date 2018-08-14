@@ -28,7 +28,7 @@ int upper(int n)
     }
 }
 
-double a(int n)
+int a(int n)
 {
     if (n <= 0)
     {
@@ -37,13 +37,14 @@ double a(int n)
     }
     else // n > 0 --> n >= 1
     {
-        return n-ceil((-1+sqrt(1+8*n))/2.0);
+        int i = lower(n)-1;
+        return n-i*(i+1)/2;//ceil((-1+sqrt(1+8*n))/2.0)+1;
     }
 }
 
 int main() {
     for (int n = 1; n <= 22; n++)
-        printf("lower(%d) = %d, upper(%d) = %d\n", n, lower(n), n, upper(n));
+        printf("lower(%d) = %d, upper(%d) = %d, a(%d) = %d\n", n, lower(n), n, upper(n), n, a(n));
     
     return 0;
 }
