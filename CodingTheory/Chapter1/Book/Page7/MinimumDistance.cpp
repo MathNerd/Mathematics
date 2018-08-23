@@ -73,6 +73,7 @@ class Code
         {
             for (size_t idx = 0; idx < m; i++)
             {
+		// ADD COPY/DUPLICATE CHECK !!!
                 codeword[idx] = codewords[idx];
             }
         }
@@ -131,12 +132,40 @@ Code<4,2,2> createC1(void)
 
 Code<4,2,3> createC2(void)
 {
+    int cw1_arr[3] = {0,0,0};
+    int cw2_arr[3] = {0,1,1};
+    int cw3_arr[3] = {1,0,1};
+    int cw4_arr[3] = {1,1,0};
     
+    CodeWord<2,3> cw1(cw1_arr);
+    CodeWord<2,3> cw2(cw2_arr);
+    CodeWord<2,3> cw3(cw3_arr);
+    CodeWord<2,3> cw4(cw4_arr);
+    
+    CodeWord<2,3> cw_arr[4] = { cw1, cw2, cw3, cw4 };
+    
+    Code<4,2,3> c(cw_arr);
+    
+    return c;
 }
 
 Code<4,2,5> reateC3(void)
 {
+    int cw1_arr[5] = {0,0,0,0,0};
+    int cw2_arr[5] = {0,1,1,0,1};
+    int cw3_arr[5] = {1,0,1,1,0};
+    int cw4_arr[5] = {1,1,0,1,1};
     
+    CodeWord<2,5> cw1(cw1_arr);
+    CodeWord<2,5> cw2(cw2_arr);
+    CodeWord<2,5> cw3(cw3_arr);
+    CodeWord<2,5> cw4(cw4_arr);
+    
+    CodeWord<2,5> cw_arr[4] = { cw1, cw2, cw3, cw4 };
+    
+    Code<4,2,5> c(cw_arr);
+    
+    return c;
 }
 
 int main() {
