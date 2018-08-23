@@ -16,6 +16,12 @@ class CodeWord
     
     public:
     
+        CodeWord(void)
+        {
+            // Never use it
+            // Just make the compiler SHUT THE FUCK UP!
+        }
+        
         CodeWord(int arr[])
         {
             for (size_t idx = 0; idx < n; idx++)
@@ -31,7 +37,7 @@ class CodeWord
             }
         }
         
-        ~CodeWord(void){};
+        ~CodeWord(void){}
         
         int GetSymbolAt(size_t idx)
         {
@@ -52,15 +58,15 @@ class CodeWord
             if(newline)
                 cout << endl;
         }
-}
+};
 
 template<size_t M, size_t Q, size_t N>
 class Code
 {
     public:
     
-        const static size_t n = N;
-        const static size_t q = Q;
+      //  const static size_t n = N;
+    //    const static size_t q = Q;
         const static size_t m = M;
         
     private:
@@ -69,21 +75,22 @@ class Code
         
     public:
     
-        Code(CodeWord codewords[]]
+        Code(CodeWord<Q,N> codewords[])
         {
-            for (size_t idx = 0; idx < m; i++)
+            for (size_t idx = 0; idx < m; idx++)
             {
 		// ADD COPY/DUPLICATE CHECK !!!
                 codeword[idx] = codewords[idx];
             }
         }
         
-        ~Code(void):
+        ~Code(void){}
         
         void Print(bool newline)
         {
             cout << "{";
-            for (size_t idx = 0; idx < m-1; idx++)
+            size_t idx;
+            for (idx = 0; idx < m-1; idx++)
             {
                 codeword[idx].Print(false);
                 cout << ", ";
@@ -94,8 +101,7 @@ class Code
             if (newline)
                 cout << endl;
         }
-}
-
+};
 
 template <size_t Q, size_t N>
 int hamming_distance(CodeWord<Q,N> x, CodeWord<Q,N> y)
@@ -149,7 +155,7 @@ Code<4,2,3> createC2(void)
     return c;
 }
 
-Code<4,2,5> reateC3(void)
+Code<4,2,5> createC3(void)
 {
     int cw1_arr[5] = {0,0,0,0,0};
     int cw2_arr[5] = {0,1,1,0,1};
@@ -168,6 +174,7 @@ Code<4,2,5> reateC3(void)
     return c;
 }
 
+
 int main() {
 	
 	Code<4,2,2> C1 = createC1();
@@ -177,4 +184,6 @@ int main() {
 	C1.Print(true);
 	C2.Print(true);
 	C3.Print(true);
+	
+	return 0;
 }
