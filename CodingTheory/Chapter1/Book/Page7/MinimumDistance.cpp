@@ -110,11 +110,42 @@ int hamming_distance(CodeWord<Q,N> x, CodeWord<Q,N> y)
     return count;
 }
 
+Code<4,2,2> createC1(void)
+{
+    int cw1_arr[2] = {0,0};
+    int cw2_arr[2] = {0,1};
+    int cw3_arr[2] = {1,0};
+    int cw4_arr[2] = {1,1};
+    
+    CodeWord<2,2> cw1(cw1_arr);
+    CodeWord<2,2> cw2(cw2_arr);
+    CodeWord<2,2> cw3(cw3_arr);
+    CodeWord<2,2> cw4(cw4_arr);
+    
+    CodeWord<2,2> cw_arr[4] = { cw1, cw2, cw3, cw4 };
+    
+    Code<4,2,2> c(cw_arr);
+    
+    return c;
+}
+
+Code<4,2,3> createC2(void)
+{
+    
+}
+
+Code<4,2,5> reateC3(void)
+{
+    
+}
+
 int main() {
 	
-	
-	Code<4,2,2> 
-	CodeWord<2,
+	Code<4,2,2> C1 = createC1();
+	Code<4,2,3> C2 = createC2();
+	Code<4,2,5> C3 = createC3();
 
-	cout<<"Sum of x+y = " << z;
+	C1.Print(true);
+	C2.Print(true);
+	C3.Print(true);
 }
