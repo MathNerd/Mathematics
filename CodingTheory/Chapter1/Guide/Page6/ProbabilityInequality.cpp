@@ -21,9 +21,10 @@ double prob(double p, int n, int i)
 }
 
 int main() {
-	double p = 0.4;
+	double p = 0.1;
 	int n = 10;
 	
+	cout.precision(17);
 	for (int i = 0; i <= n; i++)
 	    cout<<"prob("<<p<<", "<<n<<", "<<i<<") = " << prob(p,n,i) << endl;
 	
