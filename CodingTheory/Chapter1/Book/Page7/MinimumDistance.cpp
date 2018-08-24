@@ -121,6 +121,17 @@ class Code
 	    return minimal_distance;
 	}
 	
+	CodeWord<Q,N> GetCodeWordAt(size_t idx)
+	{
+	    if(idx < m)
+	        return codeword[idx);
+	    else
+	    {
+	        cout << "FATAL ERROR\n";
+		return CodeWord<Q,N>();
+	    }
+	}
+	
         void Print(bool newline)
         {
             cout << "{";
@@ -194,7 +205,33 @@ Code<4,2,5> createC3(void)
     
     return c;
 }
-
+				
+double randon(void)
+{
+    return rand()/double(RAND_MAX + 1);
+}
+								
+template<size_t M, size_t Q, size_t N>
+void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
+{
+    // Generate CodeWord with noise:
+    int codeword_with_noise_arr[N];
+    for(int idx = 0; idx < N; idx++)
+    {
+        int symbol = code.GetCodeWordAt(codeword_idx).GetSymbolAt(idx);
+	
+	if (random() <= p)
+	{
+		// NEEDS RENOVATION FOR CASE Q>2!!!
+	    symbol = 1-symbol;
+	}
+	    
+	codeword_with_noise_arr[idx] = symbol;
+    }
+    CodeWord<Q,N> codeword_with_noise(codeword_with_noise_arr);
+	
+    codeword_with_noise.Print(true);
+}
 
 int main() {
 	
@@ -213,6 +250,9 @@ int main() {
 	cout << "d(";
 	C3.Print(false);
 	cout << ") = " << C3.MinimalDistance() << endl;
+	
+	for (int i = 1; i <= 100; i++)
+		cout << random() << endl;
 	
 	return 0;
 }
