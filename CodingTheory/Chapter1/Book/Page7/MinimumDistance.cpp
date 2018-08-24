@@ -111,7 +111,7 @@ class Code
 	    int minimal_distance = 999999999;
 	    for (int i = 0; i <= m-2; i++)
 	    {
-		for (int j = i+1, j <= m-1; j++)
+		for (int j = i+1; j <= m-1; j++)
 		{
 		    int distance = hamming_distance(codeword[i], codeword[j]);
 		    if (distance < minimal_distance)
