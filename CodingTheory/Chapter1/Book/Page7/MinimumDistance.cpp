@@ -60,6 +60,20 @@ class CodeWord
         }
 };
 
+template <size_t Q, size_t N>
+int hamming_distance(CodeWord<Q,N> x, CodeWord<Q,N> y)
+{
+    int count = 0;
+    
+    for (size_t idx = 0; idx < N; idx++)
+    {
+        if (x.GetSymbolAt(idx) != y.GetSymbolAt(idx))
+            count++;
+    }
+    
+    return count;
+}
+
 template<size_t M, size_t Q, size_t N>
 class Code
 {
@@ -86,6 +100,27 @@ class Code
         
         ~Code(void){}
         
+	int MinimalDistance(void)
+	{
+	    if (m < 2)
+	    {
+	        cout << "FATAL ERROR\n";
+		return 0;
+	    }
+		
+	    int minimal_distance = 999999999;
+	    for (int i = 0; i <= m-2; i++)
+	    {
+		for (int j = i+1, j <= m-1; j++)
+		{
+		    int distance = hamming_distance(codeword[i], codeword[j]);
+		    if (distance < minimal_distance)
+		         minimal_distance = distance;
+		}
+	    }
+	    return minimal_distance;
+	}
+	
         void Print(bool newline)
         {
             cout << "{";
@@ -93,7 +128,7 @@ class Code
             for (idx = 0; idx < m-1; idx++)
             {
                 codeword[idx].Print(false);
-                cout << ", ";
+                cout << ",";
             }
             codeword[idx].Print(false);
             cout << "}";
@@ -102,20 +137,6 @@ class Code
                 cout << endl;
         }
 };
-
-template <size_t Q, size_t N>
-int hamming_distance(CodeWord<Q,N> x, CodeWord<Q,N> y)
-{
-    int count = 0;
-    
-    for (size_t idx = 0; idx < N; idx++)
-    {
-        if (x.GetSymbolAt(idx) != y.GetSymbolAt(idx))
-            count++;
-    }
-    
-    return count;
-}
 
 Code<4,2,2> createC1(void)
 {
@@ -181,9 +202,17 @@ int main() {
 	Code<4,2,3> C2 = createC2();
 	Code<4,2,5> C3 = createC3();
 
-	C1.Print(true);
-	C2.Print(true);
-	C3.Print(true);
+	cout << "d(";
+	C1.Print(false);
+	cout << ") = " << C1.MinimalDistance() << endl;
+	
+	cout << "d(";
+	C2.Print(false);
+	cout << ") = " << C2.MinimalDistance() << endl;
+	
+	cout << "d(";
+	C3.Print(false);
+	cout << ") = " << C3.MinimalDistance() << endl;
 	
 	return 0;
 }
