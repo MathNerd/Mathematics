@@ -1,4 +1,7 @@
 #include<iostream>
+#include<cstdlib>
+#include<ctime>
+#include<cmath>
 
 using namespace std;
 
@@ -124,7 +127,7 @@ class Code
 	CodeWord<Q,N> GetCodeWordAt(size_t idx)
 	{
 	    if(idx < m)
-	        return codeword[idx);
+	        return codeword[idx];
 	    else
 	    {
 	        cout << "FATAL ERROR\n";
@@ -205,12 +208,61 @@ Code<4,2,5> createC3(void)
     
     return c;
 }
-				
-double randon(void)
+
+void RandomInit(void)
 {
-    return rand()/double(RAND_MAX + 1);
+    srand(time(NULL));
 }
-								
+
+double Random(void)
+{
+    return rand()/double(RAND_MAX);
+}
+
+unsigned nCk(unsigned n, unsigned k )
+{
+    if (k > n) return 0;
+    if (k * 2 > n) k = n-k;
+    if (k == 0) return 1;
+
+    int result = n;
+    for( int i = 2; i <= k; ++i ) {
+        result *= (n-i+1);
+        result /= i;
+    }
+    return result;
+}
+
+double probability(double p, int n, int i)
+{
+    if (n<1)
+    {
+        printf("FATAL ERROR: \'n\' must be >= 1\n");
+        return 0.0;
+    }
+    
+    if (i<0 || n<i)
+    {
+        printf("FATAL ERROR: \'i\' must be >= 0 and <= n\n");
+        return 0;
+    }
+    
+    return int(nCk(n,i)) * pow(p,i) * pow(1-p,n-i);
+}
+
+template<size_t M, size_t Q, size_t N>
+void PrintValidityProbabilities(Code<M,Q,N> code, double p)
+{
+    double sum = 0.0;
+    for (int nValid = N; nValid >= 0; nValid--)
+    {
+        double prob = probability(p, N, nValid);
+        cout << "P(VALID = " << nValid << ") = " << prob << endl;
+        sum += prob;
+    }
+    cout << "P(VALID = 0,...," << N << ") = " << sum << endl;
+}
+
 template<size_t M, size_t Q, size_t N>
 void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
 {
@@ -220,7 +272,7 @@ void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
     {
         int symbol = code.GetCodeWordAt(codeword_idx).GetSymbolAt(idx);
 	
-	if (random() <= p)
+	if (Random() <= p)
 	{
 		// NEEDS RENOVATION FOR CASE Q>2!!!
 	    symbol = 1-symbol;
@@ -230,6 +282,7 @@ void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
     }
     CodeWord<Q,N> codeword_with_noise(codeword_with_noise_arr);
 	
+	cout << "DIST = " << hamming_distance(code.GetCodeWordAt(codeword_idx), codeword_with_noise) << " MUTATE = ";
     codeword_with_noise.Print(true);
 }
 
@@ -251,8 +304,16 @@ int main() {
 	C3.Print(false);
 	cout << ") = " << C3.MinimalDistance() << endl;
 	
-	for (int i = 1; i <= 100; i++)
-		cout << random() << endl;
+	RandomInit();
+	
+	double p = 0.4;
+	
+	PrintValidityProbabilities(C3,p);
+	
+//	for (int nValid = N; nValid >= 0; nValid—)
+//	    cout << "PROBABILITY OF " << nValid << " VALID PLACES = " << probabilty(
+	for (int i = 1; i<= 100; i++)
+    	simulate_send(C3, 1, p);
 	
 	return 0;
 }
