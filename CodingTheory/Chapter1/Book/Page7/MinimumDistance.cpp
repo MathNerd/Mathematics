@@ -247,7 +247,7 @@ double probability(double p, int n, int i)
         return 0;
     }
     
-    return int(nCk(n,i)) * pow(p,i) * pow(1-p,n-i);
+    return int(nCk(n,i)) * pow(p,n-i) * pow(1-p,i);
 }
 
 template<size_t M, size_t Q, size_t N>
