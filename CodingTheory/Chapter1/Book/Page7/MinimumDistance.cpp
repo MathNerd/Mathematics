@@ -221,36 +221,41 @@ void PrintValidityProbabilities(Code<M,Q,N> code, double p)
 
 //---------------------- Simulation ----------------------
 
-template<size_t M, size_t Q, size_t N>
-void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p)
-{
-    CodeWord<M,Q,N> sent_codeword = code.GetCodeWordAt(sent_codeword_index);
-	
-    // Generate CodeWord with noise:
-	
-    int received_vector_arr[N];
+template<size_t Q, size_t N>
+CodeWord<Q,N> Mutate(CodeWord<Q,N> original_word, double p)
+{	
+    int mutated_word_arr[N];
     for(int idx = 0; idx < N; idx++)
     {
-        int symbol = sent_codeword.GetSymbolAt(idx);
+        int symbol = original_word.GetSymbolAt(idx);
 	
 	if (Random() <= p)
 	{
-		// NEEDS RENOVATION FOR CASE Q>2!!!
+	    // NEEDS RENOVATION FOR CASE Q>2!!!
 	    symbol = 1-symbol;
 	}
 	    
-	received_vector_arr[idx] = symbol;
+	mutated_word_arr[idx] = symbol;
     }
-    CodeWord<Q,N> received_vector(received_vector_arr);
-    
-    static int error_statistics[N+1];
+    CodeWord<Q,N> mutated_word(mutated_word_arr);
+	
+    return mutated_word;
+}
+
+template<size_t M, size_t Q, size_t N>
+void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p)
+{
+    CodeWord<Q,N> sent_codeword = code.GetCodeWordAt(sent_codeword_index);
+    CodeWord<Q,N> received_vector = Mutate(sent_codeword, p);
+	
+    int error_statistics[N+1];
 	
     int distance = HammingDistance(sent_codeword, received_vector);
 	
     error_statistics[distance]++;
 	
     cout << "DIST = " << distance << " MUTATE = ";
-    sent_codeword_with_noise.Print(true);
+    received_vector.Print(true);
 }
 
 //---------------------- Creating Codes for Example ----------------------
