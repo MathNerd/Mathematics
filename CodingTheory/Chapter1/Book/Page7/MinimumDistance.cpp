@@ -246,7 +246,7 @@ template<size_t M, size_t Q, size_t N>
 void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times)
 {
     CodeWord<Q,N> sent_codeword = code.GetCodeWordAt(sent_codeword_index);
-    int error_statistics[N+1];
+    int error_statistics[N+1] = {0};
 
     cout << "BEGIN SIMULATION WITH {sent_codeword = ";
     sent_codeword.Print(false);
