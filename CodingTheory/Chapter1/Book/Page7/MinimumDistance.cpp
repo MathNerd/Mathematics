@@ -5,6 +5,8 @@
 
 using namespace std;
 
+//---------------------- CodeWord ----------------------
+
 template<size_t Q, size_t N>
 class CodeWord
 {
@@ -63,8 +65,10 @@ class CodeWord
         }
 };
 
+//---------------------- HammingDistance ----------------------
+
 template <size_t Q, size_t N>
-int hamming_distance(CodeWord<Q,N> x, CodeWord<Q,N> y)
+int HammingDistance(CodeWord<Q,N> x, CodeWord<Q,N> y)
 {
     int count = 0;
     
@@ -76,6 +80,8 @@ int hamming_distance(CodeWord<Q,N> x, CodeWord<Q,N> y)
     
     return count;
 }
+
+//---------------------- Code ----------------------
 
 template<size_t M, size_t Q, size_t N>
 class Code
@@ -116,7 +122,7 @@ class Code
 	    {
 		for (int j = i+1; j <= m-1; j++)
 		{
-		    int distance = hamming_distance(codeword[i], codeword[j]);
+		    int distance = HammingDistance(codeword[i], codeword[j]);
 		    if (distance < minimal_distance)
 		         minimal_distance = distance;
 		}
@@ -152,7 +158,9 @@ class Code
         }
 };
 
-Code<4,2,2> createC1(void)
+//---------------------- Creating Codes for Example ----------------------
+
+Code<4,2,2> CreateC1(void)
 {
     int cw1_arr[2] = {0,0};
     int cw2_arr[2] = {0,1};
@@ -171,7 +179,7 @@ Code<4,2,2> createC1(void)
     return c;
 }
 
-Code<4,2,3> createC2(void)
+Code<4,2,3> CreateC2(void)
 {
     int cw1_arr[3] = {0,0,0};
     int cw2_arr[3] = {0,1,1};
@@ -190,7 +198,7 @@ Code<4,2,3> createC2(void)
     return c;
 }
 
-Code<4,2,5> createC3(void)
+Code<4,2,5> CreateC3(void)
 {
     int cw1_arr[5] = {0,0,0,0,0};
     int cw2_arr[5] = {0,1,1,0,1};
@@ -209,6 +217,8 @@ Code<4,2,5> createC3(void)
     return c;
 }
 
+//---------------------- Random ----------------------
+
 void RandomInit(void)
 {
     srand(time(NULL));
@@ -218,6 +228,8 @@ double Random(void)
 {
     return rand()/double(RAND_MAX);
 }
+
+//---------------------- Combinatorics ----------------------
 
 unsigned nCk(unsigned n, unsigned k )
 {
@@ -232,6 +244,8 @@ unsigned nCk(unsigned n, unsigned k )
     }
     return result;
 }
+
+//---------------------- Probability ----------------------
 
 double probability(double p, int n, int i)
 {
@@ -263,6 +277,8 @@ void PrintValidityProbabilities(Code<M,Q,N> code, double p)
     cout << "P(VALID = 0,...," << N << ") = " << sum << endl;
 }
 
+//---------------------- Simulation ----------------------
+
 template<size_t M, size_t Q, size_t N>
 void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
 {
@@ -285,6 +301,8 @@ void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
 	cout << "DIST = " << hamming_distance(code.GetCodeWordAt(codeword_idx), codeword_with_noise) << " MUTATE = ";
     codeword_with_noise.Print(true);
 }
+
+//---------------------- Main ----------------------
 
 int main() {
 	
