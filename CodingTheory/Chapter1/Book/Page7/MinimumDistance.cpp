@@ -188,7 +188,8 @@ unsigned nCk(unsigned n, unsigned k )
 
 //---------------------- Probability ----------------------
 
-double probability(double p, int n, int i)
+// Probability that 'i' symbols are correct.
+double Probability(double p, int n, int i)
 {
     if (n<1)
     {
@@ -211,7 +212,7 @@ void PrintValidityProbabilities(Code<M,Q,N> code, double p)
     double sum = 0.0;
     for (int nValid = N; nValid >= 0; nValid--)
     {
-        double prob = probability(p, N, nValid);
+        double prob = Probability(p, N, nValid);
         cout << "P(VALID = " << nValid << ") = " << prob << endl;
         sum += prob;
     }
@@ -221,7 +222,7 @@ void PrintValidityProbabilities(Code<M,Q,N> code, double p)
 //---------------------- Simulation ----------------------
 
 template<size_t M, size_t Q, size_t N>
-void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
+void SimulateSend(Code<M,Q,N> code, int codeword_idx, double p)
 {
     // Generate CodeWord with noise:
     int codeword_with_noise_arr[N];
@@ -239,7 +240,7 @@ void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
     }
     CodeWord<Q,N> codeword_with_noise(codeword_with_noise_arr);
 	
-	cout << "DIST = " << hamming_distance(code.GetCodeWordAt(codeword_idx), codeword_with_noise) << " MUTATE = ";
+	cout << "DIST = " << HammingDistance(code.GetCodeWordAt(codeword_idx), codeword_with_noise) << " MUTATE = ";
     codeword_with_noise.Print(true);
 }
 
@@ -306,9 +307,9 @@ Code<4,2,5> CreateC3(void)
 
 int main() {
 	
-	Code<4,2,2> C1 = createC1();
-	Code<4,2,3> C2 = createC2();
-	Code<4,2,5> C3 = createC3();
+	Code<4,2,2> C1 = CreateC1();
+	Code<4,2,3> C2 = CreateC2();
+	Code<4,2,5> C3 = CreateC3();
 
 	cout << "d(";
 	C1.Print(false);
@@ -328,10 +329,8 @@ int main() {
 	
 	PrintValidityProbabilities(C3,p);
 	
-//	for (int nValid = N; nValid >= 0; nValid—)
-//	    cout << "PROBABILITY OF " << nValid << " VALID PLACES = " << probabilty(
 	for (int i = 1; i<= 100; i++)
-    	simulate_send(C3, 1, p);
+    	    SimulateSend(C3, 1, p);
 	
 	return 0;
 }
