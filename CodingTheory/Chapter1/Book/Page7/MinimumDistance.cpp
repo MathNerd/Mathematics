@@ -222,13 +222,16 @@ void PrintValidityProbabilities(Code<M,Q,N> code, double p)
 //---------------------- Simulation ----------------------
 
 template<size_t M, size_t Q, size_t N>
-void SimulateSend(Code<M,Q,N> code, int codeword_idx, double p)
+void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p)
 {
+    CodeWord<M,Q,N> sent_codeword = code.GetCodeWordAt(sent_codeword_index);
+	
     // Generate CodeWord with noise:
-    int codeword_with_noise_arr[N];
+	
+    int received_vector_arr[N];
     for(int idx = 0; idx < N; idx++)
     {
-        int symbol = code.GetCodeWordAt(codeword_idx).GetSymbolAt(idx);
+        int symbol = sent_codeword.GetSymbolAt(idx);
 	
 	if (Random() <= p)
 	{
@@ -236,12 +239,18 @@ void SimulateSend(Code<M,Q,N> code, int codeword_idx, double p)
 	    symbol = 1-symbol;
 	}
 	    
-	codeword_with_noise_arr[idx] = symbol;
+	received_vector_arr[idx] = symbol;
     }
-    CodeWord<Q,N> codeword_with_noise(codeword_with_noise_arr);
+    CodeWord<Q,N> received_vector(received_vector_arr);
+    
+    static int error_statistics[N+1];
 	
-	cout << "DIST = " << HammingDistance(code.GetCodeWordAt(codeword_idx), codeword_with_noise) << " MUTATE = ";
-    codeword_with_noise.Print(true);
+    int distance = HammingDistance(sent_codeword, received_vector);
+	
+    error_statistics[distance]++;
+	
+    cout << "DIST = " << distance << " MUTATE = ";
+    sent_codeword_with_noise.Print(true);
 }
 
 //---------------------- Creating Codes for Example ----------------------
