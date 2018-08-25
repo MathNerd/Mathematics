@@ -188,7 +188,7 @@ unsigned nCk(unsigned n, unsigned k )
 
 //---------------------- Probability ----------------------
 
-// Probability that 'i' symbols are correct.
+// Probability that 'i' symbols are received in error.
 double BinomialDistributionMassFunction(double p, int n, int i)
 {
     if (n<1)
@@ -203,17 +203,17 @@ double BinomialDistributionMassFunction(double p, int n, int i)
         return 0;
     }
     
-    return int(nCk(n,i)) * pow(p,n-i) * pow(1-p,i);
+    return int(nCk(n,i)) * pow(p,i) * pow(1-p,n-i);
 }
 
 template<size_t M, size_t Q, size_t N>
 void PrintValidityProbabilities(Code<M,Q,N> code, double p)
 {
     double sum = 0.0;
-    for (int nValid = N; nValid >= 0; nValid--)
+    for (int nError = 0; nError <= N; nError++)
     {
-        double probability = BinomialDistributionMassFunction(p, N, nValid);
-        cout << "P(VALID = " << nValid << ") = " << probability << endl;
+        double probability = BinomialDistributionMassFunction(p, N, nError);
+        cout << "P(ERROR = " << nError << ") = " << probability << endl;
         sum += probability;
     }
     cout << "P(VALID = 0,...," << N << ") = " << sum << endl;
