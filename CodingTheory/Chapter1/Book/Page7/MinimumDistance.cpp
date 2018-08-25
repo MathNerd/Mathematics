@@ -366,7 +366,9 @@ int main() {
 	
 	double p = 0.4;
 	
-	PrintValidityProbabilities(C3,p);
+	PrintErrorProbabilities(C3,p);
+	
+	cout << endl;
 	
         SimulateSend(C3, 1, p, 100);
 	
