@@ -189,7 +189,7 @@ unsigned nCk(unsigned n, unsigned k )
 //---------------------- Probability ----------------------
 
 // Probability that 'i' symbols are correct.
-double Probability(double p, int n, int i)
+double BinomialDistributionMassFunction(double p, int n, int i)
 {
     if (n<1)
     {
@@ -212,9 +212,9 @@ void PrintValidityProbabilities(Code<M,Q,N> code, double p)
     double sum = 0.0;
     for (int nValid = N; nValid >= 0; nValid--)
     {
-        double prob = Probability(p, N, nValid);
-        cout << "P(VALID = " << nValid << ") = " << prob << endl;
-        sum += prob;
+        double probability = BinomialDistributionMassFunction(p, N, nValid);
+        cout << "P(VALID = " << nValid << ") = " << probability << endl;
+        sum += probability;
     }
     cout << "P(VALID = 0,...," << N << ") = " << sum << endl;
 }
