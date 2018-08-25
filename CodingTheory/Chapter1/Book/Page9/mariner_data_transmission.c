@@ -10,9 +10,17 @@ int main()
     
     int total_pixels = width * height; // Total number of picture-elements/pixels.
     int total_bits = total_pixels * bits; // Total number of bits.
-    double total_time = total_bits / transmit_rate; // Total time reqiured to transmit the picture in seconds.
-    double total_time_h = total_time / 3600; // Total time required to transmit the picture in hours,
+    double total_time_s = total_bits / transmit_rate; // Total time reqiured to transmit the picture in seconds.
+    double total_time_h = total_time_s / 3600; // Total time required to transmit the picture in hours,
     
-    printf("%f\n", result);
+    printf("width = %d\n", width);
+    printf("height = %d\n", height);
+    printf("bits = %d\n", bits);
+    printf("transmit_rate = %f\n", transmit_rate);
+    printf("total_pixels = %d\n", total_pixels);
+    printf("total_bits = %d\n", total_bits);
+    printf("total_time_s = %f\n", total_time_s);
+    printf("total_time_h = %f\n", total_time_h);
+    
     return 0;
 }
