@@ -65,7 +65,7 @@ class CodeWord
         }
 };
 
-//---------------------- HammingDistance ----------------------
+//---------------------- Hamming Distance ----------------------
 
 template <size_t Q, size_t N>
 int HammingDistance(CodeWord<Q,N> x, CodeWord<Q,N> y)
@@ -158,65 +158,6 @@ class Code
         }
 };
 
-//---------------------- Creating Codes for Example ----------------------
-
-Code<4,2,2> CreateC1(void)
-{
-    int cw1_arr[2] = {0,0};
-    int cw2_arr[2] = {0,1};
-    int cw3_arr[2] = {1,0};
-    int cw4_arr[2] = {1,1};
-    
-    CodeWord<2,2> cw1(cw1_arr);
-    CodeWord<2,2> cw2(cw2_arr);
-    CodeWord<2,2> cw3(cw3_arr);
-    CodeWord<2,2> cw4(cw4_arr);
-    
-    CodeWord<2,2> cw_arr[4] = { cw1, cw2, cw3, cw4 };
-    
-    Code<4,2,2> c(cw_arr);
-    
-    return c;
-}
-
-Code<4,2,3> CreateC2(void)
-{
-    int cw1_arr[3] = {0,0,0};
-    int cw2_arr[3] = {0,1,1};
-    int cw3_arr[3] = {1,0,1};
-    int cw4_arr[3] = {1,1,0};
-    
-    CodeWord<2,3> cw1(cw1_arr);
-    CodeWord<2,3> cw2(cw2_arr);
-    CodeWord<2,3> cw3(cw3_arr);
-    CodeWord<2,3> cw4(cw4_arr);
-    
-    CodeWord<2,3> cw_arr[4] = { cw1, cw2, cw3, cw4 };
-    
-    Code<4,2,3> c(cw_arr);
-    
-    return c;
-}
-
-Code<4,2,5> CreateC3(void)
-{
-    int cw1_arr[5] = {0,0,0,0,0};
-    int cw2_arr[5] = {0,1,1,0,1};
-    int cw3_arr[5] = {1,0,1,1,0};
-    int cw4_arr[5] = {1,1,0,1,1};
-    
-    CodeWord<2,5> cw1(cw1_arr);
-    CodeWord<2,5> cw2(cw2_arr);
-    CodeWord<2,5> cw3(cw3_arr);
-    CodeWord<2,5> cw4(cw4_arr);
-    
-    CodeWord<2,5> cw_arr[4] = { cw1, cw2, cw3, cw4 };
-    
-    Code<4,2,5> c(cw_arr);
-    
-    return c;
-}
-
 //---------------------- Random ----------------------
 
 void RandomInit(void)
@@ -300,6 +241,65 @@ void simulate_send(Code<M,Q,N> code, int codeword_idx, double p)
 	
 	cout << "DIST = " << hamming_distance(code.GetCodeWordAt(codeword_idx), codeword_with_noise) << " MUTATE = ";
     codeword_with_noise.Print(true);
+}
+
+//---------------------- Creating Codes for Example ----------------------
+
+Code<4,2,2> CreateC1(void)
+{
+    int cw1_arr[2] = {0,0};
+    int cw2_arr[2] = {0,1};
+    int cw3_arr[2] = {1,0};
+    int cw4_arr[2] = {1,1};
+    
+    CodeWord<2,2> cw1(cw1_arr);
+    CodeWord<2,2> cw2(cw2_arr);
+    CodeWord<2,2> cw3(cw3_arr);
+    CodeWord<2,2> cw4(cw4_arr);
+    
+    CodeWord<2,2> cw_arr[4] = { cw1, cw2, cw3, cw4 };
+    
+    Code<4,2,2> c(cw_arr);
+    
+    return c;
+}
+
+Code<4,2,3> CreateC2(void)
+{
+    int cw1_arr[3] = {0,0,0};
+    int cw2_arr[3] = {0,1,1};
+    int cw3_arr[3] = {1,0,1};
+    int cw4_arr[3] = {1,1,0};
+    
+    CodeWord<2,3> cw1(cw1_arr);
+    CodeWord<2,3> cw2(cw2_arr);
+    CodeWord<2,3> cw3(cw3_arr);
+    CodeWord<2,3> cw4(cw4_arr);
+    
+    CodeWord<2,3> cw_arr[4] = { cw1, cw2, cw3, cw4 };
+    
+    Code<4,2,3> c(cw_arr);
+    
+    return c;
+}
+
+Code<4,2,5> CreateC3(void)
+{
+    int cw1_arr[5] = {0,0,0,0,0};
+    int cw2_arr[5] = {0,1,1,0,1};
+    int cw3_arr[5] = {1,0,1,1,0};
+    int cw4_arr[5] = {1,1,0,1,1};
+    
+    CodeWord<2,5> cw1(cw1_arr);
+    CodeWord<2,5> cw2(cw2_arr);
+    CodeWord<2,5> cw3(cw3_arr);
+    CodeWord<2,5> cw4(cw4_arr);
+    
+    CodeWord<2,5> cw_arr[4] = { cw1, cw2, cw3, cw4 };
+    
+    Code<4,2,5> c(cw_arr);
+    
+    return c;
 }
 
 //---------------------- Main ----------------------
