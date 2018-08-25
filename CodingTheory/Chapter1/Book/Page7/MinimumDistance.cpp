@@ -354,8 +354,7 @@ int main() {
 	
 	PrintValidityProbabilities(C3,p);
 	
-	for (int i = 1; i<= 100; i++)
-    	    SimulateSend(C3, 1, p);
+        SimulateSend(C3, 1, p, 100);
 	
 	return 0;
 }
