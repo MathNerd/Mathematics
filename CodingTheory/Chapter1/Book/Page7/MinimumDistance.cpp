@@ -1,4 +1,4 @@
-#include<iostream>
+          #include<iostream>
 #include<cstdlib>
 #include<ctime>
 #include<cmath>
@@ -244,7 +244,7 @@ CodeWord<Q,N> Mutate(CodeWord<Q,N> original_word, double p)
 }
 
 template<size_t M, size_t Q, size_t N>
-void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times)
+void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times, bool print_experiments)
 {
     CodeWord<Q,N> sent_codeword = code.GetCodeWordAt(sent_codeword_index);
     int number_of_errors_statistics[N+1] = {0};
@@ -261,10 +261,13 @@ void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times
 	
         number_of_errors_statistics[number_of_errors_in_received_vector]++;
 	
-        cout << "time = " << time
-	     << ", received_vector = ";
-        received_vector.Print(false);
-	cout << ", number_of_errors_in_received_vector = " << number_of_errors_in_received_vector << endl;
+	    if(print_experiments)
+	    {
+            cout << "time = " << time
+         	     << ", received_vector = ";
+            received_vector.Print(false);
+	        cout << ", number_of_errors_in_received_vector = " << number_of_errors_in_received_vector << endl;
+	    }
     }
 	
     cout << endl;
@@ -364,13 +367,11 @@ int main() {
 	
 	RandomInit();
 	
-	double p = 0.4;
+	double p = 0.1;
 	
 	PrintErrorProbabilities(C3,p);
 	
-	cout << endl;
-	
-        SimulateSend(C3, 1, p, 100);
+        SimulateSend(C3, 0, p, 10, true);
 	
 	return 0;
 }
