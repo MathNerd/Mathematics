@@ -250,7 +250,7 @@ void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times
 
     cout << "BEGIN SIMULATION WITH {sent_codeword = ";
     sent_codeword.Print(false);
-    cout << ", p = " << p << ", times = " << times << "}" << endl;
+    cout << ", p = " << p << ", times = " << times << "}" << endl << endl;
 	
     for(int time = 1; time <= times; time++)
     { 
@@ -260,10 +260,16 @@ void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times
 	
         error_statistics[distance]++;
 	
-        cout << "TIME = " << time
-	     << ", RECEIVED_VECTOR = ";
+        cout << "time = " << time
+	     << ", received_vector = ";
         received_vector.Print(false);
-	cout << ", DISTANCE = " << distance << endl;
+	cout << ", distance = " << distance << endl;
+    }
+	
+    cout << endl;
+    for (int errors_count = 0; errors_count <= N; errors_count++)
+    {
+	 cout << "number of instances where number of errors = " << errors_count << " is " << error_statistics[errors_count] << endl;  
     }
 	
     cout << "END SIMULATION" << endl;
