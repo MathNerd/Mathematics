@@ -264,15 +264,20 @@ void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times
         cout << "time = " << time
 	     << ", received_vector = ";
         received_vector.Print(false);
-	cout << ", number_of_errors = " << number_of_errors << endl;
+	cout << ", number_of_errors_in_received_vector = " << number_of_errors_in_received_vector << endl;
     }
 	
     cout << endl;
-    for (int number_of_errors_in_received_vector = 0; number_of_errors_in_received_vector <= N; number_of_errors_in_received_vector++)
+    for (int number_of_errors_in_received_vector = 0; 
+	 number_of_errors_in_received_vector <= N; 
+	 number_of_errors_in_received_vector++)
     {
-	 cout << "number_of_errors_statistics[number_of_errors_in_received_vector = " << number_of_errors_in_received_vector << "] = "
+	 cout << "number_of_errors_statistics[number_of_errors_in_received_vector = " 
+	      << number_of_errors_in_received_vector << "] = "
 	      << number_of_errors_statistics[number_of_errors_in_received_vector]
-	      << ", ratio = " <<  (number_of_errors_statistics[number_of_errors_in_received_vector]/double(times)) << endl;  
+	      << ", ratio = " 
+	      <<  (number_of_errors_statistics[number_of_errors_in_received_vector]/double(times)) 
+	      << endl;  
     }
 	
     cout << "END SIMULATION" << endl;
