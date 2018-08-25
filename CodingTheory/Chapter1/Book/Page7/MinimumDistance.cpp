@@ -189,7 +189,7 @@ unsigned nCk(unsigned n, unsigned k )
 //---------------------- Probability ----------------------
 
 // Probability that 'i' symbols are received in error.
-double BinomialDistributionMassFunction(double p, int n, int i)
+double ErrorProbability(double p, int n, int i)
 {
     if (n<1)
     {
@@ -203,17 +203,18 @@ double BinomialDistributionMassFunction(double p, int n, int i)
         return 0;
     }
     
+     // Binomial Distribution Mass Function.
     return int(nCk(n,i)) * pow(p,i) * pow(1-p,n-i);
 }
 
 template<size_t M, size_t Q, size_t N>
-void PrintValidityProbabilities(Code<M,Q,N> code, double p)
+void PrintErrorProbabilities(Code<M,Q,N> code, double p)
 {
     double sum = 0.0;
     for (int nError = 0; nError <= N; nError++)
     {
-        double probability = BinomialDistributionMassFunction(p, N, nError);
-        cout << "P(ERROR = " << nError << ") = " << probability << endl;
+        double probability = ErrorProbability(p, N, nError);
+        cout << "P(NUMBER OF ERRORS = " << nError << ") = " << probability << endl;
         sum += probability;
     }
     cout << "P(VALID = 0,...," << N << ") = " << sum << endl;
@@ -246,7 +247,7 @@ template<size_t M, size_t Q, size_t N>
 void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times)
 {
     CodeWord<Q,N> sent_codeword = code.GetCodeWordAt(sent_codeword_index);
-    int error_statistics[N+1] = {0};
+    int number_of_errors_statistics[N+1] = {0};
 
     cout << "BEGIN SIMULATION WITH {sent_codeword = ";
     sent_codeword.Print(false);
@@ -256,20 +257,22 @@ void SimulateSend(Code<M,Q,N> code, int sent_codeword_index, double p, int times
     { 
         CodeWord<Q,N> received_vector = Mutate(sent_codeword, p);
 	
-        int distance = HammingDistance(sent_codeword, received_vector);
+        int number_of_errors_in_received_vector = HammingDistance(sent_codeword, received_vector);
 	
-        error_statistics[distance]++;
+        number_of_errors_statistics[number_of_errors_in_received_vector]++;
 	
         cout << "time = " << time
 	     << ", received_vector = ";
         received_vector.Print(false);
-	cout << ", distance = " << distance << endl;
+	cout << ", number_of_errors = " << number_of_errors << endl;
     }
 	
     cout << endl;
-    for (int errors_count = 0; errors_count <= N; errors_count++)
+    for (int number_of_errors_in_received_vector = 0; number_of_errors_in_received_vector <= N; number_of_errors_in_received_vector++)
     {
-	 cout << "number of instances where number of errors = " << errors_count << " is " << error_statistics[errors_count] << endl;  
+	 cout << "number_of_errors_statistics[number_of_errors_in_received_vector = " << number_of_errors_in_received_vector << "] = "
+	      << number_of_errors_statistics[number_of_errors_in_received_vector]
+	      << ", ratio = " <<  (number_of_errors_statistics[number_of_errors_in_received_vector]/double(times)) << endl;  
     }
 	
     cout << "END SIMULATION" << endl;
