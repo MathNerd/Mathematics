@@ -217,7 +217,7 @@ void PrintErrorProbabilities(Code<M,Q,N> code, double p)
         cout << "P(NUMBER OF ERRORS = " << nError << ") = " << probability << endl;
         sum += probability;
     }
-    cout << "P(VALID = 0,...," << N << ") = " << sum << endl;
+    cout << "P(NUMBER OF ERRORS = 0,...," << N << ") = " << sum << endl;
 }
 
 //---------------------- Simulation ----------------------
