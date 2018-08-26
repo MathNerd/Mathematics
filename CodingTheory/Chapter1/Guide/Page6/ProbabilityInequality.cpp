@@ -43,7 +43,7 @@ double distance(double p, int n, int i)
 
 double lower_bound(double p, int n)
 {
-    return pow(p,n)/(1-p)*abs(2*p-1);
+    return pow(p,n-1)*abs(2*p-1);
 }
 
 double upper_bound(double p, int n)
@@ -57,7 +57,7 @@ int main() {
 	double p = 0.1;
 	int n = 10;
 	
-	cout.precision(17);
+	cout.precision(5);
 	for (int i = 0; i <= n-1; i++)
 	{
 	    cout<<"prob("<<p<<", "<<n<<", "<<i<<") = " << prob(p,n,i) << endl;
