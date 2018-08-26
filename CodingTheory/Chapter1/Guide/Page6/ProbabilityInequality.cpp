@@ -43,18 +43,28 @@ double distance(double p, int n, int i)
 
 double lower_bound(double p, int n)
 {
-    return pow(p,n-1)*abs(2*p-1);
+    if(p<0.5)
+        return pow(p,n-1)*abs(2*p-1);
+    else if(p>0.5)
+        return pow(1-p,n-1)*abs(2*p-1);
+    else
+        return 0;
 }
 
 double upper_bound(double p, int n)
 {
-    return pow(1-p,n-1)*abs(2*p-1);
+    if(p<0.5)
+        return pow(1-p,n-1)*abs(2*p-1);
+    else if (p>0.5)
+        return pow(p,n-1)*abs(2*p-1);
+    else
+        return 0;
 }
 	
 }
 
 int main() {
-	double p = 0.1;
+	double p = 0.4; //0.5; //0.499999; //0.500001;
 	int n = 10;
 	
 	cout.precision(5);
@@ -62,8 +72,8 @@ int main() {
 	{
 	    cout<<"prob("<<p<<", "<<n<<", "<<i<<") = " << prob(p,n,i) << endl;
 	    cout<<"lower_bound("<<p<<", "<<n<<") = "<<Distance::lower_bound(p,n)
-		<<" < distance("<<p<<", "<<n<<", "<<i<<") = " << Distance::distance(p,n,i)
-		<<" < upper_bound("<<p<<", "<<n<<") = " << Distance::upper_bound(p,n)<< endl;
+		<<" <= distance("<<p<<", "<<n<<", "<<i<<") = " << Distance::distance(p,n,i)
+		<<" <= upper_bound("<<p<<", "<<n<<") = " << Distance::upper_bound(p,n)<< endl;
 	    cout<<"next("<<p<<", "<<n<<", "<<i<<") = " << (prob(p,n,i)-Distance::distance(p,n,i))<< endl << endl;
 	}
 	
