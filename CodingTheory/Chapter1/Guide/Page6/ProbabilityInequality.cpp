@@ -64,7 +64,7 @@ int main() {
 	    cout<<"lower_bound("<<p<<", "<<n<<") = "<<Distance::lower_bound(p,n)
 		<<" < distance("<<p<<", "<<n<<", "<<i<<") = " << Distance::distance(p,n,i)
 		<<" < upper_bound("<<p<<", "<<n<<") = " << Distance::upper_bound(p,n)<< endl;
-	    cout<<"next("<<p<<", "<<n<<", "<<i<<") = " << (prob(p,n,i)-dist(p,n,i))<< endl << endl;
+	    cout<<"next("<<p<<", "<<n<<", "<<i<<") = " << (prob(p,n,i)-Distance::distance(p,n,i))<< endl << endl;
 	}
 	
 	return 0;
