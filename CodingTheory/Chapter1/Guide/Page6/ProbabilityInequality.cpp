@@ -68,13 +68,19 @@ int main() {
 	int n = 10;
 	
 	cout.precision(5);
-	for (int i = 0; i <= n-1; i++)
+	
+	cout<<"PROBABILITIES:\n";
+	for (int i = 0; i <= n; i++)
 	{
 	    cout<<"prob("<<p<<", "<<n<<", "<<i<<") = " << prob(p,n,i) << endl;
+	}
+	
+	cout<<"DISTANCES:\n";
+	for (int i = 0; i <= n-1; i++)
+	{
 	    cout<<"lower_bound("<<p<<", "<<n<<") = "<<Distance::lower_bound(p,n)
 		<<" <= distance("<<p<<", "<<n<<", "<<i<<") = " << Distance::distance(p,n,i)
 		<<" <= upper_bound("<<p<<", "<<n<<") = " << Distance::upper_bound(p,n)<< endl;
-	    cout<<"next("<<p<<", "<<n<<", "<<i<<") = " << (prob(p,n,i)-Distance::distance(p,n,i))<< endl << endl;
 	}
 	
 	return 0;
