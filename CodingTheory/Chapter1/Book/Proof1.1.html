@@ -63,7 +63,7 @@ Let $x,y,z\in\mathbb{F}_q$, Then there are two cases **(Case.1)** $x=y$ or **(Ca
 
 **(Case.2)** If $x\neq y$, Then we get by definition of $neq$, That $neq(x,y)=1$, Now there are two cases **(Case.2.1)** $x=z$ or **(Case.2.2)** $x\neq z$:
 
-**(Case.2.1)** If $x=z$, Then we get by definition of $neq$, That $neq(x,z)=0$, Also by the fact that $x\neq y$ and that $x=z$, We get that it is also the case that $z\neq y$, And thus we get by definition of $neq$, That $neq(z,y)=1$, And so $neq(x,y)=1\leq 1=0+1=neq(x,z)+neq(z,y)$.
+**(Case.2.1)** If $x=z$, Then we get by definition of $neq$, That $neq(x,z)=0$, Also by the fact that $x\neq y$, We get that it is also the case that $z\neq y$, And thus we get by definition of $neq$, That $neq(z,y)=1$, And so $neq(x,y)=1\leq 1=0+1=neq(x,z)+neq(z,y)$.
 
 **(Case.2.2)** If $x\neq z$, The we get by definition of $neq$, That $neq(x,z)=1$, Also since by **(Prop.1)** we have $0\leq neq(z,y)$, We conclude that $neq(x,y)=1= 1+0\leq neq(x,z)+neq(z,y)$.
 
@@ -91,6 +91,12 @@ We’ll prove the following propositions:
 ----------
 
 **Proof of (Prop.5):**
+
+Let $\vec{x},\vec{y}\in\mathbb{F}_q^n$, Then by definition of $d$, We get that $d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)$, Now by **(Prop.1)** we have $\forall i\in\{1,...,n\}, d(x_i,y_i)\in\mathbb{Z}$, And since $\mathbb{Z}$ is closed under addition, We get that $\sum\limits_{i=1}^n neq(x_i,y_i)\in\mathbb{Z}$, And thus $d(\vec{x},\vec{y})\in\mathbb{Z}$.
+
+Also by **(Prop.1)** we have $\forall i \in\{1,...,n\},  0\leq neq(x_i,y_i)\leq 1$, And thus, By summing all of those inequalities together we get that $0=n\cdot 0=\sum\limits_{i=1}^n 0\leq\sum\limits_{i=1}^n neq(x_i,y_i)\leq \sum\limits_{i=1}^n 1=n\cdot 1=n$, And thus $0\leq d(\vec{x},\vec{y})\leq n$ as was to be shown.
+
+Q.E.D.
 
 **Proof of (Prop.6):**
 
