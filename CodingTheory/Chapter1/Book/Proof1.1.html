@@ -1,1 +1,51 @@
 
+Let $q\in\mathbb{N}$ and $\mathbb{F}_q:=\{\lambda_1,\lambda_2,...,\lambda_q\}$ be an alphabet with $q$ distinct symbols (I.e. $|\mathbb{F}_q|=q$).
+
+Let’s define a function $neq :\mathbb{F}_q\times\mathbb{F}_q\to\{0,1\}$ such that:
+
+$$\forall x,y\in\mathbb{F}_q,neq(x,y):=
+\begin{cases}
+0 & x=y \\
+1 & x\neq y
+\end{cases}
+$$ 
+
+We’ll prove the following propositions:
+
+**(Prop.1)** $\forall x,y\in\mathbb{F}_q, neq(x,y)\in\mathbb{Z}\land 0\leq neq(x,y)\leq 1$
+
+
+**(Prop.2)** $\forall x,y\in\mathbb{F}_q, neq(x,y)=0\leftrightarrow x=y$
+
+**(Prop.3)** $\forall x,y\in\mathbb{F}_q, neq(x,y)=neq(y,x)$
+
+**(Prop.4)** $\forall x,y,z\in\mathbb{F}_q, neq(x,y)\leq neq(x,z)+neq(z,y)$
+
+
+----------
+**Proof of (Prop.1):**
+
+**Proof of (Prop.2):**
+
+**Proof of (Prop.3):**
+
+**Proof of (Prop.4):**
+
+
+----------
+
+Now let $n\in\mathbb{N}$ and let’s define a function $d:\mathbb{F}_q^n\times\mathbb{F}_q^n\to\mathbb{R}$ as follows:
+
+$\forall \vec{x},\vec{y}\in\mathbb{F}_q^n, d(\vec{x},\vec{y}):=\sum\limits_{i=1}^n neq(x_i,y_i)$
+
+We’ll prove the following propositions:
+
+**(Prop.5)** $\forall \vec{x},\vec{y}\in\mathbb{F}_q^n, d(\vec{x},\vec{y})\in\mathbb{Z}\land 0\leq d(\vec{x},\vec{y})\leq n$
+
+**(Prop.6)** $\forall \vec{x},\vec{y}\in\mathbb{F}_q^n, d(\vec{x},\vec{y})=0\leftrightarrow \vec{x}=\vec{y}$
+
+**(Prop.7)** $\forall \vec{x},\vec{y}\in\mathbb{F}_q^n, d(\vec{x},\vec{y})= d(\vec{y},\vec{x})$
+
+**(Prop.8)** $\forall \vec{x},\vec{y},\vec{z}\in\mathbb{F}_q^n, d(\vec{x},\vec{y})\leq d(\vec{x},\vec{z})+ d(\vec{z},\vec{y})$
+
+XXXXXX
