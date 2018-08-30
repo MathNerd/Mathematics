@@ -35,7 +35,7 @@ Let $x,y\in\mathbb{F}_q$, We’ll show that $neq(x,y)=0 \Longleftrightarrow x=y$
 
 $\Longrightarrow$
 
-Suppose $neq(x,y)=0$, Then we get that it must be the case that $x=y$ because if we suppose by contradiction that $x\neq y$, Then by definition of $neq$, We would get that $neq(x,y)=1$ which contradicts the fact that $neq(x,y)=0$. Thus it must be the case that $x=y$ as was to be shown.
+Suppose $neq(x,y)=0$, Then we get that it must be the case that $x=y$, Because if we suppose by contradiction that $x\neq y$, Then by definition of $neq$, We would get that $neq(x,y)=1$ which contradicts the fact that $neq(x,y)=0$. Thus it must be the case that $x=y$ as was to be shown.
 
 $\Longleftarrow$
 
@@ -53,8 +53,23 @@ Let $x,y\in\mathbb{F}_q$, Then there are two cases **(Case.1)** $x=y$ or **(Case
 
 Thus we see from cases **(Case.1)** and **(Case.2)** that it is always the case that $neq(x,y)=neq(y,x)$ as was to be shown.
 
+Q.E.D. 
+
 **Proof of (Prop.4):**
 
+Let $x,y,z\in\mathbb{F}_q$, Then there are two cases **(Case.1)** $x=y$ or **(Case.2)** $x\neq y$:
+
+**(Case.1)** If $x=y$, Then we get by definition of $neq$, That $neq(x,y)=0$, Also by **(Prop.1)** we have $0\leq neq(x,z)$ and $0\leq neq(z,y)$, And thus, We can conclude that $neq(x,y)=0=0+0\leq neq(x,z)+neq(z,y)$.
+
+**(Case.2)** If $x\neq y$, Then we get by definition of $neq$, That $neq(x,y)=1$, Now there are two cases **(Case.2.1)** $x=z$ or **(Case.2.2)** $x\neq z$:
+
+**(Case.2.1)** If $x=z$, Then we get by definition of $neq$, That $neq(x,z)=0$, Also by the fact that $x\neq y$ and that $x=z$, We get that it is also the case that $z\neq y$, And thus we get by definition of $neq$, That $neq(z,y)=1$, And so $neq(x,y)=1\leq 1=0+1=neq(x,z)+neq(z,y)$.
+
+**(Case.2.2)** If $x\neq z$, The we get by definition of $neq$, That $neq(x,z)=1$, Also since by **(Prop.1)** we have $0\leq neq(z,y)$, We conclude that $neq(x,y)=1= 1+0\leq neq(x,z)+neq(z,y)$.
+
+Therefore we conclude from cases **(Case.1)** and **(Case.2)** that it is always the case that $neq(x,y)\leq neq(x,z)+neq(z,y)$ as was to be shown.
+
+Q.E.D.
 
 ----------
 
