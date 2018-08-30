@@ -25,9 +25,33 @@ We’ll prove the following propositions:
 ----------
 **Proof of (Prop.1):**
 
+Let $x,y\in\mathbb{F}_q$, Then by definition of $neq$, We get that $neq(x,y)\in\{0,1\}$, And thus $neq(x,y)\in\mathbb{Z}$ and $0\leq neq(x,y) \leq 1$ as was to be shown.
+
+Q.E.D.
+
 **Proof of (Prop.2):**
 
+Let $x,y\in\mathbb{F}_q$, We’ll show that $neq(x,y)=0 \Longleftrightarrow x=y$:
+
+$\Longrightarrow$
+
+Suppose $neq(x,y)=0$, Then we get that it must be the case that $x=y$ because if we suppose by contradiction that $x\neq y$, Then by definition of $neq$, We would get that $neq(x,y)=1$ which contradicts the fact that $neq(x,y)=0$. Thus it must be the case that $x=y$ as was to be shown.
+
+$\Longleftarrow$
+
+Suppose $x=y$, Then by definition of $neq$, We get that $neq(x,y)=0$ as was to be shown.
+
+Q.E.D.
+
 **Proof of (Prop.3):**
+
+Let $x,y\in\mathbb{F}_q$, Then there are two cases **(Case.1)** $x=y$ or **(Case.2)** $x\neq y$:
+
+**(Case.1)** If $x=y$, Then we get by the symmetric property of the $=$ relation, That it must be also the case that $y=x$, And thus we get by definition of $neq$, That $neq(x,y)=0$ and $neq(y,x)=0$, And we conclude that $neq(x,y)=neq(y,x)$.
+
+**(Case.2)** If $x\neq y$, Then we get by the symmetric property of the $\neq$ relation, That it must be also the case that $y\neq x$, And thus we get by definition of $neq$, That $neq(x,y)=1$ and $neq(y,x)=1$, And we conclude that $neq(x,y)=neq(y,x)$.
+
+Thus we see from cases **(Case.1)** and **(Case.2)** that it is always the case that $neq(x,y)=neq(y,x)$ as was to be shown.
 
 **Proof of (Prop.4):**
 
@@ -48,4 +72,13 @@ We’ll prove the following propositions:
 
 **(Prop.8)** $\forall \vec{x},\vec{y},\vec{z}\in\mathbb{F}_q^n, d(\vec{x},\vec{y})\leq d(\vec{x},\vec{z})+ d(\vec{z},\vec{y})$
 
-XXXXXX
+
+----------
+
+**Proof of (Prop.5):**
+
+**Proof of (Prop.6):**
+
+**Proof of (Prop.7):**
+
+**Proof of (Prop.8):**
