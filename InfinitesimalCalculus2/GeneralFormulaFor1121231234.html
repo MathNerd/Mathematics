@@ -1,0 +1,244 @@
+Let $\{a_n\}_{n=1}^\infty$ be the sequence $1,2,2,3,3,3,4,4,4,4,...$, We can group the elements of the sequence $\{a_n\}_{n=1}^\infty$ as follows:
+
+$$\underbrace{1}_\textrm{1 times},\underbrace{2,2}_\textrm{2 times},\underbrace{3,3,3}_\textrm{3 times},\underbrace{4,4,4,4}_\textrm{4 times},...,\underbrace{n,n,...,n}_\textrm{$n$ times},...$$
+
+The problem is to find a mapping from the set $\mathbb{N}$ to itself such that:
+
+$$\begin{align*}
+  \underbrace{\begin{align*} 1\\\downarrow\\1\end{align*}}_\textrm{1 times},\underbrace{\begin{align*} 2,3\\\downarrow,\downarrow\\2,2\end{align*}}_\textrm{2 times},\underbrace{\begin{align*} 4,5,6\\\downarrow,\downarrow,\downarrow\\3,3,3\end{align*}}_\textrm{3 times},\underbrace{\begin{align*} 7,8,9,10\\\downarrow,\downarrow,\downarrow,\downarrow \\4,4,4,4\end{align*}}_\textrm{4 times},...,\underbrace{\begin{align*} ?,?,...,?\\\downarrow,\downarrow,...,\downarrow\\n,n,...n\end{align*}
+}_\textrm{$n$ times},...
+\end{align*}$$
+
+Such a mapping will define the sequence $\{a_n\}_{n=1}^\infty$.
+
+
+----------
+
+We’ll begin to attack this problem by first defining four sequences, three of them will be sequences of subsets of the set of the natural numbers $\mathbb{N}$, And only one will be a sequence of natural numbers:
+
+Let $\{A_i\in\mathscr{P}(\mathbb{N})\}_{i=1}^\infty$, $\{B_i\in\mathscr{P}(\mathbb{N})\}_{i=1}^\infty$ and $\{C_i\in\mathscr{P}(\mathbb{N})\}_{i=1}^\infty$ be sequences of subsets of the set of the natural numbers and let $\{m_i\in\mathbb{N}\}_{i=1}^\infty$ be a sequence of natural numbers defined as follows:
+
+$$\forall i\in\mathbb{N}, C_i:=\bigcup\limits_{j=1}^{i-1}A_j\\\land B_i:=\mathbb{N}\backslash C_i\\\land m_i:=\min(B_i)\\\land A_i:=\{n\in\mathbb{N}|m_i\leq n\leq m_i+i-1\} $$
+
+**Note:**
+The definition should be read in the order it is written, I.e. We first define $C_i$, And just after we defined it, We can define $B_i$ because the definition of $B_i$ requires that $C_i$ will be defined by that time, And then, Just after we defined $B_i$, We go And define $m_i$, As the minimum of $B_i$, (This minimum exists because $C_i\subseteq \mathbb{N}$ is finite, Whereas $\mathbb{N}$ is infinite, And thus $B_i=\mathbb{N}\backslash C_i\subseteq\mathbb{N}$ is an infinite set of the natural numbers and we conclude by the Well-Ordering Principle that its minimum exists and is a natural number, And thus we can define $m_i$ as $\min(B_i)$), And just after we defined $m_i$, We go and define $A_i$ in term of $m_i$.
+
+
+----------
+
+
+Inorder to get a little taste of what those sequences look like we’ll write their first $3$ elements:
+
+For $i=1$ we get:
+
+$C_1=\bigcup\limits_{j=1}^{1-1}A_j=\underbrace{\bigcup\limits_{j=1}^{0}A_j=\emptyset}_\textrm{as an empty union is defined as $\emptyset$}$
+
+$B_1=\mathbb{N}\backslash C_1=\mathbb{N}\backslash\emptyset=\mathbb{N}$
+
+$m_1=\min(B_1)=\min(\mathbb{N})=1$
+
+$A_1=\{n\in\mathbb{N}|m_1\leq n\leq m_1+1-1\}=\{n\in\mathbb{N}|1\leq n\leq 1\}=\{1\}$
+
+
+For $i=2$ we get:
+
+$C_2=\bigcup\limits_{j=1}^{2-1}A_j=\bigcup\limits_{j=1}^{1}A_j=A_1=\{1\}$
+
+$B_2=\mathbb{N}\backslash C_2=\mathbb{N}\backslash\{1\}=\{n\in\mathbb{N}|n\geq 2\}$
+
+$m_2=\min(B_2)=\min(\{n\in\mathbb{N}|n\geq 2\})=2$
+
+$A_2=\{n\in\mathbb{N}|m_2\leq n\leq m_2+2-1\}=\{n\in\mathbb{N}|2\leq n\leq 3\}=\{2,3\}$
+
+For $i=3$ we get:
+
+$C_3=\bigcup\limits_{j=1}^{3-1}A_j=\bigcup\limits_{j=1}^{2}A_j=A_1\cup A_2=\{1\}\cup\{2,3\}=\{1,2,3\}$
+
+$B_3=\mathbb{N}\backslash C_3=\mathbb{N}\backslash\{1,2,3\}=\{n\in\mathbb{N}|n\geq 4\}$
+
+$m_3=\min(B_3)=\min(\{n\in\mathbb{N}|n\geq 4\})=4$
+
+$A_3=\{n\in\mathbb{N}|m_3\leq n\leq m_3+3-1\}=\{n\in\mathbb{N}|4\leq n\leq 6\}=\{4,5,6\}$
+
+And so on....
+
+
+----------
+
+Now we’ll prove several facts about those sequences that will ultimately lead us to find a closed form expression for the $n$’th term of the sequence: 
+
+**(fact 1)** $\forall i\in\mathbb{N}, B_i\supseteq B_{i+1}$ (This means that $\{B_i\}_{i=1}^\infty$ is a decreasing sequence of sets)
+
+**(fact 2)** $\forall i\in\mathbb{N}, m_i\leq m_{i+1}$ (This means that $\{m_i\}_{i=1}^\infty$ is an increasing sequence of natural numbers)
+
+**(fact 3)** $\forall i\in\mathbb{N}, m_i\in A_i \land |A_i|=i$
+
+**(fact 4)** $\forall i\in\mathbb{N}, m_{i+1}\notin A_i$
+
+**(fact 5)** $\forall i\in\mathbb{N}, m_i\lt m_{i+1}$ (This means that $\{m_i\}_{i=1}^\infty$ is a strictly increasing sequence of natural numbers, This is a **stronger** fact than **(fact 2)**)
+
+**(fact 6)** $\forall i\in\mathbb{N}, \forall m\in A_i,\forall n\in A_{i+1}, m\lt n$ (This means that every element in the set $A_{i+1}$ is greater than every element in the previous set $A_i$)
+
+**(fact 7)** $\forall j\in\mathbb{N}, \forall i\in\mathbb{N}, \forall m\in A_i,\forall n\in A_{i+j}, m\lt n$ (This means that every element in the set $A_{i+j}$ is greater than every element in the set $A_i$, This is a **stronger** fact than **(fact 6)**)
+
+
+**(fact 8)** $\forall i\in\mathbb{N}, \forall j\in\mathbb{N}, A_i\cap A_j=\emptyset$ (This means that all of the sets in the sequence $\{A_i\}_{i=1}^\infty$ are mutually disjoint)
+
+**(fact 9)** $\forall i\in\mathbb{N}, m_{I+1}=m_i+i \land C_{i+1}=\{n\in\mathbb{N}|n\lt m_{i+1}\}$ 
+
+**(fact 10)** $\mathbb{N}=\bigcup\limits_{i=1}^\infty C_{i+1}$
+
+**(fact 13)** $\forall i\in\mathbb{N}, m_i=\frac{i(i-1)}{2}+1$
+
+**(fact 11)** $\forall n\in\mathbb{N},\exists ! i_n\in\mathbb{N},n\in A_{i_n}$
+
+**Note:** Since by **(fact 11)** we have that for every natural number $n\in\mathbb{N}$, There exists a unique natural number $i_n\in\mathbb{N}$, Such that $n\in A_{i_n}$, All of the subsequent **facts** will refer to **exactly those** $i_n$’s which their existence and uniqueness was guaranteed for the particular $n$ in question.
+
+**(fact 12)** $\forall n\in\mathbb{N},\exists !i_n\in\mathbb{N},m_{i_n}\leq n\leq m_{i_n}+i_n-1$
+
+**(fact 14)** $\forall n\in\mathbb{N},\exists ! i _n\in\mathbb{N}, \frac{i_n(i_n-1)}{2}+1\leq \frac{i_n(i_n+1)}{2}$
+
+**(fact 15)** $\forall n\in\mathbb{N},\exists ! i\in\mathbb{N}, i_n=\lceil \frac{-1+\sqrt(1+8n)}{2}\rceil=\lfloor \frac{1+\sqrt(1+8(n-1)}{2}\rfloor$
+
+----------
+Proof of **(fact 1)**:
+
+Let $i\in\mathbb{N}$, And let $n\in B_{i+1}$, Then by definition of the sequence $\{B_i\}_{i=1}^\infty$, We get that $B_{i+1}=\mathbb{N}\setminus C_{i+1}$, And thus $n\in\mathbb{N}\setminus C_{i+1}$, And we conclude by definition of set difference that $n\in\mathbb{N}$ and $n\notin C_{i+1}$, But since by definition of the sequence $\{C_i\}_{i=1}^\infty$, We get that $C_{i+1}=\bigcup\limits{j=1}^{(i +1)-1}A_i=\bigcup\limits{j=1}^i A_i$, And we conclude that $n\notin \bigcup\limits{j=1}^i A_i$, And thus by definition of union we get that $\forall j\in\{1,...,i\}, n\notin A_j$, And thus in particular $\forall j\in\{1,...,i-1\},n\notin A_j$, But this implies by definition of union that $n\notin \bigcup\limits{j=1}^{i-1} A_j$, But definition of the sequence $\{C_i\}_{i=1}^\infty$, We get that $C_i=\bigcup\limits{j=1}^{i-1}$, And thus $n\notin C_i$, But since $n\in\mathbb{N}$, We get by definition of set difference that $n\in\mathbb{N}\setminus C_i$, But since by definition of the sequence $\{B_i\}_{i=1}^\infty$ we have $B_i=\mathbb{N}\setminus C_i$, We conclude that $n\in B_i$, And thus $ B_{i+1}\subseteq B_i$ as was to be shown.
+
+
+----------
+Proof of **(fact 2)**:
+
+Let $i\in\mathbb{N}$, By **(fact 1)** we conclude that $B_i\supseteq B_{i+1}$, And since $\min(B_i)$ and $\min(B_{i+1})$ both exists, We conclude that $\min(B_i)\leq \min(B_{i+1})$, But since $m_i=\min (B_i)$ and $m_{i+1}=\min (B_{i+1})$, We conclude that $m_i\leq m_{i+1}$ as was to be shown.
+
+----------
+Proof of **(fact 3)**:
+
+Let $i\in\mathbb{N}$, Then $m_i\in\mathbb{N}$ and $A_i=\{n\in\mathbb{N}|m_i\leq n\leq m_i+i-1\}$, Now since $i\in\mathbb{N}$, We conclude that $1\leq i$, And thus $0\leq i-1$, And we conclude that $m_i\leq m_i+i-1$, Also since $m_i\leq m_i$, We conclude that $m_i\leq m_i\leq m_i+i-1$, And thus $m_i\in A_i$. Also by definition of $A_i$ we get $|A_i|=m_i+i-1-m_i+1=i$ as was to be shown.
+
+
+----------
+Proof of **(fact 4)**
+
+Let $i\in\mathbb{N}$, Then $m_{i+1}=\min(B_{i+1})\in B_{i+1}$, But since $B_{i+1}=\mathbb{N}\setminus C_{i+1}$, We conclude that $m_{i+1}\in\mathbb{N}\setminus C_{i+1}$, And thus $m_{i+1}\in\mathbb{N}$ and $m_{i+1}\notin C_{i+1}$, Now since $C_{i+1}=\bigcup\limits{j=1}^{(i+1)-1}A_j=\bigcup\limits{j=1}^i A_j$, We conclude that $m_{i+1}\in \bigcup\limits{j=1}^i A_j$, And thus by definition of union we get that $\exists j\in\{1,...,i\}, m_{i+1}\notin A_j$, And thus we get that in particular we have $m_{i+1}\notin A_i$ as was to be shown.
+
+----------
+Proof of **(fact 5)**
+
+Suppose by contradiction that $\exists i\in\mathbb{N}, m_i\geq m_{i+1}$, Then by **(fact 2)** we have $m_i\leq m_{i+1}$, And thus $m_i\leq m_{i+1}\leq m_i$, And we conclude that $m_{i+1}=m_i$, But since by **(fact 3)** we have $m_i\in A_i$, And thus $m_{i+1}\in A_i$, But by **(fact 4)** we have $m_{i+1}\notin A_i$ and we’ve reached a contradiction, Thus it must be the case that $\forall i\in\mathbb{N}, m_i\lt m_{i+1}$ as was to be shown.
+
+----------
+Proof of **(fact 6)**
+
+Let $i\in\mathbb{N}$, $m\in A_i$ and $n\in A_{i+1}$, By definition of $A_i$ and $A_{i+1}$, We get that $m_i\leq m\leq m_i+i-1$ and $m_{i+1}\leq n\leq m_{i+1}+(i +1)-1=m_{i+1}+i$, Now we’ll show that $m_i+i -1\lt m_{i+1}$, Because If we suppose by contradiction that $m_i+i-1\geq m_{i+1}$, Then we get by **(fact 2)** that $m_i\leq m_{i+1}$, And thus we conclude that $m_i\leq m_{i+1}\leq m_i+i-1$, But this implies by definition of $A_i$ that $m_{i+1}\in A_i$, But this contradicts the fact that $m_{i+1}\notin A_i$ (see **(fact 4)**), And therefore we’ve reached a contradiction and thus it must be the case that $m_i+i-1\lt m_{i+1}$, Thus we get $m\leq m_i+i -1\lt m_{i+1}\leq n$ and we conclude that $m\lt n$ as was to be shown.
+
+----------
+Proof of **(fact 7)**
+
+We’ll prove it by induction on $j$:
+
+For $j=1$: We have to show that $\forall i\in\mathbb{N}, \forall m\in A_i,\forall n\in A_{i+1}, m\lt n$, But this is **exactly** what **(fact 6)** says.
+
+Suppose that for some $j=k\in\mathbb{N}$ we have $\forall i\in\mathbb{N}, \forall m\in A_i,\forall n\in A_{i+k}, m\lt n$, And we’ll show that for $j=k+1$ we have $\forall i\in\mathbb{N}, \forall m\in A_i,\forall n\in A_{i+(k+1)}, m\lt n$:
+
+Let $i\in\mathbb{N}$, Buy the induction hypothesis we have **(§)** $\forall \hat{m}\in A_i, \forall \hat{n}\in A_{i+k}, \hat{m}\lt \hat{n}$, We’ll show that $\forall \m\in A_i,\forall n\in A_{i+(k+1)},m\lt n$: Let $m\in A_i$ and $n\in A_{i+(k+1)}=A_{(i +k)+1}$, Then since $i\in\mathbb{N}$ and $k\in\mathbb{N}$, We conclude that $i+k\in\mathbb{N}$, And thus by **(fact 6)** we get that **(§§)** $\forall \hat{\hat{m}}\in A_{i+k},\forall \hat{\hat{n}}\in A_{(i+k)+1},\hat{\hat{m}}\lt \hat{\hat{n}}$, Now since by **(fact 3)** we have $|A_{i+k}|=+i +k\in\mathbb{N}$, We conclude that $|A_{i+k}|\gt 0$, And thus, There is some element $q\in A_{i+k}$, And thus we conclude by **(§)** and **(§§)** that $m\lt q$ and $q\lt n$, And thus $m\lt n$ as was to be shown.
+
+----------
+Proof of **(fact 8)**
+
+Let $i,j\in\mathbb{N}$ be such that $i\neq j$, Without loss of generality suppose that $i\lt j$, Then we get that $\exists k\in (0,\infty), j=i+k$, And thus $k=j-i$, But since $i,j\in\mathbb{N}$ and $\mathbb{N}\subseteq \mathbb{Z}$, We conclude that $i,j\in\mathbb{Z}$, Now since $\mathbb{Z}$ is closed under the subtraction operation, We conclude that $j-i \in\mathbb{Z}$, And so $k\in\mathbb{Z}$, But since $k\in (0,\infty)$, We conclude that $0\lt k$, And thus $k\in\mathbb{N}$, Now since $i,k\in\mathbb{N}$, We get by **(fact 7)** that **(§)** $\forall A_i,\forall A_{i+k}, m\lt n$, And thus $A_i\cap A_{i+k}=\emptyset$, Because If we suppose by contradiction that $A_i\cup A_{i+k}\neq \emptyset$, Then we get that there exists some element $n\in A_i\cap A_{i+j}$, And thus $n\in A_i$ and $n\in A_{i+k}$, But this implies by **(§)** that $n\lt n$, And we’ve reached a contradiction. Thus it must be the case that $A_i\cap A_{i+k}=\emptyset$, But since $j=i +k$, We conclude that $A_j=A_{i+k}$, And thus $A_i\cap A_j=A_i\cap A_{i+k}=\emptyset$ as was to be shown.
+
+----------
+Proof of **(fact 9)**
+
+We’ll prove it by induction on $i$:
+
+For $i=1$, We have to show that $m_2=m_1+1\land C_2=\{n\in\mathbb{N}|n\lt m_2\}$:
+
+Since $m_2=2$ and $m_1+1=1+1=2$, We conclude that $m_2=m_1+1$.
+Also since $C_2={1}$ and $\{n\in\mathbb{N}|n\lt m_2\}=\{n\in\mathbb{N}|n\lt 2\}=\{1\}$, We conclude that $C_2=\{n\in\mathbb{N}|n\lt m_2\}$ as was to be shown.
+
+Suppose that for some $i=k\in\mathbb{N}$ we have $m_{k+1}=m_k+k\land C_{k+1}=\{n\in\mathbb{N}|n\lt m_{k+1}\}$, And we’ll show that for $i=k+1$ we have $m_{k+2}=m_{k+1}+k+1\land C_{k+2}=\{n\in\mathbb{N}|n\lt m_{k+2}\}$:
+
+Since $C_{k+2}=\bigcup\limits_{j=1}^{(k+2)-1}A_j=\bigcup\limits_{j=1}^{k+1}A_j=(\bigcup\limits_{j=1}^{k}A_j)\cup A_{k+1}$, And since $C_{k+1}=\bigcup\limits_{j=1}^{(k+1)-1}A_j=\bigcup\limits_{j=1}^{k}A_j$, We conclude that $C_{k+2}=C_{k+1}\cup A_{k+1}$, But since we have by the induction hypothesis that $C_{k+1}=\{n\in\mathbb{N}|n\lt m_{k+1}\}$, And by definition of the sequence $\{A_i\}_{i=1}^\infty$ that $A_{k+1}=\{n\in\mathbb{N}|m_{k+1}\leq n\leq m_{k+1}+(k+1)-1\}=\{n\in\mathbb{N}|m_{k+1}\leq n\leq m_{k+1}+k \}$, We conclude that $C_{k+2}=\{n\in\mathbb{N}|n\lt m_{k+1}\}\cup \{n\in\mathbb{N}|m_{k+1}\leq n\leq m_{k+1}+k \}=\{n\in\mathbb{N}|n\leq m_{k+1}+k\}=$ **ADD ELABORATION "WHY"** $\{n\in\mathbb{N}|n\lt m_{k+1}+k+1\}$, And thus $m_{k+2}=\min(B_{k+2})=\min(\mathbb{N}\setminus C_{k+2})=\min(\mathbb{N}\setminus \{n\in\mathbb{N}|n\lt m_{k+1}+k+1\})=\min(\{n\in\mathbb{N}|m_{k+1}+k+1\leq n\})=m_{k+1}+k+1$, And thus $C_{k+2}=\{n\in\mathbb{N}|n\lt m_{k+2}$ as was to be shown.
+
+----------
+Proof of **(fact 10)**
+
+Since it clear that $\forall i\in\mathbb{N}, C_{i+1}\subseteq \mathbb{N}$, We get that $\bigcup\limits_{i=1}^\infty C_{i+1}\subseteq \mathbb{N}$, And thus it left for us to show that $\mathbb{N}\subseteq \bigcup\limits_{i=1}^\infty C_{i+1}$:
+
+Let $n\in\mathbb{N}$, Then since by **(fact 5)** we get that the sequence $\{m_i\}_{i=1}^\infty$ is a strictly increasing sequence of natural numbers and thus it must be the case that $\lim\limits_{i\to\infty}m_i=\infty$, And thus by definition of limit, We get that $\exists I\in\mathbb{N},\forall I<i\in\mathbb{N}, n<m_i$, Let’s take $i\in\mathbb{N}$ to be any natural number that satisfies $N<i$, Then we get that for this particular $i$ we have $n\lt m_i$, Now since $m_i\lt m_{i+1}$, We conclude that $n\lt m_{i+1}$, But since by **(fact 9)** we have $C_{i+1}=\{n\in\mathbb{N}|n\lt m_{i+1}\}$, We conclude that $n\in C_{i+1}$, Thus we’ve shown that $\exists i\in\mathbb{N},n\in C_{i+1}$, And we conclude that $n\in\bigcup\limits_{i=1}^\infty C_{i+1}$, And thus $\mathbb{N}\subseteq \bigcup\limits_{i=1}^\infty C_{i+1}$ as was to be shown.
+
+----------
+
+**FIX IT** 
+
+$\mathbb{N}=\bigcup\limits_{i=1}^\infty A_i$
+
+Proof of **(fact 12# FIX NUMBERS)**
+
+Since it clear that $\forall i\in\mathbb{N}, A_i\subseteq \mathbb{N}$, We get that $\bigcup\limits_{i=1}^\infty A_i\subseteq \mathbb{N}$, And thus it left for us to show that $\mathbb{N}\subseteq \bigcup\limits_{i=1}^\infty A_i$:
+
+Let $n\in\mathbb{N}$, Then by **(fact 12)** we get that $n\in\bigcup\limits_{i=1}^\infty C_{i+1}$, And thus $\exists \hat{i }\in \mathbb{N}, n\in C_{\hat{i}+1}$, But since $C_{\hat{i}+1}=\bigcup\limits_{j=1]^{(\hat{i}+1)-1} A_j=\bigcup\limits_{j=1}^{\hat{i}A_j$, We conclude that $n\in\bigcup\limits_{j=1}^\hat{i}A_j$, And thus $\exists \hat{j}\in\{1,...,\hat{i }\},n\in A_{\hat{j}}$, But since $\{1,...,\hat{i}\}\subseteq\mathbb{N}$, We conclude that $\hat{j}\in\mathbb{N}$, And thus we’ve shown that $\exists \hat{j}\in \mathbb{N},n\in A_{\hat{j}}$, And we conclude that $n\in\bigcup\limits_{i=1}^\infty A_i$ as was to be shown.
+
+----------
+Proof of **(fact 11)**:
+
+Let $n\in\mathbb{N}$, By **(fact FIX NOW)** we get that $\exists i\in\mathbb{N},n\in A_i$, Now we’ll show that $\forall j\in\mathbb{N}, j\neq i\rightarrow n\notin A_j$, Because If we suppose by contradiction that $\exists j\in\mathbb{N}, j\neq i\land n\in A_j$, Then we get that $n\in A_i\cap A_j$, But this contradicts the fact that $A_i\cap A_j=\emptyset$ (see **(fact 8)**), Thus it must be the case that $\forall j\in\mathbb{N}, j\neq i\rightarrow n\notin A_j$, And we conclude that $\exists !i\in\mathbb{N},n\in A_i$ as was to be shown.
+
+We’ll denote this unique $i$ as $i_n$.
+
+----------
+Proof of **(fact 12)**
+
+Let $n\in\mathbb{N}$, Then by **(fact 11)** we get that $\exists !i_n\in\mathbb{N},n\in A_{i_n}$, Now by definition of the sequence $\{A_i\}_{i=1}^\infty$, We conclude that $A_{i_n}=\{n\in\mathbb{N}|m_{i_n}\leq n\leq m_{i_n}+i_n-1$, And thus $m_{i_n}\leq n\leq m_{i_n}+i_n-1$ as was to be shown.
+
+----------
+Proof of **(fact 13)**
+
+We’ll prove it by induction on $i$:
+
+For $i=1$ we have to show that $m_1=\frac{1\cdot(1-1)}{2}+1$:
+
+We have $m_1=1$ and $\frac{1\cdot(1-1)}{2}+1=\frac{1\cdot 0}{2}+1=0+1=1$, And thus $m_1=\frac{1\cdot(1-1)}{2}+1$ as was to be shown.
+
+Suppose that for some $i=k\in\mathbb{N}$ we have $m_k=\frac{k(k-1)}{2}+1$, And we’ll show that for $i=k+1$ we have $m_{k+1}=\frac{(k+1)k}{2}+1$:
+
+Since by **(fact 9)** we have $m_{k+1}=m_k+k$, And since by the induction hypothesis we have $m_k=\frac{k(k-1)}{2}+1$, We conclude that $m_k=\frac{k(k-1)}{2}+k+1=\frac{k^2-k+2k}{2}+1=\frac{k^2+k}{2}+1=\frac{(k+1)k}{2}+1$ as was to be shown.
+
+----------
+Proof of **(fact 14)**
+
+Let $n\in\mathbb{N}$, Then by **(fact 12)** we get that $m_{i_n}\leq n\leq m_{i_n}+i_n-1$, But since by **(fact 13)** we have $m_{i_n}=\frac{i_n(i_n-1)}{2}+1$, We conclude that $m_{i_n}+i_n-1=\frac{i_n(i_n-1)}{2}+1+i_n-1=\frac{i_n^2-i_n+2i_n}{2}=\frac{i_n^2+i_n}{2}=\frac{(i_n+1)i_n}{2}$, And we conclude that $\frac{i_n(i_n-1)}{2}+1\leq n\leq \frac{(i_n+1)i_n}{2}$ as was to be shown.
+
+----------
+Proof of **(fact 15)**
+
+Let $n\in\mathbb{N}$, Then by **(fact 14)** we have $\frac{i_n(i_n-1)}{2}+1\leq n\leq \frac{(i_n+1)i_n}{2}$, And thus $i_n^2-i_n+2=\frac{i_n(i_n-1)}+2\leq 2n\leq \frac{(i_n+1)i_n}=i_n^2+i_n$, Which implies that $i_n^2-i_n+2-2n\leq 0$ and $0\leq i_n^2+i_n-2n$, 
+
+First we’ll solve the inequality $i_n^2-i_n+2-2n\leq 0$:
+
+**(#FIX NOW# SHOW DISCRIMINANT GREATER THAN ZERO TO CONCLUDE TWO SOLUTIONS)**
+Since $n\in\mathbb{N}$, We get that $1\leq n$, And thus $0\leq n-1$, And we conclude that $0\leq 8(n-1)$, But this implies that $1\leq 1+8(n-1)$, But since $\Delta=(-1)^2-4\cdot 1\cdot (2-2n)=1-4\cdot 2(1-n)=1-8(1-n)=1+8(n-1)$, We conclude that $1\leq \Delta$, And thus the equation $i_n^2-i_n+2-2n=0$ has two distinct solution $i_n^{(1)}$ and $i_n^{(2)}$ which they are:
+
+$i_n^{(1)}=\frac{1- \sqrt{1+8(n-1)}}{2}$ and 
+$i_n^{(2)}=\frac{1+ \sqrt{1+8(n-1)}}{2}$
+
+**[BEGIN ???]**
+$i_n^2-i_n+2-2n=0$  implies that $i_n=\frac{-(-1)\pm sqrt{(-1)^2-4\cdot 1\cdot (2-2n)}}{2}=\frac{1\pm \sqrt{1+8(n-1)}}{2}$, And thus we have two solutions $i_n^{(1)}=\frac{1- \sqrt{1+8(n-1)}}{2}$ and $i_n^{(2)}=\frac{1+ \sqrt{1+8(n-1)}}{2}, But since i $i_n^2-i_n+2-2n\leq 0$, We conclude that it must be the case that $i_n^{(1)}\leq i_n\leq i_n^{(2)}$, I.e. $\frac{1- \sqrt{1+8(n-1)}\leq i_n \leq \frac{1+ \sqrt{1+8(n-1)}$, Now since 
+
+**[END ???]** 
+
+But since i $i_n^2-i_n+2-2n\leq 0$, We conclude that it must be the case that $i_n^{(1)}\leq i_n\leq i_n^{(2)}$, I.e. **(§§§)** $\frac{1- \sqrt{1+8(n-1)}{2}\leq i_n \leq \frac{1+ \sqrt{1+8(n-1)}}{2}$.
+
+Now since we’ve already shown that $1\leq \sqrt{1+8(n-1)}$, Which implies that $1-\sqrt{1+8(n-1)}\leq 0$, And thus $\frac{1-\sqrt{1+8(n-1)}}{2}\leq 0$, And we get because $i_n\in\mathbb{N}$ implies that $0\lt i_n$, That it is always the case that $\frac{1-\sqrt{1+8(n-1)}}{2}\leq i_n$, And thus, We conclude that the inequality **(§§§)** is equivalent to the inequality $ i_n \leq \frac{1+ \sqrt{1+8(n-1)}}{2}$, Now since $i_n\in\mathbb{N}$, We conclude that it must be the case that $\lfloor\frac{1+ \sqrt{1+8(n-1)}}{2}\rfloor\leq i_n$.
+
+Now we’ll solve the inequality $0\leq i_n^2+i_n-2n$:
+
+----------
+
+----------
+
+----------
+
+XXX
