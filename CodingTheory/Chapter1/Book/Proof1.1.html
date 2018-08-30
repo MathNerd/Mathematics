@@ -121,4 +121,26 @@ Q.E.D.
 
 **Proof of (Prop.7):**
 
+Let $\vec{x},\vec{y}\in\mathbb{F}_q^n$, Then we get by definition of $d$ that:
+
+$d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)\underbrace{=}\textrm{By Prop.1}=\sum\limits_{i =1}^n neq(y_i,x_i)=d(\vec{y},\vec{x})$ 
+
+as was to be shown.
+
+Q.E.D.
+
 **Proof of (Prop.8):**
+
+Let $\vec{x},\vec{y},\vec{z}\in\mathbb{F}_q^n$, Then we get by **(Prop.4)** that $\forall i\in\{1,...,n\}, neq(x_i,y_i)\leq neq(x_i,z_i)+neq(z_i,y_i)$, Now by summing all of those inequalities together we get that $\sum\limits_{i=1}^n neq(x_i,y_i)\leq \sum\limits_{i=1}^n\big(neq(x_i,z_i)+neq(z_i,y_i)\big)=\sum\limits_{i=1}^n neq(x_i,z_i) +\sum\limits_{i =1}^n neq(z_i,y_i)$, But since by definition of $d$ we have:
+
+$d(\vec{x},\vec{y})=\sum\limits_{i =1}^n neq(x_i,y_i)$
+
+$d(\vec{y},\vec{z})=\sum\limits_{i =1}^n neq(y_i,z_i)$
+
+And:
+
+$d(\vec{z},\vec{y})=\sum\limits_{i =1}^n neq(z_i,y_i)$
+
+We conclude that $d(\vec{x},\vec{y})\leq d(\vec{x},\vec{z})+d(\vec{z},\vec{y})$ as was to be shown.
+
+Q.E.D.
