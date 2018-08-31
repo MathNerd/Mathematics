@@ -92,7 +92,7 @@ We’ll prove the following propositions:
 
 **Proof of (Prop.5):**
 
-Let $\vec{x},\vec{y}\in\mathbb{F}_q^n$, Then by definition of $d$, We get that $d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)$, Now by **(Prop.1)** we have $\forall i\in\{1,...,n\}, d(x_i,y_i)\in\mathbb{Z}$, And since $\mathbb{Z}$ is closed under addition, We get that $\sum\limits_{i=1}^n neq(x_i,y_i)\in\mathbb{Z}$, And thus $d(\vec{x},\vec{y})\in\mathbb{Z}$.
+Let $\vec{x},\vec{y}\in\mathbb{F}_q^n$, Then by definition of $d$, We get that $d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)$, Now by **(Prop.1)** we have $\forall i\in\{1,...,n\}, neq(x_i,y_i)\in\mathbb{Z}$, And since $\mathbb{Z}$ is closed under addition, We get that $\sum\limits_{i=1}^n neq(x_i,y_i)\in\mathbb{Z}$, And thus $d(\vec{x},\vec{y})\in\mathbb{Z}$.
 
 Also by **(Prop.1)** we have $\forall i \in\{1,...,n\},  0\leq neq(x_i,y_i)\leq 1$, And thus, By summing all of those inequalities together we get that $0=n\cdot 0=\sum\limits_{i=1}^n 0\leq\sum\limits_{i=1}^n neq(x_i,y_i)\leq \sum\limits_{i=1}^n 1=n\cdot 1=n$, And thus $0\leq d(\vec{x},\vec{y})\leq n$ as was to be shown.
 
@@ -104,17 +104,17 @@ Let $\vec{x},\vec{y}\in\mathbb{F}_q^n$, We’ll show that $d(\vec{x},\vec{y})=0 
 
 $\Longrightarrow$
 
-Suppose $d(\vec{x},\vec{y})=0$, Then by definition of $d$, We get that $d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)$, And thus **(Fact.1)** $\sum\limits_{i=1}^n neq(x_i,y_i)=0$.
+Suppose $d(\vec{x},\vec{y})=0$, Then by definition of $d$, We get that $d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)$, And thus **(§.1)** $\sum\limits_{i=1}^n neq(x_i,y_i)=0$.
 
-Now will prove by contradiction that **(§)** $\forall i\{1,...,n\},neq(x_i,y_i)=0$, Because If we suppose by contradiction that $\exists j\in\{1,...,n\},neq(x_j,y_j)\neq 0$, Then we get by definition of $neq$ that $neq(x_j,y_j)\in\{0,1\}$, And thus, We get that it must be the case that $neq(x_j,y_j)=1$, Now we have **(Fact.2)** $\sum\limits_{i=1}^n neq(x_i,y_i)=neq(x_j,y_j)+\sum\limits_{j\neq i=1}^n neq(x_i,y_i)=1+\sum\limits_{j\neq i=1}^n neq(x_i,y_i)$, Now since by **(Prop.1)** we have $\forall i\in\{1,...,n\}\setminus\{j\},0\leq neq(x_i,y_i)$, We can conclude by summing all of those Inequalities together, That $0=(n-1)\cdot 0=\sum\limits_{i=1}^n 0\leq\sum\limits_{j\neq i=1}^n neq(x_i,y_i)$, And thus, By adding $1$ to both sides of the inequality we would get $1\leq 1+\sum\limits_{j\neq i=1}^n neq(x_i,y_i)$, And by **(Fact.2)** we get $1\leq \sum\limits_{i=1}^n neq(x_i,y_i)$, But since by **(Fact.1)** we have $\sum\limits_{i=1}^n neq(x_i,y_i)=0$, We conclude that $1\leq 0$ which contradicts the fact that$0\lt 1$. Thus it must be the case that $\forall i\{1,...,n\},neq(x_i,y_i)=0$ as was to be shown.
+Now we’ll prove by contradiction that **(§.2)** $\forall i\{1,...,n\},neq(x_i,y_i)=0$, Because If we suppose by contradiction that $\exists j\in\{1,...,n\},neq(x_j,y_j)\neq 0$, Then we get by definition of $neq$, That $neq(x_j,y_j)\in\{0,1\}$, And thus, We get that it must be the case that $neq(x_j,y_j)=1$, Now we have **(§.3)** $\sum\limits_{i=1}^n neq(x_i,y_i)=neq(x_j,y_j)+\sum\limits_{j\neq i=1}^n neq(x_i,y_i)=1+\sum\limits_{j\neq i=1}^n neq(x_i,y_i)$, Now since by **(Prop.1)** we have $\forall i\in\{1,...,n\}\setminus\{j\},0\leq neq(x_i,y_i)$, We can conclude by summing all of those inequalities together, That $0=(n-1)\cdot 0=\sum\limits_{j\neq i=1}^n 0\leq\sum\limits_{j\neq i=1}^n neq(x_i,y_i)$, And thus, By adding $1$ to both sides of the inequality we would get $1\leq 1+\sum\limits_{j\neq i=1}^n neq(x_i,y_i)$, And by **(§.3)** we get $1\leq \sum\limits_{i=1}^n neq(x_i,y_i)$, But since by **(§.1)** we have $\sum\limits_{i=1}^n neq(x_i,y_i)=0$, We conclude that $1\leq 0$ which contradicts the fact that $0\lt 1$. Thus it must be the case that $\forall i \in\{1,...,n\},neq(x_i,y_i)=0$ as was to be shown.
 
-Now we’ll prove by contradiction that **($$)** $\forall i\in\{1,...,n\}, x_i=y_i$, Because If we suppose by contradiction that $\exists j\in\{1,...,n\}, x_j\neq y_j$, Then we would get by definition of $neq$ that $neq(x_j,y_j)=1$, Which contradicts the fact that it must be the case that $neq(x_j,y_j)=0$ (by **(§)**). Thus it must be the case that  $\forall i\in\{1,...,n\}, x_i=y_i$ as was to be shown.
+Now we’ll prove by contradiction that **(§.4)** $\forall i\in\{1,...,n\}, x_i=y_i$, Because if we suppose by contradiction that $\exists j\in\{1,...,n\}, x_j\neq y_j$, Then we would get by definition of $neq$, That $neq(x_j,y_j)=1$, Which contradicts the fact that it must be the case that $neq(x_j,y_j)=0$ (by **(§.2)**). Thus it must be the case that  $\forall i\in\{1,...,n\}, x_i=y_i$ as was to be shown.
 
-And therefore we get by **(§§)** and by definition of vector equality that $\vec{x}=\vec{y}$ as was to be shown.
+And therefore we get by **(§.4)** and by definition of vector equality that $\vec{x}=\vec{y}$ as was to be shown.
 
 $\Longleftarrow$
 
-Suppose $\vec{x}=\vec{y}$, Then by definition of vector equality we get that $\forall i\in\{1,...,n\}, x_i=y_i$, And thus by definition $neq$, We get that $\forall i\in\{1,...,n\},neq(x_i,y_i)=0$, And thus by definition of $d$, We would get that $d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)=\sum\limits_{i=1}^n 0=n\cdot 0=0$ as was to be shown.
+Suppose $\vec{x}=\vec{y}$, Then by definition of vector equality, We get that $\forall i\in\{1,...,n\}, x_i=y_i$, And thus by definition $neq$, We get that $\forall i\in\{1,...,n\},neq(x_i,y_i)=0$, And thus by definition of $d$, We would get that $d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)=\sum\limits_{i=1}^n 0=n\cdot 0=0$ as was to be shown.
 
 Q.E.D.
 
