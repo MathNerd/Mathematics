@@ -123,19 +123,23 @@ Q.E.D.
 
 Let $\vec{x},\vec{y}\in\mathbb{F}_q^n$, Then we get by definition of $d$ that:
 
-$d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)\underbrace{=}\textrm{By Prop.1}=\sum\limits_{i =1}^n neq(y_i,x_i)=d(\vec{y},\vec{x})$ 
+$d(\vec{x},\vec{y})=\sum\limits_{i=1}^n neq(x_i,y_i)$
 
-as was to be shown.
+And that:
+
+$d(\vec{y},\vec{x})=\sum\limits_{i =1}^n neq(y_i,x_i)$ 
+
+But since by **(Prop.3)** we have $\forall i\in\{1,...,n\}, neq(x_i,y_i)=neq(y_i,x_i)$, We conclude that $\sum\limits_{i =1}^n neq(x_i,y_i)=\sum\limits_{i =1}^n neq(y_i,x_i)$, Which implies that $d(\vec{x},\vec{y})=d(\vec{y},\vec{x})$ as was to be shown.
 
 Q.E.D.
 
 **Proof of (Prop.8):**
 
-Let $\vec{x},\vec{y},\vec{z}\in\mathbb{F}_q^n$, Then we get by **(Prop.4)** that $\forall i\in\{1,...,n\}, neq(x_i,y_i)\leq neq(x_i,z_i)+neq(z_i,y_i)$, Now by summing all of those inequalities together we get that $\sum\limits_{i=1}^n neq(x_i,y_i)\leq \sum\limits_{i=1}^n\big(neq(x_i,z_i)+neq(z_i,y_i)\big)=\sum\limits_{i=1}^n neq(x_i,z_i) +\sum\limits_{i =1}^n neq(z_i,y_i)$, But since by definition of $d$ we have:
+Let $\vec{x},\vec{y},\vec{z}\in\mathbb{F}_q^n$, Then we get by **(Prop.4)** that $\forall i\in\{1,...,n\}, neq(x_i,y_i)\leq neq(x_i,z_i)+neq(z_i,y_i)$, Now by summing all of those inequalities together, We get that $\sum\limits_{i=1}^n neq(x_i,y_i)\leq \sum\limits_{i=1}^n\big(neq(x_i,z_i)+neq(z_i,y_i)\big)=\sum\limits_{i=1}^n neq(x_i,z_i) +\sum\limits_{i =1}^n neq(z_i,y_i)$, But since by definition of $d$ we have:
 
 $d(\vec{x},\vec{y})=\sum\limits_{i =1}^n neq(x_i,y_i)$
 
-$d(\vec{y},\vec{z})=\sum\limits_{i =1}^n neq(y_i,z_i)$
+$d(\vec{x},\vec{z})=\sum\limits_{i =1}^n neq(x_i,z_i)$
 
 And:
 
