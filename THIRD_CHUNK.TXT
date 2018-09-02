@@ -1,0 +1,28 @@
+**THIRD CHUNK**
+
+**Theorem 2:**
+
+> If $A,B\neq\emptyset$ are any non-empty sets, For which 
+> $\exists m\in\mathbb{N}, A\approx \{1,...,m\}$ and $\exists n\in\mathbb{N},B\approx \{1,...,n\}$, Then $A\approx B$ **if and only
+> if** $m=n$.
+
+
+----------
+
+**Proof:**
+
+$\Longrightarrow$
+
+If $A\approx B$, Then we get by the fact that $A\approx \{1,...,m\}$, That it is also $\{1,...,m\}\approx A$ (by simmetricity), Which implies that $\{1,...,m\}\approx B$ (by transitivity), But since it is also the case that $B\approx\{1,...,n\}$, We get that $\{1,...,m\}\approx \{1,...,n\}$ (by tranisitivity), And thus by **Definition 1**, We get that, There exists some function $f:\{1,...,m\}\to\{1,...,n\}$ that is ***one-to-one*** and ***onto***.
+
+Now we’ll prove that $m\leq n$, Because if we suppose by contradiction that $m\gt n$, Then we get by the ***pigeonhole principle*** that $\exists i,j\in\{1,...,m\},i\neq j\land f(i)=f(j)$, But this contradicts the fact that $f$ is ***one-to-one***, Thus it must be the case that $m\leq n$ as was to be shown.
+
+Now we’ll prove that $m\geq n$, Because if we suppose by contradiction that $m\lt n$, Then we get by the fact that $f$ is both ***one-to-one*** and ***onto***, That $\forall j\in\{1,...,n\},\exists ! i_j\in\{1,...,m\},f(i_j)=j$, Thus we can look at each ***unique*** $i_j$ that its existence is guaranteed for each $j\in\{1,...n\}$, As forming a function $i:\{1,...,n\}\to\{1,...,m\}$ defined as $\forall j\in\{1,...,n\}, i(j):=i_j$. Now because $m\lt n$, We get by the ***pigeonhole principle*** that $\exists j_1,j_2\in\{1,...,n\}, j_1\neq j_2\land i(j_1)=i(j_2)$, And this implies that $f(i(j_1))=f(i_{j_1})=j_1$ and that $f(i(j_2))=f(i_{j_2})=j_2$, But since $f(i(j_1))=f(i(j_2))$, We conclude that $j_1=j_2$, Which contradicts the fact that $j_1\neq j_2$, Thus it must be the case that $m\geq n$ as was to be shown.
+
+In summary we’ve shown that both $m\leq n$ and $n\leq m$, And we conclude that $m=n$ as was to be shown.
+
+$Longleftarrow$
+
+If $m=n$, Then we get $\{1,...,m\}=\{1,...,n\}$, And thus, By the fact that $A\approx \{1,...,m\}$, We conclude that $A\approx \{1,...,n\}$, Also by the fact that $B\approx \{1,...,n\}$, We conclude by symmetry that $\{1,...,n\}\approx B$, And thus we get by transitivity that $A\approx B$ as was to be shown.
+
+Q.E.D.
