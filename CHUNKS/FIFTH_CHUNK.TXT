@@ -36,6 +36,6 @@ Now there are two cases: **(Case 1)** $k+1\notin A$ or **(Case 2)** $k+1\in A$
 
 **(Case 2):** If $k+1\in A$, Then there are two cases: **(Case 2.1)** $\forall x\in\{1,...,k\},x\notin A$ or **(Case 2.2)** $\exists x\in\{1,...,k\}, x\in A$
 
-**(Case 2.1):** If $\forall x\in\{1,...,k\},x\notin A$, Then we get that $\{1,...,k\}\nsubseteq A$ **[? THINK MORE NOWWWW!!! ?]**, But since $A\subseteq \{1,...,k\}\cup\{k+1\}$, We conclude by **Lemma YOU NAME ME**, That it must be the case that $A\substeq\{k+1\}$, But since $A\neq\emptyset$, We get that it must be the case that $A=\{k+1\}$, Then we get by **Lemma ADD ME AND NAME ME NOW!!!**, That the function defined as $f:\{k+1\}(=A)\to\{1}$ defined as $f(k+1):=1$, Is a **one-to-one** and **onto**
+**(Case 2.1):** If $\forall x\in\{1,...,k\},x\notin A$, Then we get that $\{1,...,k\}\nsubseteq A$ **[? THINK MORE NOWWWW!!! ?]**, But since $A\subseteq \{1,...,k\}\cup\{k+1\}$, We conclude by **Lemma YOU NAME ME**, That it must be the case that $A\subseteq\{k+1\}$, But since $A\neq\emptyset$, We get that it must be the case that $A=\{k+1\}$, Then we get by **Lemma ADD ME AND NAME ME NOW!!!**, That the function defined as $f:\{k+1\}(=A)\to\{1\}$ defined as $f(k+1):=1$, Is a **one-to-one** and **onto** function, And thus we conclude that $A\approx \{1\}$, Now take $m:=1\in\{1,...,k,k+1\}$, And we get $\{1,...,m\}=\{1\}$, And thus $A\approx \{1,...,m\}$, And we’ve shown that $\exists m\in\{1,...,k,k+1\}, A\approx \{1,...,m\}$ as was to be shown. ??
 
 **(Case 2.2):** If $\exists x\in\{1,...,k\},x\in A$, Then
