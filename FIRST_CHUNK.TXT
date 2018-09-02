@@ -1,0 +1,67 @@
+**FIRST CHUNK**
+
+Measure Theory.... 
+
+
+----------
+
+
+> **Definition 1:**
+> 
+> Let $A,B\neq\emptyset$ be some non-empty sets, We’ll say that $A$ is
+> ***equivalent*** to $B$ **if and only if** there exists a function $f:A\to B$ that is ***one-to-one*** and ***onto***.
+> 
+> If $A$ is ***equvalent*** to $B$, We’ll denote that as $A \approx B$.
+
+
+----------
+
+From the definition it is clear that the following theorem is true:
+ 
+----------
+
+
+> **Theorem 1:**
+> 
+> The relation above is an equivalence relation:
+> 
+> For any non-empty sets $A,B,C\neq\emptyset$:
+> 
+> **reflexivity:** $A\approx A$
+> 
+> **simmetricity:** $A\approx B\Longrightarrow B\approx A$
+> 
+> **transitivity:** $A\approx B\land B\approx C\Longrightarrow A\approx C$
+
+
+----------
+
+Now by using the notion of equivalence that we’ve just defined, We will define what is a *finite set*:
+
+
+----------
+
+> **Definition 2**
+> 
+> A set $A$ will be called *finite set* **if and only if** $A=\emptyset$
+> or $\exists n\in\mathbb{N}, A\approx \{1,...,n\}$.
+
+
+----------
+
+Now my Measure Theory book says that:
+
+>  "It can be shown from the definition that two *finite sets* are
+> *equivalent* if and only if they have the exact same number of elements"
+
+without actually showing it, Also it says that:
+
+> "It can be shown that if $A$ is a *finite set* and if $B$ is another
+> set such that $B\subset A$ (proper subset), Then $B$ is also a *finite
+> set* and $|B|\lt |A|$ (The number of elements of $B$ is strictly less
+> than the number of elements of $A$)"
+
+So I’ve tried to fill in the details of proving it from the definition, Here’s what I’ve tried:
+
+
+----------
