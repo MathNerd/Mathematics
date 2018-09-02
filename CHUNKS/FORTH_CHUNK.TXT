@@ -1,0 +1,20 @@
+**FORTH CHUNK**
+
+> **Corrolary 1:**
+
+> If $A\neq\emptyset$ is any non-empty set for which 
+> $\exists m\in\mathbb{N}, A\approx \{1,...,m\}$, Then this $m$ is **unique**, I.e. $\forall n\in\mathbb{N},A\approx \{1,...,n\}\longrightarrow n=m$. 
+> 
+
+
+> This **unique** $m$ will be called ***the number of elements of $A$*** or ***the cardinality of $A$***, And will be denoted as $|A|:=m$.
+> If $A=\emptyset$, We’ll define $|A|:=0$.
+
+
+----------
+
+**Proof:**
+
+Let $n\in\mathbb{N}$ be any natural number for which $A\approx \{1,...,n\}$, Then by the fact that $A\approx \{1,...,m\}$, We get by symmetry that $\{1,...,m\}\approx A$, And thus we get by transitivity that $\{1,...,m\}\approx \{1,...,n\}$, And we conclude from **Theorem 3** that $n=m$ as was to be shown.
+
+Q.E.D.
