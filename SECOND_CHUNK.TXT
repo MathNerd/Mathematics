@@ -1,0 +1,65 @@
+**SECOND CHUNK**
+
+----------
+
+We’ll prove first some very small lemmas that will be used:
+
+
+----------
+**Lemma 1:**
+
+$A\nsubseteq B\land B\subseteq A\cup C\Longrightarrow B\subseteq C$.
+
+
+----------
+
+**Proof:**
+
+FIIL IT!!!
+
+used:
+
+
+----------
+**Lemma 2:**
+
+$B\subseteq A\land C=A\setminus B \Longrightarrow C\cup B=A$.
+
+
+----------
+
+**Proof:**
+
+FIIL IT!!!
+
+used:
+
+
+----------
+**Lemma 3:**
+
+$x\in A\cup B\land x\notin A\Longrightarrow x\in B$.
+
+
+----------
+
+**Proof:**
+
+FIIL IT!!!
+
+used:
+
+
+----------
+**Lemma 4:**
+
+Let $X\neq \emptyset$ be some universal non-empty set, Let $Y\neq\emptyset$ be another empty set, And let $f:X\to Y$ be some function, Then if $A,B\subseteq X$ are any subsets of $X$ such that $A\subset B$ (proper subset), Then $f(A)\subset f(B)$.
+
+$A,B\subseteq X\land X\subset A\Longrightarrow f(B)\subset f(A)$.
+
+
+----------
+
+**Proof:**
+
+FIIL IT!!!
