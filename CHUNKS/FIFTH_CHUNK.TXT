@@ -38,4 +38,56 @@ Now there are two cases: **(Case 1)** $k+1\notin A$ or **(Case 2)** $k+1\in A$
 
 **(Case 2.1):** If $\forall x\in\{1,...,k\},x\notin A$, Then we get that $\{1,...,k\}\nsubseteq A$ **[? THINK MORE NOWWWW!!! ?]**, But since $A\subseteq \{1,...,k\}\cup\{k+1\}$, We conclude by **Lemma YOU NAME ME**, That it must be the case that $A\subseteq\{k+1\}$, But since $A\neq\emptyset$, We get that it must be the case that $A=\{k+1\}$, Then we get by **Lemma ADD ME AND NAME ME NOW!!!**, That the function defined as $f:\{k+1\}(=A)\to\{1\}$ defined as $f(k+1):=1$, Is a **one-to-one** and **onto** function, And thus we conclude that $A\approx \{1\}$, Now take $m:=1\in\{1,...,k,k+1\}$, And we get $\{1,...,m\}=\{1\}$, And thus $A\approx \{1,...,m\}$, And we’ve shown that $\exists m\in\{1,...,k,k+1\}, A\approx \{1,...,m\}$ as was to be shown. ??
 
-**(Case 2.2):** If $\exists x\in\{1,...,k\},x\in A$, Then
+**(Case 2.2):** If $\exists x\in\{1,...,k\},x\in A$, Then define $B:=A\setminus\{k+1\}$, We’ll show that $B\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$:
+
+We’ll show that $B\neq\emptyset$:
+
+Since $x\in\{1,...,k\}$, We have that $ x\leq k\lt k+1$, And thus in particular $x\neq k+1$, Which implies that $x\notin\{k+1\}$, And thus we have $x\in A$ and $x\notin \{k+1\}$, Which implies that $x\in A\setminus\{k+1\}$, And thus, By the way $B$ was defined, We conclude that $x\in B$, And thus $B\neq\emptyset$.
+
+We’ll show that $B\subseteq\{1,...,k\}$:
+
+Let $y\in B$, Then by the way $B$ was defined, We conclude that $y\in A\setminus\{k+1\}$, And thus we get $y\in A$ and $y\notin \{k+1\}$, But since $A\subseteq\{1,...,k,k+1\}=\{1,...,k\}\cup\{k+1\}$, We conclude that $y\in\{1,...,k\}\cup\{k+1\}$, And thus it must be the case that $y\in\{1,...,k\}$.
+
+Thus we’ve shown that $B\neq\emptyset$ and $B\subseteq \{1,...,k\}$, And we conclude that $B\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$ as was to be shown.
+
+Now since $B\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$, We can conclude by the **induction hypothesis** that $\exists \hat{m}\in\{1,...,k\}, B\approx \{1,...,\hat{m}\}$, And thus we get that there exists a function $g:B\to\{1,...,\hat{m}\}$ That is ***one-to-one*** and ***onto***, Now define $m:=\hat{m}+1\in\{2,...,k+1\}\subseteq\{1,...,k,k+1\}$, And define a function $f:A\to\{1,...,m\}$ as follows:
+
+$\forall z\in A,f(z):=\text{m if z\in\{k+1\} and g(z) if z\in A}$ **TO DO SHIPUTZ NOW**
+
+By **LEMMA YOU NAME ME AND CREATE ME NOWWWW!!!!** we get that $A=B\cup\{k+1\}$ and that $B\cap\{k+1\}=\emptyset$, And thus, We get that the function $f$ is **well defined**
+
+**MAYBE ADD DISCUSSION ABOUT WHY ITS SCOPE IS INDEED {1,...,m} AND WHY IT WILL NOT GET OUT OF BOUNDS**
+**[SHIPUTZ ABOVE NOW]**
+
+We’ll prove that the function $f$ we just defined is **onto**:
+
+Let $y\in\{1,...,m\}=\{1,...,\hat{m},m\}=\{1,...,\hat{m}\}\cup\{m\}$, Then we have two cases: $y\in\{1,...,\hat{m}\}$ or $y\in\{m\}$
+
+If $y\in\{1,...,\hat{m}\}$, Then we get by the fact that $g$ is **onto**, That $\exists z\in B, g(z)=y$, Now since $z\in B$ and $B\subseteq A$, We get that $z\in A$, And we get by definition of $f$, That $f(z)=g(z)=y$, And thus we’ve shown that $\exists z\in A, f(z)=y$.
+
+Now if $y\in\{m\}$, Then we have $y=m$, And define $z:=k+1$, But since we have $k+1\in A$, We conclude that $z\in A$, Also we have by the way we defined $f$, That $f(z)=f(k+1)=m=y$, And thus we’ve shown that $\exists z\in A,f(z)=y$
+
+From both cases we see that it is always the case that $\exists z\in A, f(z)=y$, And we conclude that $f$ is ***onto*** as was to be shown.
+
+And now we’ll prove that the function $f$ is also **one-to-one**:
+
+Let $z_1,z_2\in A$ be such that $f(z_1)=f(z_2)$, Then since we have $A=B\cup\{k+1\}$, We get that there are two cases: **(Case 2.2.1)** $z_1\in B$ or **(Case 2.2.2)** $z_1\in\{k+1\}$
+
+**(Case 2.2.1):** If $z_1\in B$, Then we get by definition of $f$, That $f(z_1)=g(z_1)$, Also since $z_2\in A$, We get that $z_2\in B\cup\{k+1\}$, 
+
+Now we’ll prove by contradiction that $z_2\notin\{k+1\}$, Because if we suppose by contradiction that indeed $z_2\in\{k+1\}$, Then we’ll get by the way $f$ was defined that $f(z_2)=m$, And thus we have $m=g(z_1)$, But since $g(z_1)\in\{1,..,\hat{m}\}$, We conclude that $m\in\{1,...,\hat{m}$, And thus $m\leq\hat{m}$, But since by the way we defined $m$, We have $m=\hat{m}+1$, We conclude that $\hat{m}+1\leq\hat{m}$, And thus we get $1\leq 0$, Which contradicts the fact that $1\gt 0$, Thus we’ve reached a contradiction and it must be the case that $z_2\notin\{k+1\}$ as was to be shown.
+
+From what we’ve just shown, We conclude that it must be the case that $z_2\in B$, And thus we get by definition of $f$, That $f(z_2)=g(z_2)$, And we ultimately got that $g(z_1)=g(z_2)$, And thus we get by the fact that the function $g$ is ***one-to-one***, That it must be the case that $z_1=z_2$ as was to be shown.
+
+**(Case 2.2.2):** If $z_1\in\{k+1\}$, Then we get by definition of $f$, That $f(z_1)=m$, Also since $z_2\in A$, We get that $z_2\in B\cup\{k+1\}$,
+
+Now we’ll prove by contradiction that $z_2\notin B$, Because if we suppose by contradiction that $z_2\in B$, Then we’ll get by the way we defined $f$, That $f(z_2)=g(z_2)$, But since $g(z_2)\in\{1,...,\hat{m}\}$, We conclude that $f(z_2)\in\{1,...,\hat{m}\}$, But since $f(z_1)=f(z_2)$, We get that $f(z_1)\in\{1,...,\hat{m}$, And thus $m\in\{1,...,\hat{m}\}$, Which implies that $m\leq\hat{m}$, But since by the way we defined $m$, We have $m=\hat{m}+1$, We conclude that $\hat{m}+1\leq\hat{m}$, And thus we get $1\leq 0$, Which contradicts the fact that $1\gt 0$, Thus we’ve reached a contradiction and it must be the case that $z_2\notin\ B$ as was to be shown.
+
+From what we’ve just shown, We conclude that it must be the case that $z_2\in \{k+1\}$, And thus we get by definition of $f$, That $f(z_2)=m$, 
+**[NEEDS MORE SHIPUTZ TO SHOW THAT Z1=Z2 DO ITTTTTT]**, That it must be the case that $z_1=z_2$ as was to be shown.
+
+From both cases we see that it is always the case that $z_1=z_2$ as was to be shown, And we conclude that $f$ is ***one-to-one***.
+
+In summary, We’ve shown that there exists a **one-to-one** and **onto** function from $A$ to $\{1,...,m\}$ where $m\in\{1,...,k,k+1\}$, And we conclude that $\exists m\in\{1,...,k,k+1\}, A\approx \{1,...,m\}$ as was to be shown.
+
+Q.E.D.
