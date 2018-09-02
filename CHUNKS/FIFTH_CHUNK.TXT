@@ -1,0 +1,37 @@
+**FIFTH CHUNK**
+
+**Lemma 5**
+
+If $n\in\mathbb{N}$ is any natural number, And if $\emptyset\neq A\subseteq \{1,...,n\}$ is any non-empty subset of the set $\{1,...,n\}$, Then there exists $m\in\{1,...,n\}$ such that $A\approx\{1,...,m\}$.
+
+
+----------
+**Proof:**
+
+The Lemma can be written in logic notation as:
+
+$\forall n\in\mathbb{N},\forall A\in\mathscr{P}(\{1,...,n\})\setminus\{\emptyset\},\exists m\in\{1,...,n\},A\approx \{1,...,m\}$.
+
+We’lol prove it by ***induction*** on $n$:
+
+**BASE CASE:**
+
+For $n=1\in\mathbb{N}$, We have to show that $\forall A\in\mathscr{P}(\{1\})\setminus\{\emptyset\},\exists m\in\{1\},A\approx \{1,...,m\}$
+
+(Since $n=1$ we have $\{1,...,n\}=\{1\}$)
+
+Let $A\in\mathscr{P}(\{1\})\setminus\{\emptyset\}$, Since $\mathscr{P}(\{1\})\setminus\emptyset=\{\emptyset,\{1\}\}\setminus\{\emptyset\}=\{\{1\}\}$, We conclude that $A\in\{\{1\}\}$, And thus $A=\{1\}$, 
+
+Now let’s denote $m:=1\in\{1\}$, Then we get $\{1,...,m\}=\{1\}$, And thus we conclude that $A=\{1,...,m\}$, And by reflexivity of $\approx$, We conclude that $A\approx \{1,...,m\}$ as was to be shown.
+
+**INDUCTIVE STEP**
+
+Suppose that for some $n=k\in\mathbb{N}$ we have $\forall A\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\},\exists m\in\{1,...,k\},A\approx \{1,...,m\}$, And we’ll prove that for $n=k+1\in\mathbb{N}$ we have $\forall A\in\mathscr{P}(\{1,...,k,k+1\})\setminus\{\emptyset\},\exists m\in\{1,...,k,k+1\},A\approx \{1,...,m\}$.
+
+Let $A\in\mathscr{P}(\{1,...,k,k+1\})\setminus\{\emptyset\}$, Then we get $\emptyset\neq A\subseteq\{1,...,k,k+1\}=\{1,...,k\}\cup\{k+1\}$,
+
+Now there are two cases: **(Case 1)** k+1\notin A$ or **(Case 2)** k+1\in A$
+
+**(Case 1):** If $k+1\notin A$, Then we have that $A\nsubseteq \{k+1\}$, Also we have that $A\subseteq \{1,...,k\}\cup\{k+1\}$, And thus, We can conclude by **Lemma YOU NAME ME** that it must be the case that $A\subseteq \{1,...,k\}$, Also since $A\neq\emptyset$, We conclude that $A\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$, And thus, We get by the ***induction hypothesis***, That $\exists m\in\{1,...,k\},A\approx \{1,...,m\}$, But since $\{1,...,k\}\subseteq \{1,...,k,k+1\}$, We get that in particular $\exists m\in\{1,...,k,k+1\},A\approx \{1,...,m\}$ as was to be shown.
+
+**(Case 2):** If $k+1\in A$, 
