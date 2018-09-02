@@ -30,8 +30,12 @@ Suppose that for some $n=k\in\mathbb{N}$ we have $\forall A\in\mathscr{P}(\{1,..
 
 Let $A\in\mathscr{P}(\{1,...,k,k+1\})\setminus\{\emptyset\}$, Then we get $\emptyset\neq A\subseteq\{1,...,k,k+1\}=\{1,...,k\}\cup\{k+1\}$,
 
-Now there are two cases: **(Case 1)** k+1\notin A$ or **(Case 2)** k+1\in A$
+Now there are two cases: **(Case 1)** $k+1\notin A$ or **(Case 2)** $k+1\in A$
 
 **(Case 1):** If $k+1\notin A$, Then we have that $A\nsubseteq \{k+1\}$, Also we have that $A\subseteq \{1,...,k\}\cup\{k+1\}$, And thus, We can conclude by **Lemma YOU NAME ME** that it must be the case that $A\subseteq \{1,...,k\}$, Also since $A\neq\emptyset$, We conclude that $A\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$, And thus, We get by the ***induction hypothesis***, That $\exists m\in\{1,...,k\},A\approx \{1,...,m\}$, But since $\{1,...,k\}\subseteq \{1,...,k,k+1\}$, We get that in particular $\exists m\in\{1,...,k,k+1\},A\approx \{1,...,m\}$ as was to be shown.
 
-**(Case 2):** If $k+1\in A$, 
+**(Case 2):** If $k+1\in A$, Then there are two cases: **(Case 2.1)** $\forall x\in\{1,...,k\},x\notin A$ or **(Case 2.2)** $\exists x\in\{1,...,k\}, x\in A$
+
+**(Case 2.1):** If $\forall x\in\{1,...,k\},x\notin A$, Then we get that $\{1,...,k\}\nsubseteq A$ **[? THINK MORE NOWWWW!!! ?]**, But since $A\subseteq \{1,...,k\}\cup\{k+1\}$, We conclude by **Lemma YOU NAME ME**, That it must be the case that $A\substeq\{k+1\}$, But since $A\neq\emptyset$, We get that it must be the case that $A=\{k+1\}$, Then we get by **Lemma ADD ME AND NAME ME NOW!!!**, That the function defined as $f:\{k+1\}(=A)\to\{1}$ defined as $f(k+1):=1$, Is a **one-to-one** and **onto**
+
+**(Case 2.2):** If $\exists x\in\{1,...,k\},x\in A$, Then
