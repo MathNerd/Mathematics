@@ -1,0 +1,53 @@
+**SIXTH CHUNK**
+
+**Theorem 3:**
+
+If $A$ is a ***finite*** set, And if $B$ is  another set such that $B\subset A$ (proper subset), Then $B$ is also ***finite*** and $|B|\lt |A|$.
+
+
+----------
+
+**Proof:**
+
+Since $B\subset A$, We conclude that $\exists a\in A, a\notin B$, And thus, We conclude that $A\neq \emptyset$,
+
+ Now since $A$ is ***finite*** and $A\neq\emptyset$, We get by definition of ***finite set***, That $\exists ! n\in\mathbb{N}, A\approx \{1,...,n\}$, And we have $|A|=n\in\mathbb{N}$, 
+
+Now there are two cases: **(Case 1)** $B=\emptyset$ or **(Case 2)** $B\neq\emptyset$
+
+**(Case 1):** If $B=\emptyset$, Then we get by definition that $B$ is ***finite*** and $|B|=0$, Now since $|A|\in\mathbb{N}$, We conclude that $1\leq |A|$, And thus we have $|B|=0\lt 1\leq |A|$, And we conclude that $|B|\lt |A|$.
+
+**(Case 2):** If $B\neq \emptyset$, Then we get by the fact that $A\approx \{1,...,n\}$, That there exists a function $f:A\to\{1,...,n\}$ that is both **one-to-one** and **onto**, Now since $B\subset A$, We conclude by **LEMMA YOU NAME ME NOW!!!** that $f(B)\subset f(A)$, And thus we get that $\exists q\in f(A),q\notin f(B)$, And thus we have $\{q\}\subseteq f(A)$, Now since $f(B)\subset f(A)$ and since $\{q\}\subseteq f(A)$, We conclude that $f(B)\cup \{q\}\subseteq f(A)$, But since $f$ is **onto**, We conclude that $f(A)=\{1,...,n\}$, And thus $f(B)\cup\{q\}\subseteq \{1,...,n\}$, Also, Since $q\in f(B)\cup \{q\}$, We conclude that $f(B)\cup\{q\}\neq\emptyset$, And in summary, We’ve got that $f(B)\cup\{q\}\in \mathscr{P}(\{1,...,n\})\setminus\{\emptyset\}$, And thus we get by **LEMMA YOU NAME ME** that $\exists\hat{m}\in\mathbb{N},f(B)\cup\{q\}\approx \{1,...,\hat{m}\}$, 
+
+Now we’ll prove that $\hat{m}\geq 2$, Because if we suppose by contradiction that $\hat{m}\lt 2$, Then we get by the fact that $\hat{m}\in\mathbb{N}$, That it must be the case that $\hat{m}=1$, And thus we have $\{1,...,\hat{m}\}=\{1\}$, And we conclude that $f(B)\cup\{q\}\approx \{1\}$, And thus we get that there exists some function $g:f(B)\cup\{q\}\to\{1\}$ such that $g$ is both **one-to-one** And **onto**, Now since $B\neq\emptyset$, We get that it also that $f(B)\neq\emptyset$, And thus there exists some $r\in f(B)\subseteq f(B)\cup\{q\}$, And we have $g(r)=1$, Also since $q\in \{q\}\subseteq f(B)\cup\{q\}$, We have $g(q)=1$, And thus we conclude that $g(q)=g(r)$, But since $g$ is ***one-to-one***, This implies that $q=r$, Now because $r\in f(B)$, We conclude that $q\in f(B)$, But this contradicts the fact that $q\notin f(B)$, Thus we get that must be the case that $\hat{m}\geq 2$ as was to be shown.
+
+Now since $f(B)\cup\{q\}\approx \{1,...,\hat{m}\}$, We get that there exists a function $h:\{1,...,\hat{m}\}\to f(B)\cup\{q\}$ That is both **one-to-one** and **onto**.
+
+Now since $q\in f(B)\cup\{q\}$, We get by the fact that $h$ is both **one-to-one** and **onto** that $\exists ! k\in\{1,...,\hat{m}\}, h(k)=q$.
+
+ Now we’ll show that $\{1,...,\hat{m}\}\setminus\{k\}\neq \emptyset$:
+
+Because $k\in\{1,...,\hat{m}\}$, We get that $1\leq k\leq \hat{m}$, Also since $2\leq\hat{m}$, We conclude that $1,2\in\{1,...,\hat{m}\}$, Now there are two cases: $k=1$ or $k\neq 1$
+
+If $k=1$, Then we get by the fact that $2\neq 1$, That is also the case that $2\neq k$, And thus $2\notin\{k\}$, But since $2\in\{1,...,\hat{m}\}$, We conclude by definition of set difference that $2\in\{1,...,\hat{m}\}\setminus\{k\}$, And thus $\{1,...,\hat{m}\}\setminus\{k\}\neq \emptyset$.
+
+If $k\neq 1$, Then we get that $1\notin\{k\}$, Also by the fact that $1\in\{1,...,\hat{m}\}$, We conclude by definition of set difference that $1\in\{1,...,\hat{m}\}\setminus\{k\}$, And thus $\{1,...,\hat{m}\}\setminus\{k\}\neq\emptyset$.
+
+Thus we see from both cases that it is always the case that $\{1,...,\hat{m}\}\setminus\{k\}\neq\emptyset$ as was to be shown.
+
+Now because $\{1,...,\hat{m}\}\setminus\{k\}\neq\emptyset$ and because $f(B)\neq\emptyset$, We get that we can define a function $\hat{h}:\{1,...,\hat{m}\}\setminus\{k\}\to f(B)$ as follows:
+
+$\forall i\in\{1,...,\hat{m}\}\setminus\{k\},\hat{h}(i):=h(i)$
+
+We’ll show that $f$ is **one-to-one**:
+
+Let $x,y\in\{1,...,\hat{m}\}\setminus\{k\}$ be such that $\hat{h}(x)=\hat{h}(y)$, Then by the way we defined $\hat{h}$, We get that $h(x)=h(y)$, But since $h$ is **one-to-one**, We conclude that $x=y$ as was to be shown.
+
+And now we’ll show that $f$ is also  **onto**:
+
+Let $y\in f(B)$, Then we get that $y\in f(B)\cup\{q\}$, And thus by the fact that $h$ is **onto**, We get that $\exists x\in\{1,...,\hat{m}\},h(x)=y$, We’ll show that $x\neq k$, Because if we suppose by contradiction that $x=k$, Then we will get that $h(x)=h(k)=q$, And thus $y=q$, But this implies that $q\in f(B)$, Which contradicts the fact that $q\notin f(B)$, Thus we conclude that it must be the case that $x\neq k$, And so $x\notin \{k\}$, Which implies that $x\in\{1,...,\hat{m}\setminus\{k\}$, And thus by definition of $\hat{h}$, We conclude that $\hat{h}(x)=h(x)=y$, And in summary we’ve shown that $\exists x\in\{1,...,\hat{m}\}\setminus\{k\}, \hat{h}(x)=y$, And we conclude that $\hat{h}$ is **onto** as was to be shown.
+
+Thus we’ve shown that there exists a function $\hat{h}:\{1,...,\hat{m}\}\setminus \{k\}\to f(B)$ that is both **one-to-one** and **onto**. and we conclude that $f(B)\approx \{1,...,\hat{m}\}\setminus\{k\}$, Now by **LEMMA YOU NAME ME AND CREATE Me NOWWW!,,** we conclude that $\{1,...,\hat{m}\}\setminus\{k\}\approx \{1,...,\hat{m}-1\}$, And thus by transitivity of the $\approx$ relation, We conclude that $f(B)\approx \{1,...,\hat{m}-1\}$, Now since $f:A\to\{1,...,n\}$ is **one-to-one** and **onto**, And since $B\subset A$, We get that if we look at the ***restriction of $f$ to the set $B$*** defined as the function $\f_B:B\to f(B)$ such that $\forall x\in B, f_B(x):=f(x)$, Then we get that this function is also ***one-to-one*** and ***onto the set $f(B)$***, And thus we conclude that $B\approx f(B)$, But since $f(B)\approx \{1,...,\hat{m}-1\}$, We conclude by transitivity of the $\approx$ relation that $B\approx\{1,...,\hat{m}-1\}$, And thus $|B|=\hat{m}-1$, But since $\hat{m}\in\{1,...,n\}$, We conclude that $\hat{m}\leq n$, And thus $\hat{m}-1\leq n-1\lt n$, But since $|A|=n$, We conclude that $|B|<|A|$ as was to be shown.
+
+Q.E.D.
+
