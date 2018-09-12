@@ -161,7 +161,54 @@ Q.E.D.
 ----------
 **Proof of (fact 8):**
 
-FILL IT!!!
+Inorder to prove that:
+
+$\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)=[a,b]$
+
+We will prove that:
+
+ **(1)** $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)\subseteq[a,b]$
+
+And that:
+
+ **(2)** $[a,b]\subseteq\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)$
+
+**Proof of (1):**
+
+Since by **(fact 7)** we have $\forall i\in\{0,...,n-1\},\mathfrak{interval}(i)\subseteq[a,b]$, We conclude that $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)\subseteq[a,b]$ as was to be shown.
+
+**Proof of (2):**
+
+Let $x\in[a,b]$, Then we have $a\leq x\leq b$, Now there are two cases: **(case 1)** $x=b$ or **(case  2)** $x\neq b$ 
+
+**(case 1):** If $x=b$, Then since $n-1\in\{0,...,n-1\}$, We get that $\mathfrak{interval}(n-1)$ is defined and satisfies 
+
+$\mathfrak{interval}(n-1)=[\mathfrak{partition\_point}(n-1),\mathfrak{partition\_point}(n)]$
+
+And thus $\mathfrak{partition\_point}(n)\in\mathfrak{interval}(n-1)$
+
+But since by **(fact 1)** we have $\mathfrak{partition\_point}(n)=b$, We conclude that $b\in\mathfrak{interval}(n-1)$, And since $x=b$, We conclude that $x\in\mathfrak{interval}(n-1)$, And thus $x\in\bigcup\limits_{i=0}^{n-1}\mathfrak{interval}(i)$ as was to be shown.
+
+**(case 2):** If $x\neq b$, Then we get that $a\leq x\lt b$, And thus **(§.1)** $0\leq x-a\lt b-a$, But since it is known that $a\lt b$, We conclude that $0\lt b-a$, And thus by dividing the inequality **(§.1)** by $b-a\gt 0$, We conclude that **(§.2)** $0\leq \frac{x-a}{b-a}\lt 1$, Now since $n\in\mathbb{N}$, We conclude that $n\gt 0$, And thus by multiplying the inequality **(§.2)** by $n\gt 0$, We conclude that $0\leq \frac{n(x-a)}{b-a}\lt n$, 
+
+Now since $0\leq \frac{n(x-a)}{b-a}$, We conclude by **(lemma 2)** below that $\lfloor 0\rfloor\leq \lfloor \frac{n(x-a)}{b-a}\rfloor$, But since $0\in\mathbb{Z}$, We conclude that $\lfloor 0\rfloor=0$, And thus $0\leq \lfloor\frac{n(x-a)}{b-a}\rfloor$, 
+
+Also since $\frac{n(x-a)}{b-a}\lt n$ and since $\lfloor \frac{n(x-a)}{b-a}\rfloor\leq \frac{n(x-a)}{b-a}$, We conclude that $\lfloor \frac{n(x-a)}{b-a}\rfloor\lt n$,
+
+ And in summary we’ve got $0\leq\lfloor \frac{n(x-a)}{b-a}\rfloor\lt n$
+
+Now let’s denote **(§.3)** $i:=\lfloor\frac{n(x-a)}{b-a}\rfloor$, Then we get that $0\leq i\lt n$ and that $i\in\mathbb{Z}$,
+
+Now by **(§.3)** we conclude by definition of $\lfloor\bullet\rfloor$ that $i\leq \frac{n(x-a)}{b-a}\lt i +1$, And thus by multiplying this inequality by $b-a\gt 0$, We conclude that $i(b-a)\leq n(x-a)\lt (i+1)(b-a)$, Which is equvalent to $ib-ia \leq nx-na\lt ib-ia +b-a$, And thus by adding $na$ to this inequality, We conclude that $na+ib-ia \leq na+nx-na \lt na+ib-ia +b-a$, Which is equivalent to $(n-i)a+ib \leq nx \lt (n-i-1)a+(i+1)b$, And thus by dividing this inequlaity by $n\gt 0$, We conclude that **(§.4)** $\frac{(n-i)a+ib}{n} \leq x \lt \frac{(n-i-1)a+(i+1)b}{n}$, 
+
+Now since both $i,n\in\mathbb{Z}$, And since $i\lt n$, We conclude that it must be the case that $i+1\leq n$, And thus $i\leq n-1$, Which implies that $0\leq i\leq n-1$, And thus we conclude that **(§.5)** $i\in\{0,...,n-1\}$,
+
+Now since $i\in\{0,...,n-1\}$, We conclude that $i+1\in\{1,...,n\}$, But since $\{0,...,n-1\}\subseteq\{0,...,n\}$ and since $\{1,...,n\}\subseteq\{0,...,n\}$, We conclude that both $i,i+1\in\{0,...,n\}$, And thus we get that both $\mathfrak{partition\_point}(i)$ and $\mathfrak{partition\_point}(i+1)$ are defined and satisfy $\mathfrak{partition\_point}(i)=\frac{(n-i)a+ib}{n}$ and $\mathfrak{partition\_point}(i+1)=\frac{(n-i-1)a+(i+1)b}{n}$, And now by **(§.4)** we conclude that $\mathfrak{partition\_point}(i)\leq x\lt \mathfrak{partition\_point}(i+1)$, And thus in particular $\mathfrak{partition\_point}(i)\leq x\leq \mathfrak{partition\_point}(i+1)$, Which implies that $x\in[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$, But since $i\in\{0,...,n-1\}$, We conclude that $\mathfrak{interval}(i)$ is defined and satisfies $\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$, And thus we conclude that $x\in\mathfrak{interval}(i)$.
+
+In summary we’ve shown that $\exists i\in\{0,...,n-1\},x\in\mathfrak{interval}(i)$,
+and thus we conclude that $x\in\bigcup\limits_{i=0}^{n-1} \mathfrak{interval}(i)$ as was to be shown.
+
+Q.E.D.
 
 ----------
 
