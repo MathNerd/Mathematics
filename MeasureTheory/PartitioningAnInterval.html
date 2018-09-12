@@ -266,7 +266,69 @@ Q.E.D.
 ----------
 **Proof of (fact 10):**
 
-FILL IT!!!
+Let $i,j\in\{0,...,n-1\}$ be such that $i+2\leq j$, We’ll show that it must be the case that $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$, Because if we suppose by contradiction that $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)\neq \emptyset$, We conclude that there exists some $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, And thus $x\in\mathfrak{interval}(i)$ and $x\in\mathfrak{interval}(j)$, But since:
+
+$\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$ 
+
+And:
+
+$\mathfrak{interval}(j)=[\mathfrak{partition\_point}(j),\mathfrak{partition\_point}(j+1)]$
+
+We conclude that:
+
+ $\mathfrak{partition\_point}(i)\leq x\leq\mathfrak{partition\_point}(i+1)$ 
+
+And that:
+
+$\mathfrak{partition\_point}(j)\leq x\leq\mathfrak{partition\_point}(j+1)$ 
+
+And thus in particular $x\leq\mathfrak{partition\_point}(i+1)$ and $\mathfrak{partition\_point}(j)\leq x$, Which implies that $\mathfrak{partition\_point}(j)\leq x\leq\mathfrak{partition\_point}(i+1)$, And we conclude that **(§.1)** $\mathfrak{partition\_point}(j)\leq\mathfrak{partition\_point}(i+1)$
+
+Now by definition of $\mathfrak{partition\_point}$ we get that:
+
+$\mathfrak{partition\_point}(j)=\frac{(n-j)a+jb}{n}$
+
+And:
+
+$\mathfrak{partition\_point}(i+1)=\frac{(n-i-1)a+(i+1)b}{n}$
+
+And thus by **(§.1)** we conclude that:
+
+$\frac{(n-j)a+jb}{n}\leq\frac{(n-i-1)a+(i+1)b}{n}$
+
+And after mutiplying this inequality by $n\gt 0$, We conclude that:
+
+$(n-j)a+jb\leq(n-i-1)a+(i+1)b$
+
+And so:
+
+$na-ja+jb\leq na-ia-a+ib +b$
+
+Which implies that:
+
+$-ja+jb\leq -ia-a+ib +b$
+
+And so:
+
+$j(b-a)\leq (i +1)(b-a)$
+
+And after dividing this inequality by $b-a\gt 0$, We conclude that:
+
+$j\leq i+1$
+
+But since it is given that $i+2\leq j$, We conclude that:
+
+$i+2\leq i+1$
+
+And so:
+
+$2\leq 1$
+
+Which contradicts the fact that $2\gt 1$.
+
+Thus it must be the case that $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$ as was to be shown.
+
+Q.E.D.
 
 ----------
 
