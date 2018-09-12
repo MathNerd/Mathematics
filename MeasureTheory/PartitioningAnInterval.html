@@ -1,0 +1,209 @@
+NEW NOTATION
+
+**Partitioning an interval:**
+
+Let $a,b\in\mathbb{R}$ be some real numbers such that $a\lt b$, And let $n\in\mathbb{N}$ be some natural number, We will partition the closed-interval $[a,b]$ into $n$ closed-intervals of equal length:
+
+First let’s define a function $\mathfrak{partition\_point}:\{0,..,n\}\to\mathbb{R}$ as follows:
+
+**(definition 1):** $\forall i\in\{0,...,n\},\mathfrak{partition\_point}(i):=\frac{(n-i)a+ib}{n}$
+
+(This function will give us the partition points)
+
+Now we’ll prove the following facts:
+
+**(fact 1):** $\mathfrak{partition\_point}(0)=a$ and $\mathfrak{partition\_point}(n)=b$
+
+**(fact 2):** $\forall i\in\{0,...,n\},\mathfrak{partition\_point}(i)\in [a,b]$
+
+**(fact 3):** $\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$
+
+**(fact 4):** $\forall i,j\in\{0,...,n\},i\lt j\longrightarrow \mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(j)$
+
+**(fact 5):** $\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i+1)-\mathfrak{partition\_point}(i)=\frac{b-a}{n}$
+
+**(fact 6):** $\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$
+
+**Note:** By **(fact 2)** we can see the function $\mathfrak{partition\_point}$ as a function $\mathfrak{partition\_point}:\{0,...,n\}\to[a,b]$.
+
+----------
+
+
+**Proof of (fact 1):**
+
+By definition of $\mathfrak{partition\_point}$ we have:
+
+$\mathfrak{partition\_point}(0)=\frac{(n-0)a+0\cdot b}{n}=\frac{na}{n}=a$
+
+$\mathfrak{partition\_point}(n)=\frac{(n-n)a+nb }{n}=\frac{0\cdot a+nb}{n}=\frac{nb}{n}=b$
+
+Q.E.D.
+
+
+----------
+**Proof of (fact 2):**
+
+Let $i\in\{0,...,n\}$, Then we have **(ineq 1)** $0\leq i\leq n$, Now since it is known that $a\lt b$, We get that $0\lt b-a$, And thus by multiplying **(ineq 1)** by $b-a\gt 0$, We conclude that $0\leq i(b-a)\leq n(b-a)$, And so $0\leq ib-ia\leq nb-na$, And after adding $na$ to this inequality, We get $na\leq na+ib-ia\leq na+nb-na$, And thus **(ineq 2)** $na\leq (n-i)a+ib\leq nb$, Now since $n\in\mathbb{N}$, We get that $n\gt 0$, And thus by dividing **(ineq 2)** by $n\gt 0$, We conclude that **(ineq 3)** $a\leq \frac{(n-i)a+i b}{n}\leq b$, But since $i\in\{0,...,n\}$, We get that $\mathfrak{partition\_point}(i)$ is defined and we have $\mathfrak{partition\_point}(i )=\frac{(n-i)a+ib}{n}$, And thus by **(ineq 3)**, We conclude that $a \leq \mathfrak{partition\_point}(i)\leq b$, And so $\mathfrak{partition\_point}(i)\in [a,b]$ as was to be shown.
+
+Q.E.D.
+
+
+----------
+**Proof of (fact 3):**
+
+Let $i\in\{0,...,n-1\}$, Since it is known that $a\lt b$, We get that $0\lt b-a$, And after adding $(n-i)a+ib$ to this inequality, We get **(ineq 1)** $(n-i )a+ib\lt (n-i)a+ib+b-a=(n-i -1)a+(i +1)b$, But since $n\in\mathbb{N}$, We have $n\gt 0$, And thus by dividing **(ineq 1)** by $n\gt 0$, We conclude that **(ineq 2)** $\frac{(n-i )a+ib}{n}\lt \frac{(n-i -1)a+(i +1)b}{n}$,
+
+ Now since $i\in\{0,...,n-1\}$, We have $i+1\in\{1,...,n\}$, Also since $\{0,...,n-1\}\subseteq\{0,...,n\}$ and since $\{1,...,n\}\subseteq\{0,...,n\}$, We conclude that both $i,i+1\in\{0,...,n\}$, And thus we get that both $\mathfrak{partition\_point}(i)$ and $\mathfrak{partition\_point}(i+1)$ are defined and we have $\mathfrak{partition\_point}(i)=\frac{(n-i)a+ib}{n}$ and $\mathfrak{partition\_point}(i+1)=\frac{(n-i-1)a+(i+1)b}{n}$, And thus by **(ineq 2)**, We get $\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$ as was to be shown.
+
+Q.E.D.
+
+
+----------
+
+**Proof of (fact 4):**
+
+Immediately follows from **(fact 3)** and **(lemma 1)** shown at the ***appendix*** below.
+  
+
+
+----------
+**Proof of (fact 5):**
+
+Let $i\in\{0,...,n-1\}$,  Then we have $i+1\in\{1,...,n\}$, Now since $\{0,...,n-1\}\subseteq\{0,...,n\}$ and since $\{1,...,n\}\subseteq\{0,...,n\}$, We conclude that both $i,i+1\in\{0,...,n\}$, And thus we get that both $\mathfrak{partition\_point}(i)$ and $\mathfrak{partition\_point}(i+1)$ are defined and we have $\mathfrak{partition\_point}(i)=\frac{(n-i)a+ib}{n}$ and $\mathfrak{partition\_point}(i+1)=\frac{(n-i-1)a+(i+1)b}{n}$, And thus 
+
+$\mathfrak{partition\_point}(i+1)-\mathfrak{partition\_point}(i)=\frac{(n-i-1)a+(i+1)b}{n}-\frac{(n-i)a+ib}{n}=\frac{na-ia-a+ib+b}{n}-\frac{na-ia+ib}{n}=\frac{na-ia-a+ib+b-na+ia-ib}{n}=\frac{b-a}{n}$
+
+as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 6):**
+
+Inorder to prove that:
+
+$\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$
+
+We will prove that:
+
+ **(1)** $\mathfrak{partition\_point}(\{1,...,n-1\})\subseteq\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$ 
+
+And that:
+
+ **(2)** $\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}\subseteq\mathfrak{partition\_point}(\{1,...,n-1\})$
+
+**Proof of (1):**
+
+Let $x\in \mathfrak{partition\_point}(\{1,...,n-1\})$, Then we get that $\exists i\in\{1,...,n-1\},x=\mathfrak{partition\_point}(i)$, Now since $i\in\{1,...,n-1\}$, And since $\{1,...,n-1\}\subseteq \{0,...,n\}$, We conclude that $i\in\{0,...,n\}$, Also since $i\in\{1,...,n-1\}$, We get that $1\leq i\leq n-1$, But since $0\lt 1$ and since $n-1\lt n$, We conclude that $0\lt i\lt n$, Thus in summary we see that $0,i,n\in\{0,...,n\}$ and that $0\lt i\lt n$, And thus we can conclude by **(fact 4)** that:
+
+$\mathfrak{partition\_point}(0)\lt \mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(n)$
+
+But since by **(fact 1)** we have $\mathfrak{partition\_point}(0)=a$ and $\mathfrak{partition\_point}(n)=b$, We conclude that $a\lt \mathfrak{partition\_point}(i )\lt b$, And thus in particular $\mathfrak{partition\_point}(i)\neq a,b$, Which implies that $\mathfrak{partition\_point}(i)\notin\{a,b\}$, But since $x=\mathfrak{partition\_point}(i)$, We conclude that **(§)** $x\notin \{a,b\}$, 
+
+Now since we’ve already shown that $i\in\{0,...,n\}$ and since we know that $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{0,...,n\})$, And thus we can conclude by this fact and by **(§)** that $x\in\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}$ as was to be shown.
+
+**Proof of (2):**
+
+Let $x\in\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$, Then we get that $x\in\mathfrak{partition\_point}(\{0,...,n\})$ and that $x\notin\{a,b\}$, Now since $x\in\mathfrak{partition\_point}(\{0,...,n\})$, We conclude that $\exists i\in\{0,...,n\},x=\mathfrak{partition\_point}(i)$,
+
+We will show that $i\neq 0$ and that $i\neq n$:
+
+Suppose by contradiction that $i=0$, Then we get:
+
+$x=\mathfrak{partition\_point}(i)=\mathfrak{partition\_point}(0)\underset{\text{by $\bf{(fact\thinspace 1)}$}}{=}a$
+
+And thus we get $x\in\{a,b\}$ which contradicts the fact that $x\notin \{a,b\}$.
+
+Now suppose by contradiction that $i=n$, Then we get:
+
+$x=\mathfrak{partition\_point}(i)=\mathfrak{partition\_point}(n)\underset{\text{by $\bf{(fact\thinspace 1)}$}}{=}b$
+
+And thus we get $x\in\{a,b\}$ which contradicts the fact that $x\notin \{a,b\}$.
+
+Thus in summary we’ve shown that $i\neq 0,n$, But since $i\in\{0,...,n\}$, We conclude that it muse be the case that $i\in\{1,...,n-1\}$, And now since $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$ as was to be shown.
+
+Q.E.D.
+
+----------
+
+
+ 
+ Now we can define the partition intervals as a function $\mathfrak{interval}:\{0,...,n-1\}\to \mathscr{P}(\mathbb{R})$ as follows:
+
+**(definition 2):**
+$\forall i\in\{0,...,n-1\}, \mathfrak{interval}(i):=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$
+
+(**Note:** Since by **(fact 3)** we have
+
+ $\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$
+
+We get that indeed the definition above defines intervals)
+
+Now we’ll prove the following facts:
+
+**(fact 6):** $\forall i\in\{0,...,n-1\},\mathfrak{interval}(i)\subseteq [a,b]$
+
+**(fact 7):** $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)=[a,b]$
+
+
+----------
+**Proof of (fact 6):**
+
+FILL IT!!!
+
+
+----------
+**Proof of (fact 7):**
+
+FILL IT!!!
+
+----------
+
+Now we’ll show that for each $x\in[a,b]$, $x$ can reside at **exactly 1** interval from the $I_i$’s ***or*** at **exactly 2** intervals from the $I_i$’s and that those intervals must be consecutive. 
+
+Inorder to show it, We’ll first define ***the internal points of the partition*** as:
+
+**(definition 3):**
+$\mathfrak{internal\_points}:=\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}=\mathfrak{partition\_point}(\{1,...,n-1\})$
+
+Now we’ll prove the following facts:
+
+**(fact 8):** $\mathfrak{internal\_points}\subseteq [a,b]$
+
+**Proof of (fact 8):**
+
+Since by **(fact 2)** we have $\forall i\in\{0,...,n\}, \mathfrak{partition\_point}(i)\in[a,b]$, We get that in particular $\forall i\in\{1,...,n-1\},\mathfrak{partition\_point}(i)\in[a,b]$, And thus $\mathfrak{partition\_point}(\{1,...,n-1\})\subseteq [a,b]$, Which implies that $\mathfrak{internal\_points}\subseteq [a,b]$.
+
+Q.E.D.
+
+
+----------
+
+**(fact 9):** $\forall x\in [a,b], x\notin \mathfrak{internal\_points}\longrightarrow\exists ! i\in\{0,...,n-1\},x\in \mathfrak{interval}(i)$
+
+**(fact 10)** $\forall x\in[a,b],x\in \mathfrak{internal\_points}\longrightarrow\exists !i\in\{0,...,n-2\},x\in \mathfrak{interval}(i) \land x\in \mathfrak{interval}({i+1})\land \big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin \mathfrak{interval}(j)\big)$
+
+
+----------
+
+$\forall i\in\{0,...,n-1\},\forall x\in[a,b], \mathfrak{indicator}(i,x):=\begin{cases}
+   1 & x\in I_i \\
+   0 & x\notin I_i
+\end{cases}$
+
+$\forall x\in[a,b], \mathfrak{count}(x):=\sum\limits_{i=0}^{n-1}\mathfrak{indicator}(i,x)$
+
+**(fact 9)** $\forall x\in[a,b], 
+
+
+----------
+**Appendix:**
+
+**(lemma 1):**
+
+DO IT!!!
+
+----------
+**Proof of (lemma 1):**
+
+WRITE IT !!!
