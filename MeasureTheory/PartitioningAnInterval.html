@@ -125,8 +125,6 @@ Thus in summary we’ve shown that $i\neq 0,n$, But since $i\in\{0,...,n\}$, We 
 Q.E.D.
 
 ----------
-
-
  
  Now we can define the partition intervals as a function $\mathfrak{interval}:\{0,...,n-1\}\to \mathscr{P}(\mathbb{R})$ as follows:
 
@@ -144,6 +142,10 @@ Now we’ll prove the following facts:
 **(fact 7):** $\forall i\in\{0,...,n-1\},\mathfrak{interval}(i)\subseteq [a,b]$
 
 **(fact 8):** $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)=[a,b]$
+
+**(fact 9):** $\forall i\in\{0,...,n-2\},\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)=\{\mathfrak{partition\_point}(i+1)\}$
+
+**(fact 10):** $\forall i,j\in\{0,...,n-1\},i+2\leq j\longrightarrow\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$
 
 **Note:** By **(fact 7)** we can see the function $\mathfrak{interval}$ as a function $\mathfrak{interval}:\{0,...,n-1\}\to\mathscr{P}([a,b])$.
 
@@ -211,6 +213,62 @@ and thus we conclude that $x\in\bigcup\limits_{i=0}^{n-1} \mathfrak{interval}(i)
 Q.E.D.
 
 ----------
+**Proof of (fact 9):**
+
+Let $i\in\{0,...,n-2\}$, Then we get $i+1\in\{1,...,n-1\}$, But since $\{0,...,n-2\}\subseteq\{0,...,-1n\}$ and since $\{1,...,n-1\}\subseteq\{0,...,n-1\}$, We conclude that both $i,i+1\in\{0,...,n-1\}$, And thus we get that both $\mathfrak{interval}(i)$ and $\mathfrak{interval}(i+1)$ are defined and we have:
+
+**(§.1)**
+$\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$
+
+ And:
+
+**(§.2)**
+$\mathfrak{interval}(i+1)=[\mathfrak{partition\_point}(i+1),\mathfrak{partition\_point}(i+2)]$ 
+
+And thus it is clear that:
+
+$\mathfrak{partition\_point}(i+1)\in \mathfrak{interval}(i)$
+
+And:
+
+$\mathfrak{partition\_point}(i+1)\in \mathfrak{interval}(i+1)$
+
+And thus:
+
+$\mathfrak{partition\_point}(i+1)\in \mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
+
+And we conclude that:
+
+**(§.3)** $\{\mathfrak{partition\_point}(i+1)\}\subseteq \mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
+
+Now we’ll show that:
+
+**(§.4)** $ \mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)\subseteq\{\mathfrak{partition\_point}(i+1)\}$
+
+Let $x\in \mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$, Then we get that $x\in \mathfrak{interval}(i)$ and that $x\in\mathfrak{interval}(i+1)$, And thus by **(§.1)** and **(§.2)** we conclude that:
+
+$\mathfrak{partition\_point}(i)\leq x\leq \mathfrak{partition\_point}(i+1)$
+
+And that:
+
+$\mathfrak{partition\_point}(i+1)\leq x\leq \mathfrak{partition\_point}(i+2)$
+
+And thus in particular we have $x\leq \mathfrak{partition\_point}(i+1)$ and $\mathfrak{partition\_point}(i+1)\leq x$, Which implies that $ \mathfrak{partition\_point}(i+1)\leq x\leq \mathfrak{partition\_point}(i+1)$, And thus we conclude that it must be the case that $x=\mathfrak{partition\_point}(i+1)$, And thus $x\in\{ \mathfrak{partition\_point}(i+1)\}$ and the inclusion was proved.
+
+From **(§.3)** and **(§.4)** we conclude that:
+
+$\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)=\{\mathfrak{partition\_point}(i+1)\}$
+
+as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 10):**
+
+FILL IT!!!
+
+----------
 
 Now we’ll show that for each $x\in[a,b]$, $x$ can reside at **exactly 1** interval from the $I_i$’s ***or*** at **exactly 2** intervals from the $I_i$’s and that those intervals must be consecutive. 
 
@@ -221,9 +279,9 @@ $\mathfrak{internal\_points}:=\mathfrak{partition\_point}(\{0,...,n\})\setminus\
 
 Now we’ll prove the following facts:
 
-**(fact 8):** $\mathfrak{internal\_points}\subseteq [a,b]$
+**(fact 11):** $\mathfrak{internal\_points}\subseteq [a,b]$
 
-**Proof of (fact 8):**
+**Proof of (fact 11):**
 
 Since by **(fact 2)** we have $\forall i\in\{0,...,n\}, \mathfrak{partition\_point}(i)\in[a,b]$, We get that in particular $\forall i\in\{1,...,n-1\},\mathfrak{partition\_point}(i)\in[a,b]$, And thus $\mathfrak{partition\_point}(\{1,...,n-1\})\subseteq [a,b]$, Which implies that $\mathfrak{internal\_points}\subseteq [a,b]$.
 
@@ -232,9 +290,9 @@ Q.E.D.
 
 ----------
 
-**(fact 9):** $\forall x\in [a,b], x\notin \mathfrak{internal\_points}\longrightarrow\exists ! i\in\{0,...,n-1\},x\in \mathfrak{interval}(i)$
+**(fact 12):** $\forall x\in [a,b], x\notin \mathfrak{internal\_points}\longrightarrow\exists ! i\in\{0,...,n-1\},x\in \mathfrak{interval}(i)$
 
-**(fact 10)** $\forall x\in[a,b],x\in \mathfrak{internal\_points}\longrightarrow\exists !i\in\{0,...,n-2\},x\in \mathfrak{interval}(i) \land x\in \mathfrak{interval}({i+1})\land \big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin \mathfrak{interval}(j)\big)$
+**(fact 13)** $\forall x\in[a,b],x\in \mathfrak{internal\_points}\longrightarrow\exists !i\in\{0,...,n-2\},x\in \mathfrak{interval}(i) \land x\in \mathfrak{interval}({i+1})\land \big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin \mathfrak{interval}(j)\big)$
 
 
 ----------
