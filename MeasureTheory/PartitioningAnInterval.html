@@ -133,27 +133,33 @@ Q.E.D.
 **(definition 2):**
 $\forall i\in\{0,...,n-1\}, \mathfrak{interval}(i):=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$
 
-(**Note:** Since by **(fact 3)** we have
+**Note:** Since by **(fact 3)** we have
 
  $\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$
 
-We get that indeed the definition above defines intervals)
+We get that indeed the definition above defines intervals.
 
 Now we’ll prove the following facts:
 
-**(fact 6):** $\forall i\in\{0,...,n-1\},\mathfrak{interval}(i)\subseteq [a,b]$
+**(fact 7):** $\forall i\in\{0,...,n-1\},\mathfrak{interval}(i)\subseteq [a,b]$
 
-**(fact 7):** $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)=[a,b]$
+**(fact 8):** $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)=[a,b]$
 
-
-----------
-**Proof of (fact 6):**
-
-FILL IT!!!
-
+**Note:** By **(fact 7)** we can see the function $\mathfrak{interval}$ as a function $\mathfrak{interval}:\{0,...,n-1\}\to\mathscr{P}([a,b])$.
 
 ----------
 **Proof of (fact 7):**
+
+Let $i\in\{0,...,n-1\}$, Then we get that $\mathfrak{interval}(i)$ is defined and we have **(§)** $\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$, 
+
+Now we’ll show that $\mathfrak{interval}(i)\subseteq [a,b]$:
+
+Let $x\in\mathfrak{interval}(i)$, Then we get by **(§)** that $x\in[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$, And thus **(§§)** $\mathfrak{partition\_point}(i)\leq x\leq\mathfrak{partition\_point}(i+1)$, But since $i\in\{0,...,n-1\}$, We get that $i+1\in\{1,...,n\}$, And since $\{0,...,n-1\}\subseteq\{0,...,n\}$ and $\{1,...,n\}\subseteq\{0,...,n\}$, We conclude that both $i,i+1\in\{0,...,n\}$, And thus we conclude by **(fact 2)** that $\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)\in [a,b]$, Which implies that $a\leq \mathfrak{partition\_point}(i)$ and $\mathfrak{partition\_point}(i+1)\leq b$, And thus we conclude by **(§§)** that $a\leq x\leq b$, Which implies that $x\in[a,b]$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 8):**
 
 FILL IT!!!
 
