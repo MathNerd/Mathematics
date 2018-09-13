@@ -82,6 +82,8 @@ Q.E.D.
 ----------
 **Proof of (fact 6):**
 
+**Direct Proof:**
+
 Inorder to prove that:
 
 $\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$
@@ -123,6 +125,46 @@ $x=\mathfrak{partition\_point}(i)=\mathfrak{partition\_point}(n)\underset{\text{
 And thus we get $x\in\{a,b\}$ which contradicts the fact that $x\notin \{a,b\}$.
 
 Thus in summary we’ve shown that $i\neq 0,n$, But since $i\in\{0,...,n\}$, We conclude that it muse be the case that $i\in\{1,...,n-1\}$, And now by the fact $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$ as was to be shown.
+
+Q.E.D.
+
+**Alternative Proof:**
+
+We have:
+
+$\mathfrak{partition\_point}(\{0,...,n\})=\mathfrak{partition\_point}(\{1,...,n-1\}\cup\{0,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\mathfrak{partition\_point}(\{0,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{\mathfrak{partition\_point}(0),\mathfrak{partition\_point}(n)\}\underset{\text{by $\bf{(fact\thinspace 1)}$}}{=}\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{a,b\}$
+
+And so:
+
+$\mathfrak{partition\_point}(\{0,...,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{a,b\}$
+
+Now we’ll show that: $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}=\emptyset$
+
+Suppose by contradiction that $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}\neq\emptyset$, Then we get that there exists some $y\in\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}$, And thus $y\in\mathfrak{partition\_point}(\{1,...,n-1\})$ and $y\in \{a,b\}$, 
+
+Now since $y\in\mathfrak{partition\_point}(\{1,...,n-1\})$, We get that $\exists i\in\{1,...,n-1\},y=\mathfrak{partition\_point}(i)$,
+
+Now since $i\in\{1,...,n-1\}$, We conclude that $1\leq i\leq n-1$, But since $0\lt 1$ and $n-1\lt n$, We conclude that $0\lt i \lt n$, And thus in summary $0,i,n\in\{0,...,n\}$ such that $0\lt i \lt n$, And thus by **(fact 4)** we conclude that:
+
+$\mathfrak{partition\_point}(0)\lt \mathfrak{partition\_point}(i )\lt \mathfrak{partition\_point}(n)$
+
+But since by **(fact 1)** we have $\mathfrak{partition\_point}(0)=a$ and $\mathfrak{partition\_point}(n)=b$, We conclude that $a\lt \mathfrak{partition\_point}(i)\lt b$, And thus in particular $\mathfrak{partition\_point}(i)\neq a,b$, Which implies that $\mathfrak{partition\_point}(i)\notin\{a,b\}$, But since $y=\mathfrak{partition\_point}(i)$, We conclude that $y\notin\{a,b\}$, But this contradicts the fact that $y\in\{a,b\}$.
+
+Thus it must be the case that $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}=\emptyset$ as was to be shown.
+
+Now as we’ve already shown that:
+
+$\mathfrak{partition\_point}(\{0,...,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{a,b\}$ 
+
+And that:
+
+$\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}=\emptyset$
+
+We can conclude by **(lemma 3)** that:
+
+$\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}=\mathfrak{partition\_point}(\{1,...,n-1\})$ 
+
+As was to be shown.
 
 Q.E.D.
 
@@ -382,6 +424,10 @@ $\forall n\in\mathbb{N}, \forall f\in\mathbb{R}^{\{0,...,n\}},\big(\forall i\in\
 
 $\forall x,y\in\mathbb{R}, x\leq y\longrightarrow \lfloor x\rfloor\leq \lfloor y\rfloor$
 
+**(lemma 3):**
+
+$\forall A,B,C:\mathfrak{set}, A=B\cup C\land B\cap C=\emptyset\longrightarrow A\setminus C=B$
+
 ----------
 **Proof of (lemma 1):**
 
@@ -389,5 +435,10 @@ WRITE IT !!!
 
 ----------
 **Proof of (lemma 2):**
+
+WRITE IT !!!
+
+----------
+**Proof of (lemma 3):**
 
 WRITE IT !!!
