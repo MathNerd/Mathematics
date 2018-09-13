@@ -65,8 +65,6 @@ Q.E.D.
 **Proof of (fact 4):**
 
 Immediately follows from **(fact 3)** and **(lemma 1)** shown at the ***appendix*** below.
-  
-
 
 ----------
 **Proof of (fact 5):**
@@ -98,7 +96,7 @@ And that:
 
 **Proof of (1):**
 
-Let $x\in \mathfrak{partition\_point}(\{1,...,n-1\})$, Then we get that $\exists i\in\{1,...,n-1\},x=\mathfrak{partition\_point}(i)$, Now since $i\in\{1,...,n-1\}$, And since $\{1,...,n-1\}\subseteq \{0,...,n\}$, We conclude that $i\in\{0,...,n\}$, Also since $i\in\{1,...,n-1\}$, We get that $1\leq i\leq n-1$, But since $0\lt 1$ and since $n-1\lt n$, We conclude that $0\lt i\lt n$, And so in summary we see that $0,i,n\in\{0,...,n\}$ and that $0\lt i\lt n$, And thus we can conclude by **(fact 4)** that:
+Let $x\in \mathfrak{partition\_point}(\{1,...,n-1\})$, Then we get that $\exists i\in\{1,...,n-1\},x=\mathfrak{partition\_point}(i)$, Now since $i\in\{1,...,n-1\}$, And since $\{1,...,n-1\}\subseteq \{0,...,n\}$, We conclude that $i\in\{0,...,n\}$, Also since $i\in\{1,...,n-1\}$, We get that $1\leq i\leq n-1$, But since $0\lt 1$ and since $n-1\lt n$, We conclude that $0\lt i\lt n$, And so in summary we see that $0,i,n\in\{0,...,n\}$ such that $0\lt i\lt n$, And thus we can conclude by **(fact 4)** that:
 
 $\mathfrak{partition\_point}(0)\lt \mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(n)$
 
@@ -124,7 +122,7 @@ $x=\mathfrak{partition\_point}(i)=\mathfrak{partition\_point}(n)\underset{\text{
 
 And thus we get $x\in\{a,b\}$ which contradicts the fact that $x\notin \{a,b\}$.
 
-Thus in summary we’ve shown that $i\neq 0,n$, But since $i\in\{0,...,n\}$, We conclude that it muse be the case that $i\in\{1,...,n-1\}$, And now by the fact $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$ as was to be shown.
+Thus in summary we’ve shown that $i\neq 0,n$, But since $i\in\{0,...,n\}$, We conclude that it must be the case that $i\in\{1,...,n-1\}$, And now by the fact $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$ as was to be shown.
 
 Q.E.D.
 
@@ -144,7 +142,7 @@ Suppose by contradiction that $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a
 
 Now since $y\in\mathfrak{partition\_point}(\{1,...,n-1\})$, We get that $\exists i\in\{1,...,n-1\},y=\mathfrak{partition\_point}(i)$,
 
-Now since $i\in\{1,...,n-1\}$, We conclude that $1\leq i\leq n-1$, But since $0\lt 1$ and $n-1\lt n$, We conclude that $0\lt i \lt n$, And thus in summary $0,i,n\in\{0,...,n\}$ such that $0\lt i \lt n$, And thus by **(fact 4)** we conclude that:
+Now since $i\in\{1,...,n-1\}$, And since $\{1,...,n-1\}\subseteq \{0,...,n\}$, We conclude that $i\in\{0,...,n\}$, Also since $i\in\{1,...,n-1\}$, We get that $1\leq i\leq n-1$, But since $0\lt 1$ and since $n-1\lt n$, We conclude that $0\lt i\lt n$, And so in summary we see that $0,i,n\in\{0,...,n\}$ such that $0\lt i\lt n$, And thus we can conclude by **(fact 4)** that:
 
 $\mathfrak{partition\_point}(0)\lt \mathfrak{partition\_point}(i )\lt \mathfrak{partition\_point}(n)$
 
@@ -152,7 +150,7 @@ But since by **(fact 1)** we have $\mathfrak{partition\_point}(0)=a$ and $\mathf
 
 Thus it must be the case that $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}=\emptyset$ as was to be shown.
 
-Now as we’ve already shown that:
+In summary we’ve shown that:
 
 $\mathfrak{partition\_point}(\{0,...,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{a,b\}$ 
 
@@ -160,7 +158,7 @@ And that:
 
 $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}=\emptyset$
 
-We can conclude by **(lemma 3)** that:
+And thus we can conclude by **(lemma 2)** shown at the ***appendix*** below that:
 
 $\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}=\mathfrak{partition\_point}(\{1,...,n-1\})$ 
 
@@ -237,7 +235,7 @@ But since by **(fact 1)** we have $\mathfrak{partition\_point}(n)=b$, We conclud
 
 **(case 2):** If $x\neq b$, Then we get that $a\leq x\lt b$, And thus **(§.1)** $0\leq x-a\lt b-a$, But since it is known that $a\lt b$, We conclude that $0\lt b-a$, And thus by dividing the inequality **(§.1)** by $b-a\gt 0$, We conclude that **(§.2)** $0\leq \frac{x-a}{b-a}\lt 1$, Now since $n\in\mathbb{N}$, We conclude that $n\gt 0$, And thus by multiplying the inequality **(§.2)** by $n\gt 0$, We conclude that $0\leq \frac{n(x-a)}{b-a}\lt n$, 
 
-Now since $0\leq \frac{n(x-a)}{b-a}$, We conclude by **(lemma 2)** below that $\lfloor 0\rfloor\leq \lfloor \frac{n(x-a)}{b-a}\rfloor$, But since $0\in\mathbb{Z}$, We conclude that $\lfloor 0\rfloor=0$, And thus $0\leq \lfloor\frac{n(x-a)}{b-a}\rfloor$, 
+Now since $0\leq \frac{n(x-a)}{b-a}$, We conclude by **(lemma 3)** below that $\lfloor 0\rfloor\leq \lfloor \frac{n(x-a)}{b-a}\rfloor$, But since $0\in\mathbb{Z}$, We conclude that $\lfloor 0\rfloor=0$, And thus $0\leq \lfloor\frac{n(x-a)}{b-a}\rfloor$, 
 
 Also since $\frac{n(x-a)}{b-a}\lt n$ and since $\lfloor \frac{n(x-a)}{b-a}\rfloor\leq \frac{n(x-a)}{b-a}$, We conclude that $\lfloor \frac{n(x-a)}{b-a}\rfloor\lt n$,
 
@@ -422,11 +420,11 @@ $\forall n\in\mathbb{N}, \forall f\in\mathbb{R}^{\{0,...,n\}},\big(\forall i\in\
 
 **(lemma 2):**
 
-$\forall x,y\in\mathbb{R}, x\leq y\longrightarrow \lfloor x\rfloor\leq \lfloor y\rfloor$
+$\forall A,B,C:\mathfrak{set}, A=B\cup C\land B\cap C=\emptyset\longrightarrow A\setminus C=B$
 
 **(lemma 3):**
 
-$\forall A,B,C:\mathfrak{set}, A=B\cup C\land B\cap C=\emptyset\longrightarrow A\setminus C=B$
+$\forall x,y\in\mathbb{R}, x\leq y\longrightarrow \lfloor x\rfloor\leq \lfloor y\rfloor$
 
 ----------
 **Proof of (lemma 1):**
