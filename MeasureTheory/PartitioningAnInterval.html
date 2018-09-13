@@ -10,7 +10,7 @@ First let’s define a function $\mathfrak{partition\_point}:\{0,..,n\}\to\mathb
 
 (This function will give us the partition points)
 
-Now we’ll prove the following facts:
+Now we’ll prove the following facts about this function:
 
 **(fact 1):** $\mathfrak{partition\_point}(0)=a$ and $\mathfrak{partition\_point}(n)=b$
 
@@ -24,7 +24,7 @@ Now we’ll prove the following facts:
 
 **(fact 6):** $\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$
 
-**Note:** By **(fact 2)** we can see the function $\mathfrak{partition\_point}$ as a function $\mathfrak{partition\_point}:\{0,...,n\}\to[a,b]$.
+**Note:** By **(fact 2)** we can view the function $\mathfrak{partition\_point}$ as a function $\mathfrak{partition\_point}:\{0,...,n\}\to[a,b]$.
 
 ----------
 
@@ -34,6 +34,8 @@ Now we’ll prove the following facts:
 By definition of $\mathfrak{partition\_point}$ we have:
 
 $\mathfrak{partition\_point}(0)=\frac{(n-0)a+0\cdot b}{n}=\frac{na}{n}=a$
+
+And:
 
 $\mathfrak{partition\_point}(n)=\frac{(n-n)a+nb }{n}=\frac{0\cdot a+nb}{n}=\frac{nb}{n}=b$
 
@@ -94,7 +96,7 @@ And that:
 
 **Proof of (1):**
 
-Let $x\in \mathfrak{partition\_point}(\{1,...,n-1\})$, Then we get that $\exists i\in\{1,...,n-1\},x=\mathfrak{partition\_point}(i)$, Now since $i\in\{1,...,n-1\}$, And since $\{1,...,n-1\}\subseteq \{0,...,n\}$, We conclude that $i\in\{0,...,n\}$, Also since $i\in\{1,...,n-1\}$, We get that $1\leq i\leq n-1$, But since $0\lt 1$ and since $n-1\lt n$, We conclude that $0\lt i\lt n$, Thus in summary we see that $0,i,n\in\{0,...,n\}$ and that $0\lt i\lt n$, And thus we can conclude by **(fact 4)** that:
+Let $x\in \mathfrak{partition\_point}(\{1,...,n-1\})$, Then we get that $\exists i\in\{1,...,n-1\},x=\mathfrak{partition\_point}(i)$, Now since $i\in\{1,...,n-1\}$, And since $\{1,...,n-1\}\subseteq \{0,...,n\}$, We conclude that $i\in\{0,...,n\}$, Also since $i\in\{1,...,n-1\}$, We get that $1\leq i\leq n-1$, But since $0\lt 1$ and since $n-1\lt n$, We conclude that $0\lt i\lt n$, And so in summary we see that $0,i,n\in\{0,...,n\}$ and that $0\lt i\lt n$, And thus we can conclude by **(fact 4)** that:
 
 $\mathfrak{partition\_point}(0)\lt \mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(n)$
 
@@ -120,7 +122,7 @@ $x=\mathfrak{partition\_point}(i)=\mathfrak{partition\_point}(n)\underset{\text{
 
 And thus we get $x\in\{a,b\}$ which contradicts the fact that $x\notin \{a,b\}$.
 
-Thus in summary we’ve shown that $i\neq 0,n$, But since $i\in\{0,...,n\}$, We conclude that it muse be the case that $i\in\{1,...,n-1\}$, And now since $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$ as was to be shown.
+Thus in summary we’ve shown that $i\neq 0,n$, But since $i\in\{0,...,n\}$, We conclude that it muse be the case that $i\in\{1,...,n-1\}$, And now by the fact $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$ as was to be shown.
 
 Q.E.D.
 
