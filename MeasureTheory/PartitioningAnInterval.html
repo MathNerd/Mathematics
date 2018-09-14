@@ -189,6 +189,8 @@ Now we’ll prove the following facts:
 
 **(fact 10):** $\forall i,j\in\{0,...,n-1\},i+2\leq j\longrightarrow\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$
 
+**(fact 11):** $\forall i\in\{0,...,n-1\},\mathscr{l}(\mathfrak{interval}(i))=\frac{b-a}{n}$
+
 **Note:** By **(fact 7)** we can view the function $\mathfrak{interval}$ as a function $\mathfrak{interval}:\{0,...,n-1\}\to\mathscr{P}([a,b])$.
 
 ----------
@@ -374,42 +376,99 @@ Q.E.D.
 
 ----------
 
-Now we’ll show that for each $x\in[a,b]$, $x$ can reside at **exactly 1** interval from the $I_i$’s ***or*** at **exactly 2** intervals from the $I_i$’s and that those intervals must be consecutive. 
+**Proof of (fact 11):**
 
-Inorder to show it, We’ll first define ***the internal points of the partition*** as:
+Let $i\in\{0,...,n-1\}$, Then we have:
+
+$\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$
+
+And thus: 
+
+$\mathscr{l}(\mathfrak{interval}(i))=\mathfrak{partition\_point}(i+1)-\mathfrak{partition\_point}(i)$
+
+But since by **(fact 5)** we have:
+
+$\mathfrak{partition\_point}(i+1)-\mathfrak{partition\_point}(i)=\frac{b-a}{n}$
+
+We conclude that:
+
+$\mathscr{l}(\mathfrak{interval}(i))=\frac{b-a}{n}$
+
+as was to be shown.
+
+Q.E.D.
+
+----------
+
+Now we’ll show that for each $x\in[a,b]$, $x$ can reside at **exactly one** interval of the partition ***or*** at **exactly two** intervals of the partition and that in this case those **two** intervals must be consecutive. 
+
+Inorder to show it, We’ll first define a set that will be called ***the internal points of the partition*** as follows:
 
 **(definition 3):**
-$\mathfrak{internal\_points}:=\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}=\mathfrak{partition\_point}(\{1,...,n-1\})$
+$\mathfrak{internal\_points}:=\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}\underset{\text{by $\bf{(fact\thinspace 6)}$}}{=}\mathfrak{partition\_point}(\{1,...,n-1\})$
 
 Now we’ll prove the following facts:
 
-**(fact 11):** $\mathfrak{internal\_points}\subseteq [a,b]$
+**(fact 12):** $\mathfrak{internal\_points}\subseteq [a,b]$
 
-**Proof of (fact 11):**
+**(fact 13):** $\forall x\in [a,b], x\notin \mathfrak{internal\_points}\longrightarrow\exists ! i\in\{0,...,n-1\},x\in \mathfrak{interval}(i)$
+
+**(fact 14):** $\forall x\in[a,b],x\in \mathfrak{internal\_points}\longrightarrow\exists !i\in\{0,...,n-2\},x\in \mathfrak{interval}(i) \land x\in \mathfrak{interval}({i+1})\land \big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin \mathfrak{interval}(j)\big)$
+
+----------
+**Proof of (fact 12):**
 
 Since by **(fact 2)** we have $\forall i\in\{0,...,n\}, \mathfrak{partition\_point}(i)\in[a,b]$, We get that in particular $\forall i\in\{1,...,n-1\},\mathfrak{partition\_point}(i)\in[a,b]$, And thus $\mathfrak{partition\_point}(\{1,...,n-1\})\subseteq [a,b]$, Which implies that $\mathfrak{internal\_points}\subseteq [a,b]$.
 
 Q.E.D.
 
+----------
+**Proof of (fact 13):**
+
+DO IT!!!
+
+----------
+**Proof of (fact 14):**
+
+DO IT!!!
 
 ----------
 
-**(fact 12):** $\forall x\in [a,b], x\notin \mathfrak{internal\_points}\longrightarrow\exists ! i\in\{0,...,n-1\},x\in \mathfrak{interval}(i)$
+Now we’ll define a function $ \mathfrak{indicator}:\{0,...,n-1\}\times [a,b]\to\{0,1\}$ that will give us a value that will indicate wether or wether not the point passed as the second argument belongs to the partition interval that corresponds to the index passed as the first argument as follows:
 
-**(fact 13)** $\forall x\in[a,b],x\in \mathfrak{internal\_points}\longrightarrow\exists !i\in\{0,...,n-2\},x\in \mathfrak{interval}(i) \land x\in \mathfrak{interval}({i+1})\land \big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin \mathfrak{interval}(j)\big)$
-
-
-----------
-
+**(definition 4):**
 $\forall i\in\{0,...,n-1\},\forall x\in[a,b], \mathfrak{indicator}(i,x):=\begin{cases}
-   1 & x\in I_i \\
-   0 & x\notin I_i
+   1 & x\in \mathfrak{interval}(i) \\
+   0 & x\notin \mathfrak{intercal}(i)
 \end{cases}$
 
+And now by using this function we’ll define a new function $\mathfrak{count}:[a,b]\to\mathbb{N}\cup\{0\}$ which will give us the number of partition intervals to which the point passed as the argument belongs as follows:
+
+**(definition 5):**
 $\forall x\in[a,b], \mathfrak{count}(x):=\sum\limits_{i=0}^{n-1}\mathfrak{indicator}(i,x)$
 
-**(fact 9)** $\forall x\in[a,b], 
+Now we’ll prove the following facts:
 
+**(fact 15):** $\forall x\in [a,b], x\notin \mathfrak{internal\_points}\longrightarrow \mathfrak{count}(x)=1$
+
+**(fact 16):** $\forall x\in [a,b], x\in \mathfrak{internal\_points}\longrightarrow \mathfrak{count}(x)=2$
+
+**(fact 17):** $\forall x\in [a,b], \mathfrak{count}(x)\in\{1,2\}$
+
+----------
+**Proof of (fact 15):**
+
+DO IT!!!
+
+----------
+**Proof of (fact 16):**
+
+DO IT!!!
+
+----------
+**Proof of (fact 17):**
+
+DO IT!!!
 
 ----------
 **Appendix:**
