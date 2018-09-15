@@ -418,14 +418,63 @@ Now we’ll prove the following facts:
 ----------
 **Proof of (fact 12):**
 
-Since by **(fact 2)** we have $\forall i\in\{0,...,n\}, \mathfrak{partition\_point}(i)\in[a,b]$, We get that in particular $\forall i\in\{1,...,n-1\},\mathfrak{partition\_point}(i)\in[a,b]$, And thus $\mathfrak{partition\_point}(\{1,...,n-1\})\subseteq [a,b]$, Which implies that $\mathfrak{internal\_points}\subseteq [a,b]$.
+Since by **(fact 2)** we have $\forall i\in\{0,...,n\}, \mathfrak{partition\_point}(i)\in[a,b]$, We get that in particular $\forall i\in\{1,...,n-1\},\mathfrak{partition\_point}(i)\in[a,b]$, And thus $\mathfrak{partition\_point}(\{1,...,n-1\})\subseteq [a,b]$, Which implies that $\mathfrak{internal\_points}\subseteq [a,b]$ as was to be shown.
 
 Q.E.D.
 
 ----------
 **Proof of (fact 13):**
 
-DO IT!!!
+Let $x\in[a,b]$ be such that $x\notin\mathfrak{internal\_points}$, Then by **(fact 8)** we have $[a,b]=\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)$, And thus we get $x\in\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)$, Which implies that $\exists i\in\{0,...,n-1\},x\in\mathfrak{interval}(i )$, 
+
+Now we’ll prove that: $\forall j\in\{0,...,n-1\}, j\neq i\longrightarrow x\notin \mathfrak{interval}(j)$
+
+Suppose by contradiction that:
+$\exists j\in\{0,...,n-1\},j\neq i\land x\in\mathfrak{interval}(j)$
+
+Since $j\neq i$, We get that there are two cases: **(case 1)** $j\lt i$ or **(case 2)** $j\gt i$
+
+**(case 1):** If $j\lt i$, Then we get by the fact that both $j,i\in\mathbb{Z}$, That it must be the case that $j+1\leq i$, And thus we get that there are two cases: **(case 1.1)** $i=j+1$ or **(case 1.2)** $j+1\lt i$
+
+**(case 1.1):** If $i=j+1$, Then we get by the fact that $i\in\{0,...,n-1\}$, That it must be the case that $j+1\in\{0,...,n-1\}$, And thus we conclude that $0\leq j+1\leq n-1$, Which implies that **(ineq 1)** $-1\leq j\leq n-2$, But since $j\in\{0,...,n-1\}$, We conclude that it is also the case that **(ineq 2)** $0\leq j\leq n-1$, And thus we conclude from **(ineq 1)** and **(ineq 2)** that it must be the case that $0\leq j\leq n-2$, And thus we conclude that **(§.1)** $j\in\{0,...,n-2\}$, 
+
+Now we can conclude by **(§.1)** and by **(fact 9)** that **(§.2)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(j+1)=\{\mathfrak{partition\_point}(j+1)\}$
+
+But since $i=j+1$, We conclude that $\mathfrak{interval}(i)=\mathfrak{interval}(j+1)$, And thus $\mathfrak{interval}(j)\cap\mathfrak{interval}(i)=\mathfrak{interval}(j)\cap\mathfrak{interval}(j+1)$, Which implies by **(§.2)** that **(§.3)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i)=\{\mathfrak{partition\_point}(j+1)\}$
+
+But since $x\in\mathfrak{interval}(j)$ and $x\in\mathfrak{interval}(i)$, We conclude that $x\in\mathfrak{interval}(j)\cap\mathfrak{interval}(i)$, Which implies by **(§.3)** that $x\in\{\mathfrak{partition\_point}(j+1)\}$, And thus $x=\mathfrak{partition\_point}(j+1)$, But since by **(§.1)** we have $j\in\{0,...,n-2\}$, We conclude that $j+1\in\{1,...,n-1\}$, And thus we conclude that:
+
+$\mathfrak{partition\_point}(j+1)\in\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{internal\_points}$
+
+Which implies that $x\in\mathfrak{internal\_points}$, But this contradicts the fact that $x\notin \mathfrak{partition\_points}$ and we’ve reached a contradiction.
+
+**(case 1.2):** If $j+1\lt i$, Then we get by the fact that both $j,1\in\mathbb{Z}$, That it must be the case that $j+1\in\mathbb{Z}$, And thus we conclude that both $j+1,i \in\mathbb{Z}$, And we can conclude by the fact that $j+1\lt i$, That it must be the case that $j+2=(j+1)+1\leq i$, And thus we can conclude by **(fact 10)** that **(§.1)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i)=\emptyset$, But since $x\in\mathfrak{interval}(j)$ and since $x\in\mathfrak{interval}(i)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, Which implies that $x\in\emptyset$ and we’ve reached a contradiction.
+
+**(case 2):** If $j\gt i$, Then we get be the fact that both $j,i\in\mathbb{Z}$, That it must be the case that $j\geq i+1$, And thus we get that there are two cases: **(case 2.1)** $j=i+1$ or **(case 2.2)** $j\gt i+1$
+
+**(case 2.1):** If $j=i+1$, Then we get by the fact that $j\in\{0,...,n-1\}$, That it must be the case that $i+1\in\{0,...,n-1\}$, And thus we conclude that $0\leq i +1\leq n-1$, Which implies that **(ineq 1)** $-1\leq i \leq n-2$, But since $i\in\{0,...,n-1\}$, We conclude that it is also the case that **(ineq 2)** $0\leq i \leq n-1$, And thus we conclude from **(ineq 1)** and **(ineq 2)** that it must be the case that $0\leq i\leq n-2$, And thus we conclude that **(§.1)** $i\in\{0,...,n-2\}$, 
+
+Now we can conclude by **(§.1)** and by **(fact 9)** that **(§.2)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)=\{\mathfrak{partition\_point}(i+1)\}$
+
+But since $j=i+1$, We conclude that $\mathfrak{interval}(j)=\mathfrak{interval}(i+1)$, And thus $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$, Which implies by **(§.2)** that **(§.3)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\{\mathfrak{partition\_point}(i+1)\}$
+
+But since $x\in\mathfrak{interval}(i)$ and $x\in\mathfrak{interval}(j)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, Which implies by **(§.3)** that $x\in\{\mathfrak{partition\_point}(i+1)\}$, And thus $x=\mathfrak{partition\_point}(i+1)$, But since by **(§.1)** we have $i\in\{0,...,n-2\}$, We conclude that $i+1\in\{1,...,n-1\}$, And thus we conclude that:
+
+$\mathfrak{partition\_point}(i+1)\in\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{internal\_points}$
+
+Which implies that $x\in\mathfrak{internal\_points}$, But this contradicts the fact that $x\notin \mathfrak{partition\_points}$ and we’ve reached a contradiction.
+
+**(case 2.2):** If $j\gt i+1$, Then we get by the fact that both $i,1\in\mathbb{Z}$, That it must be the case that $i+1\in\mathbb{Z}$, And thus we conclude that both $i+1,j \in\mathbb{Z}$, And we can conclude by the fact that $i+1\lt j$, That it must be the case that $i+2=(i+1)+1\leq j$, And thus we can conclude by **(fact 10)** that **(§.1)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$, But since $x\in\mathfrak{interval}(i)$ and since $x\in\mathfrak{interval}(j)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, Which implies that $x\in\emptyset$ and we’ve reached a contradiction.
+
+Thus we see in each of those cases that we reach a contradiction, And thus it must be the case that: 
+
+$\forall j\in\{0,...,n-1\}, j\neq i\longrightarrow x\notin \mathfrak{interval}(j)$
+
+as was to be shown.
+
+In summary we’ve shown that $\exists i\in\{0,...,n-1\},x\in\mathfrak{interval}(i )$ and that $\forall j\in\{0,...,n-1\}, j\neq i\longrightarrow x\notin \mathfrak{interval}(j)$, And thus we conclude that $\exists ! i\in\{0,...,n-1\},x\in\mathfrak{interval}(i )$ as was to be shown.
+
+Q.E.D.
 
 ----------
 **Proof of (fact 14):**
