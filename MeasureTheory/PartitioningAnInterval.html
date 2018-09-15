@@ -477,9 +477,104 @@ In summary we’ve shown that $\exists i\in\{0,...,n-1\},x\in\mathfrak{interval}
 Q.E.D.
 
 ----------
+**LAST CHECK!!!**
+
 **Proof of (fact 14):**
 
-DO IT!!!
+Let $x\in[a,b]$ be such that $x\in\mathfrak{internal\_points}$, Then we get by the fact that $\mathfrak{internal\_points}=\mathfrak{partition\_point}(\{1,...,n-1\})$, That $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$, And thus $\exists \hat{i}\in\{1,...,n-1\}, x=\mathfrak{partition\_point}(\hat{i})$,
+
+Now since $\hat{i}\in\{1,...,n-1\}$, We conclude that **(§.1)** $\hat{i}-1\in\{0,...,n-2\}$, And thus we get by **(fact 9)** that **(§.2)** $\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})=\{\mathfrak{partition\_point}(\hat{i})\}$,
+
+But since $x=\mathfrak{partition\_point}(\hat{i})$, We conclude that $\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})=\{x\}$, And thus we conclude that **(§.4)** $x\in\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})$,
+
+Now let’s denote $i:=\hat{i}-1$, Then we get by **(§.1)** that **(§.3)** $i\in\{0,...,n-2\}$, 
+
+In addition we have $i+1=(\hat{i}-1)+1=\hat{i}$, And thus we can conclude that:
+
+$\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})=\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
+
+And thus we conclude by **(§.4)** that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
+
+ And thus we conclude that:
+
+$x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+So far we’ve shown that:
+
+$\exists i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+Now we’ll show that:
+
+$\forall j\in\{0,...,n-2\},j\neq i\longrightarrow \lnot\big(x\in\mathfrak{interval}(j)\land x\in\mathfrak{interval}(j+1)\big)$
+
+Suppose by contradiction that:
+
+$\exists j\in\{0,...,n-2\},j\neq i\land \big(x\in\mathfrak{interval}(j)\land x\in\mathfrak{interval}(j+1)\big)$
+
+Since $j\neq i$, We get that there are two cases: **(case 1)** $j\lt i$ or **(case 2)** $j\gt i$
+
+**(case 1):** If $j\lt i$, Then we get by the fact that $i,j\in\mathbb{Z}$, That it must be the case that $j+1\leq i$, And thus we conclude that $j+2=(j+1)+1\leq i+1$, And thus we conclude by **(fact 10)** that **(§§)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i+1)=\emptyset$, But since $x\in\mathfrak{interval}(j)$ and since $x\in\mathfrak{interval}(i+1)$, We conclude that $x\in\mathfrak{interval}(j)\cap\mathfrak{interval}(i+1)$, And therefore we conclude by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+**(case 2):** If $j\gt i$, Then we get by the fact that $i,j\in\mathbb{Z}$, That it must be the case that $i+1\leq j$, And thus we conclude that $i+2=(i+1)+1\leq j+1$, And thus we conclude by **(fact 10)** that **(§§)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(j+1)=\emptyset$, But since $x\in\mathfrak{interval}(i)$ and since $x\in\mathfrak{interval}(j+1)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j+1)$, And therefore we conclude by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+Thus we see from both cases that we reach a contradiction, And therefore it must be the case that:
+
+$\forall j\in\{0,...,n-2\},j\neq i\longrightarrow \lnot\big(x\in\mathfrak{interval}(j)\land x\in\mathfrak{interval}(j+1)\big)$
+
+As was to be shown.
+
+So far we’ve shown that:
+
+$\exists i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+And that:
+
+$\forall j\in\{0,...,n-2\},j\neq i\longrightarrow \lnot\big(x\in\mathfrak{interval}(j)\land x\in\mathfrak{interval}(j+1)\big)$
+
+And thus we conclude that:
+
+$\exists !i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+Now we’ll show that:
+
+$\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin\mathfrak{interval}(j)$
+
+Supposed by contradiction that:
+
+$\exists j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\in\mathfrak{interval}(j)$
+
+Then we get that there are two cases: **(case 1)** $j\leq i -1$ or **(case 2)** $i+2\leq j$
+
+**(case 1):** If $j\leq i-1$, Then we get that there are two cases: **(case 1.1)** $j=i-1$ or **(case 1.2)** $j\lt i-1$
+
+**(case 1.1):** If $j=i-1$, Then we get that $j+2=(i-1)+2=i+1$, And thus in particular $j+2\leq i+1$, And we can conclude by **(fact 10)** that **(§§)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i+1)=\emptyset$, 
+But since $x\in\mathfrak{interval}(j)$ and $x\in\mathfrak{interval}(i+1)$, We conclude that $x\in\mathfrak{interval}(j)\cap\mathfrak{interval}(i+1)$, And thus we get by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+**(case 1.2):** If $j\lt i-1$, Then we get by the fact that both $j,i-1\in\mathbb{Z}$, That it must be the case that $j+1\leq i-1$, And thus we conclude $j+2\leq i$, Which implies by **(fact 10)** that **(§§)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i)=\emptyset$, But since $x\in\mathfrak{interval}(j)$ and $x\in\mathfrak{interval}(i)$, We conclude that $x\in\mathfrak{interval}(j)\cap\mathfrak{interval}(i)$, And thus we get by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+**(case 2):** If $i+2\leq j$, Then we conclude by **(fact 10)** that **(§§)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$, But since $x\in\mathfrak{interval}(i)$ and since  $x\in\mathfrak{interval}(j)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, And thus we get by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+Thus we see from each of those cases that we always reach a contradiction, And thus we conclude that it must be the case that
+
+$\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin\mathfrak{interval}(j)$
+
+As was to be shown.
+
+Therefore in summary we’ve shown that:
+
+$\exists !i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+And that:
+
+$\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin\mathfrak{interval}(j)$
+
+And thus we conclude that:
+
+$\exists !i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)\land\big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin\mathfrak{interval}(j)\big)$
+
+As was to be shown.
+
+Q.E.D.
 
 ----------
 
