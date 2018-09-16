@@ -666,7 +666,78 @@ $\forall x,y\in\mathbb{R}, x\leq y\longrightarrow \lfloor x\rfloor\leq \lfloor y
 ----------
 **Proof of (lemma 1):**
 
-**WRITE IT NOW!!!**
+We’ll prove by induction on $n$ that:
+
+$\forall n\in\mathbb{N}, \forall f\in\mathbb{R}^{\{0,...,n\}},\big(\forall i\in\{0,...,n-1\},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,...,n\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+**(base case):** 
+
+For $n=1\in\mathbb{N}$, We must show that:
+
+$\forall f\in\mathbb{R}^{\{0,1\}},\big(\forall i\in\{0\},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,1\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+Let $f\in\mathbb{R}^{\{0,1\}}$ be such that **(§§)** $\forall i\in\{0\},f(i)\lt f(i +1)$,
+
+We’ll show that:
+
+$\forall i,j\in\{0,1\},i \lt j\longrightarrow f(i)\lt f(j)$
+
+Let $i,j\in\{0,1\}$ be such that $i\lt j$, Then we get by the fact that both $i,j\in\mathbb{Z}$, That it must be the case that **(§.1)** $i+1\leq j$, But since $j\in\{0,1\}$, We conclude that $j\leq 1$, And thus by **(§.1)** we conclude that that $i+1\leq 1$, And so **(§.2)** $i\leq 0$, But since $i\in\{0,1\}$, We conclude that $0\leq i$, And thus we conclude by this fact and by **(§.2)** that $0\leq i\leq 0$, Which implies that **(§.3)** $i=0$, And thus we conclude by this fact and by **(§.1)** that **(§.4)** $1=0+1=i +1\leq j$, 
+But since $j\in\{0,1\}$, We conclude that $j\leq 1$, And thus we conclude by this fact and by **(§.4)** that $1\leq j\leq 1$, Which implies that **(§.5)** $j=1$.
+
+Now since $i=0\in\{0\}$, We conclude by **(§§)** that **(§.6)** $f(i)\lt f(i+1)$, But since $i+1=0+1=1=j$, We conclude that $f(j)=f(i+1)$, And thus we conclude by **(§.6)** that $f(i)\lt f(j)$ as was to be shown.
+
+**(inductive step):**
+
+Suppose that for some some $n=k\in\mathbb{N}$ we have:
+
+$\forall f\in\mathbb{R}^{\{0,...,k\}},\big(\forall i\in\{0,...,k-1\},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,...,k\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+And we’ll prove that for $n=k+1\in\mathbb{N}$ we have:
+
+$\forall f\in\mathbb{R}^{\{0,...,k,k+1\}},\big(\forall i\in\{0,...,k-1,k \},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,...,k,k+1\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+Let $f\in\mathbb{R}^{\{0,...,k,k+1\}}$ be some function such that:
+
+**(§§)** $\forall i\in\{0,...,k-1,k \},f(i)\lt f(i +1)$
+
+Let’s define a function $g\in\mathbb{R}^{\{0,...,k\}}$ as follows:
+
+$\forall i\in\{0,...,k\},g(i):=f(i)$
+
+We’ll show that:
+
+$\forall i\in\{0,...,k-1\},g(i)\lt g(i+1)$
+
+Let $i\in\{0,...,k-1\}$, Then we get $i+1\in\{1,...,k\}$, But since $\{0,...,k-1\}\subseteq\{0,...,k\}$ and since $\{1,...,k\}\subseteq\{0,...,k\}$, We conclude that both $i,i+1\in\{0,...,k\}$, And thus we conclude that both $g(i)$ and $g(i+1)$ are defined and we have $g(i)=f(i)$ and $g(i+1)=f(i+1)$, But since by **(§§)** we have $f(i)\lt f(i+1)$, We conclude that $g(i)\lt g(i+1)$ as was to be shown.
+
+And thus we can conclude by the ***induction hypothesis*** that:
+
+$\forall i,j\in\{0,...,k\},i\lt j\longrightarrow g(i)\lt g(j)$
+
+And thus we conclude by the way we defined $g$ that:
+
+**(§§§)** $\forall i,j\in\{0,...,k\},f(i)\lt f(j)$
+
+Now we’ll prove that:
+
+$\forall i,j\in\{0,...,k,k+1\},i \lt j\longrightarrow f(i)\lt f(j)$
+
+Let $i,j\in\{0,...,k,k+1\}$ be such that $i\lt j$, Now there are two cases: **(case 1)** $j\neq k+1$ or **(case 2)** $j=k+1$
+
+**(case 1):** If $j\neq k+1$, Then we get that $j\in\{0,... k\}$, And thus we conclude that $j\leq k$, But since $i\lt j$, We conclude that $i\lt k$, And thus we conclude that $i\in\{0,...,k\}$ too, And therefore we conclude by **(§§§)** that $f(i)\lt f(j)$.
+
+**(case 2):** If $j=k+1$, Then we can conclude by the that both $i,j\in\mathbb{Z}$ and by the fact that $i\lt j$, That it must be the case that $i+1\leq j$, And thus we conclude $i+1\leq k+1$, Which implies that $i\leq k$, And so $i\in\{0,...,k\}$.
+
+Now there are two cases: **(case 2.1)** $i\lt k$ or **(case 2.2)** $i=k$
+
+**(case 2.1):** If $i\lt k$, Then because  $k\in\{0,...,k\}$, And beacuse $i\in\{0,...,k\}$, We conclude by **(§§§)** that $f(i)\lt f(k)$, But since by **(§§)** we have $f(k)\lt f(k+1)$, We conclude that $f(i)\lt f(k+1)$, But since $j=k+1$, We conclude that $f(j)=f(k+1)$, And thus we conclude that $f(i)\lt f(j)$.
+
+**(case 2.2):** If $i=k$, Then we get by **(§§)** that $f(k)\lt f(k+1)$, But since $i=k$ and $j=k+1$, We conclude that $f(i)\lt f(j).
+
+Thus we see from each of those cases that it is always the case that $f(i)\lt f(j)$ as was to be shown.
+
+Q.E.D.
 
 ----------
 **Proof of (lemma 2):**
