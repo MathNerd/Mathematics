@@ -1,0 +1,780 @@
+<!DOCTYPE html><html> <head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script><script type="text/javascript" async="true"></script><style type="text/css">
+  .proof {
+      white-space: pre-line;
+  }</style></head><body><div class="proof">
+  
+**Partitioning an interval into intervals of equal length:**
+
+Let $a,b\in\mathbb{R}$ be some real numbers such that $a\lt b$, And let $n\in\mathbb{N}$ be some natural number, We will partition the closed-interval $[a,b]$ into $n$ closed-intervals of equal length:
+
+First let’s define a function $\mathfrak{partition\_point}:\{0,..,n\}\to\mathbb{R}$ as follows:
+
+**(definition 1):** $\forall i\in\{0,...,n\},\mathfrak{partition\_point}(i):=\frac{(n-i)a+ib}{n}$
+
+(This function will give us the partition points)
+
+Now we’ll prove the following facts about this function:
+
+**(fact 1):** $\mathfrak{partition\_point}(0)=a$ and $\mathfrak{partition\_point}(n)=b$
+
+**(fact 2):** $\forall i\in\{0,...,n\},\mathfrak{partition\_point}(i)\in [a,b]$
+
+**(fact 3):** $\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$
+
+**(fact 4):** $\forall i,j\in\{0,...,n\},i\lt j\longrightarrow \mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(j)$
+
+**(fact 5):** $\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i+1)-\mathfrak{partition\_point}(i)=\frac{b-a}{n}$
+
+**(fact 6):** $\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$
+
+**Note:** By **(fact 2)** we can view the function $\mathfrak{partition\_point}$ as a function $\mathfrak{partition\_point}:\{0,...,n\}\to[a,b]$.
+
+----------
+**Proof of (fact 1):**
+
+By definition of $\mathfrak{partition\_point}$ we have:
+
+$\mathfrak{partition\_point}(0)=\frac{(n-0)a+0\cdot b}{n}=\frac{na}{n}=a$
+
+And:
+
+$\mathfrak{partition\_point}(n)=\frac{(n-n)a+nb }{n}=\frac{0\cdot a+nb}{n}=\frac{nb}{n}=b$
+
+Q.E.D.
+
+
+----------
+**Proof of (fact 2):**
+
+Let $i\in\{0,...,n\}$, Then we have **(ineq 1)** $0\leq i\leq n$, Now since it is known that $a\lt b$, We get that $0\lt b-a$, And thus by multiplying **(ineq 1)** by $b-a\gt 0$, We conclude that $0\leq i(b-a)\leq n(b-a)$, And so $0\leq ib-ia\leq nb-na$, And after adding $na$ to this inequality, We get $na\leq na+ib-ia\leq na+nb-na$, And thus **(ineq 2)** $na\leq (n-i)a+ib\leq nb$, Now since $n\in\mathbb{N}$, We get that $n\gt 0$, And thus by dividing **(ineq 2)** by $n\gt 0$, We conclude that **(ineq 3)** $a\leq \frac{(n-i)a+i b}{n}\leq b$, But since $i\in\{0,...,n\}$, We get that $\mathfrak{partition\_point}(i)$ is defined and we have $\mathfrak{partition\_point}(i )=\frac{(n-i)a+ib}{n}$, And thus by **(ineq 3)**, We conclude that $a \leq \mathfrak{partition\_point}(i)\leq b$, And so $\mathfrak{partition\_point}(i)\in [a,b]$ as was to be shown.
+
+Q.E.D.
+
+
+----------
+**Proof of (fact 3):**
+
+Let $i\in\{0,...,n-1\}$, Since it is known that $a\lt b$, We get that $0\lt b-a$, And after adding $(n-i)a+ib$ to this inequality, We get **(ineq 1)** $(n-i )a+ib\lt (n-i)a+ib+b-a=(n-i -1)a+(i +1)b$, But since $n\in\mathbb{N}$, We have $n\gt 0$, And thus by dividing **(ineq 1)** by $n\gt 0$, We conclude that **(ineq 2)** $\frac{(n-i )a+ib}{n}\lt \frac{(n-i -1)a+(i +1)b}{n}$,
+
+ Now since $i\in\{0,...,n-1\}$, We have $i+1\in\{1,...,n\}$, Also since $\{0,...,n-1\}\subseteq\{0,...,n\}$ and since $\{1,...,n\}\subseteq\{0,...,n\}$, We conclude that both $i,i+1\in\{0,...,n\}$, And thus we get that both $\mathfrak{partition\_point}(i)$ and $\mathfrak{partition\_point}(i+1)$ are defined and we have $\mathfrak{partition\_point}(i)=\frac{(n-i)a+ib}{n}$ and $\mathfrak{partition\_point}(i+1)=\frac{(n-i-1)a+(i+1)b}{n}$, And thus by **(ineq 2)**, We get $\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$ as was to be shown.
+
+Q.E.D.
+
+
+----------
+**Proof of (fact 4):**
+
+Immediately follows from **(fact 3)** and **(lemma 1)** shown at the ***appendix*** below.
+
+----------
+**Proof of (fact 5):**
+
+Let $i\in\{0,...,n-1\}$,  Then we have $i+1\in\{1,...,n\}$, Now since $\{0,...,n-1\}\subseteq\{0,...,n\}$ and since $\{1,...,n\}\subseteq\{0,...,n\}$, We conclude that both $i,i+1\in\{0,...,n\}$, And thus we get that both $\mathfrak{partition\_point}(i)$ and $\mathfrak{partition\_point}(i+1)$ are defined and we have $\mathfrak{partition\_point}(i)=\frac{(n-i)a+ib}{n}$ and $\mathfrak{partition\_point}(i+1)=\frac{(n-i-1)a+(i+1)b}{n}$, And thus 
+
+$\mathfrak{partition\_point}(i+1)-\mathfrak{partition\_point}(i)=\frac{(n-i-1)a+(i+1)b}{n}-\frac{(n-i)a+ib}{n}=\frac{na-ia-a+ib+b}{n}-\frac{na-ia+ib}{n}=\frac{na-ia-a+ib+b-na+ia-ib}{n}=\frac{b-a}{n}$
+
+as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 6):**
+
+**Direct Proof:**
+
+Inorder to prove that:
+
+$\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$
+
+We will prove that:
+
+ **(1)** $\mathfrak{partition\_point}(\{1,...,n-1\})\subseteq\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$ 
+
+And that:
+
+ **(2)** $\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}\subseteq\mathfrak{partition\_point}(\{1,...,n-1\})$
+
+**Proof of (1):**
+
+Let $x\in \mathfrak{partition\_point}(\{1,...,n-1\})$, Then we get that $\exists i\in\{1,...,n-1\},x=\mathfrak{partition\_point}(i)$, Now since $i\in\{1,...,n-1\}$, And since $\{1,...,n-1\}\subseteq \{0,...,n\}$, We conclude that $i\in\{0,...,n\}$, Also since $i\in\{1,...,n-1\}$, We get that $1\leq i\leq n-1$, But since $0\lt 1$ and since $n-1\lt n$, We conclude that $0\lt i\lt n$, And so in summary we see that $0,i,n\in\{0,...,n\}$ such that $0\lt i\lt n$, And thus we can conclude by **(fact 4)** that:
+
+$\mathfrak{partition\_point}(0)\lt \mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(n)$
+
+But since by **(fact 1)** we have $\mathfrak{partition\_point}(0)=a$ and $\mathfrak{partition\_point}(n)=b$, We conclude that $a\lt \mathfrak{partition\_point}(i )\lt b$, And thus in particular $\mathfrak{partition\_point}(i)\neq a,b$, Which implies that $\mathfrak{partition\_point}(i)\notin\{a,b\}$, But since $x=\mathfrak{partition\_point}(i)$, We conclude that **(§)** $x\notin \{a,b\}$, 
+
+Now since we’ve already shown that $i\in\{0,...,n\}$ and since we know that $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{0,...,n\})$, And thus we can conclude by this fact and by **(§)** that $x\in\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}$ as was to be shown.
+
+**Proof of (2):**
+
+Let $x\in\mathfrak{partition\_point}(\{0,...,n\})\setminus \{a,b\}$, Then we get that $x\in\mathfrak{partition\_point}(\{0,...,n\})$ and that $x\notin\{a,b\}$, Now since $x\in\mathfrak{partition\_point}(\{0,...,n\})$, We conclude that $\exists i\in\{0,...,n\},x=\mathfrak{partition\_point}(i)$,
+
+We will show that $i\neq 0$ and that $i\neq n$:
+
+Suppose by contradiction that $i=0$, Then we get:
+
+$x=\mathfrak{partition\_point}(i)=\mathfrak{partition\_point}(0)\underset{\text{by $\bf{(fact\thinspace 1)}$}}{=}a$
+
+And thus we get $x\in\{a,b\}$ which contradicts the fact that $x\notin \{a,b\}$.
+
+Now suppose by contradiction that $i=n$, Then we get:
+
+$x=\mathfrak{partition\_point}(i)=\mathfrak{partition\_point}(n)\underset{\text{by $\bf{(fact\thinspace 1)}$}}{=}b$
+
+And thus we get $x\in\{a,b\}$ which contradicts the fact that $x\notin \{a,b\}$.
+
+Thus in summary we’ve shown that $i\neq 0,n$, But since $i\in\{0,...,n\}$, We conclude that it must be the case that $i\in\{1,...,n-1\}$, And now by the fact $x=\mathfrak{partition\_point}(i)$, We conclude that $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$ as was to be shown.
+
+Q.E.D.
+
+**Alternative Proof:**
+
+We have:
+
+$\mathfrak{partition\_point}(\{0,...,n\})=\mathfrak{partition\_point}(\{1,...,n-1\}\cup\{0,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\mathfrak{partition\_point}(\{0,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{\mathfrak{partition\_point}(0),\mathfrak{partition\_point}(n)\}\underset{\text{by $\bf{(fact\thinspace 1)}$}}{=}\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{a,b\}$
+
+And so:
+
+$\mathfrak{partition\_point}(\{0,...,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{a,b\}$
+
+Now we’ll show that: $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}=\emptyset$
+
+Suppose by contradiction that $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}\neq\emptyset$, Then we get that there exists some $y\in\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}$, And thus $y\in\mathfrak{partition\_point}(\{1,...,n-1\})$ and $y\in \{a,b\}$, 
+
+Now since $y\in\mathfrak{partition\_point}(\{1,...,n-1\})$, We get that $\exists i\in\{1,...,n-1\},y=\mathfrak{partition\_point}(i)$,
+
+Now since $i\in\{1,...,n-1\}$, And since $\{1,...,n-1\}\subseteq \{0,...,n\}$, We conclude that $i\in\{0,...,n\}$, Also since $i\in\{1,...,n-1\}$, We get that $1\leq i\leq n-1$, But since $0\lt 1$ and since $n-1\lt n$, We conclude that $0\lt i\lt n$, And so in summary we see that $0,i,n\in\{0,...,n\}$ such that $0\lt i\lt n$, And thus we can conclude by **(fact 4)** that:
+
+$\mathfrak{partition\_point}(0)\lt \mathfrak{partition\_point}(i )\lt \mathfrak{partition\_point}(n)$
+
+But since by **(fact 1)** we have $\mathfrak{partition\_point}(0)=a$ and $\mathfrak{partition\_point}(n)=b$, We conclude that $a\lt \mathfrak{partition\_point}(i)\lt b$, And thus in particular $\mathfrak{partition\_point}(i)\neq a,b$, Which implies that $\mathfrak{partition\_point}(i)\notin\{a,b\}$, But since $y=\mathfrak{partition\_point}(i)$, We conclude that $y\notin\{a,b\}$, But this contradicts the fact that $y\in\{a,b\}$.
+
+Thus it must be the case that $\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}=\emptyset$ as was to be shown.
+
+In summary we’ve shown that:
+
+$\mathfrak{partition\_point}(\{0,...,n\})=\mathfrak{partition\_point}(\{1,...,n-1\})\cup\{a,b\}$ 
+
+And that:
+
+$\mathfrak{partition\_point}(\{1,...,n-1\})\cap\{a,b\}=\emptyset$
+
+And thus we can conclude by **(lemma 2)** shown at the ***appendix*** below that:
+
+$\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}=\mathfrak{partition\_point}(\{1,...,n-1\})$ 
+
+As was to be shown.
+
+Q.E.D.
+
+----------
+Now we can define the partition intervals as a function $\mathfrak{interval}:\{0,...,n-1\}\to \mathscr{P}(\mathbb{R})$ as follows:
+
+**(definition 2):**
+$\forall i\in\{0,...,n-1\}, \mathfrak{interval}(i):=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$
+
+**Note:** Since by **(fact 3)** we have
+
+$\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$
+
+We get that indeed the definition above defines non-degenerate intervals.
+
+Now we’ll prove the following facts:
+
+**(fact 7):** $\forall i\in\{0,...,n-1\},\mathfrak{interval}(i)\subseteq [a,b]$
+
+**(fact 8):** $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)=[a,b]$
+
+**(fact 9):** $\forall i\in\{0,...,n-2\},\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)=\{\mathfrak{partition\_point}(i+1)\}$
+
+**(fact 10):** $\forall i,j\in\{0,...,n-1\},i+2\leq j\longrightarrow\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$
+
+**(fact 11):** $\forall i\in\{0,...,n-1\},\mathscr{l}(\mathfrak{interval}(i))=\frac{b-a}{n}$
+
+**Note:** By **(fact 7)** we can view the function $\mathfrak{interval}$ as a function $\mathfrak{interval}:\{0,...,n-1\}\to\mathscr{P}([a,b])$.
+
+----------
+**Proof of (fact 7):**
+
+Let $i\in\{0,...,n-1\}$, Then we get that $\mathfrak{interval}(i)$ is defined and we have **(§.1)** $\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$, 
+
+Now we’ll show that $\mathfrak{interval}(i)\subseteq [a,b]$:
+
+Let $x\in\mathfrak{interval}(i)$, Then we get by **(§.1)** that $x\in[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$, And thus **(§.2)** $\mathfrak{partition\_point}(i)\leq x\leq\mathfrak{partition\_point}(i+1)$, But since $i\in\{0,...,n-1\}$, We get that $i+1\in\{1,...,n\}$, And since $\{0,...,n-1\}\subseteq\{0,...,n\}$ and $\{1,...,n\}\subseteq\{0,...,n\}$, We conclude that both $i,i+1\in\{0,...,n\}$, And thus we can conclude by **(fact 2)** that $\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)\in [a,b]$, Which implies that $a\leq \mathfrak{partition\_point}(i)$ and $\mathfrak{partition\_point}(i+1)\leq b$, And thus we conclude by **(§.2)** that $a\leq x\leq b$, Which implies that $x\in[a,b]$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 8):**
+
+Inorder to prove that:
+
+$\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)=[a,b]$
+
+We will prove that:
+
+ **(1)** $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)\subseteq[a,b]$
+
+And that:
+
+ **(2)** $[a,b]\subseteq\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)$
+
+**Proof of (1):**
+
+Since by **(fact 7)** we have $\forall i\in\{0,...,n-1\},\mathfrak{interval}(i)\subseteq[a,b]$, We immediately conclude that $\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)\subseteq[a,b]$ as was to be shown.
+
+**Proof of (2):**
+
+Let $x\in[a,b]$, Then we have $a\leq x\leq b$, Now there are two cases: **(case 1)** $x=b$ or **(case  2)** $x\neq b$ 
+
+**(case 1):** If $x=b$, Then since $n-1\in\{0,...,n-1\}$, We get that $\mathfrak{interval}(n-1)$ is defined and satisfies 
+
+$\mathfrak{interval}(n-1)=[\mathfrak{partition\_point}(n-1),\mathfrak{partition\_point}(n)]$
+
+And thus $\mathfrak{partition\_point}(n)\in\mathfrak{interval}(n-1)$
+
+But since by **(fact 1)** we have $\mathfrak{partition\_point}(n)=b$, We conclude that $b\in\mathfrak{interval}(n-1)$, But since $x=b$, We conclude that $x\in\mathfrak{interval}(n-1)$, And thus $x\in\bigcup\limits_{i=0}^{n-1}\mathfrak{interval}(i)$ as was to be shown.
+
+**(case 2):** If $x\neq b$, Then we get that $a\leq x\lt b$, And thus **(§.1)** $0\leq x-a\lt b-a$, But since it is known that $a\lt b$, We conclude that $0\lt b-a$, And thus by dividing the inequality **(§.1)** by $b-a\gt 0$, We conclude that **(§.2)** $0\leq \frac{x-a}{b-a}\lt 1$, Now since $n\in\mathbb{N}$, We conclude that $n\gt 0$, And thus by multiplying the inequality **(§.2)** by $n\gt 0$, We conclude that $0\leq \frac{n(x-a)}{b-a}\lt n$, 
+
+Now since $0\leq \frac{n(x-a)}{b-a}$, We conclude by **(lemma 3)** in the ***appendix*** below that $\lfloor 0\rfloor\leq \lfloor \frac{n(x-a)}{b-a}\rfloor$, But since $0\in\mathbb{Z}$, We conclude that $\lfloor 0\rfloor=0$, And thus $0\leq \lfloor\frac{n(x-a)}{b-a}\rfloor$, 
+
+Also since $\frac{n(x-a)}{b-a}\lt n$ and since $\lfloor \frac{n(x-a)}{b-a}\rfloor\leq \frac{n(x-a)}{b-a}$, We conclude that $\lfloor \frac{n(x-a)}{b-a}\rfloor\lt n$,
+
+ And in summary we’ve got $0\leq\lfloor \frac{n(x-a)}{b-a}\rfloor\lt n$
+
+Now let’s denote **(§.3)** $i:=\lfloor\frac{n(x-a)}{b-a}\rfloor$, Then we get that $0\leq i\lt n$ and that $i\in\mathbb{Z}$,
+
+Now by **(§.3)** we conclude by definition of $\lfloor\bullet\rfloor$ that $i\leq \frac{n(x-a)}{b-a}\lt i +1$, And thus by multiplying this inequality by $b-a\gt 0$, We conclude that $i(b-a)\leq n(x-a)\lt (i+1)(b-a)$, Which is equivalent to $ib-ia \leq nx-na\lt ib-ia +b-a$, And thus by adding $na$ to this inequality, We conclude that $na+ib-ia \leq na+nx-na \lt na+ib-ia +b-a$, Which is equivalent to $(n-i)a+ib \leq nx \lt (n-i-1)a+(i+1)b$, And thus by dividing this inequlaity by $n\gt 0$, We conclude that **(§.4)** $\frac{(n-i)a+ib}{n} \leq x \lt \frac{(n-i-1)a+(i+1)b}{n}$, 
+
+Now since both $i,n\in\mathbb{Z}$, And since $i\lt n$, We conclude that it must be the case that $i+1\leq n$, And thus $i\leq n-1$, Which implies that $0\leq i\leq n-1$, And thus we conclude that $i\in\{0,...,n-1\}$,
+
+Now since $i\in\{0,...,n-1\}$, We conclude that $i+1\in\{1,...,n\}$, But since $\{0,...,n-1\}\subseteq\{0,...,n\}$ and since $\{1,...,n\}\subseteq\{0,...,n\}$, We conclude that both $i,i+1\in\{0,...,n\}$, And thus we get that both $\mathfrak{partition\_point}(i)$ and $\mathfrak{partition\_point}(i+1)$ are defined and satisfy $\mathfrak{partition\_point}(i)=\frac{(n-i)a+ib}{n}$ and $\mathfrak{partition\_point}(i+1)=\frac{(n-i-1)a+(i+1)b}{n}$, And now by **(§.4)** we conclude that $\mathfrak{partition\_point}(i)\leq x\lt \mathfrak{partition\_point}(i+1)$, And thus in particular $\mathfrak{partition\_point}(i)\leq x\leq \mathfrak{partition\_point}(i+1)$, Which implies that $x\in[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$, But since $i\in\{0,...,n-1\}$, We conclude that $\mathfrak{interval}(i)$ is defined and satisfies $\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$, And thus we conclude that $x\in\mathfrak{interval}(i)$.
+
+In summary we’ve shown that $\exists i\in\{0,...,n-1\},x\in\mathfrak{interval}(i)$,
+and thus we conclude that $x\in\bigcup\limits_{i=0}^{n-1} \mathfrak{interval}(i)$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 9):**
+
+Let $i\in\{0,...,n-2\}$, Then we get $i+1\in\{1,...,n-1\}$, But since $\{0,...,n-2\}\subseteq\{0,...,n-1\}$ and since $\{1,...,n-1\}\subseteq\{0,...,n-1\}$, We conclude that both $i,i+1\in\{0,...,n-1\}$, And thus we get that both $\mathfrak{interval}(i)$ and $\mathfrak{interval}(i+1)$ are defined and we have:
+
+**(§.1)**
+$\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$
+
+ And:
+
+**(§.2)**
+$\mathfrak{interval}(i+1)=[\mathfrak{partition\_point}(i+1),\mathfrak{partition\_point}(i+2)]$ 
+
+And thus it is clear that:
+
+$\mathfrak{partition\_point}(i+1)\in \mathfrak{interval}(i)$
+
+And:
+
+$\mathfrak{partition\_point}(i+1)\in \mathfrak{interval}(i+1)$
+
+And thus:
+
+$\mathfrak{partition\_point}(i+1)\in \mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
+
+And we conclude that:
+
+**(§.3)** $\{\mathfrak{partition\_point}(i+1)\}\subseteq \mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
+
+Now we’ll show that:
+
+**(§.4)** $ \mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)\subseteq\{\mathfrak{partition\_point}(i+1)\}$
+
+Let $x\in \mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$, Then we get that $x\in \mathfrak{interval}(i)$ and that $x\in\mathfrak{interval}(i+1)$, And thus by **(§.1)** and **(§.2)** we conclude that:
+
+$\mathfrak{partition\_point}(i)\leq x\leq \mathfrak{partition\_point}(i+1)$
+
+And that:
+
+$\mathfrak{partition\_point}(i+1)\leq x\leq \mathfrak{partition\_point}(i+2)$
+
+And thus in particular we have $x\leq \mathfrak{partition\_point}(i+1)$ and $\mathfrak{partition\_point}(i+1)\leq x$, Which implies that $ \mathfrak{partition\_point}(i+1)\leq x\leq \mathfrak{partition\_point}(i+1)$, And thus we conclude that it must be the case that $x=\mathfrak{partition\_point}(i+1)$, And thus $x\in\{ \mathfrak{partition\_point}(i+1)\}$ and the inclusion was proved.
+
+Therefore we conclude from **(§.3)** and **(§.4)** that:
+
+$\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)=\{\mathfrak{partition\_point}(i+1)\}$
+
+as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 10):**
+
+Let $i,j\in\{0,...,n-1\}$ be such that $i+2\leq j$, We’ll show that it must be the case that $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$, Because if we suppose by contradiction that $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)\neq \emptyset$, We conclude that there exists some $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, And thus $x\in\mathfrak{interval}(i)$ and $x\in\mathfrak{interval}(j)$, But since:
+
+$\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$ 
+
+And:
+
+$\mathfrak{interval}(j)=[\mathfrak{partition\_point}(j),\mathfrak{partition\_point}(j+1)]$
+
+We conclude that:
+
+ $\mathfrak{partition\_point}(i)\leq x\leq\mathfrak{partition\_point}(i+1)$ 
+
+And that:
+
+$\mathfrak{partition\_point}(j)\leq x\leq\mathfrak{partition\_point}(j+1)$ 
+
+And thus in particular $x\leq\mathfrak{partition\_point}(i+1)$ and $\mathfrak{partition\_point}(j)\leq x$, Which implies that $\mathfrak{partition\_point}(j)\leq x\leq\mathfrak{partition\_point}(i+1)$, And we conclude that **(§.1)** $\mathfrak{partition\_point}(j)\leq\mathfrak{partition\_point}(i+1)$
+
+Now by definition of $\mathfrak{partition\_point}$ we get that:
+
+$\mathfrak{partition\_point}(j)=\frac{(n-j)a+jb}{n}$
+
+And:
+
+$\mathfrak{partition\_point}(i+1)=\frac{(n-i-1)a+(i+1)b}{n}$
+
+And thus by **(§.1)** we conclude that:
+
+$\frac{(n-j)a+jb}{n}\leq\frac{(n-i-1)a+(i+1)b}{n}$
+
+And after mutiplying this inequality by $n\gt 0$, We conclude that:
+
+$(n-j)a+jb\leq(n-i-1)a+(i+1)b$
+
+And so:
+
+$na-ja+jb\leq na-ia-a+ib +b$
+
+Which implies that:
+
+$-ja+jb\leq -ia-a+ib +b$
+
+And so:
+
+$j(b-a)\leq (i +1)(b-a)$
+
+And after dividing this inequality by $b-a\gt 0$, We conclude that:
+
+$j\leq i+1$
+
+But since it is given that $i+2\leq j$, We conclude that:
+
+$i+2\leq i+1$
+
+And so:
+
+$2\leq 1$
+
+Which contradicts the fact that $2\gt 1$.
+
+Thus it must be the case that $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 11):**
+
+Let $i\in\{0,...,n-1\}$, Then we have:
+
+$\mathfrak{interval}(i)=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$
+
+And thus: 
+
+$\mathscr{l}(\mathfrak{interval}(i))=\mathfrak{partition\_point}(i+1)-\mathfrak{partition\_point}(i)$
+
+But since by **(fact 5)** we have:
+
+$\mathfrak{partition\_point}(i+1)-\mathfrak{partition\_point}(i)=\frac{b-a}{n}$
+
+We conclude that:
+
+$\mathscr{l}(\mathfrak{interval}(i))=\frac{b-a}{n}$
+
+as was to be shown.
+
+Q.E.D.
+
+----------
+Now we’ll show that for each $x\in[a,b]$, $x$ can reside at **exactly one** interval of the partition ***or*** at **exactly two** intervals of the partition and that in this case those **two** intervals must be consecutive. 
+
+Inorder to show it, We’ll first define a set that will be called ***the internal points of the partition*** as follows:
+
+**(definition 3):**
+$\mathfrak{internal\_points}:=\mathfrak{partition\_point}(\{0,...,n\})\setminus\{a,b\}\underset{\text{by $\bf{(fact\thinspace 6)}$}}{=}\mathfrak{partition\_point}(\{1,...,n-1\})$
+
+Now we’ll prove the following facts:
+
+**(fact 12):** $\mathfrak{internal\_points}\subseteq [a,b]$
+
+**(fact 13):** $\forall x\in [a,b], x\notin \mathfrak{internal\_points}\longrightarrow\exists ! i\in\{0,...,n-1\},x\in \mathfrak{interval}(i)$
+
+**(fact 14):** $\forall x\in[a,b],x\in \mathfrak{internal\_points}\longrightarrow\exists !i\in\{0,...,n-2\},x\in \mathfrak{interval}(i) \land x\in \mathfrak{interval}({i+1})\land \big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin \mathfrak{interval}(j)\big)$
+
+----------
+**Proof of (fact 12):**
+
+Since by **(fact 2)** we have $\forall i\in\{0,...,n\}, \mathfrak{partition\_point}(i)\in[a,b]$, We get that in particular $\forall i\in\{1,...,n-1\},\mathfrak{partition\_point}(i)\in[a,b]$, And thus $\mathfrak{partition\_point}(\{1,...,n-1\})\subseteq [a,b]$, Which implies that $\mathfrak{internal\_points}\subseteq [a,b]$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 13):**
+
+Let $x\in[a,b]$ be such that $x\notin\mathfrak{internal\_points}$, Then by **(fact 8)** we have $[a,b]=\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)$, And thus we get $x\in\bigcup\limits_{i =0}^{n-1}\mathfrak{interval}(i)$, Which implies that $\exists i\in\{0,...,n-1\},x\in\mathfrak{interval}(i )$, 
+
+Now we’ll prove that: $\forall j\in\{0,...,n-1\}, j\neq i\longrightarrow x\notin \mathfrak{interval}(j)$
+
+Suppose by contradiction that:
+$\exists j\in\{0,...,n-1\},j\neq i\land x\in\mathfrak{interval}(j)$
+
+Since $j\neq i$, We get that there are two cases: **(case 1)** $j\lt i$ or **(case 2)** $j\gt i$
+
+**(case 1):** If $j\lt i$, Then we get by the fact that both $j,i\in\mathbb{Z}$, That it must be the case that $j+1\leq i$, And thus we get that there are two cases: **(case 1.1)** $i=j+1$ or **(case 1.2)** $j+1\lt i$
+
+**(case 1.1):** If $i=j+1$, Then we get by the fact that $i\in\{0,...,n-1\}$, That it must be the case that $j+1\in\{0,...,n-1\}$, And thus we conclude that $0\leq j+1\leq n-1$, Which implies that **(ineq 1)** $-1\leq j\leq n-2$, But since $j\in\{0,...,n-1\}$, We conclude that it is also the case that **(ineq 2)** $0\leq j\leq n-1$, And thus we conclude from **(ineq 1)** and **(ineq 2)** that it must be the case that $0\leq j\leq n-2$, And thus we conclude that **(§.1)** $j\in\{0,...,n-2\}$, 
+
+Now we can conclude by **(§.1)** and by **(fact 9)** that **(§.2)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(j+1)=\{\mathfrak{partition\_point}(j+1)\}$
+
+But since $i=j+1$, We conclude that $\mathfrak{interval}(i)=\mathfrak{interval}(j+1)$, And thus $\mathfrak{interval}(j)\cap\mathfrak{interval}(i)=\mathfrak{interval}(j)\cap\mathfrak{interval}(j+1)$, Which implies by **(§.2)** that **(§.3)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i)=\{\mathfrak{partition\_point}(j+1)\}$
+
+But since $x\in\mathfrak{interval}(j)$ and $x\in\mathfrak{interval}(i)$, We conclude that $x\in\mathfrak{interval}(j)\cap\mathfrak{interval}(i)$, Which implies by **(§.3)** that $x\in\{\mathfrak{partition\_point}(j+1)\}$, And thus $x=\mathfrak{partition\_point}(j+1)$, But since by **(§.1)** we have $j\in\{0,...,n-2\}$, We conclude that $j+1\in\{1,...,n-1\}$, And thus we conclude that:
+
+$\mathfrak{partition\_point}(j+1)\in\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{internal\_points}$
+
+Which implies that $x\in\mathfrak{internal\_points}$, But this contradicts the fact that $x\notin \mathfrak{partition\_points}$ and we’ve reached a contradiction.
+
+**(case 1.2):** If $j+1\lt i$, Then we get by the fact that both $j,1\in\mathbb{Z}$, That it must be the case that $j+1\in\mathbb{Z}$, And thus we conclude that both $j+1,i \in\mathbb{Z}$, And we can conclude by the fact that $j+1\lt i$, That it must be the case that $j+2=(j+1)+1\leq i$, And thus we can conclude by **(fact 10)** that **(§.1)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i)=\emptyset$, But since $x\in\mathfrak{interval}(j)$ and since $x\in\mathfrak{interval}(i)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, Which implies that $x\in\emptyset$ and we’ve reached a contradiction.
+
+**(case 2):** If $j\gt i$, Then we get be the fact that both $j,i\in\mathbb{Z}$, That it must be the case that $j\geq i+1$, And thus we get that there are two cases: **(case 2.1)** $j=i+1$ or **(case 2.2)** $j\gt i+1$
+
+**(case 2.1):** If $j=i+1$, Then we get by the fact that $j\in\{0,...,n-1\}$, That it must be the case that $i+1\in\{0,...,n-1\}$, And thus we conclude that $0\leq i +1\leq n-1$, Which implies that **(ineq 1)** $-1\leq i \leq n-2$, But since $i\in\{0,...,n-1\}$, We conclude that it is also the case that **(ineq 2)** $0\leq i \leq n-1$, And thus we conclude from **(ineq 1)** and **(ineq 2)** that it must be the case that $0\leq i\leq n-2$, And thus we conclude that **(§.1)** $i\in\{0,...,n-2\}$, 
+
+Now we can conclude by **(§.1)** and by **(fact 9)** that **(§.2)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)=\{\mathfrak{partition\_point}(i+1)\}$
+
+But since $j=i+1$, We conclude that $\mathfrak{interval}(j)=\mathfrak{interval}(i+1)$, And thus $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$, Which implies by **(§.2)** that **(§.3)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\{\mathfrak{partition\_point}(i+1)\}$
+
+But since $x\in\mathfrak{interval}(i)$ and $x\in\mathfrak{interval}(j)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, Which implies by **(§.3)** that $x\in\{\mathfrak{partition\_point}(i+1)\}$, And thus $x=\mathfrak{partition\_point}(i+1)$, But since by **(§.1)** we have $i\in\{0,...,n-2\}$, We conclude that $i+1\in\{1,...,n-1\}$, And thus we conclude that:
+
+$\mathfrak{partition\_point}(i+1)\in\mathfrak{partition\_point}(\{1,...,n-1\})=\mathfrak{internal\_points}$
+
+Which implies that $x\in\mathfrak{internal\_points}$, But this contradicts the fact that $x\notin \mathfrak{partition\_points}$ and we’ve reached a contradiction.
+
+**(case 2.2):** If $j\gt i+1$, Then we get by the fact that both $i,1\in\mathbb{Z}$, That it must be the case that $i+1\in\mathbb{Z}$, And thus we conclude that both $i+1,j \in\mathbb{Z}$, And we can conclude by the fact that $i+1\lt j$, That it must be the case that $i+2=(i+1)+1\leq j$, And thus we can conclude by **(fact 10)** that **(§.1)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$, But since $x\in\mathfrak{interval}(i)$ and since $x\in\mathfrak{interval}(j)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, Which implies that $x\in\emptyset$ and we’ve reached a contradiction.
+
+Thus we see in each of those cases that we reach a contradiction, And thus it must be the case that: 
+
+$\forall j\in\{0,...,n-1\}, j\neq i\longrightarrow x\notin \mathfrak{interval}(j)$
+
+as was to be shown.
+
+In summary we’ve shown that $\exists i\in\{0,...,n-1\},x\in\mathfrak{interval}(i )$ and that $\forall j\in\{0,...,n-1\}, j\neq i\longrightarrow x\notin \mathfrak{interval}(j)$, And thus we conclude that $\exists ! i\in\{0,...,n-1\},x\in\mathfrak{interval}(i )$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 14):**
+
+Let $x\in[a,b]$ be such that $x\in\mathfrak{internal\_points}$, 
+
+We’ll show that:
+
+$\exists i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+Since $x\in\mathfrak{internal\_points}$, We get by the fact that $\mathfrak{internal\_points}=\mathfrak{partition\_point}(\{1,...,n-1\})$, That $x\in\mathfrak{partition\_point}(\{1,...,n-1\})$, And thus $\exists \hat{i}\in\{1,...,n-1\}, x=\mathfrak{partition\_point}(\hat{i})$,
+
+Now since $\hat{i}\in\{1,...,n-1\}$, We conclude that **(§.1)** $\hat{i}-1\in\{0,...,n-2\}$, And thus we get by **(fact 9)** that $\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})=\{\mathfrak{partition\_point}(\hat{i})\}$, But since $x=\mathfrak{partition\_point}(\hat{i})$, We conclude that $\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})=\{x\}$, And thus we conclude that **(§.2)** $x\in\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})$,
+
+Now let’s denote $i:=\hat{i}-1$, Then we get by **(§.1)** that $i\in\{0,...,n-2\}$, 
+
+In addition we have $i+1=(\hat{i}-1)+1=\hat{i}$, And thus we can conclude that:
+
+$\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})=\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
+
+And thus we conclude by **(§.2)** that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
+
+And thus we conclude that:
+
+$x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+And we’ve shown that:
+
+$\exists i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+Now we’ll show that:
+
+$\forall j\in\{0,...,n-2\},j\neq i\longrightarrow \lnot\big(x\in\mathfrak{interval}(j)\land x\in\mathfrak{interval}(j+1)\big)$
+
+Suppose by contradiction that:
+
+$\exists j\in\{0,...,n-2\},j\neq i\land \big(x\in\mathfrak{interval}(j)\land x\in\mathfrak{interval}(j+1)\big)$
+
+Since $j\neq i$, We get that there are two cases: **(case 1)** $j\lt i$ or **(case 2)** $j\gt i$
+
+**(case 1):** If $j\lt i$, Then we get by the fact that $i,j\in\mathbb{Z}$, That it must be the case that $j+1\leq i$, And thus we conclude that $j+2=(j+1)+1\leq i+1$, And thus we conclude by **(fact 10)** that **(§§)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i+1)=\emptyset$, But since $x\in\mathfrak{interval}(j)$ and since $x\in\mathfrak{interval}(i+1)$, We conclude that $x\in\mathfrak{interval}(j)\cap\mathfrak{interval}(i+1)$, And therefore we conclude by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+**(case 2):** If $j\gt i$, Then we get by the fact that $i,j\in\mathbb{Z}$, That it must be the case that $i+1\leq j$, And thus we conclude that $i+2=(i+1)+1\leq j+1$, And thus we conclude by **(fact 10)** that **(§§)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(j+1)=\emptyset$, But since $x\in\mathfrak{interval}(i)$ and since $x\in\mathfrak{interval}(j+1)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j+1)$, And therefore we conclude by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+Thus we see from both cases that we reach a contradiction, And therefore it must be the case that:
+
+$\forall j\in\{0,...,n-2\},j\neq i\longrightarrow \lnot\big(x\in\mathfrak{interval}(j)\land x\in\mathfrak{interval}(j+1)\big)$
+
+As was to be shown.
+
+So far we’ve shown that:
+
+$\exists i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+And that:
+
+$\forall j\in\{0,...,n-2\},j\neq i\longrightarrow \lnot\big(x\in\mathfrak{interval}(j)\land x\in\mathfrak{interval}(j+1)\big)$
+
+And thus we conclude that:
+
+$\exists !i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+Now we’ll show that:
+
+$\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin\mathfrak{interval}(j)$
+
+Supposed by contradiction that:
+
+$\exists j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\in\mathfrak{interval}(j)$
+
+Then we get that there are two cases: **(case 1)** $j\leq i -1$ or **(case 2)** $i+2\leq j$
+
+**(case 1):** If $j\leq i-1$, Then we get that there are two cases: **(case 1.1)** $j=i-1$ or **(case 1.2)** $j\lt i-1$
+
+**(case 1.1):** If $j=i-1$, Then we get that $j+2=(i-1)+2=i+1$, And thus in particular $j+2\leq i+1$, And we can conclude by **(fact 10)** that **(§§)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i+1)=\emptyset$, 
+But since $x\in\mathfrak{interval}(j)$ and since $x\in\mathfrak{interval}(i+1)$, We conclude that $x\in\mathfrak{interval}(j)\cap\mathfrak{interval}(i+1)$, And thus we get by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+**(case 1.2):** If $j\lt i-1$, Then we get by the fact that both $j,i-1\in\mathbb{Z}$, That it must be the case that $j+1\leq i-1$, And thus we conclude $j+2\leq i$, Which implies by **(fact 10)** that **(§§)** $\mathfrak{interval}(j)\cap\mathfrak{interval}(i)=\emptyset$, But since $x\in\mathfrak{interval}(j)$ and since $x\in\mathfrak{interval}(i)$, We conclude that $x\in\mathfrak{interval}(j)\cap\mathfrak{interval}(i)$, And thus we get by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+**(case 2):** If $i+2\leq j$, Then we conclude by **(fact 10)** that **(§§)** $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=\emptyset$, But since $x\in\mathfrak{interval}(i)$ and since  $x\in\mathfrak{interval}(j)$, We conclude that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(j)$, And thus we get by **(§§)** that $x\in\emptyset$ and we’ve reached a contradiction.
+
+Thus we see from each of those cases that we always reach a contradiction, And thus we conclude that it must be the case that
+
+$\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin\mathfrak{interval}(j)$
+
+As was to be shown.
+
+Therefore in summary we’ve shown that:
+
+$\exists !i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
+
+And that:
+
+$\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin\mathfrak{interval}(j)$
+
+And thus we conclude that:
+
+$\exists !i \in\{0,...,n-2\},x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)\land\big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin\mathfrak{interval}(j)\big)$
+
+As was to be shown.
+
+Q.E.D.
+
+----------
+Now we’ll define a function $ \mathfrak{indicator}:\{0,...,n-1\}\times [a,b]\to\{0,1\}$ that will give us a value that will indicate wether or wether not the point passed as the second argument belongs to the partition interval that corresponds to the index passed as the first argument as follows:
+
+**(definition 4):**
+$\forall i\in\{0,...,n-1\},\forall x\in[a,b], \mathfrak{indicator}(i,x):=\begin{cases}
+   1 & x\in \mathfrak{interval}(i) \\
+   0 & x\notin \mathfrak{intercal}(i)
+\end{cases}$
+
+And now by using this function we’ll define a new function $\mathfrak{count}:[a,b]\to\mathbb{N}\cup\{0\}$ which will give us the number of partition intervals to which the point passed as the argument belongs as follows:
+
+**(definition 5):**
+$\forall x\in[a,b], \mathfrak{count}(x):=\sum\limits_{i=0}^{n-1}\mathfrak{indicator}(i,x)$
+
+Now we’ll prove the following facts:
+
+**(fact 15):** $\forall x\in [a,b], x\notin \mathfrak{internal\_points}\longrightarrow \mathfrak{count}(x)=1$
+
+**(fact 16):** $\forall x\in [a,b], x\in \mathfrak{internal\_points}\longrightarrow \mathfrak{count}(x)=2$
+
+**(fact 17):** $\forall x\in [a,b], \mathfrak{count}(x)\in\{1,2\}$
+
+----------
+**Proof of (fact 15):**
+
+Let $x\in[a,b]$ be such that $x\notin \mathfrak{internal\_points}$, Then we get by **(fact 13)** that:
+
+$\exists !\in\{0,...,n-1\},x\in\mathfrak{interval}(i)$ 
+
+And thus:
+
+$\forall j\in\{0,...,n-1\}, j\neq i\longrightarrow x\notin\mathfrak{interval}(j)$
+
+And therefore we get:
+
+$\mathfrak{count}(x)=\sum\limits_{k=0}^{n-1} \mathfrak{indicator}(k,x)=\mathfrak{indicator}(i,x)+\sum\limits_{\substack{j=0\\j\neq i}}^{n-1} \mathfrak{indicator}(j,x)=1+\sum\limits_{\substack{j=0\\j\neq i}}^{n-1}0=1+0=1$ 
+
+As was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 16):**
+
+Let $x\in[a,b]$ be such that $x\in \mathfrak{internal\_points}$, Then we get by **(fact 14)** that:
+
+$\exists !i\in\{0,...,n-2\},x\in \mathfrak{interval}(i) \land x\in \mathfrak{interval}({i+1})\land \big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin \mathfrak{interval}(j)\big)$
+ 
+And therefore we get:
+
+ $\mathfrak{count}(x)=\sum\limits_{k=0}^{n-1} \mathfrak{indicator}(k,x)=\mathfrak{indicator}(i,x)+\mathfrak{indicator}(i+1,x)+\sum\limits_{\substack{j=0\\j\neq i,i+1}}^{n-1} \mathfrak{indicator}(j,x)=1+1+\sum\limits_{\substack{j=0 \\j\neq i,i+1}}^{n-1}0=2+0=2$ 
+
+As was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (fact 17):**
+
+Let $x\in[a,b]$, Then there are two cases: **(case 1)** $x\notin\mathfrak{internal\_points}$ or **(case 2)** $x\in\mathfrak{internal\_points}$
+
+**(case 1):** If $x\notin\mathfrak{internal\_points}$, Then we get by **(fact 15)** that $\mathfrak{count}(x)=1$, And thus $\mathfrak{count}(x)\in\{1,2\}$.
+
+**(case 2):** If $x\in\mathfrak{internal\_points}$, Then we get by **(fact 16)** that $\mathfrak{count}(x)=2$, And thus $\mathfrak{count}(x)\in\{1,2\}$.
+
+Thus we see from both cases that it is always the case that $\mathfrak{count}(x)\in\{1,2\}$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Appendix:**
+
+**(lemma 1):**
+
+$\forall n\in\mathbb{N}, \forall f\in\mathbb{R}^{\{0,...,n\}},\big(\forall i\in\{0,...,n-1\},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,...,n\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+**(lemma 2):**
+
+$\forall A,B,C:\mathfrak{set}, A=B\cup C\land B\cap C=\emptyset\longrightarrow A\setminus C=B$
+
+**(lemma 3):**
+
+$\forall x,y\in\mathbb{R}, x\leq y\longrightarrow \lfloor x\rfloor\leq \lfloor y\rfloor$
+
+----------
+**Proof of (lemma 1):**
+
+We’ll prove by induction on $n$ that:
+
+$\forall n\in\mathbb{N}, \forall f\in\mathbb{R}^{\{0,...,n\}},\big(\forall i\in\{0,...,n-1\},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,...,n\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+**(base case):** 
+
+For $n=1\in\mathbb{N}$, We must show that:
+
+$\forall f\in\mathbb{R}^{\{0,1\}},\big(\forall i\in\{0\},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,1\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+Let $f\in\mathbb{R}^{\{0,1\}}$ be such that **(§§)** $\forall i\in\{0\},f(i)\lt f(i +1)$,
+
+We’ll show that:
+
+$\forall i,j\in\{0,1\},i \lt j\longrightarrow f(i)\lt f(j)$
+
+Let $i,j\in\{0,1\}$ be such that $i\lt j$, Then we get by the fact that both $i,j\in\mathbb{Z}$, That it must be the case that **(§.1)** $i+1\leq j$, But since $j\in\{0,1\}$, We conclude that $j\leq 1$, And thus by **(§.1)** we conclude that that $i+1\leq 1$, And so **(§.2)** $i\leq 0$, But since $i\in\{0,1\}$, We conclude that $0\leq i$, And thus we conclude by this fact and by **(§.2)** that $0\leq i\leq 0$, Which implies that **(§.3)** $i=0$, And thus we conclude by this fact and by **(§.1)** that **(§.4)** $1=0+1=i +1\leq j$, 
+But since $j\in\{0,1\}$, We conclude that $j\leq 1$, And thus we conclude by this fact and by **(§.4)** that $1\leq j\leq 1$, Which implies that **(§.5)** $j=1$.
+
+Now since $i=0\in\{0\}$, We conclude by **(§§)** that **(§.6)** $f(i)\lt f(i+1)$, But since $i+1=0+1=1=j$, We conclude that $f(j)=f(i+1)$, And thus we conclude by **(§.6)** that $f(i)\lt f(j)$ as was to be shown.
+
+**(inductive step):**
+
+Suppose that for some some $n=k\in\mathbb{N}$ we have:
+
+$\forall f\in\mathbb{R}^{\{0,...,k\}},\big(\forall i\in\{0,...,k-1\},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,...,k\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+And we’ll prove that for $n=k+1\in\mathbb{N}$ we have:
+
+$\forall f\in\mathbb{R}^{\{0,...,k,k+1\}},\big(\forall i\in\{0,...,k-1,k \},f(i)\lt f(i +1)\big)\longrightarrow\big(\forall i,j\in\{0,...,k,k+1\},i \lt j\longrightarrow f(i)\lt f(j)\big)$
+
+Let $f\in\mathbb{R}^{\{0,...,k,k+1\}}$ be some function such that:
+
+**(§§)** $\forall i\in\{0,...,k-1,k \},f(i)\lt f(i +1)$
+
+Let’s define a function $g\in\mathbb{R}^{\{0,...,k\}}$ as follows:
+
+$\forall i\in\{0,...,k\},g(i):=f(i)$
+
+We’ll show that:
+
+$\forall i\in\{0,...,k-1\},g(i)\lt g(i+1)$
+
+Let $i\in\{0,...,k-1\}$, Then we get $i+1\in\{1,...,k\}$, But since $\{0,...,k-1\}\subseteq\{0,...,k\}$ and since $\{1,...,k\}\subseteq\{0,...,k\}$, We conclude that both $i,i+1\in\{0,...,k\}$, And thus we conclude that both $g(i)$ and $g(i+1)$ are defined and we have $g(i)=f(i)$ and $g(i+1)=f(i+1)$, But since by **(§§)** we have $f(i)\lt f(i+1)$, We conclude that $g(i)\lt g(i+1)$ as was to be shown.
+
+And thus we can conclude by the ***induction hypothesis*** that:
+
+$\forall i,j\in\{0,...,k\},i\lt j\longrightarrow g(i)\lt g(j)$
+
+And thus we conclude by the way we defined $g$ that:
+
+**(§§§)** $\forall i,j\in\{0,...,k\},f(i)\lt f(j)$
+
+Now we’ll prove that:
+
+$\forall i,j\in\{0,...,k,k+1\},i \lt j\longrightarrow f(i)\lt f(j)$
+
+Let $i,j\in\{0,...,k,k+1\}$ be such that $i\lt j$, Now there are two cases: **(case 1)** $j\neq k+1$ or **(case 2)** $j=k+1$
+
+**(case 1):** If $j\neq k+1$, Then we get that $j\in\{0,... k\}$, And thus we conclude that $j\leq k$, But since $i\lt j$, We conclude that $i\lt k$, And thus we conclude that $i\in\{0,...,k\}$ too, And therefore we conclude by **(§§§)** that $f(i)\lt f(j)$.
+
+**(case 2):** If $j=k+1$, Then we can conclude by the that both $i,j\in\mathbb{Z}$ and by the fact that $i\lt j$, That it must be the case that $i+1\leq j$, And thus we conclude $i+1\leq k+1$, Which implies that $i\leq k$, And so $i\in\{0,...,k\}$.
+
+Now there are two cases: **(case 2.1)** $i\lt k$ or **(case 2.2)** $i=k$
+
+**(case 2.1):** If $i\lt k$, Then because  $k\in\{0,...,k\}$, And beacuse $i\in\{0,...,k\}$, We conclude by **(§§§)** that $f(i)\lt f(k)$, But since by **(§§)** we have $f(k)\lt f(k+1)$, We conclude that $f(i)\lt f(k+1)$, But since $j=k+1$, We conclude that $f(j)=f(k+1)$, And thus we conclude that $f(i)\lt f(j)$.
+
+**(case 2.2):** If $i=k$, Then we get by **(§§)** that $f(k)\lt f(k+1)$, But since $i=k$ and $j=k+1$, We conclude that $f(i)\lt f(j)$.
+
+Thus we see from each of those cases that it is always the case that $f(i)\lt f(j)$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (lemma 2):**
+
+Let $A,B,C$ be some sets such that $A=B\cup C$ and $B\cap C=\emptyset$, 
+
+We’ll prove that $A\setminus C=B$ by showing that **(1)** $A\setminus C\subseteq B$ and that **(2)** $B\subseteq A\setminus C$:
+
+**Proof of (1):**
+
+Let $x\in A\setminus C$, Then we get $x\in A$ and $x\notin C$, But since $A=B\cup C$, We conclude that $x\in B\cup C$, But since $x\notin C$, We conclude that it must be the case that $x\in B$ as was to be shown.
+
+**Proof of (2):**
+
+Let $x\in B$, Then we get $x\in B\cup C$, But since $A=B\cup C$, We conclude that $x\in A$, 
+
+Now we’ll show that $x\notin C$:
+
+Suppose by contradiction that $x\in C$, Then we get by the fact $x\in B$, That $x\in B\cap C$, But since $B\cap C=\emptyset$, We conclude that $x\in\emptyset$ and we’ve reached a contradiction, And thus it must be the case that $x\notin C$.
+
+Since we’ve shown that $x\in A$ and $x\notin C$, We conclude that $x\in A\setminus C$ as was to be shown.
+
+From **(1)** and **(2)** we get that $A\setminus C=B$ as was to be shown.
+
+Q.E.D.
+
+----------
+**Proof of (lemma 3):**
+
+Let $x,y\in\mathbb{R}$ be such that $x\leq y$, Then there two cases: **(case 1)** $x\lt y$ or **(case 2)** $x=y$
+
+**(case 1):** If $x\lt y$, Then it is a known result that $\lfloor x\rfloor\leq \lfloor y\rfloor$.
+
+**(case 2):** If $x=y$, Then we get $\lfloor x\rfloor=\lfloor y\rfloor$, And thus in particular $\lfloor x\rfloor\leq \lfloor y\rfloor$.
+
+Thus we see from both cases that it is always the case that $\lfloor x\rfloor\leq \lfloor y\rfloor$ as was to be shown.
+
+Q.E.D.  
+</div></body></html>
