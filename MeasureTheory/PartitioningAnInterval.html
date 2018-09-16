@@ -497,7 +497,7 @@ $\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})=\mathfrak{interv
 
 And thus we conclude by **(§.2)** that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
 
-And thus we conclude that:
+ And thus we conclude that:
 
 $x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
 
@@ -604,17 +604,49 @@ Now we’ll prove the following facts:
 ----------
 **Proof of (fact 15):**
 
-DO IT!!!
+Let $x\in[a,b]$ be such that $x\notin \mathfrak{internal\_points}$, Then we get by **(fact 13)** that:
+
+$\exists !\in\{0,...,n-1\},x\in\mathfrak{interval}(i)$ 
+
+And thus:
+
+$\forall j\in\{0,...,n-1\}, j\neq i\longrightarrow x\notin\mathfrak{interval}(j)$
+
+And therefore we get:
+
+$\mathfrak{count}(x)=\sum\limits_{k=0}^{n-1} \mathfrak{indicator}(k,x)=\mathfrak{indicator}(i,x)+\sum\limits_{\substack{j=0\\j\neq i}}^{n-1} \mathfrak{indicator}(j,x)=1+\sum\limits_{\substack{j=0\\j\neq i}}^{n-1}0=1+0=1$ 
+
+As was to be shown.
+
+Q.E.D.
 
 ----------
 **Proof of (fact 16):**
 
-DO IT!!!
+Let $x\in[a,b]$ be such that $x\in \mathfrak{internal\_points}$, Then we get by **(fact 14)** that:
+
+$\exists !i\in\{0,...,n-2\},x\in \mathfrak{interval}(i) \land x\in \mathfrak{interval}({i+1})\land \big(\forall j\in\{0,...,n-1\}\setminus\{i,i+1\}, x\notin \mathfrak{interval}(j)\big)$
+ 
+And therefore we get:
+
+ $\mathfrak{count}(x)=\sum\limits_{k=0}^{n-1} \mathfrak{indicator}(k,x)=\mathfrak{indicator}(i,x)+\mathfrak{indicator}(i+1,x)+\sum\limits_{\substack{j=0\\j\neq i,i+1}}^{n-1} \mathfrak{indicator}(j,x)=1+1+\sum\limits_{\substack{j=0 \\j\neq i,i+1}}^{n-1}0=2+0=2$ 
+
+As was to be shown.
+
+Q.E.D.
 
 ----------
 **Proof of (fact 17):**
 
-DO IT!!!
+Let $x\in[a,b]$, Then there are two cases: **(case 1)** $x\notin\mathfrak{internal\_points}$ or **(case 2)** $x\in\mathfrak{internal\_points}$
+
+**(case 1):** If $x\notin\mathfrak{internal\_points}$, Then we get by **(fact 15)** that $\mathfrak{count}(x)=1$, And thus $\mathfrak{count}(x)\in\{1,2\}$.
+
+**(case 2):** If $x\in\mathfrak{internal\_points}$, Then we get by **(fact 16)** that $\mathfrak{count}(x)=2$, And thus $\mathfrak{count}(x)\in\{1,2\}$.
+
+Thus we see from both cases that it is always the case that $\mathfrak{count}(x)\in\{1,2\}$ as was to be shown.
+
+Q.E.D.
 
 ----------
 **Appendix:**
