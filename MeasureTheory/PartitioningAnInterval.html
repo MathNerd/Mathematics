@@ -1,6 +1,4 @@
-NEW NOTATION
-
-**Partitioning an interval:**
+**Partitioning an interval into intervals of equal length:**
 
 Let $a,b\in\mathbb{R}$ be some real numbers such that $a\lt b$, And let $n\in\mathbb{N}$ be some natural number, We will partition the closed-interval $[a,b]$ into $n$ closed-intervals of equal length:
 
@@ -27,8 +25,6 @@ Now we’ll prove the following facts about this function:
 **Note:** By **(fact 2)** we can view the function $\mathfrak{partition\_point}$ as a function $\mathfrak{partition\_point}:\{0,...,n\}\to[a,b]$.
 
 ----------
-
-
 **Proof of (fact 1):**
 
 By definition of $\mathfrak{partition\_point}$ we have:
@@ -61,7 +57,6 @@ Q.E.D.
 
 
 ----------
-
 **Proof of (fact 4):**
 
 Immediately follows from **(fact 3)** and **(lemma 1)** shown at the ***appendix*** below.
@@ -167,15 +162,14 @@ As was to be shown.
 Q.E.D.
 
 ----------
- 
- Now we can define the partition intervals as a function $\mathfrak{interval}:\{0,...,n-1\}\to \mathscr{P}(\mathbb{R})$ as follows:
+Now we can define the partition intervals as a function $\mathfrak{interval}:\{0,...,n-1\}\to \mathscr{P}(\mathbb{R})$ as follows:
 
 **(definition 2):**
 $\forall i\in\{0,...,n-1\}, \mathfrak{interval}(i):=[\mathfrak{partition\_point}(i),\mathfrak{partition\_point}(i+1)]$
 
 **Note:** Since by **(fact 3)** we have
 
- $\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$
+$\forall i\in\{0,...,n-1\},\mathfrak{partition\_point}(i)\lt \mathfrak{partition\_point}(i+1)$
 
 We get that indeed the definition above defines non-degenerate intervals.
 
@@ -375,7 +369,6 @@ Thus it must be the case that $\mathfrak{interval}(i)\cap\mathfrak{interval}(j)=
 Q.E.D.
 
 ----------
-
 **Proof of (fact 11):**
 
 Let $i\in\{0,...,n-1\}$, Then we have:
@@ -399,7 +392,6 @@ as was to be shown.
 Q.E.D.
 
 ----------
-
 Now we’ll show that for each $x\in[a,b]$, $x$ can reside at **exactly one** interval of the partition ***or*** at **exactly two** intervals of the partition and that in this case those **two** intervals must be consecutive. 
 
 Inorder to show it, We’ll first define a set that will be called ***the internal points of the partition*** as follows:
@@ -579,7 +571,6 @@ As was to be shown.
 Q.E.D.
 
 ----------
-
 Now we’ll define a function $ \mathfrak{indicator}:\{0,...,n-1\}\times [a,b]\to\{0,1\}$ that will give us a value that will indicate wether or wether not the point passed as the second argument belongs to the partition interval that corresponds to the index passed as the first argument as follows:
 
 **(definition 4):**
