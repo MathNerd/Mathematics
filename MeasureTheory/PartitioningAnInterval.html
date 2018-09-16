@@ -497,7 +497,7 @@ $\mathfrak{interval}(\hat{i}-1)\cap\mathfrak{interval}(\hat{i})=\mathfrak{interv
 
 And thus we conclude by **(§.2)** that $x\in\mathfrak{interval}(i)\cap\mathfrak{interval}(i+1)$
 
- And thus we conclude that:
+And thus we conclude that:
 
 $x\in\mathfrak{interval}(i)\land x\in\mathfrak{interval}(i+1)$
 
@@ -666,14 +666,42 @@ $\forall x,y\in\mathbb{R}, x\leq y\longrightarrow \lfloor x\rfloor\leq \lfloor y
 ----------
 **Proof of (lemma 1):**
 
-WRITE IT !!!
+**WRITE IT NOW!!!**
 
 ----------
 **Proof of (lemma 2):**
 
-WRITE IT !!!
+Let $A,B,C$ be some sets such that $A=B\cup C$ and $B\cap C=\emptyset$, 
+
+We’ll prove that $A\setminus C=B$ by showing that **(1)** $A\setminus C\subseteq B$ and that **(2)** $B\subseteq A\setminus C$:
+
+**Proof of (1):**
+
+Let $x\in A\setminus C$, Then we get $x\in A$ and $x\notin C$, But since $A=B\cup C$, We conclude that $x\in B\cup C$, But since $x\notin C$, We conclude that it must be the case that $x\in B$ as was to be shown.
+
+**Proof of (2):**
+
+Let $x\in B$, Then we get $x\in B\cup C$, But since $A=B\cup C$, We conclude that $x\in A$, 
+
+Now we’ll show that $x\notin C$:
+
+Suppose by contradiction that $x\in C$, Then we get by the fact $x\in B$, That $x\in B\cap C$, But since $B\cap C=\emptyset$, We conclude that $x\in\emptyset$ and we’ve reached a contradiction, And thus it must be the case that $x\notin C$.
+
+Since we’ve shown that $x\in A$ and $x\notin C$, We conclude that $x\in A\setminus C$ as was to be shown.
+
+From **(1)** and **(2)** we get that $A\setminus C=B$ as was to be shown.
+
+Q.E.D.
 
 ----------
 **Proof of (lemma 3):**
 
-WRITE IT !!!
+Let $x,y\in\mathbb{R}$ be such that $x\leq y$, Then there two cases: **(case 1)** $x\lt y$ or **(case 2)** $x=y$
+
+**(case 1):** If $x\lt y$, Then it is a known result that $\lfloor x\rfloor\leq \lfloor y\rfloor$.
+
+**(case 2):** If $x=y$, Then we get $\lfloor x\rfloor=\lfloor y\rfloor$, And thus in particular $\lfloor x\rfloor\leq \lfloor y\rfloor$.
+
+Thus we see from both cases that it is always the case that $\lfloor x\rfloor\leq \lfloor y\rfloor$ as was to be shown.
+
+Q.E.D.
