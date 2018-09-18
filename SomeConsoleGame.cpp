@@ -39,6 +39,22 @@ void print_state(STATE state)
 
 enum class INPUT{none, shoot};
 
+position position_function(unsigned n)
+{
+    position new_position;
+    
+    const unsigned R = 3U
+    if (n <= R)
+    {
+        new_position.x = n;
+        new_position.y = 0;
+    }
+    else // n > 3U
+    {
+        new_position.x = 
+    }
+}
+
 STATE next_state(STATE current_state, INPUT input)
 {
     STATE new_state;
