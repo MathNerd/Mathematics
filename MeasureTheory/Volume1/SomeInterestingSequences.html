@@ -65,14 +65,14 @@ Now we’ll show that **(6):** $b_1-a_1=\frac{1}{3^1}$:
 
 $b_1-a_1=\mathfrak{p}_1(i+1)-\mathfrak{p}_1(i)\underset{\big(\bf{fact\thinspace 5}\big)}{=}\frac{b_0-a_0}{\mathscr{N}}=\frac{1-0}{3}=\frac{1}{3^1}$
 
-Thus is summary we’ve shown that **(1)**, **(2)**, **(5)**, **(6)** and **(7)** are satisfied, 
+Thus in summary we’ve shown that **(1)**, **(2)**, **(5)**, **(6)** and **(7)** are satisfied when $n=1$, 
 
-Now since $n=1\notin\mathbb{N}_{\geq 2}$, We conclude that **(2)** and **(3)** are also satisfied by default, And in summary we’ve built the first elements of the sequences as required.
+Now since $n=1\notin\mathbb{N}_{\geq 2}$, We conclude that **(2)** and **(3)** are also satisfied by ***default***, And in summary we’ve built the first elements of the sequences as required.
 
 ----------
 For $n=2\in\mathbb{N}$:
 
-Since $a_1\lt b_1$ we get that $[a_1,b_1]$ forms a non-degenerate closed-interval, Now let’s denote $\mathscr{N}:=3\in\mathbb{N}$,
+Since $a_1\lt b_1$, We get that $[a_1,b_1]$ forms a non-degenerate closed-interval, Now let’s denote $\mathscr{N}:=3\in\mathbb{N}$,
 
 We will partition the non-degenerate closed-interval $[a_1,b_1]$ into $\mathscr{N}$ closed-intervals of equal length by defining the ***partition-point function*** $\mathfrak{p}_2:\langle \mathscr{N}\rangle\to[a_1,b_1]$ as follows:
 
@@ -92,7 +92,7 @@ Since $f(2)\in[0,1]$, We get that there are two cases:
 
 **(case 1):** $f(2)\notin[a_1,b_1]$
 
-or:
+Or:
 
 **(case 2):** $f(2)\in[a_1,b_1]$
 
@@ -100,7 +100,7 @@ or:
 
 $$\forall i\in\langle \mathscr{N}-1\rangle,f(2)\notin\mathcal{I}_2(i)$$
 
-Suppose by contradiction that:
+Because if we suppose by contradiction that:
 
 $$\exists i\in\langle \mathscr{N}-1\rangle,f(2)\in\mathcal{I}_2(i)$$
 
@@ -126,11 +126,17 @@ Now set $i:=CHOOSE(\langle \mathscr{N}-1\rangle)$, Then we get $i \in\langle \ma
 
 **(case 2):** If $f(2)\in[a_1,b_1]$, Then because $\mathscr{N}=3\geq 3$, We can conclude by **(fact 18)** that:
 
-$\exists i\in\langle\mathscr{N}-1\rangle,f(2)\notin\mathcal{I}_2(i)$ as was to be shown.
+$$\exists i\in\langle\mathscr{N}-1\rangle,f(2)\notin\mathcal{I}_2(i)$$ 
 
-Thus we see from both cases that it is always the case that $\exists i\in\langle\mathscr{N}-1\rangle,f(2)\notin\mathcal{I}_2(i)$ as was to be shown. 
+As was to be shown.
 
-Now since $\mathcal{I}_1(i)=[\mathfrak{p}_2(i),\mathfrak{p}_2(i +1)]$, We conclude that $f(2)\notin[\mathfrak{p}_2(i),\mathfrak{p}_2(i +1)]$, 
+Thus we see from both cases that it is always the case that:
+
+$$\exists i\in\langle\mathscr{N}-1\rangle,f(2)\notin\mathcal{I}_2(i)$$ 
+
+As was to be shown. 
+
+Now since $\mathcal{I}_2(i)=[\mathfrak{p}_2(i),\mathfrak{p}_2(i +1)]$, We conclude that $f(2)\notin[\mathfrak{p}_2(i),\mathfrak{p}_2(i +1)]$, 
 
 Now let’s denote $a_2:=\mathfrak{p}_2(i)$ and $b_2:=\mathfrak{p}_2(i +1)$, 
 
@@ -160,7 +166,7 @@ Now we’ll show that **(6):** $b_2-a_2=\frac{1}{3^2}$:
 
 $b_2-a_2=\mathfrak{p}_2(i+1)-\mathfrak{p}_2(i)\underset{\big(\bf{fact\thinspace 5}\big)}{=}\frac{b_1-a_1}{\mathscr{N}}=\frac{\frac{1}{3^1}}{3}=\frac{1}{3^2}$
 
-Thus is summary we’ve shown that **(1)**, **(2)**, **(3)**, **(4)**, **(5)**, **(6)** and **(7)** are satisfied.
+Thus is summary we’ve shown that **(1)**, **(2)**, **(3)**, **(4)**, **(5)**, **(6)** and **(7)** are satisfied when $n=2$.
 
 ----------
 Suppose that for $n=k\in\mathbb{N}$ where $k\geq 2$ we’ve built numbers $a_1,a_2,...,a_k,b_1,b_2,...,b_k\in\mathbb{R}$ such that:
@@ -219,15 +225,15 @@ Since $f(k+1)\in[0,1]$, We get that there are two cases:
 
 **(case 1):** $f(k+1)\notin[a_k,b_k]$
 
-or:
+Or:
 
-**(case 2):** $f(2)\in[a_k,b_k]$
+**(case 2):** $f(k+1)\in[a_k,b_k]$
 
-**(case 1):** If $f(2)\notin[a_k,b_k]$, Then we’ll show that:
+**(case 1):** If $f(k+1)\notin[a_k,b_k]$, Then we’ll show that:
 
 $$\forall i\in\langle \mathscr{N}-1\rangle,f(k+1)\notin\mathcal{I}_{k+1}(i)$$
 
-Suppose by contradiction that:
+Because if we suppose by contradiction that:
 
 $$\exists i\in\langle \mathscr{N}-1\rangle,f(k+1)\in\mathcal{I}_{k+1}(i)$$
 
@@ -251,11 +257,17 @@ As was to be shown.
 
 Now set $i:=CHOOSE(\langle \mathscr{N}-1\rangle)$, Then we get $i \in\langle \mathscr{N}-1\rangle$, And thus we conclude by what we’ve just shown that $f(k+1)\notin\mathcal{I}_{k+1}(i)$, And in summary we’ve shown that $\exists i\in\langle \mathscr{N}-1\rangle,f(k+1)\notin \mathcal{I}_{k+1}(i)$ as was to be shown.
 
-**(case 2):** If $f(k+1)\in[a_1,b_1]$, Then because $\mathscr{N}=3\geq 3$, We can conclude by **(fact 18)** that:
+**(case 2):** If $f(k+1)\in[a_k,b_k]$, Then because $\mathscr{N}=3\geq 3$, We can conclude by **(fact 18)** that:
 
-$\exists i\in\langle\mathscr{N}-1\rangle,f(k+1)\notin\mathcal{I}_{k+1}(i)$ as was to be shown.
+$$\exists i\in\langle\mathscr{N}-1\rangle,f(k+1)\notin\mathcal{I}_{k+1}(i)$$ 
 
-Thus we see from both cases that it is always the case that $\exists i\in\langle\mathscr{N}-1\rangle,f(k+1)\notin\mathcal{I}_{k+1}(i)$ as was to be shown. 
+As was to be shown.
+
+Thus we see from both cases that it is always the case that:
+
+ $$\exists i\in\langle\mathscr{N}-1\rangle,f(k+1)\notin\mathcal{I}_{k+1}(i)$$
+
+As was to be shown. 
 
 Now since $\mathcal{I}_{k+1}(i)=[\mathfrak{p}_{k+1}(i),\mathfrak{p}_{k+1}(i +1)]$, We conclude that $f(k+1)\notin[\mathfrak{p}_{k+1}(i),\mathfrak{p}_{k+1}(i +1)]$, 
 
@@ -263,9 +275,9 @@ Now let’s denote $a_{k+1}:=\mathfrak{p}_{k+1}(i)$ and $b_{k+1}:=\mathfrak{p}_{
 
 Then we get **(7):** $f(k+1)\notin [a_{k+1},b_{k+1}]$, 
 
-Now we have:
+And now we have:
 
-$0\underset{\big(a_k\in[0,1]\big)}{\leq}a_{k+1}\underset{\big(\bf{fact\thinspace 1}\big)}{=}\mathfrak{p}_{k+1}(0)\underset{\big(\bf{fact\thinspace 4}\big)}\leq\mathfrak{p}_{k+1}(i)\underset{\big(\bf{fact\thinspace 3}\big)}{\lt}\mathfrak{p}_{k+1}(i +1)\underset{\big(\bf{fact\thinspace 4}\big)}{\leq}{\mathfrak{p}_{k+1}(\mathcal{N})}\underset{\big(\bf{fact\thinspace 1}\big)}{=} b_k\underset{\big(b_k\in[0,1]\big)}{\leq}1$
+$0\underset{\big(a_k\in[0,1]\big)}{\leq}a_{k}\underset{\big(\bf{fact\thinspace 1}\big)}{=}\mathfrak{p}_{k+1}(0)\underset{\big(\bf{fact\thinspace 4}\big)}\leq\mathfrak{p}_{k+1}(i)\underset{\big(\bf{fact\thinspace 3}\big)}{\lt}\mathfrak{p}_{k+1}(i +1)\underset{\big(\bf{fact\thinspace 4}\big)}{\leq}{\mathfrak{p}_{k+1}(\mathcal{N})}\underset{\big(\bf{fact\thinspace 1}\big)}{=} b_k\underset{\big(b_k\in[0,1]\big)}{\leq}1$
 
 And thus we conclude that:
 
@@ -287,6 +299,4 @@ Now we’ll show that **(6):** $b_{k+1}-a_{k+1}=\frac{1}{3^{k+1}}$:
 
 $b_{k+1}-a_{k+1}=\mathfrak{p}_{k+1}(i+1)-\mathfrak{p}_{k+1}(i)\underset{\big(\bf{fact\thinspace 5}\big)}{=}\frac{b_k-a_k}{\mathscr{N}}=\frac{\frac{1}{3^k}}{3}=\frac{1}{3^{k+1}}$
 
-And we immediately conclude that **(1'')**, **(2'')**, **(3'')**, **(4'')**, **(5'')**, **(6'')** and **(7'')** are satisfied.
-
-And we’ve built the $a_{k+1}$’st and $b_{k+1}$’st elements of the sequences.
+And we immediately conclude that **(1'')**, **(2'')**, **(3'')**, **(4'')**, **(5'')**, **(6'')** and **(7'')** are satisfied, And we’ve built the $a_{k+1}$’st and $b_{k+1}$’st elements of the sequences.
