@@ -93,22 +93,25 @@ void run(char c)
     printf("\n");
 }
 
+void loop(void (*process_input)(char))
+{
+    int c;
+    
+    while((c = getchar()) != EOF && c != 'q')
+    {
+        process_input(c);
+    }
+}
+
 int main(void)
 {
     //int input;
     
-    /*while((input = getchar()) != EOF && input != 'q')
-    {
-        printf("\n");
-        
-        printf("X\n");
-        
-        break
-    }
-    */
+    
+    
     
     init();
-    read_input(run);
+    loop(run);
     
     return 0;
 }
