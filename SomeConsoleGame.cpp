@@ -12,7 +12,7 @@ struct position
 struct STATE
 {
     unsigned frame;
-    position spaceship_position;
+    position unit_position;
     unsigned shoot_delay;
     std::vector<position> shot_positions;
 };
@@ -30,7 +30,7 @@ void print_state(STATE state)
     {
         for(int y = MIN_Y; y <= MAX_Y; y++)
         {
-            if (state.spaceship_position.x == x && state.spaceship_position.y == y)
+            if (state.unit_position.x == x && state.unit_position.y == y)
                 printf("*");
             else
                 printf("+");
@@ -41,9 +41,17 @@ void print_state(STATE state)
 
 enum class INPUT{none, shoot};
 
-STATE next_state(STATE state, INPUT input)
+STATE next_state(STATE current_state, INPUT input)
 {
-    return start_state;
+    STATE new_state;
+    
+    new_state.frame = current_state.frame+1;
+    new_state.unit_position.x = 1;
+    new_state.unit_position.y = 2;
+    new_state.shoot_delay = current_state.shoot_delay > 0 ? current_state.shoot_delay - 1 : 0;
+    new_state.shot_positions = current_state.shot_positions;
+    
+    return new_state;
 }
 
 void read_input(void (*process_input)(char))
@@ -70,8 +78,6 @@ void init(void)
 
 void run(char c)
 {
-    static STATE state = start_state;
-    
     INPUT input;
     if (c == 's')
         input = INPUT::shoot;
