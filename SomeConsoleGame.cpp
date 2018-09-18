@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <vector>
-#include <unistd.h>
-#include <termios.h>
 
 struct position
 {
@@ -54,18 +52,6 @@ STATE next_state(STATE current_state, INPUT input)
     return new_state;
 }
 
-void read_input(void (*process_input)(char))
-{
-    struct termios told,tnew;
-    char c;
-    tcgetattr(0,&told);
-    tnew = told;
-    tnew.c_lflag&=~ICANON;
-    tcsetattr(0,TCSANOW,&tnew);
-    while (read(0,&c,1) && c!='q') process_input(c);
-    tcsetattr(0,TCSANOW,&told);
-}
-
 static STATE state;
 
 void init(void)
@@ -105,11 +91,6 @@ void loop(void (*process_input)(char))
 
 int main(void)
 {
-    //int input;
-    
-    
-    
-    
     init();
     loop(run);
     
