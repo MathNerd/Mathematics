@@ -5,7 +5,7 @@
 
 double partition_point(double a, double b, unsigned n, unsigned i)
 {
-    if (a >= b)
+    if (a > b)
     {
         fprintf(stderr, "FATAL ERROR: 'a' must be < 'b'.\n");
         return 0.0;
@@ -71,17 +71,20 @@ double f(unsigned n)
 
 int main(void)
 {
-    const unsigned count = 10;
+    const unsigned count = 30;
     interval I;
     I.a = 0.0;
     I.b = 1.0;
+    
+    double a[count];
+    double b[count];
     
     srand(time(0));
     for(unsigned n = 1; n <= count; n++)
     {
         double fn = f(n);
         
-        const unsigned number_of_partition_intervals = 1;
+        const unsigned number_of_partition_intervals = 3;
         unsigned number_of_partition_intervals_to_which_fn_does_not_belong = 0;
         interval partition_intervals_to_which_fn_does_not_belong[number_of_partition_intervals];
         for (unsigned k = 0; k < number_of_partition_intervals; k++)
@@ -112,6 +115,10 @@ int main(void)
                 [rand() % number_of_partition_intervals_to_which_fn_does_not_belong];
          
             printf("[%g,%g]\n", randomly_choosen_interval.a, randomly_choosen_interval.b);
+            
+            I = randomly_choosen_interval;
+            a[n] = I.a;
+            b[n] = I.b;
         }
         
         printf("\n");
@@ -119,5 +126,13 @@ int main(void)
         //printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, fn, n, I.a, n, I.b);
     }
     
+    for (unsigned n = 1; n <= count; n++)
+    {
+        printf("a(%u) = %.16f, b(%u) = %.16f\n", a[n], n, b[n], n);
+    }
+    
     return 0;
 }
+    
+
+      
