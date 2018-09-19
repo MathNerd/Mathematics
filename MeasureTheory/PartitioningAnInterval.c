@@ -23,6 +23,32 @@ double partition_point(double a, double b, unsigned n, unsigned i)
     return ((n - i)*a + i*b)/n;
 }
 
+struct interval
+{
+    double a;
+    double b;
+}
+
+interval partition_interval(double a, double b, unsigned n, unsigned i)
+{
+    interval I;
+    
+    if (i >= n)
+    {
+        fprintf(stderr, "FATAL ERROR: 'i' must be <= 'n-1'.\n");
+        
+        I.a = 0;
+        I.b = 0;
+        
+        return I;
+    }
+
+    I.a = partition_point(a ,b, n, i);
+    I.b = partition_point(a, b, n, i+1);
+    
+    return I;
+}
+
 int main(void)
 {
     // a >= b
