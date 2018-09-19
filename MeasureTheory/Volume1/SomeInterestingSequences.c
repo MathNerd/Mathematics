@@ -83,7 +83,7 @@ int main(void)
         
         const unsigned number_of_partition_intervals = 3;
         unsigned number_of_partition_intervals_to_which_fn_does_not_belong = 0;
-        unsigned partition_intervals_to_which_fn_does_not_belong[number_of_partition_intervals];
+        interval partition_intervals_to_which_fn_does_not_belong[number_of_partition_intervals];
         for (unsigned k = 0; k < number_of_partition_intervals; k++)
         {
             interval PI = partition_interval(I.a, I.b, number_of_partition_intervals, k);
@@ -101,11 +101,16 @@ int main(void)
         printf("{ ");
         for (unsigned i = 0; i <  number_of_partition_intervals_to_which_fn_does_not_belong; i++)
         {
-            intercal PI =  partition_intervals_to_which_fn_does_not_belong[i];
+            interval PI =  partition_intervals_to_which_fn_does_not_belong[i];
             printf("[%g,%g] ", PI.a, PI.b);
         }
-        printf("}");
-                   
+        printf("}\n\n");
+        
+        interval randomly_choosen_interval = partition_intervals_to_which_fn_does_not_belong[
+            rand() % number_of_partition_intervals_to_which_fn_does_not_belong];
+         
+         printf("[%g,%g]\n", randomly_choosen_interval.a, randomly_choosen_interval.b);
+        
         //printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, fn, n, I.a, n, I.b);
     }
     
