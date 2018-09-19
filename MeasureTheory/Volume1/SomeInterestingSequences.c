@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 double partition_point(double a, double b, unsigned n, unsigned i)
 {
@@ -49,8 +51,31 @@ interval partition_interval(double a, double b, unsigned n, unsigned i)
     return I;
 }
 
+
+// f:N—->[0,1]
+double f(unsigned n)
+{
+    if (n < 1)
+    { 
+        fprintf(stderr, "FATAL ERROR: 'n' must be >= 1.\n");
+        return 0.0;
+    }
+    
+    return ((double)rand())/RAND_MAX;
+}
+
 int main(void)
 {
+    const unsigned count = 10;
+    double a = 0.0;
+    double b = 1.0;
+    
+    srand(time(0));
+    for(unsigned n = 1; n <= count; n++)
+    {
+        printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, f(n), n, a, n, b);
+    }
+    
     interval I;
     
     printf("%f\n", partition_point(1.0,2.0,3,0));
