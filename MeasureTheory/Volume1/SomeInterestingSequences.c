@@ -83,30 +83,13 @@ int main(void)
         
         for (unsigned k = 0; k <= 2; k++)
         {
-            printf("%d", is_in_interval(fn, partition_interval(I.a, I.b, 3, k)));
+            interval J = partition_interval(I.a, I.b, 3, k);
+            printf("f(%u)=%f %s [%f,%f] = PI(%u)\n", n, fn, (is_in_interval(fn, J) ? "in" : "not in"), J.a, J.b, k);
         }
         printf("\n");
         
-        printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, fn, n, I.a, n, I.b);
+        //printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, fn, n, I.a, n, I.b);
     }
-    
-    printf("%f\n", partition_point(1.0,2.0,3,0));
-    printf("%f\n", partition_point(1.0,2.0,3,1));
-    printf("%f\n", partition_point(1.0,2.0,3,2)); 
-    printf("%f\n", partition_point(1.0,2.0,3,3));
-    
-    double x = 2;
-    I = partition_interval(1.0,2.0,3,0);
-    printf("[%f,%f]\n", I.a, I.b);
-    printf("%d\n", is_in_interval(x, I));
-    
-    I = partition_interval(1.0,2.0,3,1);
-    printf("[%f,%f]\n", I.a, I.b);
-    printf("%d\n", is_in_interval(x, I));
-    
-    I = partition_interval(1.0,2.0,3,2);
-    printf("[%f,%f]\n", I.a, I.b);
-    printf("%d\n", is_in_interval(x, I));
     
     return 0;
 }
