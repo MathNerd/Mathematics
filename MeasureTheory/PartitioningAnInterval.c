@@ -66,5 +66,32 @@ int main(void)
     printf("%f\n", partition_point(1.0,2.0,3,2)); 
     printf("%f\n", partition_point(1.0,2.0,3,3));
     
+    interval I;
+    
+    // a >= b
+    I = partition_interval(2.0,1.0,0,4);
+    printf("[%f,%f]\n", I.a, I.b);
+    
+    // n < 1
+    I = partition_interval(1.0,2.0,0,4);
+    printf("[%f,%f]\n", I.a, I.b);
+    
+    // i >= n
+    I = partition_interval(1.0,2.0,3,4);
+    printf("[%f,%f]\n", I.a, I.b);
+    
+    I = partition_interval(1.0,2.0,3,3);
+    printf("[%f,%f]\n", I.a, I.b);
+    
+    // good
+    I = partition_interval(1.0,2.0,3,0);
+    printf("[%f,%f]\n", I.a, I.b);
+    
+    I = partition_interval(1.0,2.0,3,1);
+    printf("[%f,%f]\n", I.a, I.b);
+    
+    I = partition_interval(1.0,2.0,3,2);
+    printf("[%f,%f]\n", I.a, I.b);
+    
     return 0;
 }
