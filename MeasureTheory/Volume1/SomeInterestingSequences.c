@@ -104,12 +104,12 @@ int main(void)
             interval PI =  partition_intervals_to_which_fn_does_not_belong[i];
             printf("[%g,%g] ", PI.a, PI.b);
         }
-        printf("}\n\n");
+        printf("}\n");
         
         interval randomly_choosen_interval = partition_intervals_to_which_fn_does_not_belong[
             rand() % number_of_partition_intervals_to_which_fn_does_not_belong];
          
-         printf("[%g,%g]\n", randomly_choosen_interval.a, randomly_choosen_interval.b);
+         printf("[%g,%g]\n\n", randomly_choosen_interval.a, randomly_choosen_interval.b);
         
         //printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, fn, n, I.a, n, I.b);
     }
