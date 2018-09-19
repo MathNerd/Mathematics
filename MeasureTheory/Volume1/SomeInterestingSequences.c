@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 
 double partition_point(double a, double b, unsigned n, unsigned i)
 {
@@ -51,6 +52,10 @@ interval partition_interval(double a, double b, unsigned n, unsigned i)
     return I;
 }
 
+bool is_in_interval(double x, interval I)
+{
+    return (I.a <= x && x <= I.b);
+}
 
 // f:N—->[0,1]
 double f(unsigned n)
@@ -83,14 +88,18 @@ int main(void)
     printf("%f\n", partition_point(1.0,2.0,3,2)); 
     printf("%f\n", partition_point(1.0,2.0,3,3));
     
+    double x = 2;
     I = partition_interval(1.0,2.0,3,0);
     printf("[%f,%f]\n", I.a, I.b);
+    printf("%d\n", is_in_interval(x, I));
     
     I = partition_interval(1.0,2.0,3,1);
     printf("[%f,%f]\n", I.a, I.b);
+    printf("%d\n", is_in_interval(x, I));
     
     I = partition_interval(1.0,2.0,3,2);
     printf("[%f,%f]\n", I.a, I.b);
+    printf("%d\n", is_in_interval(x, I));
     
     return 0;
 }
