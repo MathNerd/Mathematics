@@ -81,7 +81,7 @@ int main(void)
     {
         double fn = f(n);
         
-        const unsigned number_of_partition_intervals = 3;
+        const unsigned number_of_partition_intervals = 1;
         unsigned number_of_partition_intervals_to_which_fn_does_not_belong = 0;
         interval partition_intervals_to_which_fn_does_not_belong[number_of_partition_intervals];
         for (unsigned k = 0; k < number_of_partition_intervals; k++)
@@ -111,8 +111,10 @@ int main(void)
             interval randomly_choosen_interval = partition_intervals_to_which_fn_does_not_belong
                 [rand() % number_of_partition_intervals_to_which_fn_does_not_belong];
          
-            printf("[%g,%g]\n\n", randomly_choosen_interval.a, randomly_choosen_interval.b);
+            printf("[%g,%g]\n", randomly_choosen_interval.a, randomly_choosen_interval.b);
         }
+        
+        printf("\n");
         
         //printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, fn, n, I.a, n, I.b);
     }
