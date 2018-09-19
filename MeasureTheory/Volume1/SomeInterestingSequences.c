@@ -72,16 +72,23 @@ double f(unsigned n)
 int main(void)
 {
     const unsigned count = 10;
-    double a = 0.0;
-    double b = 1.0;
+    interval I;
+    I.a = 0.0;
+    I.b = 1.0;
     
     srand(time(0));
     for(unsigned n = 1; n <= count; n++)
     {
-        printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, f(n), n, a, n, b);
+        double fn = f(n);
+        
+        for (unsigned k = 0; k <= 2; k++)
+        {
+            printf("%d", is_in_interval(fn, partition_interval(I.a, I.b, 3, k)));
+        }
+        printf("\n");
+        
+        printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, fn, n, I.a, n, I.b);
     }
-    
-    interval I;
     
     printf("%f\n", partition_point(1.0,2.0,3,0));
     printf("%f\n", partition_point(1.0,2.0,3,1));
