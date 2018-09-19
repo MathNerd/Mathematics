@@ -23,11 +23,11 @@ double partition_point(double a, double b, unsigned n, unsigned i)
     return ((n - i)*a + i*b)/n;
 }
 
-struct interval
+typedef struct interval
 {
     double a;
     double b;
-}
+} interval;
 
 interval partition_interval(double a, double b, unsigned n, unsigned i)
 {
@@ -51,6 +51,10 @@ interval partition_interval(double a, double b, unsigned n, unsigned i)
 
 int main(void)
 {
+    interval I;
+    
+    // ERROR TESTING:
+    /*
     // a >= b
     printf("%f\n", partition_point(2.0,1.0,0,4));
     
@@ -60,20 +64,8 @@ int main(void)
     // i > n
     printf("%f\n", partition_point(1.0,2.0,3,4));
     
-    // good
-    printf("%f\n", partition_point(1.0,2.0,3,0));
-    printf("%f\n", partition_point(1.0,2.0,3,1));
-    printf("%f\n", partition_point(1.0,2.0,3,2)); 
-    printf("%f\n", partition_point(1.0,2.0,3,3));
-    
-    interval I;
-    
     // a >= b
-    I = partition_interval(2.0,1.0,0,4);
-    printf("[%f,%f]\n", I.a, I.b);
-    
-    // n < 1
-    I = partition_interval(1.0,2.0,0,4);
+    I = partition_interval(2.0,1.0,3,0);
     printf("[%f,%f]\n", I.a, I.b);
     
     // i >= n
@@ -82,7 +74,14 @@ int main(void)
     
     I = partition_interval(1.0,2.0,3,3);
     printf("[%f,%f]\n", I.a, I.b);
+    */
     
+    // good
+    printf("%f\n", partition_point(1.0,2.0,3,0));
+    printf("%f\n", partition_point(1.0,2.0,3,1));
+    printf("%f\n", partition_point(1.0,2.0,3,2)); 
+    printf("%f\n", partition_point(1.0,2.0,3,3));
+      
     // good
     I = partition_interval(1.0,2.0,3,0);
     printf("[%f,%f]\n", I.a, I.b);
