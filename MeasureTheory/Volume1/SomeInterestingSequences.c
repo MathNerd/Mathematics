@@ -81,13 +81,31 @@ int main(void)
     {
         double fn = f(n);
         
-        for (unsigned k = 0; k <= 2; k++)
+        const unsigned number_of_partition_intervals = 3;
+        unsigned number_of_partition_intervals_to_which_fn_does_not_belong = 0;
+        unsigned partition_intervals_to_which_fn_does_not_belong[number_of_partition_intervals];
+        for (unsigned k = 0; k < number_of_partition_intervals; k++)
         {
-            interval J = partition_interval(I.a, I.b, 3, k);
-            printf("f(%u)=%f %s [%f,%f] = PI(%u)\n", n, fn, (is_in_interval(fn, J) ? "in" : "not in"), J.a, J.b, k);
+            interval PI = partition_interval(I.a, I.b, number_of_partition_intervals, k);
+            
+            if (!is_in_interval(fn, PI))
+            {
+                 partition_intervals_to_which_fn_does_not_belong
+                     [number_of_partition_intervals_to_which_fn_does_not_belong++] = PI;
+            }
+            
+            printf("f(%u)=%g %s [%g,%g] = PI(%u)\n", n, fn, (is_in_interval(fn, PI) ? "in" : "not in"), PI.a, PI.b, k);
         }
         printf("\n");
         
+        printf("{ ");
+        for (unsigned i = 0; i <  number_of_partition_intervals_to_which_fn_does_not_belong; i++)
+        {
+            intercal PI =  partition_intervals_to_which_fn_does_not_belong[i];
+            printf("[%g,%g] ", PI.a, PI.b);
+        }
+        printf("}");
+                   
         //printf("f(%d) = %f, a(%d) = %f, b(%d) = %f\n", n, fn, n, I.a, n, I.b);
     }
     
