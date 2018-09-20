@@ -1,4 +1,4 @@
- **UNITED CHUNK**
+**UNITED CHUNK**
 
 **FIRST CHUNK**
 
@@ -38,7 +38,7 @@ From the definition it is clear that the following theorem is true:
 
 ----------
 
-Now by using the notion of equivalence that we’ve just defined, We will define what is a *finite set*:
+Now by using the notion of equivalence that we’ve just defined, We will define what is a ***finite set***:
 
 
 ----------
@@ -56,15 +56,14 @@ Now my Measure Theory book says that:
 >  "It can be shown from the definition that two *finite sets* are
 > *equivalent* if and only if they have the exact same number of elements"
 
-without actually showing it, Also it says that:
+Without actually showing it, Also it says that:
 
 > "It can be shown from the definition that if $A$ is a *finite set* and if $B$ is another
 > set such that $B\subset A$ (proper subset), Then $B$ is also a *finite
-> set* and $|B|\lt |A|$ (The number of elements of $B$ is strictly less
-> than the number of elements of $A$)"
+> set* and the number of elements of $B$ is strictly less
+> than the number of elements of $A$"
 
-So I’ve tried to fill in the details of proving it from the definition, Here’s what I’ve tried:
-
+Without actually showing it, So I’ve tried to fill in the details of proving it from the definition, Here’s what I’ve done:
 
 ----------
 **SECOND CHUNK**
@@ -146,7 +145,7 @@ Now we’ll show that $f(A)\subset f(B)$:
 
 Since $A\subset B$, We conclude that $\exists z\in B, z\notin A$, Now let’s denote $y:=f(z)$, Then we conclude by the fact $z\in B$, That $y\in f(B)$,
 
-Now we’ll show that $y\notin f(A)$, Because if we suppose by contradiction that $y\in f(A)$, Then we get that $\exists x\in A, y=f(x)$, But since $y=f(z)$, We conclude that $f(z)=f(x)$, And thus we conclude by the fact that $f$ is ***one-to-one***, That it must be the case that $z=x$, But since $x\in A$, We conclude that $z\in A$, But this contradicts the fact that $z\notin A$, And thus we conclude that it must be the case that $y\notin f(A)$.
+Now we’ll show that $y\notin f(A)$, Because if we suppose by contradiction that $y\in f(A)$, Then we get that $\exists x\in A, y=f(x)$, But since $y=f(z)$, We conclude that $f(z)=f(x)$, And thus we conclude by the fact that $f$ is ***one-to-one***, That it must be the case that $z=x$, But since $x\in A$, We conclude that $z\in A$, But this contradicts the fact that $z\notin A$, And thus we conclude that it must be the case that $y\notin f(A)$ as was to be shown.
 
 In summary we’ve shown that $f(A)\subseteq f(B)$ and that $\exists y\in f(B),y\notin f(A)$, And thus we conclude that $f(A)\subset f(B)$ as was to be shown.
 
