@@ -74,9 +74,9 @@ We’ll prove first some very small lemmas that will be used:
 
 
 ----------
-**(lemma 1):**
+> **(lemma 1):**
 
-$\forall A,B,C:\mathfrak{set},A\cap B=\emptyset\land B\subseteq A\cup C\Longrightarrow B\subseteq C$.
+> $\forall A,B,C:\mathfrak{set},A\cap B=\emptyset\land B\subseteq A\cup C\Longrightarrow B\subseteq C$.
 
 ----------
 **Proof:**
@@ -94,9 +94,9 @@ Now since we have both $x\in A\cup C$ and $x\notin A$, We conclude that it must 
 Q.E.D.
 
 ----------
-**(lemma 2):**
+> **(lemma 2):**
 
-$\forall A,B,C:\mathfrak{set}, B\subseteq A\land C=A\setminus B \Longrightarrow C\cup B=A$.
+> $\forall A,B,C:\mathfrak{set}, B\subseteq A\land C=A\setminus B \Longrightarrow C\cup B=A$.
 
 ----------
 **Proof:**
@@ -130,9 +130,12 @@ From **(1)** and **(2)** we get that $C\cup B=A$ as was to be shown.
 Q.E.D.
 
 ----------
-**(lemma 3):**
 
-Let $X,Y\neq \emptyset$ be some non-empty sets, And let $f:X\to Y$ be some ***one-to-one*** function, If $A,B\subseteq X$ are any subsets of $X$ such that $A\subset B$ (proper subset), Then $f(A)\subset f(B)$.
+> **(lemma 3):**
+> 
+> Let $X,Y\neq \emptyset$ be some non-empty sets, And let $f:X\to Y$ be
+> some ***one-to-one*** function, If $A,B\subseteq X$ are any subsets of
+> $X$ such that $A\subset B$ (proper subset), Then $f(A)\subset f(B)$.
 
 ----------
 **Proof:**
@@ -155,7 +158,7 @@ Q.E.D.
 
 **THIRD CHUNK**
 
-**(theorem 2):**
+> **(theorem 2):**
 
 > If $A,B\neq\emptyset$ are any non-empty sets, For which 
 > $\exists m\in\mathbb{N}, A\approx \{1,...,m\}$ and $\exists n\in\mathbb{N},B\approx \{1,...,n\}$, Then $A\approx B$ **if and only
@@ -168,7 +171,7 @@ Q.E.D.
 
 $\Longrightarrow$
 
-If $A\approx B$, Then we get by the fact that $A\approx \{1,...,m\}$, That it is also $\{1,...,m\}\approx A$ (by symmetry), Which implies that $\{1,...,m\}\approx B$ (by transitivity), But since it is also the case that $B\approx\{1,...,n\}$, We get that $\{1,...,m\}\approx \{1,...,n\}$ (by tranisitivity), And thus by **Definition 1**, We get that, There exists some function $f:\{1,...,m\}\to\{1,...,n\}$ that is both ***one-to-one*** and ***onto***.
+If $A\approx B$, Then we get by the fact that $A\approx \{1,...,m\}$, That it is also $\{1,...,m\}\approx A$ (by symmetry), Which implies that $\{1,...,m\}\approx B$ (by transitivity), But since it is also the case that $B\approx\{1,...,n\}$, We get that $\{1,...,m\}\approx \{1,...,n\}$ (by tranisitivity), And thus by **(definition 1)**, We get that, There exists some function $f:\{1,...,m\}\to\{1,...,n\}$ that is both ***one-to-one*** and ***onto***.
 
 Now we’ll prove that $m\leq n$, Because if we suppose by contradiction that $m\gt n$, Then we get by the ***pigeonhole principle*** that $\exists i,j\in\{1,...,m\},i\neq j\land f(i)=f(j)$, But this contradicts the fact that $f$ is ***one-to-one***, Thus it must be the case that $m\leq n$ as was to be shown.
 
@@ -182,33 +185,35 @@ If $m=n$, Then we get $\{1,...,m\}=\{1,...,n\}$, And thus, By the fact that $A\a
 
 Q.E.D.
 
+----------
 **FORTH CHUNK**
 
-> **Corrolary 1:**
+> **(corollary 1):**
 
 > If $A\neq\emptyset$ is any non-empty set for which 
 > $\exists m\in\mathbb{N}, A\approx \{1,...,m\}$, Then this $m$ is **unique**, I.e. $\forall n\in\mathbb{N},A\approx \{1,...,n\}\longrightarrow n=m$. 
 > 
 
 
-> This **unique** $m$ will be called ***the number of elements of $A$*** or ***the cardinality of $A$***, And will be denoted as $|A|:=m$.
+> This **unique** $m$ will be called ***the number of elements of (the finite-set) $A$*** or ***the cardinality of (the finite-set) $A$***, And will be denoted as $|A|:=m$.
 > If $A=\emptyset$, We’ll define $|A|:=0$.
 
-
 ----------
-
 **Proof:**
 
-Let $n\in\mathbb{N}$ be any natural number for which $A\approx \{1,...,n\}$, Then by the fact that $A\approx \{1,...,m\}$, We get by symmetry that $\{1,...,m\}\approx A$, And thus we get by transitivity that $\{1,...,m\}\approx \{1,...,n\}$, And we conclude from **Theorem 2** that $n=m$ as was to be shown.
+Let $n\in\mathbb{N}$ be any natural number for which $A\approx \{1,...,n\}$, Then by the fact that $A\approx \{1,...,m\}$, We get by symmetry that $\{1,...,m\}\approx A$, And thus we get by transitivity that $\{1,...,m\}\approx \{1,...,n\}$, And we conclude by **(theorem 2)** that $n=m$ as was to be shown.
 
 Q.E.D.
 
+----------
 **FIFTH CHUNK**
 
-**Lemma 5**
-
-If $n\in\mathbb{N}$ is any natural number, And if $\emptyset\neq A\subseteq \{1,...,n\}$ is any non-empty subset of the set $\{1,...,n\}$, Then there exists $m\in\{1,...,n\}$ such that $A\approx\{1,...,m\}$.
-
+> **(lemma 4):**
+> 
+> If $n\in\mathbb{N}$ is any natural number, And if $\emptyset\neq
+> A\subseteq \{1,...,n\}$ is any non-empty subset of the set
+> $\{1,...,n\}$, Then there exists $m\in\{1,...,n\}$ such that
+> $A\approx\{1,...,m\}$.
 
 ----------
 **Proof:**
@@ -219,7 +224,7 @@ $\forall n\in\mathbb{N},\forall A\in\mathscr{P}(\{1,...,n\})\setminus\{\emptyset
 
 We’ll prove it by ***induction*** on $n$:
 
-**Base Case:**
+**(base case):**
 
 For $n=1\in\mathbb{N}$, We have to show that $\forall A\in\mathscr{P}(\{1\})\setminus\{\emptyset\},\exists m\in\{1\},A\approx \{1,...,m\}$
 
@@ -229,21 +234,21 @@ Let $A\in\mathscr{P}(\{1\})\setminus\{\emptyset\}$, Since $\mathscr{P}(\{1\})\se
 
 Now let’s denote $m:=1\in\{1\}$, Then we get $\{1,...,m\}=\{1\}$, And thus we conclude that $A=\{1,...,m\}$, And by reflexivity of $\approx$, We conclude that $A\approx \{1,...,m\}$ as was to be shown.
 
-**Inductive Step:**
+**(inductive step):**
 
 Suppose that for some $n=k\in\mathbb{N}$ we have $\forall A\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\},\exists m\in\{1,...,k\},A\approx \{1,...,m\}$, And we’ll prove that for $n=k+1\in\mathbb{N}$ we have $\forall A\in\mathscr{P}(\{1,...,k,k+1\})\setminus\{\emptyset\},\exists m\in\{1,...,k,k+1\},A\approx \{1,...,m\}$.
 
 Let $A\in\mathscr{P}(\{1,...,k,k+1\})\setminus\{\emptyset\}$, Then we get $\emptyset\neq A\subseteq\{1,...,k,k+1\}=\{1,...,k\}\cup\{k+1\}$,
 
-Now there are two cases: **(Case 1)** $k+1\notin A$ or **(Case 2)** $k+1\in A$
+Now there are two cases: **(case 1)** $k+1\notin A$ or **(case 2)** $k+1\in A$
 
-**(Case 1):** If $k+1\notin A$, Then we have that $A\nsubseteq \{k+1\}$, Also we have that $A\subseteq \{1,...,k\}\cup\{k+1\}$ and that $\{1,...,k\}\cap\{k+1\}=\emptyset$, And thus, We can conclude by **Lemma YOU NAME ME** that it must be the case that $A\subseteq \{1,...,k\}$, Also since $A\neq\emptyset$, We conclude that $A\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$, And thus, We get by the ***induction hypothesis***, That $\exists m\in\{1,...,k\},A\approx \{1,...,m\}$, But since $\{1,...,k\}\subseteq \{1,...,k,k+1\}$, We get that in particular $\exists m\in\{1,...,k,k+1\},A\approx \{1,...,m\}$ as was to be shown.
+**(case 1):** If $k+1\notin A$, Then we have that $A\nsubseteq \{k+1\}$, Also we have that $A\subseteq \{1,...,k\}\cup\{k+1\}$ and that $\{1,...,k\}\cap\{k+1\}=\emptyset$, And thus, We can conclude by **Lemma YOU NAME ME** that it must be the case that $A\subseteq \{1,...,k\}$, Also since $A\neq\emptyset$, We conclude that $A\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$, And thus, We get by the ***induction hypothesis***, That $\exists m\in\{1,...,k\},A\approx \{1,...,m\}$, But since $\{1,...,k\}\subseteq \{1,...,k,k+1\}$, We get that in particular $\exists m\in\{1,...,k,k+1\},A\approx \{1,...,m\}$ as was to be shown.
 
-**(Case 2):** If $k+1\in A$, Then there are two cases: **(Case 2.1)** $\forall x\in\{1,...,k\},x\notin A$ or **(Case 2.2)** $\exists x\in\{1,...,k\}, x\in A$
+**(case 2):** If $k+1\in A$, Then there are two cases: **(case 2.1)** $\forall x\in\{1,...,k\},x\notin A$ or **(case 2.2)** $\exists x\in\{1,...,k\}, x\in A$
 
-**(Case 2.1):** If $\forall x\in\{1,...,k\},x\notin A$, Then we get by the fact that  $A\subseteq\{1,...,k\}\cup\{k+1\}$ and by **Lemma YOU NAME ME**, That it must be the case that $A\subseteq\{k+1\}$, But since $A\neq\emptyset$, We get that it must be the case that $A=\{k+1\}$, And thus we can define a function $f:\{k+1\}(=A)\to\{1\}$ as $f(k+1):=1$, Clearly this is a function that is both **one-to-one** and **onto**, And thus we conclude that $A\approx \{1\}$, Now take $m:=1\in\{1,...,k,k+1\}$, And we get $\{1,...,m\}=\{1\}$, And thus $A\approx \{1,...,m\}$, And we’ve shown that $\exists m\in\{1,...,k,k+1\}, A\approx \{1,...,m\}$ as was to be shown.
+**(case 2.1):** If $\forall x\in\{1,...,k\},x\notin A$, Then we get by the fact that  $A\subseteq\{1,...,k\}\cup\{k+1\}$ and by **Lemma YOU NAME ME**, That it must be the case that $A\subseteq\{k+1\}$, But since $A\neq\emptyset$, We get that it must be the case that $A=\{k+1\}$, And thus we can define a function $f:\{k+1\}(=A)\to\{1\}$ as $f(k+1):=1$, Clearly this is a function that is both **one-to-one** and **onto**, And thus we conclude that $A\approx \{1\}$, Now take $m:=1\in\{1,...,k,k+1\}$, And we get $\{1,...,m\}=\{1\}$, And thus $A\approx \{1,...,m\}$, And we’ve shown that $\exists m\in\{1,...,k,k+1\}, A\approx \{1,...,m\}$ as was to be shown.
 
-**(Case 2.2):** If $\exists x\in\{1,...,k\},x\in A$, Then define $B:=A\setminus\{k+1\}$, We’ll show that $B\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$:
+**(case 2.2):** If $\exists x\in\{1,...,k\},x\in A$, Then define $B:=A\setminus\{k+1\}$, We’ll show that $B\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$:
 
 First we’ll show that $B\neq\emptyset$:
 
@@ -270,7 +275,7 @@ Now by the way $B$ was defined, We can conclude by **LEMMA YOU NAME ME AND CREAT
 ‎**בנוסף הסבר מדוע תחום הגדרתה של הפונקציה $f$ הזו בסדר ומדוע היא מוגדרת היטב**
 
 **[SHIPUTZ ABOVE NOW]**
-**[שיפוץ למעלה עכשיו]**
+‎**[שיפוץ למעלה עכשיו]**
 
 We’ll prove that the function $f$ we just defined is **onto**:
 
@@ -284,15 +289,15 @@ From both cases we see that it is always the case that $\exists z\in A, f(z)=y$,
 
 And now we’ll prove that the function $f$ is also **one-to-one**:
 
-Let $z_1,z_2\in A$ be such that $f(z_1)=f(z_2)$, Then since we have $A=B\cup\{k+1\}$, We get that there are two cases: **(Case 2.2.1)** $z_1\in B$ or **(Case 2.2.2)** $z_1\in\{k+1\}$
+Let $z_1,z_2\in A$ be such that $f(z_1)=f(z_2)$, Then since we have $A=B\cup\{k+1\}$, We get that there are two cases: **(case 2.2.1)** $z_1\in B$ or **(case 2.2.2)** $z_1\in\{k+1\}$
 
-**(Case 2.2.1):** If $z_1\in B$, Then we get by definition of $f$, That $f(z_1)=g(z_1)$, Also since $z_2\in A$, We get that $z_2\in B\cup\{k+1\}$, 
+**(case 2.2.1):** If $z_1\in B$, Then we get by definition of $f$, That $f(z_1)=g(z_1)$, Also since $z_2\in A$, We get that $z_2\in B\cup\{k+1\}$, 
 
 Now we’ll prove by contradiction that $z_2\notin\{k+1\}$, Because if we suppose by contradiction that indeed $z_2\in\{k+1\}$, Then we’ll get by the way $f$ was defined that $f(z_2)=m$, And thus we have $m=g(z_1)$, But since $g(z_1)\in\{1,..,\hat{m}\}$, We conclude that $m\in\{1,...,\hat{m}\}$, And thus $m\leq\hat{m}$, But since by the way we defined $m$, We have $m=\hat{m}+1$, We conclude that $\hat{m}+1\leq\hat{m}$, And thus we get $1\leq 0$, Which contradicts the fact that $1\gt 0$, Thus we’ve reached a contradiction and it must be the case that $z_2\notin\{k+1\}$ as was to be shown.
 
 From what we’ve just shown, We conclude that it must be the case that $z_2\in B$, And thus we get by definition of $f$, That $f(z_2)=g(z_2)$, And we’ve ultimately got that $g(z_1)=g(z_2)$, And thus we get by the fact that the function $g$ is ***one-to-one***, That it must be the case that $z_1=z_2$ as was to be shown.
 
-**(Case 2.2.2):** If $z_1\in\{k+1\}$, Then we get by definition of $f$, That $f(z_1)=m$, Also since $z_2\in A$, We get that $z_2\in B\cup\{k+1\}$,
+**(case 2.2.2):** If $z_1\in\{k+1\}$, Then we get by definition of $f$, That $f(z_1)=m$, Also since $z_2\in A$, We get that $z_2\in B\cup\{k+1\}$,
 
 Now we’ll prove by contradiction that $z_2\notin B$, Because if we suppose by contradiction that $z_2\in B$, Then we’ll get by the way we defined $f$, That $f(z_2)=g(z_2)$, But since $g(z_2)\in\{1,...,\hat{m}\}$, We conclude that $f(z_2)\in\{1,...,\hat{m}\}$, But since $f(z_1)=f(z_2)$, We get that $f(z_1)\in\{1,...,\hat{m}\}$, And thus $m\in\{1,...,\hat{m}\}$, Which implies that $m\leq\hat{m}$, But since by the way we defined $m$, We have $m=\hat{m}+1$, We conclude that $\hat{m}+1\leq\hat{m}$, And thus we get $1\leq 0$, Which contradicts the fact that $1\gt 0$, Thus we’ve reached a contradiction and it must be the case that $z_2\notin\ B$ as was to be shown.
 
@@ -305,26 +310,28 @@ In summary, We’ve shown that there exists a **one-to-one** and **onto** functi
 
 Q.E.D.
 
+----------
 **SIXTH CHUNK**
 
-**Theorem 3:**
-
-If $A$ is a ***finite*** set, And if $B$ is  another set such that $B\subset A$ (proper subset), Then $B$ is also ***finite*** and $|B|\lt |A|$.
+> **(theorem 3):**
+> 
+> If $A$ is a ***finite*** set, And if $B$ is  another set such that
+> $B\subset A$ (proper subset), Then $B$ is also ***finite*** and
+> $|B|\lt |A|$.
 
 
 ----------
-
 **Proof:**
 
 Since $B\subset A$, We conclude that $\exists a\in A, a\notin B$, And thus, We conclude that $A\neq \emptyset$,
 
  Now since $A$ is ***finite*** and $A\neq\emptyset$, We get by definition of ***finite set***, That $\exists ! n\in\mathbb{N}, A\approx \{1,...,n\}$, And we have $|A|=n\in\mathbb{N}$, 
 
-Now there are two cases: **(Case 1)** $B=\emptyset$ or **(Case 2)** $B\neq\emptyset$
+Now there are two cases: **(case 1)** $B=\emptyset$ or **(case 2)** $B\neq\emptyset$
 
-**(Case 1):** If $B=\emptyset$, Then we get by definition that $B$ is ***finite*** and $|B|=0$, Now since $|A|\in\mathbb{N}$, We conclude that $1\leq |A|$, And thus we have $|B|=0\lt 1\leq |A|$, And we conclude that $|B|\lt |A|$.
+**(case 1):** If $B=\emptyset$, Then we get by definition that $B$ is ***finite*** and $|B|=0$, Now since $|A|\in\mathbb{N}$, We conclude that $1\leq |A|$, And thus we have $|B|=0\lt 1\leq |A|$, And we conclude that $|B|\lt |A|$.
 
-**(Case 2):** If $B\neq \emptyset$, Then we get by the fact that $A\approx \{1,...,n\}$, That there exists a function $f:A\to\{1,...,n\}$ that is both **one-to-one** and **onto**, Now since $B\subset A$, We conclude by **LEMMA YOU NAME ME NOW!!!** that $f(B)\subset f(A)$, And thus we get that $\exists q\in f(A),q\notin f(B)$, And thus we have $\{q\}\subseteq f(A)$, Now since $f(B)\subset f(A)$ and since $\{q\}\subseteq f(A)$, We conclude that $f(B)\cup \{q\}\subseteq f(A)$, But since $f$ is **onto**, We conclude that $f(A)=\{1,...,n\}$, And thus $f(B)\cup\{q\}\subseteq \{1,...,n\}$, Also, Since $q\in f(B)\cup \{q\}$, We conclude that $f(B)\cup\{q\}\neq\emptyset$, And in summary, We’ve got that $f(B)\cup\{q\}\in \mathscr{P}(\{1,...,n\})\setminus\{\emptyset\}$, And thus we get by **LEMMA YOU NAME ME** that $\exists\hat{m}\in\mathbb{N},f(B)\cup\{q\}\approx \{1,...,\hat{m}\}$, 
+**(case 2):** If $B\neq \emptyset$, Then we get by the fact that $A\approx \{1,...,n\}$, That there exists a function $f:A\to\{1,...,n\}$ that is both **one-to-one** and **onto**, Now since $B\subset A$, We conclude by **LEMMA YOU NAME ME NOW!!!** that $f(B)\subset f(A)$, And thus we get that $\exists q\in f(A),q\notin f(B)$, And thus we have $\{q\}\subseteq f(A)$, Now since $f(B)\subset f(A)$ and since $\{q\}\subseteq f(A)$, We conclude that $f(B)\cup \{q\}\subseteq f(A)$, But since $f$ is **onto**, We conclude that $f(A)=\{1,...,n\}$, And thus $f(B)\cup\{q\}\subseteq \{1,...,n\}$, Also, Since $q\in f(B)\cup \{q\}$, We conclude that $f(B)\cup\{q\}\neq\emptyset$, And in summary, We’ve got that $f(B)\cup\{q\}\in \mathscr{P}(\{1,...,n\})\setminus\{\emptyset\}$, And thus we get by **LEMMA YOU NAME ME** that $\exists\hat{m}\in\mathbb{N},f(B)\cup\{q\}\approx \{1,...,\hat{m}\}$, 
 
 Now we’ll prove that $\hat{m}\geq 2$, Because if we suppose by contradiction that $\hat{m}\lt 2$, Then we get by the fact that $\hat{m}\in\mathbb{N}$, That it must be the case that $\hat{m}=1$, And thus we have $\{1,...,\hat{m}\}=\{1\}$, And we conclude that $f(B)\cup\{q\}\approx \{1\}$, And thus we get that there exists some function $g:f(B)\cup\{q\}\to\{1\}$ such that $g$ is both **one-to-one** And **onto**, Now since $B\neq\emptyset$, We get that it also that $f(B)\neq\emptyset$, And thus there exists some $r\in f(B)\subseteq f(B)\cup\{q\}$, And we have $g(r)=1$, Also since $q\in \{q\}\subseteq f(B)\cup\{q\}$, We have $g(q)=1$, And thus we conclude that $g(q)=g(r)$, But since $g$ is ***one-to-one***, This implies that $q=r$, Now because $r\in f(B)$, We conclude that $q\in f(B)$, But this contradicts the fact that $q\notin f(B)$, Thus we get that must be the case that $\hat{m}\geq 2$ as was to be shown.
 
