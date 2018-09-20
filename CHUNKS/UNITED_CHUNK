@@ -1,4 +1,4 @@
-**UNITED CHUNK**
+ **UNITED CHUNK**
 
 **FIRST CHUNK**
 
@@ -8,12 +8,12 @@ Measure Theory....
 ----------
 
 
-> **Definition 1:**
+> **(definition 1):**
 > 
 > Let $A,B\neq\emptyset$ be some non-empty sets, We’ll say that $A$ is
 > ***equivalent*** to $B$ **if and only if** there exists a function $f:A\to B$ that is both ***one-to-one*** and ***onto***.
 > 
-> If $A$ is ***equvalent*** to $B$, We’ll denote that as $A \approx B$.
+> If $A$ is ***equivalent*** to $B$, We’ll denote that as $A \approx B$.
 
 
 ----------
@@ -23,7 +23,7 @@ From the definition it is clear that the following theorem is true:
 ----------
 
 
-> **Theorem 1:**
+> **(theorem 1):**
 > 
 > The relation above is an equivalence relation:
 > 
@@ -31,7 +31,7 @@ From the definition it is clear that the following theorem is true:
 > 
 > **reflexivity:** $A\approx A$
 > 
-> **simmetricity:** $A\approx B\Longrightarrow B\approx A$
+> **symmetricity:** $A\approx B\Longrightarrow B\approx A$
 > 
 > **transitivity:** $A\approx B\land B\approx C\Longrightarrow A\approx C$
 
@@ -43,7 +43,7 @@ Now by using the notion of equivalence that we’ve just defined, We will define
 
 ----------
 
-> **Definition 2**
+> **(definition 2):**
 > 
 > A set $A$ will be called *finite set* **if and only if** $A=\emptyset$
 > or $\exists n\in\mathbb{N}, A\approx \{1,...,n\}$.
@@ -75,67 +75,88 @@ We’ll prove first some very small lemmas that will be used:
 
 
 ----------
-**Lemma 1:**
+**(lemma 1):**
 
-$A\nsubseteq B\land B\subseteq A\cup C\Longrightarrow B\subseteq C$.
-
+$\forall A,B,C:\mathfrak{set},A\cap B=\emptyset\land B\subseteq A\cup C\Longrightarrow B\subseteq C$.
 
 ----------
-
 **Proof:**
 
-FIIL IT!!!
+Let $A,B,C$ be some sets such that $A\cap B=\emptyset$ and $B\subseteq A\cup C$,  We’ll prove that $B\subseteq C$:
 
-used:
+Let $x\in B$, Then we get by $B\subseteq A\cup C$, That $x\in A\cup C$, 
 
+Now we’ll prove that $x\notin A$:
+
+Because if we suppose by contradiction that $x\in A$, Then we get by the fact that $x\in B$, That it must be the case that $x\in A\cap B$, But since $A\cap B=\emptyset$, We conclude that $x\in\emptyset$ and we’ve reached a contradiction, And thus it must be the case that $x\notin A$ as was to be shown.
+
+Now since we have both $x\in A\cup C$ and $x\notin A$, We conclude that it must be the case that $x\in C$ as was to be shown.
+
+Q.E.D.
 
 ----------
-**Lemma 2:**
+**(lemma 2):**
 
-$B\subseteq A\land C=A\setminus B \Longrightarrow C\cup B=A$.
-
+$\forall A,B,C:\mathfrak{set}, B\subseteq A\land C=A\setminus B \Longrightarrow C\cup B=A$.
 
 ----------
-
 **Proof:**
 
-FIIL IT!!!
+Let $A,B,C$ be some sets such that $B\subseteq A$ and $C=A\setminus B$, 
 
-used:
+We’ll prove that $C\cup B=A$ by showing that **(1)** $C\cup B\subseteq A$ and that **(2)** $A\subseteq C\cup B$:
 
+**Proof of (1):**
+
+Let $x\in C\cup B$, Then we get that there are two cases: **(case 1)** $x\in C$ or **(case 2)** $x\in B$
+
+**(case 1):** If $x\in C$, Then we get by the fact $C=A\setminus B$, That $x\in A\setminus B$, And thus we conclude that $x\in A$ and $x\notin B$, And in particular we got that $x\in A$.
+
+**(case 2):** If $x\in B$, Then we get by the fact $B\subseteq A$, That $x\in A$.
+
+From both cases we see that it is always the case that $x\in A$ as was to be shown.
+
+**Proof of (2):**
+
+Let $x\in A$, Then we have two cases: **(case 1)** $x\in B$ or **(case 2)** $x\notin B$
+
+**(case 1):** If $x\in B$, Then it is clear that $x\in C\cup B$.
+
+**(case 2):** If $x\notin B$, Then we have both $x\in A$ and $x\notin B$, And thus we conclude that $x\in A\setminus B$, But since $C=A\setminus B$, We conclude that $x\in C$, And thus we conclude that $x\in C\cup B$.
+
+From both cases we see that it is always the case that $x\in C\cup B$ as was to be shown.
+
+From **(1)** and **(2)** we get that $C\cup B=A$ as was to be shown.
+
+Q.E.D.
 
 ----------
-**Lemma 3:**
+**(lemma 3):**
 
-$x\in A\cup B\land x\notin A\Longrightarrow x\in B$.
-
+Let $X,Y\neq \emptyset$ be some non-empty sets, And let $f:X\to Y$ be some ***one-to-one*** function, If $A,B\subseteq X$ are any subsets of $X$ such that $A\subset B$ (proper subset), Then $f(A)\subset f(B)$.
 
 ----------
-
 **Proof:**
 
-FIIL IT!!!
+We’ll first show that $f(A)\subseteq f(B)$:
 
-used:
+Let $y\in f(A)$, Then we get that $\exists x\in A,y=f(x)$, But since $A\subset B$, We get that in particular we have $\exists x\in B,y=f(x)$, And thus we conclude that $y\in f(B)$ as was to be shown.
 
+Now we’ll show that $f(A)\subset f(B)$:
+
+Since $A\subset B$, We conclude that $\exists z\in B, z\notin A$, Now let’s denote $y:=f(z)$, Then we conclude by the fact $z\in B$, That $y\in f(B)$,
+
+Now we’ll show that $y\notin f(A)$, Because if we suppose by contradiction that $y\in f(A)$, Then we get that $\exists x\in A, y=f(x)$, But since $y=f(z)$, We conclude that $f(z)=f(x)$, And thus we conclude by the fact that $f$ is ***one-to-one***, That it must be the case that $z=x$, But since $x\in A$, We conclude that $z\in A$, But this contradicts the fact that $z\notin A$, And thus we conclude that it must be the case that $y\notin f(A)$.
+
+In summary we’ve shown that $f(A)\subseteq f(B)$ and that $\exists y\in f(B),y\notin f(A)$, And thus we conclude that $f(A)\subset f(B)$ as was to be shown.
+
+Q.E.D.
 
 ----------
-**Lemma 4:**
-
-Let $X\neq \emptyset$ be some universal non-empty set, Let $Y\neq\emptyset$ be another empty set, And let $f:X\to Y$ be some function, Then if $A,B\subseteq X$ are any subsets of $X$ such that $A\subset B$ (proper subset), Then $f(A)\subset f(B)$.
-
-$A,B\subseteq X\land X\subset A\Longrightarrow f(B)\subset f(A)$.
-
-
-----------
-
-**Proof:**
-
-FIIL IT!!!
 
 **THIRD CHUNK**
 
-**Theorem 2:**
+**(theorem 2):**
 
 > If $A,B\neq\emptyset$ are any non-empty sets, For which 
 > $\exists m\in\mathbb{N}, A\approx \{1,...,m\}$ and $\exists n\in\mathbb{N},B\approx \{1,...,n\}$, Then $A\approx B$ **if and only
