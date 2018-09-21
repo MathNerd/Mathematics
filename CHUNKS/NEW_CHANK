@@ -19,6 +19,18 @@ And thus we conclude that $(A\cup B)\setminus C=(A\setminus C)\cup (B\setminus C
 Q.E.D.
 
 ----------
+**(lemma GIVEMEMYNAME 2):**
+
+$\forall A,B,C:\mathfrak{set}, A\subseteq B\Longrightarrow A\setminus C\subseteq B\setminus C$
+
+----------
+**Proof:**
+
+Let $A,B,C$ be some sets such that $A\subseteq B$, We'll show that: $A\setminus C\subseteq B\setminus C$
+
+Let $x\in A\setminus C$, 
+
+----------
 
 > **(lemma 6):**
 > 
