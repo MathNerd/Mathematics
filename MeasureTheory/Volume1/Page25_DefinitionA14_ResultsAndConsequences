@@ -268,11 +268,33 @@ Now there are two cases: **(case 1)** $k+1\notin A$ or **(case 2)** $k+1\in A$
 
 ‎***₪₪₪₪₪₪₪₪₪₪₪ נקודת בקרה **₪₪₪₪₪₪₪₪₪₪₪***
 
-We’ll show that $B\cap\{k+1\}=\emptyset$ **עשה זאת מיד!!!**
+‎**בדוק זאת מיד!!!**
 
-We’ll show that $A=B\cup \{k+1\}$ **עשה זאת מיד!!!**
+We’ll show that $B\cap\{k+1\}=\emptyset$:
 
-We’ll show that $B\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$:
+Suppose by contradiction that $B\cap\{k+1\}\neq\emptyset$, Then we get that there exists some $z\in B\cap\{k+1\}$, And thus we conclude that $z\in B$ and $z\in \{k+1\}$, But since $B=A\setminus\{k+1\}$, We get that $z\in A\setminus\{k+1\}$, And thus we conclude that $z\in A$ and $z\notin \{k+1\}$, In summary we’ve got that both $z\in\{k+1\}$ and $z\notin\{k+1\}$, And we’ve reached a contradiction, Thus it must be the case that B\cap\{k+1\}=\emptyset$ as was to be shown.
+
+‎**בדוק זאת מיד!!!**
+
+Now we’ll show that $A=B\cup \{k+1\}$:
+
+First we’ll show that $A\subseteq B\cup \{k+1\}$:
+
+Let $y\in A$, Now there are two cases: $y=k+1$ or $y\neq k+1$
+
+If $y=k+1$, Then we get $y\in\{k+1\}$, And thus we conclude that $y\in B\cup\{k+1\}$.
+
+If $y\neq k+1$, Then we get $y\notin\{k+1\}$, But since $y\in A$, We conclude that $y\in A\setminus\{k+1\}$, And by the way $B$ was defined, We conclude that $y\in B$, And thus we conclude that $y\in B\cup\{k+1\}$.
+
+From both cases we see that it is always the case that $y\in B\cup\{k+1\}$ and the inclusion was proved.
+
+And now we’ll show that $B\cup \{k+1\}\subseteq A$:
+
+Since $A\setminus\{k+1\}\subseteq A$, We conclude by the way $B$ was defined that $B\subseteq A$, Now since $k+1\in A$, We conclude that also $\{k+1\}\subseteq A$, And thus we conclude that $B\cup\{k+1\}\subseteq A$ and the inclusion was proved.
+
+From both cases we conclude that $A=B\cup\{k+1\}$ as was to be shown.
+
+Now we’ll show that $B\in\mathscr{P}(\{1,...,k\})\setminus\{\emptyset\}$:
 
 First we’ll show that $B\neq\emptyset$:
 
@@ -306,17 +328,17 @@ Thus we see from both cases that it is always the case that $f(z)\in\{1,...,m\}$
 
 ‎***₪₪₪₪₪₪₪₪₪₪₪ נקודת בקרה **₪₪₪₪₪₪₪₪₪₪₪***
 ‎
-Now we’ll prove that the the function $f$ is **onto**:
+Now we’ll prove that the the function $f$ is **onto**, I.e. we’ll prove that $\forall y\in\{1,...,m\},\exists z\in A, f(z)=y$:
 
 Let $y\in\{1,...,m\}=\{1,...,\hat{m},m\}=\{1,...,\hat{m}\}\cup\{m\}$, Then we have two cases: $y\in\{1,...,\hat{m}\}$ or $y\in\{m\}$
 
 If $y\in\{1,...,\hat{m}\}$, Then we get by the fact that $g$ is **onto**, That $\exists z\in B, g(z)=y$, Now since $z\in B$ and since $B\subseteq A$, We conclude that $z\in A$, And now we get by definition of $f$, That $f(z)=g(z)=y$, And thus we’ve shown that $\exists z\in A, f(z)=y$.
 
-Now if $y\in\{m\}$, Then we have $y=m$, And define $z:=k+1$, But since we have $k+1\in A$, We conclude that $z\in A$, And now we have by the way we defined $f$, That $f(z)=f(k+1)=m=y$, And thus we’ve shown that $\exists z\in A,f(z)=y$
+Now if $y\in\{m\}$, Then we have $y=m$, And define $z:=k+1$, But since we have $k+1\in A$, We conclude that $z\in A$, And now we have by the way we defined $f$, That $f(z)=f(k+1)=m=y$, And thus we’ve shown that $\exists z\in A,f(z)=y$.
 
 Thus we see from both cases that it is always the case that $\exists z\in A, f(z)=y$, And we conclude that $f$ is ***onto*** as was to be shown.
 
-And now we’ll prove that the function $f$ is also **one-to-one**:
+And now we’ll prove that the function $f$ is also **one-to-one**, I.e. we’ll prove that $\forall z_1,z_2\in A,f(z_1)=f(z_2)\longrightarrow z_1=z_2$:
 
 Let $z_1,z_2\in A$ be such that $f(z_1)=f(z_2)$, Then since we have $A=B\cup\{k+1\}$, We get that there are two cases: **(case 2.2.1)** $z_1\in B$ or **(case 2.2.2)** $z_1\in\{k+1\}$
 
@@ -330,7 +352,7 @@ From what we’ve just shown, We conclude that it must be the case that $z_2\in 
 
 Now we’ll prove by contradiction that $z_2\notin B$, Because if we suppose by contradiction that $z_2\in B$, Then we’ll get by the way we defined $f$, That $f(z_2)=g(z_2)$, But since $g(z_2)\in\{1,...,\hat{m}\}$, We conclude that $f(z_2)\in\{1,...,\hat{m}\}$, But since $f(z_1)=f(z_2)$, We get that $f(z_1)\in\{1,...,\hat{m}\}$, And thus $m\in\{1,...,\hat{m}\}$, Which implies that $m\leq\hat{m}$, But since by the way we defined $m$ as $m:=\hat{m}+1$, We conclude that $\hat{m}+1\leq\hat{m}$, And thus we get $1\leq 0$, Which contradicts the fact that $1\gt 0$, Thus we’ve reached a contradiction and it must be the case that $z_2\notin\ B$ as was to be shown.
 
-From what we’ve just shown, We conclude that it must be the case that $z_2\in \{k+1\}$, And thus in summary we got that both $z_1,z_2\in\{k+1\}$, Which implies that $z_1 = k+1$ and $z_2 = k+1$, And thus we conclude that $z_1=z_2$ as was to be shown.
+From what we’ve just shown, We conclude that it must be the case that $z_2\in \{k+1\}$, And thus in summary we’ve got that both $z_1,z_2\in\{k+1\}$, Which implies that $z_1 = k+1$ and $z_2 = k+1$, And thus we conclude that $z_1=z_2$ as was to be shown.
 
 From both cases we see that it is always the case that $z_1=z_2$, And we conclude that $f$ is ***one-to-one*** as was to be shown.
 
