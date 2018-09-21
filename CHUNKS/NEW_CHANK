@@ -91,7 +91,7 @@ Now we’ll prove that the function $f$ is **onto**, I.e. we’ll prove that $\f
 
 Let $y\in\{1,...,k,k+1\}\setminus\{m\}$, Now since:
 
-$$\{1,...,k,k+1\}\setminus\{m\}=\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}=\big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)=\big(\{1,...,k\}\setminus\{m\}\big)\cup\{k+1\}$$
+$$\{1,...,k,k+1\}\setminus\{m\}=\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}\underset{\bf{(lemma\thinspace GIVEMEMYNAME)}}{=}\big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)\underset{(\bf{since}\thinspace m\neq k+1)}{=}\big(\{1,...,k\}\setminus\{m\}\big)\cup\{k+1\}$$
 
 We conclude that there are two cases: **(case 1)** $y\in\{1,...,k\}\setminus\{m\}$ or **(case 2)** $y\in\{k+1\}$
 
