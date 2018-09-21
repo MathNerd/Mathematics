@@ -1,4 +1,11 @@
 ----------
+
+**(lemma GIVEMEMYNAME):**
+
+$\forall A,B,C:\mathfrak{set}, (A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C)$
+
+
+$
 **SIXTH ##################בשיפוצים################# CHUNK**
 
 > **(lemma 6):**
@@ -26,11 +33,11 @@ Thus we see from both cases that it is always the case that $\{1,2\}\setminus\{m
 
 **(inductive step):**
 
-Suppose that for some $n=k\in\mathbb{N}_{\geq 2}$ we have $\forall m\in\{1,...,k\}, \{1,...,k\}\setminus\{m\}\approx\{1,...,k-1\}$, And we’ll prove that for $n=k+1\in\mathbb{N}$ we have $\forall m\in\{1,...,k,k+1\}, \{1,...,k,k+1\}\setminus\{m\}\approx\{1,...,k-1,k\}$.
+Suppose that for some $n=k\in\mathbb{N}_{\geq 2}$ we have $\forall m\in\{1,...,k\}, \{1,...,k\}\setminus\{m\}\approx\{1,...,k-1\}$, And we’ll prove that for $n=k+1\in\mathbb{N}_{\geq 2}$ we have $\forall m\in\{1,...,k,k+1\}, \{1,...,k,k+1\}\setminus\{m\}\approx\{1,...,k-1,k\}$.
 
 Let $m\in\{1,...,k,k+1\}$, Then we get by the fact $\{1,...,k,k+1\}=\{1,...,k\}\cup\{k+1\}$, That there are two cases: **(case 1)** $m\in \{1,...,k\}$ or **(case 2)** $m\in \{k+1\}$
 
-**(case 1):** If $m\in \{1,...,k\}$, Then we get by the ***induction hypothesis*** that $\{1,...,k\}\setminus\{m\}\approx \{1,...,k-1\}$, And thus we conclude that there exists a function $g:\{1,....k-1\}\to\{1,...,k\}\setminus\{m\}$ that is both ***one-to-one*** and ***onto***, 
+**(case 1):** If $m\in \{1,...,k\}$, Then we get by the ***induction hypothesis*** that $\{1,...,k\}\setminus\{m\}\approx \{1,...,k-1\}$, And thus we conclude that there exists a function $g:\{1,...,k-1\}\to\{1,...,k\}\setminus\{m\}$ that is both ***one-to-one*** and ***onto***, 
 
 Now we’ll define a function $f:\{1,...,k-1,k\}\to\{1,...,k,k+1\}\setminus\{m\}$ as follows:
 
@@ -45,15 +52,12 @@ We’ll show that $f$’s range is indeed $\{1,...,k,k+1\}\setminus\{m\}$, I.e. 
 
 Let $i\in \{1,...,k\}$, Then we get by the fact that $\{1,...,k\}=\{1,...,k-1\}\cup\{k\}$, That there are two cases: $i\in\{1,...,k-1\}$ or $i\in \{k\}$
 
-If $i\in\{1,...,k-1\}$, Then we get by definition of $f$ that $f(i)=g(i)\in\{1,...,k\}\setminus\{m\}$ 
+If $i\in\{1,...,k-1\}$, Then we get by definition of $f$ that $f(i)=g(i)\in\{1,...,k\}\setminus\{m\}\subseteq \big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)\underset{\bf{lemma\thinspace GIVEMEMYNAME}}{=}\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}=\{1,...,k,k+1\}\setminus\{m\}$ 
 
-‎***השלם מיד***
+If $i\in\{k\}$, Then we get $i=k$, And thus we conclude by definition of $f$, That $f(i)=k+1\in\{k+1\}$, Now since $m\in\{1,...,k\}$, We conclude that $m\leq k\lt k+1$, And thus we conclude that $m\notin {k+1}$, Which implies that $\{k+1\}\setminus\{m\}=\{k+1\}$, And thus we conclude that $f(i)\in\{k+1\}\setminus\{m\}$.
+‎***לתקן האמור לעיל/המסקנה הסופית לא מספקת***
 
-If $x\in\{k\}$, Then we get by definition of $f$ that $f(i)=k+1$.
-
-‎***השלם מיד***
-
-Thus we see from both cases that it is always the case that $f(i)\in\{1,...,k+1\}\setminus\{m\} $ as was to be shown.
+Thus we see from both cases that it is always the case that $f(i)\in\{1,...,k+1\}\setminus\{m\}$ as was to be shown.
 
 *** / f אכן על השלם זאת מיד***
 
@@ -65,16 +69,25 @@ Let $y\in\{1,...,k,k+1\}\setminus\{m\}$, Now since:
 
 We conclude that there are two cases: **(case 1)** $y\in\{1,...,k\}\setminus\{m\}$ or **(case 2)** $y\in\{k+1\}$
 
-**(case 1):** If $y\in\{1,...,k\}\setminus\{m\}$, Then
+**(case 1):** If $y\in\{1,...,k\}\setminus\{m\}$, Then we get by the fact $g$ is ***onto***, That $\exists x\in\{1,...,k-1\},g(x)=y$, Now since $x\in\{1,...,k-1\}\subseteq\{1,...,k-1,k\}$, We conclude by definition of $f$, That $f(x)=g(x)$, But because $g(x)=y$, We conclude that $f(x)=y$, And thus we’ve shown that $\exists x\in\{1,...,k\},f(x)=y$.
 
-**(case 2):** If $y\in\{k+1\}$, Then
+**(case 2):** If $y\in\{k+1\}$, Then we get $y=k+1$, Now take $x:=k\in\{1,...,k\}$, Now we get by definition of $f$, That $f(x)=f(k)=k+1=y$, And thus we’ve shown that $\exists x\in\{1,...,k\},f(x)=y$.
 
+Thus we see from both cases that it is always the case that $\exists x\in \{1,...,k\}, f(x)=y$, And we conclude that $f$ is ***onto*** as was to be shown.
 
 *** / f אכן חד חד ערכית המשך מיד***
 
 And now we’ll prove that the function $f$ is also **one-to-one**, I.e. we’ll prove that $\forall i,j\in\{1,...,k-1,k\},f(i)=f(j)\longrightarrow i =j$:
 
-Let $ i,j\in\{1,...,k-1,k\}$ be such that $f(i)=f(j)$, 
+Let $ i,j\in\{1,...,k-1,k\}$ be such that $f(i)=f(j)$, Now since $\{1,...,k-1,k\}=\{1,...,k-1\}\cup\{k\}$, We conclude that there are two cases: **(case 1)** $i\in\{1,...,k-1\}$ or **(case 2)** $i\in\{k\}$
+
+**(case 1):** If $i\in\{1,...,k-1\}$, Then we get by definition of $f$, That $f(i)=g(i)$, Also since $\{1,...,k-1,k\}=\{1,...,k-1\}\cup\{k\}$, We get that $j\in\{1,...,k-1\}\cup\{k\}$,
+
+Now we’ll show that $j\notin \{k\}$, Because if we suppose by contradiction that $j\in\{k\}$, Then we get that $j=k$, And thus we get by definition of $f$, That $f(j)=k+1$, But since $f(i)=g(i)$ and since $f(i)=f(j)$, We conclude that $k+1=g(i)$, But since $g(i)\in\{1,...,k\}\setminus\{m\}$, We conclude that $g(i)\in\{1,...,k\}$, And thus we conclude that $g(i)\leq k$, But this implies that $k+1\leq k$, And we conclude that $1\leq 0$, But this contradicts the fact that $1\gt 0$, And thus we conclude that it must be the case that $j\notin\{k\}$ as was to be shown
+
+From what we’ve just shown, We conclude that it must be the case that $j\in\{1,...,k-1\}$, And thus we conclude by definition of $f$, That $f(j)=g(j)$, And therefore we conclude that $g(i)=g(j)$, But since $g$ is ***one-to-one***, We conclude that $i=j$ as was to be shown.
+
+**(case 2):** If $i\in\{k\}$, Then we get $i=k$, And thus we get by define of $f$, That $f(i)=k+1$, 
 
 ‎***השלם זאת מיד***
 
