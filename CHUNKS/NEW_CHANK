@@ -79,9 +79,9 @@ We’ll show that $f$’s range is indeed $\{1,...,k,k+1\}\setminus\{m\}$, I.e. 
 
 Let $i\in \{1,...,k\}$, Then we get by the fact that $\{1,...,k\}=\{1,...,k-1\}\cup\{k\}$, That there are two cases: $i\in\{1,...,k-1\}$ or $i\in \{k\}$
 
-If $i\in\{1,...,k-1\}$, Then we get by definition of $f$ that $f(i)=g(i)\in\{1,...,k\}\setminus\{m\}\subseteq \big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)\underset{\bf{lemma\thinspace GIVEMEMYNAME}}{=}\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}=\{1,...,k,k+1\}\setminus\{m\}$ 
+If $i\in\{1,...,k-1\}$, Then we get by definition of $f$ that $f(i)=g(i)\in\{1,...,k\}\setminus\{m\}\subseteq \big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)\underset{\bf{lemma\thinspace GIVEMEMYNAME}}{=}\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}=\{1,...,k,k+1\}\setminus\{m\}$
 
-If $i\in\{k\}$, Then we get $i=k$, And thus we conclude by definition of $f$, That $f(i)=k+1\in\{k+1\}$, Now since $m\in\{1,...,k\}$, We conclude that $m\leq k\lt k+1$, And thus we conclude that $m\notin {k+1}$, Which implies that $\{k+1\}\setminus\{m\}=\{k+1\}$, And thus we conclude that $f(i)\in\{k+1\}\setminus\{m\}$, Now since $\{k+1\}\subseteq \{1,...,k,k+1\}$, We conclude by **(lemma GIVEMEMYNAME 2)**, That $\{k+1\}\setminus\{m\}\subseteq\{1,...,k+1\}\setminus\{m\}$, And thus we conclude that $f(i)\in\{1,...,k,k+1\}\setminus\{m\}$.
+If $i\in\{k\}$, Then we get $i=k$, And thus we conclude by definition of $f$, That $f(i)=k+1\in\{k+1\}$, Now since $m\in\{1,...,k\}$, We conclude that $m\leq k\lt k+1$, And thus we get that in particular $m\neq k+1$, Which implies that $m\notin \{k+1\}$, And so we get that $\{k+1\}\setminus\{m\}=\{k+1\}$, And we conclude that $f(i)\in\{k+1\}\setminus\{m\}$, Now since $\{k+1\}\subseteq \{1,...,k,k+1\}$, We conclude by **(lemma GIVEMEMYNAME 2)**, That $\{k+1\}\setminus\{m\}\subseteq\{1,...,k+1\}\setminus\{m\}$, And thus we conclude that $f(i)\in\{1,...,k,k+1\}\setminus\{m\}$.
 
 Thus we see from both cases that it is always the case that $f(i)\in\{1,...,k+1\}\setminus\{m\}$ as was to be shown.
 
