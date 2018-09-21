@@ -1,10 +1,24 @@
+
+**SIXTH ##################בשיפוצים################# CHUNK**
+
 ----------
 
 **(lemma GIVEMEMYNAME):**
 
 $\forall A,B,C:\mathfrak{set}, (A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C)$
 
-**SIXTH ##################בשיפוצים################# CHUNK**
+----------
+**Proof:**
+
+Let $A,B,C$ be some sets,  Then we have:
+
+$$x\in (A\cup B)\setminus C\\\Longleftrightarrow\\x\in A\cup B\land x\notin C \\\Longleftrightarrow \\(x\in A\lor x\in B)\land x\notin C\\\Longleftrightarrow\\ (x\in A\land x\notin C)\lor (x\in B\land x\notin C)\\\Longleftrightarrow \\x\in A\setminus C\lor x\in B\setminus C\\\Longleftrightarrow \\x\in (A\setminus C)\cup (B\setminus C)$$
+
+And thus we conclude that $(A\cup B)\setminus C=(A\setminus C)\cup (B\setminus C)$ as was to be shown.
+
+Q.E.D.
+
+----------
 
 > **(lemma 6):**
 > 
@@ -63,7 +77,7 @@ Now we’ll prove that the function $f$ is **onto**, I.e. we’ll prove that $\f
 
 Let $y\in\{1,...,k,k+1\}\setminus\{m\}$, Now since:
 
-$$\{1,...,k,k+1\}\setminus\{m\}=\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}=\big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)=\big(\{1,...,k\}\setminus\{m\}\big)\cup\{k+1\}$$
+ $$\{1,...,k,k+1\}\setminus\{m\}=\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}=\big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)=\big(\{1,...,k\}\setminus\{m\}\big)\cup\{k+1\}$$
 
 We conclude that there are two cases: **(case 1)** $y\in\{1,...,k\}\setminus\{m\}$ or **(case 2)** $y\in\{k+1\}$
 
