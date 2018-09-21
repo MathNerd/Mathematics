@@ -4,8 +4,6 @@
 
 $\forall A,B,C:\mathfrak{set}, (A\cup B)\setminus C=(A\setminus C)\cup(B\setminus C)$
 
-
-$
 **SIXTH ##################בשיפוצים################# CHUNK**
 
 > **(lemma 6):**
@@ -48,7 +46,7 @@ $\forall i\in\{1,...,k-1,k\},f(i):=\begin{cases}
 
 We’ll show that $f$’s range is indeed $\{1,...,k,k+1\}\setminus\{m\}$, I.e. we’ll prove that $\forall i\in \{1,...,k\}, f(i)\in\{1,...,k,k+1\}\setminus\{m\}$:
 
-‎***השלם זאת מיד / טווח f הוא אכן הקבוצה הרשומה***
+***נקודת בקרה: אימות טווח***
 
 Let $i\in \{1,...,k\}$, Then we get by the fact that $\{1,...,k\}=\{1,...,k-1\}\cup\{k\}$, That there are two cases: $i\in\{1,...,k-1\}$ or $i\in \{k\}$
 
@@ -59,13 +57,13 @@ If $i\in\{k\}$, Then we get $i=k$, And thus we conclude by definition of $f$, Th
 
 Thus we see from both cases that it is always the case that $f(i)\in\{1,...,k+1\}\setminus\{m\}$ as was to be shown.
 
-*** / f אכן על השלם זאת מיד***
+***נקודת בקרה: אימות על***
 
 Now we’ll prove that the function $f$ is **onto**, I.e. we’ll prove that $\forall y\in\{1,...,k,k+1\}\setminus\{m\},\exists x\in \{1,...,k\}, f(x)=y$:
 
 Let $y\in\{1,...,k,k+1\}\setminus\{m\}$, Now since:
 
- $$\{1,...,k,k+1\}\setminus\{m\}=\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}=\big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)=\big(\{1,...,k\}\setminus\{m\}\big)\cup\{k+1\}$$
+$$\{1,...,k,k+1\}\setminus\{m\}=\big(\{1,...,k\}\cup\{k+1\}\big)\setminus\{m\}=\big(\{1,...,k\}\setminus\{m\}\big)\cup\big(\{k+1\}\setminus\{m\}\big)=\big(\{1,...,k\}\setminus\{m\}\big)\cup\{k+1\}$$
 
 We conclude that there are two cases: **(case 1)** $y\in\{1,...,k\}\setminus\{m\}$ or **(case 2)** $y\in\{k+1\}$
 
@@ -75,29 +73,32 @@ We conclude that there are two cases: **(case 1)** $y\in\{1,...,k\}\setminus\{m\
 
 Thus we see from both cases that it is always the case that $\exists x\in \{1,...,k\}, f(x)=y$, And we conclude that $f$ is ***onto*** as was to be shown.
 
-*** / f אכן חד חד ערכית המשך מיד***
+***נקודת בקרה: אימות חד חד ערכיות***
 
 And now we’ll prove that the function $f$ is also **one-to-one**, I.e. we’ll prove that $\forall i,j\in\{1,...,k-1,k\},f(i)=f(j)\longrightarrow i =j$:
 
-Let $ i,j\in\{1,...,k-1,k\}$ be such that $f(i)=f(j)$, Now since $\{1,...,k-1,k\}=\{1,...,k-1\}\cup\{k\}$, We conclude that there are two cases: **(case 1)** $i\in\{1,...,k-1\}$ or **(case 2)** $i\in\{k\}$
+Let $ i,j\in\{1,...,k-1,k\}$ be such that $f(i)=f(j)$, Now since $\{1,...,k-1,k\}=\{1,...,k-1\}\cup\{k\}$, We conclude that there are two cases: **(case 1.1)** $i\in\{1,...,k-1\}$ or **(case 1.2)** $i\in\{k\}$
 
-**(case 1):** If $i\in\{1,...,k-1\}$, Then we get by definition of $f$, That $f(i)=g(i)$, Also since $\{1,...,k-1,k\}=\{1,...,k-1\}\cup\{k\}$, We get that $j\in\{1,...,k-1\}\cup\{k\}$,
+**(case 1.1):** If $i\in\{1,...,k-1\}$, Then we get by definition of $f$, That $f(i)=g(i)$, Also since $\{1,...,k-1,k\}=\{1,...,k-1\}\cup\{k\}$, We get that $j\in\{1,...,k-1\}\cup\{k\}$,
 
-Now we’ll show that $j\notin \{k\}$, Because if we suppose by contradiction that $j\in\{k\}$, Then we get that $j=k$, And thus we get by definition of $f$, That $f(j)=k+1$, But since $f(i)=g(i)$ and since $f(i)=f(j)$, We conclude that $k+1=g(i)$, But since $g(i)\in\{1,...,k\}\setminus\{m\}$, We conclude that $g(i)\in\{1,...,k\}$, And thus we conclude that $g(i)\leq k$, But this implies that $k+1\leq k$, And we conclude that $1\leq 0$, But this contradicts the fact that $1\gt 0$, And thus we conclude that it must be the case that $j\notin\{k\}$ as was to be shown
+Now we’ll show that $j\notin \{k\}$, Because if we suppose by contradiction that $j\in\{k\}$, Then we get that $j=k$, And thus we get by definition of $f$, That $f(j)=k+1$, But since $f(i)=g(i)$ and since $f(i)=f(j)$, We conclude that $k+1=g(i)$, But since $g(i)\in\{1,...,k\}\setminus\{m\}$, We conclude that $g(i)\in\{1,...,k\}$, And thus we conclude that $g(i)\leq k$, But this implies that $k+1\leq k$, And we conclude that $1\leq 0$, But this contradicts the fact that $1\gt 0$, And thus we conclude that it must be the case that $j\notin\{k\}$ as was to be shown.
 
 From what we’ve just shown, We conclude that it must be the case that $j\in\{1,...,k-1\}$, And thus we conclude by definition of $f$, That $f(j)=g(j)$, And therefore we conclude that $g(i)=g(j)$, But since $g$ is ***one-to-one***, We conclude that $i=j$ as was to be shown.
 
-**(case 2):** If $i\in\{k\}$, Then we get $i=k$, And thus we get by define of $f$, That $f(i)=k+1$, 
+**(case 1.2):** If $i\in\{k\}$, Then we get $i=k$, And thus we get by definition of $f$, That $f(i)=k+1$, Also since $\{1,...,k-1,k\}=\{1,...,k-1\}\cup\{k\}$, We get that $j\in\{1,...,k-1\}\cup\{k\}$, 
 
-‎***השלם זאת מיד***
+Now we’ll show that $j\notin \{1,...,k-1\}$, Because if we suppose by contradiction that $j\in\{1,...,k-1\}$, Then we get by definition of $f$, That $f(j)=g(j)$, But since $f(i)=k+1$ and since $f(i)=f(j)$, We conclude that $k+1=g(j)$, But since $g(j)\in\{1,...,k\}\setminus\{m\}$, We conclude that $g(j)\in\{1,...,k\}$, And thus we conclude that $g(j)\leq k$, But this implies that $k+1\leq k$, And we conclude that $1\leq 0$, But this contradicts the fact that $1\gt 0$, And thus we conclude that it must be the case that $j\notin\{1,...,k-1\}$ as was to be shown.
 
-**(case 2):** If $m\in\{k+1\}$, Then
+From what we’ve just shown, We conclude that it must be the case that $j\in\{k\}$, And thus we conclude that $j=k$, But since it is also the case $i=k$,  We conclude that $i=j$ as was to be shown.
 
-‎***המשך מיד ועכשיו***
+From what we’ve just shown, We conclude that it must be the case that $j\in \{k\}$, And thus in summary we’ve got that both $i,j\in\{k\}$,  But this implies that $i = k$ and $j = k$, And thus we conclude that $i=j$ as was to be shown.
 
+From both cases we see that it is always the case that $i=j$, And we conclude that $f$ is ***one-to-one*** as was to be shown.
 
-‎***מקורות טקסט:***
+In summary, We’ve shown that there exists a **one-to-one** and **onto** function from $\{1,...,k-1,k\}$ to $\{1,...,k,k+1\}\{m\}$, And we conclude that $\{1,...,k,k+1\}\setminus\{m\}\approx\{1,...,k-1,k\}$ as was to be shown.
 
-Since $\mathscr{P}(\{1\})\setminus\emptyset=\{\emptyset,\{1\}\}\setminus\{\emptyset\}=\{\{1\}\}$, We conclude that $A\in\{\{1\}\}$, And thus $A=\{1\}$, 
+**(case 2):** If $m\in\{k+1\}$, Then we get $m=k+1$, And thus $\{1,...,k,k+1\}\setminus\{m\}=\{1,...,k,k+1\}\setminus\{k+1\}=\{1,...,k\}$, But since $\approx$ is reflexive, We conclude that $\{1,...,k\}\approx\{1,...,k\}$, And we conclude $\{1,...,k,k+1\}\setminus\{m\}\approx\{1,...,k\}$ as was to be shown.
 
-Now let’s denote $m:=1\in\{1\}$, Then we get $\{1,...,m\}=\{1\}$, And thus we conclude that $A=\{1,...,m\}$, And by reflexivity of $\approx$, We conclude that $A\approx \{1,...,m\}$, And in summary we’ve got that $\exists m\in\{1\}, A\approx \{1,...,m\}$ as was to be shown.
+From both cases we see that it is always the case that $\{1,...,k,k+1\}\setminus\{m\}\approx\{1,...,k\}$ as was to be shown.
+
+Q.E.D.
