@@ -17,7 +17,7 @@ natural g(natural k)
 {
     static natural n;
     static natural* X;
-    static is _initialized = false;
+    static is_initialized = false;
     
     if(!is_initialized)
     {
