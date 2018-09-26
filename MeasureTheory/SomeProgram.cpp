@@ -13,15 +13,9 @@ natural f(natural k)
     return 1;
 }
 
-int compar(const void* a, const void* b)
-{
-    return a <= b;
-}
-
 natural g(natural k)
 {
     static natural n;
-    static natural Y[m];
     static natural* X;
     static is _initialized = false;
     
