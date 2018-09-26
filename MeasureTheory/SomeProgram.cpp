@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 
+#define DBG_PRINT 1
+
 typedef unsigned natural;
 const natural m = 5;
 
@@ -33,7 +35,9 @@ natural g(natural k)
     
         n = max_f - m;        
         
+        #if DBG_PRINT == 1
         printf("max_f = %u, n = %u, m = %u\n", max_f, n, m);
+        #endif
         
         X = (natural*)(malloc(sizeof(natural)*n));
         
@@ -54,11 +58,13 @@ natural g(natural k)
         
         is_initialized = true;
         
+        #if DBG_PRINT
         for (unsigned i = 0; i < n; i++)
         {
             printf("%u  ", X[i]);
         }
         printf("\n");
+        #endif
     }
     
     if (1 <= k && k <= n)
