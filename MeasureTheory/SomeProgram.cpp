@@ -2,7 +2,7 @@
 #include <cstdlib>
 
 typedef unsigned natural;
-const natural m = 10;
+const natural m = 5;
 
 natural f(natural k)
 {
@@ -17,7 +17,7 @@ natural g(natural k)
 {
     static natural n;
     static natural* X;
-    static is_initialized = false;
+    static bool is_initialized = false;
     
     if(!is_initialized)
     {
@@ -30,10 +30,12 @@ natural g(natural k)
             if (max_f < f_i)
                 max_f = f_i;
         }
-        
+    
         n = max_f - m;        
         
-        X = malloc(sizeof(natural)*n);
+        printf("max_f = %u, n = %u, m = %u\n", max_f, n, m);
+        
+        X = (natural*)(malloc(sizeof(natural)*n));
         
         unsigned i = 0;
         for (natural k = 1; k <= max_f; k++)
@@ -52,7 +54,7 @@ natural g(natural k)
         
         is_initialized = true;
         
-        for (unsigned i = 0; i < m; i++)
+        for (unsigned i = 0; i < n; i++)
         {
             printf("%u  ", X[i]);
         }
@@ -68,9 +70,21 @@ natural g(natural k)
     return 1;
 }
 
+natural h(natural k)
+{
+    if (1 <= k && k <= m)
+        return f(k);
+    else if (m+1 <= k)
+        return g(k - m);
+        
+    fprintf(stderr, "FATAL ERROR: argument for function 'h' is not in range.\n");
+    return 1;
+}
+
 int main(void)
 {
-    printf("hello %u\n", g(6+10));
+    for (natural k = 1; k <= 30; k++)
+         printf("h(%u) = %u\n", k, h(k));
     
     return 0;
 }
