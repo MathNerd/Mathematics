@@ -1,10 +1,11 @@
+
 #include <iostream>
 #include <cstdlib>
 
-#define DBG_PRINT 1
+#define DBG_PRINT 0
 
 typedef unsigned natural;
-const natural m = 5;
+const natural m = 10;
 
 natural f(natural k)
 {
@@ -89,7 +90,7 @@ natural h(natural k)
 
 int main(void)
 {
-    for (natural k = 1; k <= 30; k++)
+    for (natural k = 1; k <= 101; k++)
          printf("h(%u) = %u\n", k, h(k));
     
     return 0;
