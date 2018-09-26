@@ -27,37 +27,48 @@ natural g(natural k)
     
     if(!is_initialized)
     {
-        for (unsigned i = 0; i < m; i++)
+        natural max_f = 1;
+         
+        for (natural i = 1; i <= m; i++)
         {
-            Y[i] = f(i);
+            natural f_i = f(i);
+             
+            if (max_f < f_i)
+                max_f = f_i;
         }
         
-        qsort(Y, m, sizeof(natural), compar);
-        
-        for (unsigned i = 0; i < m; i++)
-        {
-            printf("%u  ", Y[i]);
-        }
-        printf("\n");
-        
-        natural max_f = Y[m-1];
-        
-        n = max_f - m;
+        n = max_f - m;        
         
         X = malloc(sizeof(natural)*n);
         
-        for (natural i = 1; i <= max_f; i++)
+        unsigned i = 0;
+        for (natural k = 1; k <= max_f; k++)
         {
-            if ()
-            X[i] = 1; // min([max_f]\{g(1),...,g(k-1))
+            bool is_found = false;
             
+            for (natural l = 1; !is_found && l <= m; l++)
+            {
+                if (k == f(l))
+                    is_found = true;
+            }
+            
+            if (!is_found)
+                X[i++] = k;         
         }
         
         is_initialized = true;
+        
+        for (unsigned i = 0; i < m; i++)
+        {
+            printf("%u  ", X[i]);
+        }
+        printf("\n");
     }
     
-    if (1 <= k)
-        return 10;
+    if (1 <= k && k <= n)
+        return X[k-1];
+    else if (n + 1 <= k)
+        return k + m;
         
     fprintf(stderr, "FATAL ERROR: argument for function 'g' is not in range.\n");
     return 1;
