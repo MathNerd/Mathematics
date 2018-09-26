@@ -13,30 +13,42 @@ natural f(natural k)
     return 1;
 }
 
+int compar(const void* a, const void* b)
+{
+    return a <= b;
+}
+
 natural g(natural k)
 {
     static natural n;
+    static natural Y[m];
     static natural* X;
     static is _initialized = false;
     
     if(!is_initialized)
     {
-        natural max_f = 1;
-        
-        for (natural i = 1; i <= m; i++)
+        for (unsigned i = 0; i < m; i++)
         {
-            natural f_i = f(i);
-            
-            if (max_f < f_i)
-                max_f = f_i;
+            Y[i] = f(i);
         }
+        
+        qsort(Y, m, sizeof(natural), compar);
+        
+        for (unsigned i = 0; i < m; i++)
+        {
+            printf("%u  ", Y[i]);
+        }
+        printf("\n");
+        
+        natural max_f = Y[m-1];
         
         n = max_f - m;
         
         X = malloc(sizeof(natural)*n);
         
-        for (natural i = 1; i <= n; i++)
+        for (natural i = 1; i <= max_f; i++)
         {
+            if ()
             X[i] = 1; // min([max_f]\{g(1),...,g(k-1))
             
         }
