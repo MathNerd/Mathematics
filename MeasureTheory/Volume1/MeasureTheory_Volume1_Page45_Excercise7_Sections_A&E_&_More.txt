@@ -1,0 +1,4 @@
+1. Proof that finite union of bounded sets is bounded.
+2. Proof that any intersection of bounded sets is bounded.
+3. Proof that finite union of compact sets is compact.
+4. Proof that any intersection of compact sets is compact.
