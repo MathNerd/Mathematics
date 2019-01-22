@@ -1,4 +1,4 @@
 1. Proof of logical equvalence between two different definitions of disjoint sets.
 2. Proof that in any non-empty open interval bounded or unbounded there is a rational number by using LemmaB2 in page 37.
 3. Proof of LemmaB9.
-4 & 5. Proof of LemmaB10 in two ways by using the logical equvalence between the two different definitions of disjoint sets that is proved at the top of the page.
+4 & 5. Proof of LemmaB10 in two ways by using the logical equivalence between the two different definitions of disjoint sets that is proved at the top of the page.
