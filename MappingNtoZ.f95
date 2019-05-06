@@ -1,7 +1,9 @@
-﻿program sum 
+! program to map N (the set of natural numbers) into Z (the set of whole numbers):
+
+program sum 
 
     do n = 1,30
-        PRINT *,h(n)
+        print *,h(n)
     end do
     
 contains
