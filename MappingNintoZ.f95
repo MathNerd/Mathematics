@@ -1,6 +1,6 @@
 ! program to map N (the set of natural numbers) into Z (the set of whole numbers):
 
-program sum 
+program map_N_into_Z
 
     do n = 1,30
         print *,h(n)
@@ -18,4 +18,4 @@ function h(n) result(r)
     end if 
 end function
 
-end program sum
+end program map_N_into_Z
