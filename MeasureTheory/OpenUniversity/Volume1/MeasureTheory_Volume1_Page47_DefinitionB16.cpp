@@ -1,4 +1,6 @@
-﻿#include <iostream>
+// "Theoretically" implements Definition-B16 ('Open Cover') in Measure-Theory, Volume-1, Page 47.
+
+#include <iostream>
 #include <cassert>
 #include <string>
 #include <vector>
