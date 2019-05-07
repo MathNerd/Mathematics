@@ -82,7 +82,7 @@ struct open_interval
 
 struct open_family
 {
-    std::vector<open_interval> _oil;
+    std::vector<open_interval> _oil; // acronym for: open interval list.
     
     static open_family create(void)
     {
