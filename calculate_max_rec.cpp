@@ -1,4 +1,4 @@
-// Calculates the maximal value in an array.
+// Calculates the maximal value in an array recursively.
 
 #include <iostream>
 
