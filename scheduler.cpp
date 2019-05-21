@@ -47,7 +47,7 @@ int minimal_time_to_next_state_change(std::vector<delays> delays_list)
     
     
     
-    return minimal_time_to_next_state_change;
+    return next_minimal_time_to_next_state_change;
 }
 
 int main() {
