@@ -40,6 +40,16 @@ std::string to_string(std::vector<delays> delays_list)
     return str;
 }
 
+int minimal_time_to_next_state_change(std::vector<delays> delays_list)
+{
+    static int current_minimal_time_to_next_state_change = 0;
+    int next_minimal_time_to_next_state_change = 0;
+    
+    
+    
+    return minimal_time_to_next_state_change;
+}
+
 int main() {
 	delays_list.push_back({1, 4, 7});
 	delays_list.push_back({5, 2, 8});
