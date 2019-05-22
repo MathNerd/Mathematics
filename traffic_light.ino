@@ -68,7 +68,7 @@ class TRAFFIC_LIGHT_STATE
 class TRAFFIC_LIGHT
 {
     private:
-        TRAFFIC_LIGHT_STATE _state;
+        TRAFFIC_LIGHT_STATE _traffic_light_state;
         LED _red_led;
         LED _yellow_led;
         LED _green_led;
@@ -77,38 +77,38 @@ class TRAFFIC_LIGHT
         TRAFFIC_LIGHT(void) {}
         ~TRAFFIC_LIGHT(void) {}
         
-        static TRAFFIC_LIGHT Create(LED red_led, LED yellow_led, LED green_led) 
+        static TRAFFIC_LIGHT Create(LED red_led, LED yellow_led, LED green_led, TRAFFIC_LIGHT_STATE traffic_light_state) 
         {
             TRAFFIC_LIGHT traffic_light;
-            traffic_light._state = TRAFFIC_LIGHT_STATE::STOP;
             traffic_light._red_led = red_led;
             traffic_light._yellow_led = yellow_led;
             traffic_light._green_led = green_led;
+            traffic_light._traffic_light_state = traffic_light_state;
             return traffic_light;
         }
         
-        void SetState(TRAFFIC_LIGHT_STATE state)
+        void SetState(TRAFFIC_LIGHT_STATE traffic_light_state)
         {
-            this->_state = state;
-            if (state == TRAFFIC_LIGHT_STATE::STOP)
+            this->_traffic_light_state = traffic_light_state;
+            if (_traffic_light_state == TRAFFIC_LIGHT_STATE::STOP)
             {
                 _red_led.SetState(LED_STATE::ON);
                 _yellow_led.SetState(LED_STATE::OFF);
                 _green_led.SetState(LED_STATE::OFF);
             }
-            else if (state == TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE)
+            else if (_traffic_light_state == TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE)
             {
                 _red_led.SetState(LED_STATE::ON);
                 _yellow_led.SetState(LED_STATE::ON);
                 _green_led.SetState(LED_STATE::OFF);
             }
-            else if (state == TRAFFIC_LIGHT_STATE::DRIVE)
+            else if (_traffic_light_state == TRAFFIC_LIGHT_STATE::DRIVE)
             {
                 _red_led.SetState(LED_STATE::OFF);
                 _yellow_led.SetState(LED_STATE::OFF);
                 _green_led.SetState(LED_STATE::ON);
             }
-            else if (state == TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP)
+            else if (_traffic_light_state == TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP)
             {
                 _red_led.SetState(LED_STATE::OFF);
                 _yellow_led.SetState(LED_STATE::ON);
@@ -118,7 +118,7 @@ class TRAFFIC_LIGHT
         
         TRAFFIC_LIGHT_STATE GetState(void)
         {
-            return this->_state;
+            return this->_traffic_light_state;
         }
 };
 
@@ -262,14 +262,14 @@ class TRAFFIC_LIGHT_SCHEDULER
             _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP);
             delay(1000);
             */
+            
+            static unsigned delay_tracker = 0;
 
-            TRAFFIC_LIGHT_STATE current_traffic_light_state0 = _traffic_light_array[0].GetState();
-            _traffic_light_array[0].SetState(current_traffic_light_state0.NextState());
-            delay(1000);
+            delay(_traffic_light_transition_delays_array[0].GetDelay(_traffic_light_array[0].GetState()));
+            _traffic_light_array[0].SetState(_traffic_light_array[0].GetState().NextState());
 
-            TRAFFIC_LIGHT_STATE current_traffic_light_state1 = _traffic_light_array[1].GetState();
-            _traffic_light_array[1].SetState(current_traffic_light_state1.NextState());
-            delay(1000);
+            delay(_traffic_light_transition_delays_array[1].GetDelay(_traffic_light_array[1].GetState()));
+            _traffic_light_array[1].SetState(_traffic_light_array[1].GetState().NextState());
         }
 };
 
@@ -308,14 +308,16 @@ void setup()
     traffic_light2 = TRAFFIC_LIGHT::Create(
         LED::Create(traffic_light_pin_ids2.red),
         LED::Create(traffic_light_pin_ids2.yellow),
-        LED::Create(traffic_light_pin_ids2.green)
+        LED::Create(traffic_light_pin_ids2.green),
+        TRAFFIC_LIGHT_STATE::STOP
     );
     
     traffic_light_transition_delays2 = TRAFFIC_LIGHT_TRANSITION_DELAYS::Create(
         TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
         TRAFFIC_LIGHT_DELAY::CreateConstant(1000),
         TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
-        TRAFFIC_LIGHT_DELAY::CreateConstant(1000)
+        TRAFFIC_LIGHT_DELAY::CreateConstant(1000),
+        TRAFFIC_LIGHT_STATE::STOP
     );
     
     traffic_light_scheduler = TRAFFIC_LIGHT_SCHEDULER<2U>::Create();
