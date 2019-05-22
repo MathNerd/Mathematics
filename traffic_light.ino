@@ -83,7 +83,7 @@ class TRAFFIC_LIGHT
             traffic_light._red_led = red_led;
             traffic_light._yellow_led = yellow_led;
             traffic_light._green_led = green_led;
-            traffic_light._traffic_light_state = traffic_light_state;
+            traffic_light.SetState(traffic_light_state);
             return traffic_light;
         }
         
@@ -205,7 +205,7 @@ class TRAFFIC_LIGHT_TRANSITION_DELAYS
         }
 };
 
-template<unsigned int SIZE>
+template<size_t SIZE>
 class TRAFFIC_LIGHT_SCHEDULER
 {
     private:
@@ -253,23 +253,34 @@ class TRAFFIC_LIGHT_SCHEDULER
         void Run(void)
         {
             /*
-            _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::STOP);
+            _traffic_light_array[0].SetState(TRAFFIC_LIGHT_STATE::STOP);
             delay(5000);
-            _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE);
+            _traffic_light_array[0].SetState(TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE);
             delay(1000);
-            _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::DRIVE);
+            _traffic_light_array[0].SetState(TRAFFIC_LIGHT_STATE::DRIVE);
             delay(5000);
-            _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP);
+            _traffic_light_array[0].SetState(TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP);
             delay(1000);
             */
             
-            static unsigned delay_tracker = 0;
+            static unsigned last_minimal_delay = 0;
+            static size_t last_traffic_light_with_minimal_delay_index = 0;
+            
+            size_t traffic_light_with_minimal_delay_index = 0;
+            for (size_t traffic_light_index = 1; traffic_light_index < SIZE; traffic_light_index++)
+            {
+                if (_traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState()) >
+                    _traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState())) 
+                {
+                    traffic_light_with_minimal_delay_index = traffic_light_index;
+                }
+            }
 
-            delay(_traffic_light_transition_delays_array[0].GetDelay(_traffic_light_array[0].GetState()));
-            _traffic_light_array[0].SetState(_traffic_light_array[0].GetState().NextState());
-
-            delay(_traffic_light_transition_delays_array[1].GetDelay(_traffic_light_array[1].GetState()));
-            _traffic_light_array[1].SetState(_traffic_light_array[1].GetState().NextState());
+            last_traffic_light_with_minimal_delay_index = traffic_light_with_minimal_delay_index;
+            last_minimal_delay = _traffic_light_transition_delays_array[last_traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[last_traffic_light_with_minimal_delay_index].GetState());
+            
+            delay(last_minimal_delay);
+            _traffic_light_array[traffic_light_with_minimal_delay_index].SetState(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState().NextState());
         }
 };
 
@@ -295,7 +306,8 @@ void setup()
     traffic_light1 = TRAFFIC_LIGHT::Create(
         LED::Create(traffic_light_pin_ids1.red),
         LED::Create(traffic_light_pin_ids1.yellow),
-        LED::Create(traffic_light_pin_ids1.green)
+        LED::Create(traffic_light_pin_ids1.green),
+        TRAFFIC_LIGHT_STATE::DRIVE
     );
     
     traffic_light_transition_delays1 = TRAFFIC_LIGHT_TRANSITION_DELAYS::Create(
@@ -316,8 +328,7 @@ void setup()
         TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
         TRAFFIC_LIGHT_DELAY::CreateConstant(1000),
         TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
-        TRAFFIC_LIGHT_DELAY::CreateConstant(1000),
-        TRAFFIC_LIGHT_STATE::STOP
+        TRAFFIC_LIGHT_DELAY::CreateConstant(1000)
     );
     
     traffic_light_scheduler = TRAFFIC_LIGHT_SCHEDULER<2U>::Create();
