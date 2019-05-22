@@ -345,7 +345,8 @@ class TRAFFIC_LIGHT_SCHEDULER
                 _traffic_light_array[_traffic_light_scheduler_minimal_delay_indices_tracker.GetAt(index)].SetState(_traffic_light_array[_traffic_light_scheduler_minimal_delay_indices_tracker.GetAt(index)].GetState().NextState());
 
             // Find minimal delay from those indices that are not in the indices tracking array:    
-            size_t traffic_light_with_minimal_delay_index = 0;
+            bool is_all_not_in = true;
+            size_t traffic_light_with_minimal_delay_index;
             for (size_t traffic_light_index = 0; traffic_light_index < SIZE; traffic_light_index++)
             {
                 if (!_traffic_light_scheduler_minimal_delay_indices_tracker.IsIn(traffic_light_index))
@@ -354,11 +355,17 @@ class TRAFFIC_LIGHT_SCHEDULER
                         _traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState())) 
                     {
                         traffic_light_with_minimal_delay_index = traffic_light_index;
+                        is_all_not_in = false;
                     }
                 }
             }
             // ??? WHAT IF ALL ARE NOT IN THE INDICESmTRACKING ARRAY ???
-            unsigned minimal_delay_of_those_that_are_not_in_the_indices_tracking_array = _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState());
+            unsigned minimal_delay_of_those_that_are_not_in_the_indices_tracking_array;
+            
+            if (is_all_not_in)
+                minimal_delay_of_those_that_are_not_in_the_indices_tracking_array = 0;
+            else
+                minimal_delay_of_those_that_are_not_in_the_indices_tracking_array = _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState());
         
             unsigned shifted_minimal_delay = minimal_delay_of_those_that_are_not_in_the_indices_tracking_array - last_minimal_delay;
             
