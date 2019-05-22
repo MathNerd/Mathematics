@@ -206,11 +206,63 @@ class TRAFFIC_LIGHT_TRANSITION_DELAYS
 };
 
 template<size_t SIZE>
+class TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER
+{
+    private:
+        size_t _last_index_of_traffic_light_with_minimal_delay_array[SIZE];
+        size_t _count;
+        
+    public:
+        TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER(void) 
+        {
+            _count = 0U;
+        }
+        
+        ~TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER(void) {}
+        
+        void PushIndex(size_t index)
+        {
+            _last_index_of_traffic_light_with_minimal_delay_array[_count++] = index;
+        }
+        
+        size_t GetCount(void)
+        {
+            return _count;
+        }
+        
+        size_t GetAt(size_t i)
+        {
+            return _last_index_of_traffic_light_with_minimal_delay_array[i];
+        }
+        
+        void Clear(void)
+        {
+            _count = 0;
+        }
+        
+        bool IsIn(size_t index)
+        {
+            for (size_t i = 0; i < _count; i++)
+                if (index = GetAt(i))
+                    return true;
+            return false;
+        }
+        
+        TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER& operator=(const TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER& other)
+        {
+            this->_count = other._count;
+            for (size_t i = 0; i < _count; i++)
+            {
+               this-> _last_index_of_traffic_light_with_minimal_delay_array[i] = other._last_index_of_traffic_light_with_minimal_delay_array[i];
+            }
+            return *this;
+        }
+};
+
+template<size_t SIZE>
 class TRAFFIC_LIGHT_SCHEDULER
 {
     private:
-        bool is_initialized;
-        
         TRAFFIC_LIGHT _traffic_light_array[SIZE];
         unsigned int _traffic_light_push_counter;
         
@@ -220,6 +272,7 @@ class TRAFFIC_LIGHT_SCHEDULER
         unsigned int last_minimal_delay;
         size_t last_traffic_light_with_minimal_delay_index;
         
+        TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER _traffic_light_scheduler_minimal_delay_indices_tracker;
     public:
         TRAFFIC_LIGHT_SCHEDULER(void) {}
         ~TRAFFIC_LIGHT_SCHEDULER(void) {}
@@ -249,6 +302,7 @@ class TRAFFIC_LIGHT_SCHEDULER
     public:
         void Initialize(void)
         {
+            // Find minimal delay:
             size_t traffic_light_with_minimal_delay_index = 0;
             for (size_t traffic_light_index = 1; traffic_light_index < SIZE; traffic_light_index++)
             {
@@ -258,9 +312,18 @@ class TRAFFIC_LIGHT_SCHEDULER
                     traffic_light_with_minimal_delay_index = traffic_light_index;
                 }
             }
+            unsigned minimal_delay = _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState());
             
-            last_traffic_light_with_minimal_delay_index = traffic_light_with_minimal_delay_index;
-            last_minimal_delay =  _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState());
+            // Find all indices with minimal delay:
+            for (size_t traffic_light_index = 0; traffic_light_index < SIZE; traffic_light_index++)
+            {
+                if (_traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState()) == minimal_delay) 
+                {
+                   _traffic_light_scheduler_minimal_delay_indices_tracker.PushIndex(traffic_light_index);
+                }
+            }
+            
+            last_minimal_delay = minimal_delay;
         }
     
         void Run(void)
@@ -278,12 +341,14 @@ class TRAFFIC_LIGHT_SCHEDULER
             
             
             delay(last_minimal_delay);
-            _traffic_light_array[last_traffic_light_with_minimal_delay_index].SetState(_traffic_light_array[last_traffic_light_with_minimal_delay_index].GetState().NextState());
+            for (size_t index = 0; index < _traffic_light_scheduler_minimal_delay_indices_tracker.GetCount(); index++)
+                _traffic_light_array[_traffic_light_scheduler_minimal_delay_indices_tracker.GetAt(index)].SetState(_traffic_light_array[_traffic_light_scheduler_minimal_delay_indices_tracker.GetAt(index)].GetState().NextState());
 
+            // Find minimal delay from those indices that are not in the indices tracking array:    
             size_t traffic_light_with_minimal_delay_index = 0;
             for (size_t traffic_light_index = 0; traffic_light_index < SIZE; traffic_light_index++)
             {
-                if (traffic_light_index != last_traffic_light_with_minimal_delay_index)
+                if (!_traffic_light_scheduler_minimal_delay_indices_tracker.IsIn(traffic_light_index))
                 {
                     if (_traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState()) >
                         _traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState())) 
@@ -292,9 +357,33 @@ class TRAFFIC_LIGHT_SCHEDULER
                     }
                 }
             }
-
-            last_traffic_light_with_minimal_delay_index = traffic_light_with_minimal_delay_index;
-            last_minimal_delay = _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState()) - last_minial_delay;
+            // ??? WHAT IF ALL ARE NOT IN THE INDICESmTRACKING ARRAY ???
+            unsigned minimal_delay_of_those_that_are_not_in_the_indices_tracking_array = _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState());
+        
+            unsigned shifted_minimal_delay = minimal_delay_of_those_that_are_not_in_the_indices_tracking_array - last_minimal_delay;
+            
+            // Find all indices with the "appropriate" minimal delay:
+            TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER new_traffic_light_scheduler_minimal_delay_indices_tracker;
+            for (size_t traffic_light_index = 0; traffic_light_index < SIZE; traffic_light_index++)
+            {
+                if (_traffic_light_scheduler_minimal_delay_indices_tracker.IsIn(traffic_light_index))
+                {
+                    if (_traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState()) == shifted_minimal_delay) 
+                    {
+                       new_traffic_light_scheduler_minimal_delay_indices_tracker.PushIndex(traffic_light_index);
+                    }
+                }
+                else
+                {
+                    if (_traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState()) == minimal_delay_of_those_that_are_not_in_the_indices_tracking_array) 
+                    {
+                       new_traffic_light_scheduler_minimal_delay_indices_tracker.PushIndex(traffic_light_index);
+                    }
+                }
+            }
+            
+            _traffic_light_scheduler_minimal_delay_indices_tracker = new_traffic_light_scheduler_minimal_delay_indices_tracker;
+            last_minimal_delay = shifted_minimal_delay;
         }
 };
 
