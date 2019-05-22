@@ -395,7 +395,7 @@ class TRAFFIC_LIGHT_SCHEDULER
             {
                 if (_array_of_current_traffic_light_delays[traffic_light_index] == minimal_delay) 
                 {
-                   new_indices_tracker_for_traffic_lights_that_require_a_state_update.PushIndex(traffic_light_index).PushIndex(traffic_light_index);
+                   new_indices_tracker_for_traffic_lights_that_require_a_state_update.PushIndex(traffic_light_index);
                 }
             }
             
