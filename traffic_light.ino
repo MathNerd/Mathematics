@@ -268,60 +268,59 @@ class TRAFFIC_LIGHT_SCHEDULER
 
 struct TRAFFIC_LIGHT_PIN_IDS
 {
-  int red;
-  int yellow;
-  int green;
+    int red;
+    int yellow;
+    int green;
 };
 
-TRAFFIC_LIGHT_PIN_IDS traffic_light_pin_ids1 = {
-  .red = 13, 
-  .yellow = 12, 
-  .green = 11
- };
-TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays1 = {
-  .stop_delay = 5000,
-  .prepare_to_drive_delay = 1000,
-  .drive_delay = 5000,
-  .prepare_to_stop_delay = 1000
-};
+TRAFFIC_LIGHT_PIN_IDS traffic_light_pin_ids1 = { .red = 13, .yellow = 12, .green = 11 };
 TRAFFIC_LIGHT traffic_light1;
-TRAFFIC_LIGHT_CONTROLLER traffic_light_controller1;
+TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays1;
 
-TRAFFIC_LIGHT_PIN_IDS traffic_light_pin_ids2 = {
-  .red = 10, 
-  .yellow = 9, 
-  .green = 8
-};
-TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays2 = {
-  .stop_delay = 5000,
-  .prepare_to_drive_delay = 1000,
-  .drive_delay = 5000,
-  .prepare_to_stop_delay = 1000
-};
+TRAFFIC_LIGHT_PIN_IDS traffic_light_pin_ids2 = { .red = 10, .yellow = 9, .green = 8 };
 TRAFFIC_LIGHT traffic_light2;
-TRAFFIC_LIGHT_CONTROLLER traffic_light_controller2;
+TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays2;
+
+TRAFFIC_LIGHT_SCHEDULER<2> traffic_light_scheduler;
 
 void setup()
 {
-  traffic_light1 = TRAFFIC_LIGHT::Create(
-    LED::Create(traffic_light_pin_ids1.red),
-    LED::Create(traffic_light_pin_ids1.yellow),
-    LED::Create(traffic_light_pin_ids1.green)
-  );
-
-  traffic_light_controller1 = TRAFFIC_LIGHT_CONTROLLER::Create(traffic_light1);
-
-  traffic_light2 = TRAFFIC_LIGHT::Create(
-    LED::Create(traffic_light_pin_ids2.red),
-    LED::Create(traffic_light_pin_ids2.yellow),
-    LED::Create(traffic_light_pin_ids2.green)
-  );
-
-  traffic_light_controller2 = TRAFFIC_LIGHT_CONTROLLER::Create(traffic_light2);
+    traffic_light1 = TRAFFIC_LIGHT::Create(
+        LED::Create(traffic_light_pin_ids1.red),
+        LED::Create(traffic_light_pin_ids1.yellow),
+        LED::Create(traffic_light_pin_ids1.green)
+    );
+    
+    traffic_light_transition_delays1 = TRAFFIC_LIGHT_TRANSITION_DELAYS::Create(
+        TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(1000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(1000)
+    );
+    
+    traffic_light2 = TRAFFIC_LIGHT::Create(
+        LED::Create(traffic_light_pin_ids2.red),
+        LED::Create(traffic_light_pin_ids2.yellow),
+        LED::Create(traffic_light_pin_ids2.green)
+    );
+    
+    traffic_light_transition_delays2 = TRAFFIC_LIGHT_TRANSITION_DELAYS::Create(
+        TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(1000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(1000)
+    );
+    
+    traffic_light_scheduler = traffic_light_scheduler<2>::Create();
+    
+    traffic_light_scheduler.PushTrafficLight(traffic_light1);
+    traffic_light_scheduler.PushTrafficLight(traffic_light2);
+    
+    traffic_light_scheduler.PushTrafficLightTransitionDelays(traffic_light_transition_delays1);
+    traffic_light_scheduler.PushTrafficLightTransitionDelays(traffic_light_transition_delays2);
 }
 
 void loop()
 {
-  traffic_light_controller1.Run();
-  traffic_light_controller2.Run();
+    traffic_light_scheduler.Run();
 }
