@@ -49,14 +49,14 @@ class TRAFFIC_LIGHT_STATE
         TRAFFIC_LIGHT_STATE() = default;
         constexpr TRAFFIC_LIGHT_STATE(STATE state) : _state(state) { }
         
-        bool operator==(TRAFFIC_LIGHT_STATE traffic_light_state) const { return _state == traffic_light_state.state; }
-        bool operator!=(TRAFFIC_LIGHT_STATE traffic_light_state) const { return _state != traffic_light_state.state; }
+        bool operator==(TRAFFIC_LIGHT_STATE traffic_light_state) const { return _state == traffic_light_state._state; }
+        bool operator!=(TRAFFIC_LIGHT_STATE traffic_light_state) const { return _state != traffic_light_state._state; }
     
         TRAFFIC_LIGHT_STATE NextState(void)
         {
             TRAFFIC_LIGHT_STATE next_traffic_light_state;
             
-            next_traffic_light_state = STATE(modulo(unsigned(this->_traffic_light_state._state) + 1,4));
+            next_traffic_light_state = STATE(modulo(unsigned(this->_state) + 1,4));
             
             return next_traffic_light_state;
         }
@@ -184,21 +184,23 @@ class TRAFFIC_LIGHT_TRANSITION_DELAYS
             TRAFFIC_LIGHT_DELAY drive_delay,
             TRAFFIC_LIGHT_DELAY prepare_to_stop_delay)
         {
-            _stop_delay = stop_delay;
-            _prepare_to_drive_delay = prepare_to_drive_delay;
-            _drive_delay = drive_delay;
-            _prepare_to_stop_delay = prepare_to_stop_delay;
+            TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays;
+            traffic_light_transition_delays._stop_delay = stop_delay;
+            traffic_light_transition_delays._prepare_to_drive_delay = prepare_to_drive_delay;
+            traffic_light_transition_delays._drive_delay = drive_delay;
+            traffic_light_transition_delays._prepare_to_stop_delay = prepare_to_stop_delay;
+            return traffic_light_transition_delays;
         }
         
         unsigned GetDelay(TRAFFIC_LIGHT_STATE traffic_light_state)
         {
-            if (state == TRAFFIC_LIGHT_STATE::STOP)
+            if (traffic_light_state == TRAFFIC_LIGHT_STATE::STOP)
                 return _stop_delay.GetDelay();
-            else if (state == TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE)
+            else if (traffic_light_state == TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE)
                 return _prepare_to_drive_delay.GetDelay();
-            else if (state == TRAFFIC_LIGHT_STATE::DRIVE)
+            else if (traffic_light_state == TRAFFIC_LIGHT_STATE::DRIVE)
                 return _drive_delay.GetDelay();
-            else if (state == TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP)
+            else if (traffic_light_state == TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP)
                 return _prepare_to_stop_delay.GetDelay();
         }
 };
@@ -281,7 +283,7 @@ TRAFFIC_LIGHT_PIN_IDS traffic_light_pin_ids2 = { .red = 10, .yellow = 9, .green 
 TRAFFIC_LIGHT traffic_light2;
 TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays2;
 
-TRAFFIC_LIGHT_SCHEDULER<2> traffic_light_scheduler;
+TRAFFIC_LIGHT_SCHEDULER<2U> traffic_light_scheduler;
 
 void setup()
 {
@@ -311,7 +313,7 @@ void setup()
         TRAFFIC_LIGHT_DELAY::CreateConstant(1000)
     );
     
-    traffic_light_scheduler = traffic_light_scheduler<2>::Create();
+    traffic_light_scheduler = TRAFFIC_LIGHT_SCHEDULER<2U>::Create();
     
     traffic_light_scheduler.PushTrafficLight(traffic_light1);
     traffic_light_scheduler.PushTrafficLight(traffic_light2);
