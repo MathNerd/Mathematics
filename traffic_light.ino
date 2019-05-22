@@ -277,8 +277,7 @@ class TRAFFIC_LIGHT_SCHEDULER
         
         unsigned int _array_of_current_traffic_light_delays[TRAFFIC_LIGHTS_COUNT];
         unsigned int _last_minimal_delay;
-        size_t _last_index_of_traffic_light_with_minimal_delay_for_its_current_state;
-        
+
         INDEX_CONTAINER _indices_tracker_for_traffic_lights_that_require_a_state_update;
         
     public:
