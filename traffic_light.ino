@@ -1,4 +1,10 @@
 
+
+void print_error(const char* string)
+{
+    //Serial.print(string);
+}
+
 #define modulo(a,b) ((a) % (b))
 
 typedef enum LED_STATE { OFF = 0, ON = 1} LED_STATE;
@@ -206,23 +212,23 @@ class TRAFFIC_LIGHT_TRANSITION_DELAYS
 };
 
 template<size_t SIZE>
-class TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER
+class INDEX_CONTAINER
 {
     private:
-        size_t _last_index_of_traffic_light_with_minimal_delay_array[SIZE];
+        size_t _index_array[SIZE];
         size_t _count;
         
     public:
-        TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER(void) 
+        INDEX_CONTAINER(void) 
         {
             _count = 0U;
         }
         
-        ~TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER(void) {}
+        ~INDEX_CONTAINER(void) {}
         
         void PushIndex(size_t index)
         {
-            _last_index_of_traffic_light_with_minimal_delay_array[_count++] = index;
+            _index_array[_count++] = index;
         }
         
         size_t GetCount(void)
@@ -232,7 +238,7 @@ class TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER
         
         size_t GetAt(size_t i)
         {
-            return _last_index_of_traffic_light_with_minimal_delay_array[i];
+            return _index_array[i];
         }
         
         void Clear(void)
@@ -248,31 +254,32 @@ class TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER
             return false;
         }
         
-        TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER& operator=(const TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER& other)
+        INDEX_CONTAINER& operator=(const INDEX_CONTAINER& other)
         {
             this->_count = other._count;
             for (size_t i = 0; i < _count; i++)
             {
-               this-> _last_index_of_traffic_light_with_minimal_delay_array[i] = other._last_index_of_traffic_light_with_minimal_delay_array[i];
+               this-> _index_array[i] = other._index_array[i];
             }
             return *this;
         }
 };
 
-template<size_t SIZE>
+template<size_t TRAFFIC_LIGHTS_COUNT>
 class TRAFFIC_LIGHT_SCHEDULER
 {
     private:
-        TRAFFIC_LIGHT _traffic_light_array[SIZE];
+        TRAFFIC_LIGHT _array_of_traffic_lights[TRAFFIC_LIGHTS_COUNT];
         unsigned int _traffic_light_push_counter;
         
-        TRAFFIC_LIGHT_TRANSITION_DELAYS _traffic_light_transition_delays_array[SIZE];
+        TRAFFIC_LIGHT_TRANSITION_DELAYS _array_of_traffic_light_transition_delays[TRAFFIC_LIGHTS_COUNT];
         unsigned int _traffic_light_transition_delays_push_counter;
         
-        unsigned int last_minimal_delay;
-        size_t last_traffic_light_with_minimal_delay_index;
+        unsigned int _last_minimal_delay;
+        size_t _last_index_of_traffic_light_with_minimal_delay_for_its_current_state;
         
-        TRAFFIC_LIGHT_SCHEDULER_MINIMAL_DELAY_INDICES_TRACKER _traffic_light_scheduler_minimal_delay_indices_tracker;
+        INDEX_CONTAINER _indices_tracker_for_traffic_lights_that_require_a_state_update;
+        
     public:
         TRAFFIC_LIGHT_SCHEDULER(void) {}
         ~TRAFFIC_LIGHT_SCHEDULER(void) {}
@@ -287,39 +294,50 @@ class TRAFFIC_LIGHT_SCHEDULER
         
         void PushTrafficLight(TRAFFIC_LIGHT traffic_light)
         {
-            // CHECK FOR ERROR!!!
-            _traffic_light_array[_traffic_light_push_counter++]
-                = traffic_light;
+            if (_traffic_light_push_counter >= TRAFFIC_LIGHTS_COUNT)
+                print_error("FATAL ERROR: Too much traffic light objects were pushed in to the scheduler.\n");
+            else
+                _array_of_traffic_lights[_traffic_light_push_counter++] = traffic_light;
         }
         
         void PushTrafficLightTransitionDelays(TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays)
         {
-            // CHECK FOR ERROR!!!
-            _traffic_light_transition_delays_array[_traffic_light_transition_delays_push_counter++]
-                = traffic_light_transition_delays;
+            if (_traffic_light_push_counter >= TRAFFIC_LIGHTS_COUNT)
+                print_error("FATAL ERROR: Too much traffic light transition delays objects were pushed in to the scheduler.\n");
+            else
+                _array_of_traffic_light_transition_delays[_traffic_light_transition_delays_push_counter++] = traffic_light_transition_delays;
         }
         
     public:
         void Initialize(void)
         {
-            // Find minimal delay:
-            size_t traffic_light_with_minimal_delay_index = 0;
-            for (size_t traffic_light_index = 1; traffic_light_index < SIZE; traffic_light_index++)
+            if (_traffic_light_push_counter != TRAFFIC_LIGHTS_COUNT)
+                print_error("FATAL ERROR: Cannot intialize the scheduler beacuse the number of traffic lights "
+                            " that were pushed doesn't corresponed to number of traffic lights that the scheduler expects.\n");
+                            
+            if (_traffic_light_transition_delays_push_counter != TRAFFIC_LIGHT_COUNT)
+                print_error("FATAL ERROR: Cannot intialize the scheduler beacuse the number of traffic light transition delays"
+                            " that were pushed doesn't corresponed to number of traffic lights that the scheduler expects.\n");
+                
+            size_t index_of_traffic_light_with_minimal_delay_for_its_current_state = 0;
+            for (size_t traffic_light_index = 1; traffic_light_index < TRAFFIC_LIGHT_COUNT; traffic_light_index++)
             {
-                if (_traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState()) >
-                    _traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState())) 
+                if (_array_of_traffic_light_transition_delays[index_of_traffic_light_with_minimal_delay_for_its_current_state].GetDelay(
+                        _array_of_traffic_lights[index_of_traffic_light_with_minimal_delay_for_its_current_state].GetState()) >
+                    _array_of_traffic_light_transition_delays[traffic_light_index].GetDelay(_array_of_traffic_lights[traffic_light_index].GetState())) 
                 {
-                    traffic_light_with_minimal_delay_index = traffic_light_index;
+                    index_of_traffic_light_with_minimal_delay_for_its_current_state = traffic_light_index;
                 }
             }
-            unsigned minimal_delay = _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState());
+            unsigned minimal_delay = _array_of_traffic_light_transition_delays[index_of_traffic_light_with_minimal_delay_for_its_current_state].GetDelay(
+                _array_of_traffic_lights[index_of_traffic_light_with_minimal_delay_for_its_current_state].GetState());
             
-            // Find all indices with minimal delay:
+            // Find all indices with minimal delay and push them into an indices tracker:
             for (size_t traffic_light_index = 0; traffic_light_index < SIZE; traffic_light_index++)
             {
-                if (_traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState()) == minimal_delay) 
+                if (_array_of_traffic_light_transition_delays[traffic_light_index].GetDelay(_array_of_traffic_lights[traffic_light_index].GetState()) == minimal_delay) 
                 {
-                   _traffic_light_scheduler_minimal_delay_indices_tracker.PushIndex(traffic_light_index);
+                   _indices_tracker_for_traffic_lights_that_require_a_state_update.PushIndex(traffic_light_index);
                 }
             }
             
@@ -339,10 +357,13 @@ class TRAFFIC_LIGHT_SCHEDULER
             delay(1000);
             */
             
-            
+            // Wait for last_minimal_delay:
             delay(last_minimal_delay);
-            for (size_t index = 0; index < _traffic_light_scheduler_minimal_delay_indices_tracker.GetCount(); index++)
-                _traffic_light_array[_traffic_light_scheduler_minimal_delay_indices_tracker.GetAt(index)].SetState(_traffic_light_array[_traffic_light_scheduler_minimal_delay_indices_tracker.GetAt(index)].GetState().NextState());
+            
+            // Update the states for all traffic lights that required an update that were tracked inside the indices tracker:
+            for (size_t traffic_light_index = 0; traffic_light_index < _indices_tracker_for_traffic_lights_that_require_state_update.GetCount(); traffic_light_index++)
+                _array_of_traffic_lights[_indices_tracker_for_traffic_lights_that_require_a_state_update.GetAt(index)].SetState(
+                    _array_of_traffic_lights[_indices_tracker_for_traffic_lights_that_require_a_state_update.GetAt(index)].GetState().NextState());
 
             // Find minimal delay from those indices that are not in the indices tracking array:    
             bool is_all_not_in = true;
