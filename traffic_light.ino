@@ -155,7 +155,9 @@ class TRAFFIC_LIGHT_DELAY
         // 'min_delay' must be < 'max_delay'
         static TRAFFIC_LIGHT_DELAY CreateRandom(unsigned min_delay, unsigned max_delay)
         {
-            // CHECK FOR ERROR!!!
+            if (min_delay > max_delay)
+                print_error("FATAL ERROR: 'min_delay' must be <= 'max_delay'.\n");
+                
             TRAFFIC_LIGHT_DELAY traffic_light_delay;
             traffic_light_delay._delay_type = DELAY_TYPE::RANDOM;
             traffic_light_delay._min_delay = min_delay;
