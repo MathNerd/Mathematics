@@ -1,53 +1,74 @@
 
+#define modulo(a,b) ((a) % (b))
+
+typedef enum LED_STATE { OFF = 0, ON = 1} LED_STATE;
+
 class LED
 {
-   public: 
-      typedef enum LED_STATE { OFF = 0, ON = 1} LED_STATE;
-  
-  private:
-    int _led_pin_id;
-    LED_STATE _state;
-  
-  public:
-    LED(void) {}
-    ~LED(void) {}
+    private:
+        int _led_pin_id;
+        LED_STATE _state;
+
+    public:
+        LED(void) {}
+        ~LED(void) {}
+        
+        static LED Create(int led_pin_id) 
+        {
+            LED led;
+            led._led_pin_id = led_pin_id;
+            led._state = OFF;
+            pinMode(led_pin_id, OUTPUT);
+            return led;
+        }
     
-    static LED Create(int led_pin_id) 
-    {
-        LED led;
-        led._led_pin_id = led_pin_id;
-        led._state = OFF;
-        pinMode(led_pin_id, OUTPUT);
-        return led;
-    }
-  
-    void SetState(LED::LED_STATE state)
-    {
-        this->_state = state;
-        int voltage = state == OFF ? LOW : HIGH;
-        digitalWrite(_led_pin_id, voltage);
-    }
+        void SetState(LED_STATE state)
+        {
+            this->_state = state;
+            int voltage = state == OFF ? LOW : HIGH;
+            digitalWrite(_led_pin_id, voltage);
+        }
     
-    LED::LED_STATE GetState(void)
-    {
-      return this->_state;
-    }
+        LED_STATE GetState(void)
+        {
+            return this->_state;
+        }
 };
 
-
-class TRAFFIC_LIGHT
+class TRAFFIC_LIGHT_STATE
 {
     public:
-        typedef enum TRAFFIC_LIGHT_STATE 
-        { 
+        enum STATE : unsigned
+        {
             STOP = 0, 
             PREPARE_TO_DRIVE = 1, 
             DRIVE = 2, 
             PREPARE_TO_STOP = 3 
-        } TRAFFIC_LIGHT_STATE;
+        };
     
+        TRAFFIC_LIGHT_STATE() = default;
+        constexpr TRAFFIC_LIGHT_STATE(STATE state) : _state(state) { }
+        
+        bool operator==(TRAFFIC_LIGHT_STATE traffic_light_state) const { return _state == traffic_light_state.state; }
+        bool operator!=(TRAFFIC_LIGHT_STATE traffic_light_state) const { return _state != traffic_light_state.state; }
+    
+        TRAFFIC_LIGHT_STATE NextState(void)
+        {
+            TRAFFIC_LIGHT_STATE next_traffic_light_state;
+            
+            next_traffic_light_state = STATE(modulo(unsigned(this->_traffic_light_state._state) + 1,4));
+            
+            return next_traffic_light_state;
+        }
+        
     private:
-        TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE _state;
+        STATE _state;
+};
+
+class TRAFFIC_LIGHT
+{
+    private:
+        TRAFFIC_LIGHT_STATE _state;
         LED _red_led;
         LED _yellow_led;
         LED _green_led;
@@ -58,45 +79,44 @@ class TRAFFIC_LIGHT
         
         static TRAFFIC_LIGHT Create(LED red_led, LED yellow_led, LED green_led) 
         {
-            TRAFFIC_LIGHT tl;
-            tl._red_led = red_led;
-            tl._yellow_led = yellow_led;
-            tl._green_led = green_led;
-            return tl;
+            TRAFFIC_LIGHT traffic_light;
+            traffic_light._state = TRAFFIC_LIGHT_STATE::STOP;
+            traffic_light._red_led = red_led;
+            traffic_light._yellow_led = yellow_led;
+            traffic_light._green_led = green_led;
+            return traffic_light;
         }
         
-        void SetState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE state)
+        void SetState(TRAFFIC_LIGHT_STATE state)
         {
             this->_state = state;
-            switch(state)
+            if (state == TRAFFIC_LIGHT_STATE::STOP)
             {
-                case STOP:
-                    _red_led.SetState(LED::LED_STATE::ON);
-                    _yellow_led.SetState(LED::LED_STATE::OFF);
-                    _green_led.SetState(LED::LED_STATE::OFF);
-                    break;
-                
-                case PREPARE_TO_DRIVE:
-                    _red_led.SetState(LED::LED_STATE::ON);
-                    _yellow_led.SetState(LED::LED_STATE::ON);
-                    _green_led.SetState(LED::LED_STATE::OFF);
-                    break;
-                
-                case DRIVE:
-                    _red_led.SetState(LED::LED_STATE::OFF);
-                    _yellow_led.SetState(LED::LED_STATE::OFF);
-                    _green_led.SetState(LED::LED_STATE::ON);
-                    break;
-                
-                case PREPARE_TO_STOP:
-                    _red_led.SetState(LED::OFF);
-                    _yellow_led.SetState(LED::ON);
-                    _green_led.SetState(LED::OFF);
-                    break;
+                _red_led.SetState(LED_STATE::ON);
+                _yellow_led.SetState(LED_STATE::OFF);
+                _green_led.SetState(LED_STATE::OFF);
+            }
+            else if (state == TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE)
+            {
+                _red_led.SetState(LED_STATE::ON);
+                _yellow_led.SetState(LED_STATE::ON);
+                _green_led.SetState(LED_STATE::OFF);
+            }
+            else if (state == TRAFFIC_LIGHT_STATE::DRIVE)
+            {
+                _red_led.SetState(LED_STATE::OFF);
+                _yellow_led.SetState(LED_STATE::OFF);
+                _green_led.SetState(LED_STATE::ON);
+            }
+            else if (state == TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP)
+            {
+                _red_led.SetState(LED_STATE::OFF);
+                _yellow_led.SetState(LED_STATE::ON);
+                _green_led.SetState(LED_STATE::OFF);
             }
         }
         
-        TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE GetState(void)
+        TRAFFIC_LIGHT_STATE GetState(void)
         {
             return this->_state;
         }
@@ -170,7 +190,17 @@ class TRAFFIC_LIGHT_TRANSITION_DELAYS
             _prepare_to_stop_delay = prepare_to_stop_delay;
         }
         
-        // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        unsigned GetDelay(TRAFFIC_LIGHT_STATE traffic_light_state)
+        {
+            if (state == TRAFFIC_LIGHT_STATE::STOP)
+                return _stop_delay.GetDelay();
+            else if (state == TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE)
+                return _prepare_to_drive_delay.GetDelay();
+            else if (state == TRAFFIC_LIGHT_STATE::DRIVE)
+                return _drive_delay.GetDelay();
+            else if (state == TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP)
+                return _prepare_to_stop_delay.GetDelay();
+        }
 };
 
 template<unsigned int SIZE>
@@ -178,57 +208,62 @@ class TRAFFIC_LIGHT_SCHEDULER
 {
     private:
         bool is_initialized;
-        unsigned int _traffic_light_transition_delays_added;
+        
+        TRAFFIC_LIGHT _traffic_light_array[SIZE];
+        unsigned int _traffic_light_push_counter;
+        
         TRAFFIC_LIGHT_TRANSITION_DELAYS _traffic_light_transition_delays_array[SIZE];
+        unsigned int _traffic_light_transition_delays_push_counter;
         
     public:
         TRAFFIC_LIGHT_SCHEDULER(void) {}
         ~TRAFFIC_LIGHT_SCHEDULER(void) {}
         
-        static TRAFFIC_LIGHT_SCHEDULER Create()
+        static TRAFFIC_LIGHT_SCHEDULER Create(void)
         {
            TRAFFIC_LIGHT_SCHEDULER traffic_light_scheduler;
-           traffic_light_scheduler._traffic_light_transition_delays_added = 0U;
+           traffic_light_scheduler._traffic_light_push_counter = 0U;
+           traffic_light_scheduler._traffic_light_transition_delays_push_counter = 0U;
            return traffic_light_scheduler;
+        }
+        
+        void PushTrafficLight(TRAFFIC_LIGHT traffic_light)
+        {
+            // CHECK FOR ERROR!!!
+            _traffic_light_array[_traffic_light_push_counter++]
+                = traffic_light;
         }
         
         void PushTrafficLightTransitionDelays(TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays)
         {
             // CHECK FOR ERROR!!!
-            _traffic_light_transition_delays_array[_traffic_light_transition_delays_added++]
+            _traffic_light_transition_delays_array[_traffic_light_transition_delays_push_counter++]
                 = traffic_light_transition_delays;
         }
         
+    private:
+        void Manage(void)
+        {
+            
+        }
         
-};
-
-class TRAFFIC_LIGHT_CONTROLLER
-{
-  private:
-    TRAFFIC_LIGHT _traffic_light;
-    
-  public:
-    TRAFFIC_LIGHT_CONTROLLER(void) {}
-    ~TRAFFIC_LIGHT_CONTROLLER(void) {}
-
-    static TRAFFIC_LIGHT_CONTROLLER Create(TRAFFIC_LIGHT traffic_light)
-    {
-        TRAFFIC_LIGHT_CONTROLLER traffic_light_controller;
-        traffic_light_controller._traffic_light = traffic_light;
-        return traffic_light_controller;
-    }
-
-    void Run(void)
-    {
-      _traffic_light.SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::STOP);
-      delay(5000);
-      _traffic_light.SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE);
-      delay(1000);
-      _traffic_light.SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::DRIVE);
-      delay(5000);
-      _traffic_light.SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP);
-      delay(1000);
-    }
+    public:
+        void Run(void)
+        {
+            /*
+            _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::STOP);
+            delay(5000);
+            _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::PREPARE_TO_DRIVE);
+            delay(1000);
+            _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::DRIVE);
+            delay(5000);
+            _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP);
+            delay(1000);
+            */
+            
+            _traffic_light_array[0].SetState(_traffic_light_array[0].GetState().NextState());
+            delay(1000);
+        }
 };
 
 struct TRAFFIC_LIGHT_PIN_IDS
