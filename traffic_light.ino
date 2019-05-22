@@ -262,8 +262,13 @@ class TRAFFIC_LIGHT_SCHEDULER
             _traffic_light_array[0].SetTrafficState(TRAFFIC_LIGHT::TRAFFIC_LIGHT_STATE::PREPARE_TO_STOP);
             delay(1000);
             */
-            
-            _traffic_light_array[0].SetState(_traffic_light_array[0].GetState().NextState());
+
+            TRAFFIC_LIGHT_STATE current_traffic_light_state0 = _traffic_light_array[0].GetState();
+            _traffic_light_array[0].SetState(current_traffic_light_state0.NextState());
+            delay(1000);
+
+            TRAFFIC_LIGHT_STATE current_traffic_light_state1 = _traffic_light_array[1].GetState();
+            _traffic_light_array[1].SetState(current_traffic_light_state1.NextState());
             delay(1000);
         }
 };
