@@ -217,6 +217,9 @@ class TRAFFIC_LIGHT_SCHEDULER
         TRAFFIC_LIGHT_TRANSITION_DELAYS _traffic_light_transition_delays_array[SIZE];
         unsigned int _traffic_light_transition_delays_push_counter;
         
+        unsigned int last_minimal_delay;
+        size_t last_traffic_light_with_minimal_delay_index;
+        
     public:
         TRAFFIC_LIGHT_SCHEDULER(void) {}
         ~TRAFFIC_LIGHT_SCHEDULER(void) {}
@@ -243,13 +246,23 @@ class TRAFFIC_LIGHT_SCHEDULER
                 = traffic_light_transition_delays;
         }
         
-    private:
-        void Manage(void)
-        {
-            
-        }
-        
     public:
+        void Initialize(void)
+        {
+            size_t traffic_light_with_minimal_delay_index = 0;
+            for (size_t traffic_light_index = 1; traffic_light_index < SIZE; traffic_light_index++)
+            {
+                if (_traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState()) >
+                    _traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState())) 
+                {
+                    traffic_light_with_minimal_delay_index = traffic_light_index;
+                }
+            }
+            
+            last_traffic_light_with_minimal_delay_index = traffic_light_with_minimal_delay_index;
+            last_minimal_delay =  _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState());
+        }
+    
         void Run(void)
         {
             /*
@@ -263,24 +276,25 @@ class TRAFFIC_LIGHT_SCHEDULER
             delay(1000);
             */
             
-            static unsigned last_minimal_delay = 0;
-            static size_t last_traffic_light_with_minimal_delay_index = 0;
             
+            delay(last_minimal_delay);
+            _traffic_light_array[last_traffic_light_with_minimal_delay_index].SetState(_traffic_light_array[last_traffic_light_with_minimal_delay_index].GetState().NextState());
+
             size_t traffic_light_with_minimal_delay_index = 0;
-            for (size_t traffic_light_index = 1; traffic_light_index < SIZE; traffic_light_index++)
+            for (size_t traffic_light_index = 0; traffic_light_index < SIZE; traffic_light_index++)
             {
-                if (_traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState()) >
-                    _traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState())) 
+                if (traffic_light_index != last_traffic_light_with_minimal_delay_index)
                 {
-                    traffic_light_with_minimal_delay_index = traffic_light_index;
+                    if (_traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState()) >
+                        _traffic_light_transition_delays_array[traffic_light_index].GetDelay(_traffic_light_array[traffic_light_index].GetState())) 
+                    {
+                        traffic_light_with_minimal_delay_index = traffic_light_index;
+                    }
                 }
             }
 
             last_traffic_light_with_minimal_delay_index = traffic_light_with_minimal_delay_index;
-            last_minimal_delay = _traffic_light_transition_delays_array[last_traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[last_traffic_light_with_minimal_delay_index].GetState());
-            
-            delay(last_minimal_delay);
-            _traffic_light_array[traffic_light_with_minimal_delay_index].SetState(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState().NextState());
+            last_minimal_delay = _traffic_light_transition_delays_array[traffic_light_with_minimal_delay_index].GetDelay(_traffic_light_array[traffic_light_with_minimal_delay_index].GetState()) - last_minial_delay;
         }
 };
 
@@ -338,6 +352,8 @@ void setup()
     
     traffic_light_scheduler.PushTrafficLightTransitionDelays(traffic_light_transition_delays1);
     traffic_light_scheduler.PushTrafficLightTransitionDelays(traffic_light_transition_delays2);
+    
+    traffic_light_scheduler.Initialize();
 }
 
 void loop()
