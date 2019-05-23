@@ -1,8 +1,21 @@
 
 
-void print_error(const char* string)
+namespace Printer
 {
-    //Serial.print(string);
+  void Initialize(void)
+  {
+    Serial.begin(9600);
+  }
+  
+  void PrintError(const char* string)
+  {
+      Serial.print(string);
+  }
+  
+  void PrintString(const char* string)
+  {
+      Serial.print(string);
+  }
 }
 
 #define modulo(a,b) ((a) % (b))
@@ -156,7 +169,7 @@ class TRAFFIC_LIGHT_DELAY
         static TRAFFIC_LIGHT_DELAY CreateRandom(unsigned min_delay, unsigned max_delay)
         {
             if (min_delay > max_delay)
-                print_error("FATAL ERROR: 'min_delay' must be <= 'max_delay'.\n");
+                Printer::PrintError("FATAL ERROR: 'min_delay' must be <= 'max_delay'.\n");
                 
             TRAFFIC_LIGHT_DELAY traffic_light_delay;
             traffic_light_delay._delay_type = DELAY_TYPE::RANDOM;
@@ -251,7 +264,7 @@ class INDEX_CONTAINER
         bool IsIn(size_t index)
         {
             for (size_t i = 0; i < _count; i++)
-                if (index = GetAt(i))
+                if (index == GetAt(i))
                     return true;
             return false;
         }
@@ -280,7 +293,7 @@ class TRAFFIC_LIGHT_SCHEDULER
         unsigned int _array_of_current_traffic_light_delays[TRAFFIC_LIGHTS_COUNT];
         unsigned int _last_minimal_delay;
 
-        INDEX_CONTAINER _indices_tracker_for_traffic_lights_that_require_a_state_update;
+        INDEX_CONTAINER<TRAFFIC_LIGHTS_COUNT> _indices_tracker_for_traffic_lights_that_require_a_state_update;
         
     public:
         TRAFFIC_LIGHT_SCHEDULER(void) {}
@@ -297,15 +310,15 @@ class TRAFFIC_LIGHT_SCHEDULER
         void PushTrafficLight(TRAFFIC_LIGHT traffic_light)
         {
             if (_traffic_light_push_counter >= TRAFFIC_LIGHTS_COUNT)
-                print_error("FATAL ERROR: Too much traffic light objects were pushed in to the scheduler.\n");
+                Printer::PrintError("FATAL ERROR: Too much traffic light objects were pushed in to the scheduler.\n");
             else
                 _array_of_traffic_lights[_traffic_light_push_counter++] = traffic_light;
         }
         
         void PushTrafficLightTransitionDelays(TRAFFIC_LIGHT_TRANSITION_DELAYS traffic_light_transition_delays)
         {
-            if (_traffic_light_push_counter >= TRAFFIC_LIGHTS_COUNT)
-                print_error("FATAL ERROR: Too much traffic light transition delays objects were pushed in to the scheduler.\n");
+            if (_traffic_light_transition_delays_push_counter >= TRAFFIC_LIGHTS_COUNT)
+                Printer::PrintError("FATAL ERROR: Too much traffic light transition delays objects were pushed in to the scheduler.\n");
             else
                 _array_of_traffic_light_transition_delays[_traffic_light_transition_delays_push_counter++] = traffic_light_transition_delays;
         }
@@ -314,11 +327,11 @@ class TRAFFIC_LIGHT_SCHEDULER
         void Initialize(void)
         {
             if (_traffic_light_push_counter != TRAFFIC_LIGHTS_COUNT)
-                print_error("FATAL ERROR: Cannot intialize the scheduler beacuse the number of traffic lights "
+                Printer::PrintError("FATAL ERROR: Cannot intialize the scheduler beacuse the number of traffic lights "
                             " that were pushed doesn't corresponed to number of traffic lights that the scheduler expects.\n");
                             
             if (_traffic_light_transition_delays_push_counter != TRAFFIC_LIGHTS_COUNT)
-                print_error("FATAL ERROR: Cannot intialize the scheduler beacuse the number of traffic light transition delays"
+                Printer::PrintError("FATAL ERROR: Cannot intialize the scheduler beacuse the number of traffic light transition delays"
                             " that were pushed doesn't corresponed to number of traffic lights that the scheduler expects.\n");
                 
             for (size_t traffic_light_index = 0; traffic_light_index < TRAFFIC_LIGHTS_COUNT; traffic_light_index++)
@@ -358,7 +371,7 @@ class TRAFFIC_LIGHT_SCHEDULER
             
             // Update the states of all traffic lights that require an update who were tracked inside the indices tracker:
             for (size_t index_inside_the_indices_tracker = 0; 
-                 index_inside_the_indices_tracker < _indices_tracker_for_traffic_lights_that_require_state_update.GetCount(); 
+                 index_inside_the_indices_tracker < _indices_tracker_for_traffic_lights_that_require_a_state_update.GetCount(); 
                  index_inside_the_indices_tracker++)
             {
                 _array_of_traffic_lights[_indices_tracker_for_traffic_lights_that_require_a_state_update.GetAt(index_inside_the_indices_tracker)].SetState(
@@ -391,7 +404,7 @@ class TRAFFIC_LIGHT_SCHEDULER
             unsigned minimal_delay = _array_of_current_traffic_light_delays[index_of_traffic_light_with_minimal_delay_for_its_current_state];
             
             // Find all indices with minimal delay and push them into the indices tracker:
-            INDEX_CONTAINER new_indices_tracker_for_traffic_lights_that_require_a_state_update;
+            INDEX_CONTAINER<TRAFFIC_LIGHTS_COUNT> new_indices_tracker_for_traffic_lights_that_require_a_state_update;
             for (size_t traffic_light_index = 0; traffic_light_index < TRAFFIC_LIGHTS_COUNT; traffic_light_index++)
             {
                 if (_array_of_current_traffic_light_delays[traffic_light_index] == minimal_delay) 
@@ -424,6 +437,8 @@ TRAFFIC_LIGHT_SCHEDULER<2U> traffic_light_scheduler;
 
 void setup()
 {
+    Printer::Initialize();
+  
     traffic_light1 = TRAFFIC_LIGHT::Create(
         LED::Create(traffic_light_pin_ids1.red),
         LED::Create(traffic_light_pin_ids1.yellow),
@@ -432,10 +447,10 @@ void setup()
     );
     
     traffic_light_transition_delays1 = TRAFFIC_LIGHT_TRANSITION_DELAYS::Create(
-        TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
-        TRAFFIC_LIGHT_DELAY::CreateConstant(1000),
-        TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
-        TRAFFIC_LIGHT_DELAY::CreateConstant(1000)
+        TRAFFIC_LIGHT_DELAY::CreateConstant(2000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(500),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(2000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(500)
     );
     
     traffic_light2 = TRAFFIC_LIGHT::Create(
@@ -446,10 +461,10 @@ void setup()
     );
     
     traffic_light_transition_delays2 = TRAFFIC_LIGHT_TRANSITION_DELAYS::Create(
-        TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
-        TRAFFIC_LIGHT_DELAY::CreateConstant(1000),
-        TRAFFIC_LIGHT_DELAY::CreateConstant(5000),
-        TRAFFIC_LIGHT_DELAY::CreateConstant(1000)
+        TRAFFIC_LIGHT_DELAY::CreateConstant(3000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(500),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(4000),
+        TRAFFIC_LIGHT_DELAY::CreateConstant(500)
     );
     
     traffic_light_scheduler = TRAFFIC_LIGHT_SCHEDULER<2U>::Create();
