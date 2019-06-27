@@ -8,7 +8,7 @@ T Max(T x, T y)
 }
 
 template<class T>
-T Max(T* a, size_t n)
+T Max(T a[], size_t n)
 {
     if (n == 1)
         return a[0];
@@ -19,7 +19,7 @@ T Max(T* a, size_t n)
 int main() {
 	double a[] = {1,4,2,6,3,9,6,2,5,7,1,3};
 	const size_t n = sizeof(a)/sizeof(a[0]);
-	cout << "max(a," << n << ") = " << Max(a,n) << endl;
+	cout << "Max(a," << n << ") = " << Max(a,n) << endl;
 	
 	return 0;
 }
