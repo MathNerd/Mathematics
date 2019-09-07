@@ -1,0 +1,13 @@
+
+
+point_0 = [ -0.37092 , + 3.20325 ]
+point_velocity = [  -0.25430   ,   0.54625   ]   
+point_radius = 0.5
+point_drag_acceleration = 1
+
+rectangle_bottom_left_corner = [ 1.06619 , -0.70325 ] 
+rectangle_size = [ 1 , 2 ] 
+rectangle_velocity = [ -0.045379 , 0.482153 ]
+rectangle_drag_acceleration = 1
+
+
