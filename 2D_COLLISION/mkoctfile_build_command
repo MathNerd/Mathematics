@@ -1,0 +1,1 @@
+mkoctfile -I/home/pi/Desktop/LIBRARIES/boost_1_70_0 -std=c++11 scene_parser_IMP.cpp -o scene_parser_IMP
