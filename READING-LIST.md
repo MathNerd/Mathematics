@@ -1,3 +1,5 @@
+https://www.gamingonlinux.com/2025/04/command-conquer-combined-arms-gets-a-major-update-with-new-missions-ai-improvements-and-more/
+
 https://vale.rocks/posts/open-source-entitlement
 
 https://hackaday.com/2025/04/05/how-a-tiny-relay-became-a-usb-swiss-army-knife/
