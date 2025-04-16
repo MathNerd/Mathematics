@@ -1,3 +1,5 @@
+https://www.zdnet.com/article/how-to-use-the-new-linux-terminal-on-android/
+
 https://hypermode.com/blog/manual-memory-management-golang-jemalloc
 
 https://simonwillison.net/2025/Apr/11/camel/
