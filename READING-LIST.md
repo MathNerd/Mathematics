@@ -15,3 +15,5 @@ https://status.sr.ht/issues/2025-03-17-git.sr.ht-llms/
 https://gerrymcgovern.com/data-centers-contain-90-crap-data/
 
 https://adactio.com/journal/21831
+
+https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/
