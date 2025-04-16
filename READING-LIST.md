@@ -1,3 +1,5 @@
+https://www.cnx-software.com/2025/04/01/orange-pi-rv-low-cost-risc-v-sbc-with-starfive-jh7110-soc/
+
 https://gist.github.com/no-defun-allowed/7e3e238c959e27d4919bb4272487d7ad
 
 https://lispcookbook.github.io/cl-cookbook/dynamic-libraries.html
