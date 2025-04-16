@@ -1,3 +1,5 @@
+https://simonwillison.net/2025/Apr/11/camel/
+
 https://hackaday.com/2025/04/11/tracing-the-how-the-linux-kernel-handles-the-shebang/
 
 https://www.cnx-software.com/2025/04/02/tinybeast-fpga-a-microchip-polarfire-mpf300t-mpf100t-fpga-pcie-reference-design/
