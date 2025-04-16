@@ -78,6 +78,8 @@ https://adactio.com/journal/21831
 
 https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/
 
+https://arstechnica.com/ai/2025/03/devs-say-ai-crawlers-dominate-traffic-forcing-blocks-on-entire-countries/
+
 https://arstechnica.com/ai/2025/03/you-can-now-download-the-source-code-that-sparked-the-ai-boom/
 
 https://en.m.wikipedia.org/wiki/Fiber_bundle
