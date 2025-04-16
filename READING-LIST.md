@@ -1,4 +1,6 @@
 
+https://arxiv.org/abs/2311.09783
+
 https://garymarcus.substack.com/p/deep-learning-deep-scandal
 
 https://www.lesswrong.com/posts/4mvphwx5pdsZLMmpY/recent-ai-model-progress-feels-mostly-like-bullshit
