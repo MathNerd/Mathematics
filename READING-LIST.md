@@ -1,3 +1,5 @@
+http://phix.x10.mx/
+
 https://huggingface.co/spaces/hesamation/primer-llm-embedding?section=what_are_embeddings?
 
 https://www.cnx-software.com/2025/04/01/orange-pi-rv-low-cost-risc-v-sbc-with-starfive-jh7110-soc/
