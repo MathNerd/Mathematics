@@ -1,3 +1,5 @@
+https://hypermode.com/blog/manual-memory-management-golang-jemalloc
+
 https://simonwillison.net/2025/Apr/11/camel/
 
 https://hackaday.com/2025/04/11/tracing-the-how-the-linux-kernel-handles-the-shebang/
