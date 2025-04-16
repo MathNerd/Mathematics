@@ -1,3 +1,4 @@
+https://arstechnica.com/ai/2025/04/researchers-concerned-to-find-ai-models-hiding-their-true-reasoning-processes/
 
 https://hackaday.com/2025/04/12/the-incomplete-json-pretty-printer-brought-to-you-by-vibes/
 
