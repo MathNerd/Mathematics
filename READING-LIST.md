@@ -1,4 +1,6 @@
 
+https://arxiv.org/abs/2504.01995
+
 https://arxiv.org/abs/2311.09783
 
 https://garymarcus.substack.com/p/deep-learning-deep-scandal
