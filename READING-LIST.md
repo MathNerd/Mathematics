@@ -64,6 +64,8 @@ https://prdeving.wordpress.com/2025/04/01/shortcuts-always-causes-delays-the-imp
 
 https://www.anthropic.com/news/tracing-thoughts-language-model
 
+https://transformer-circuits.pub/2025/attribution-graphs/biology.html
+
 https://status.sr.ht/issues/2025-03-17-git.sr.ht-llms/
 
 https://herman.bearblog.dev/the-great-scrape/
