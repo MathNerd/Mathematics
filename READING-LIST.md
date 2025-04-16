@@ -1,3 +1,5 @@
+https://vale.rocks/posts/open-source-entitlement
+
 https://hackaday.com/2025/04/05/how-a-tiny-relay-became-a-usb-swiss-army-knife/
 
 https://hackaday.com/2025/04/06/command-and-conquer-ported-to-the-pi-pico-2/
