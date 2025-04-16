@@ -1,3 +1,5 @@
+https://daniel.haxx.se/blog/2025/04/07/writing-c-for-curl/
+
 https://www.zdnet.com/article/how-to-use-the-new-linux-terminal-on-android/
 
 https://hypermode.com/blog/manual-memory-management-golang-jemalloc
