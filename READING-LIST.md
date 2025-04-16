@@ -1,3 +1,5 @@
+https://www.cnx-software.com/2025/04/02/tinybeast-fpga-a-microchip-polarfire-mpf300t-mpf100t-fpga-pcie-reference-design/
+
 https://hackaday.com/2025/04/09/self-hosting-a-cluster-on-old-phones/
 
 https://www.bleepingcomputer.com/news/google/google-takes-on-cursor-with-firebase-studio-its-ai-builder-for-vibe-coding/
