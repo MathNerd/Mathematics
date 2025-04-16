@@ -11,3 +11,5 @@ https://www.anthropic.com/news/tracing-thoughts-language-model
 https://status.sr.ht/issues/2025-03-17-git.sr.ht-llms/
 
 https://gerrymcgovern.com/data-centers-contain-90-crap-data/
+
+https://adactio.com/journal/21831
