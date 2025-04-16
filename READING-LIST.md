@@ -30,6 +30,8 @@ https://hackaday.com/2025/04/12/the-incomplete-json-pretty-printer-brought-to-yo
 
 https://hackaday.com/2025/04/12/vibe-check-false-packages-a-new-llm-security-risk/
 
+https://arxiv.org/abs/2504.02827
+
 https://arxiv.org/abs/2504.01995
 
 https://arxiv.org/abs/2311.09783
