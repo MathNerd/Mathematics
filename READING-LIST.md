@@ -1,3 +1,5 @@
+https://www.bleepingcomputer.com/news/google/google-takes-on-cursor-with-firebase-studio-its-ai-builder-for-vibe-coding/
+
 https://arstechnica.com/ai/2025/04/researchers-find-ai-is-pretty-bad-at-debugging-but-theyre-working-on-it/
 
 https://www.microsoft.com/en-us/research/blog/debug-gym-an-environment-for-ai-coding-tools-to-learn-how-to-debug-code-like-programmers/
