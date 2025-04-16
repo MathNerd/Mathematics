@@ -1,3 +1,9 @@
+https://gist.github.com/no-defun-allowed/7e3e238c959e27d4919bb4272487d7ad
+
+https://lispcookbook.github.io/cl-cookbook/dynamic-libraries.html
+
+https://ccrma.stanford.edu/software/snd/snd/s7.html
+
 https://www.gamingonlinux.com/2025/04/command-conquer-combined-arms-gets-a-major-update-with-new-missions-ai-improvements-and-more/
 
 https://vale.rocks/posts/open-source-entitlement
