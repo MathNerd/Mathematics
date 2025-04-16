@@ -1,3 +1,5 @@
+https://hackaday.com/2025/04/09/self-hosting-a-cluster-on-old-phones/
+
 https://www.bleepingcomputer.com/news/google/google-takes-on-cursor-with-firebase-studio-its-ai-builder-for-vibe-coding/
 
 https://arstechnica.com/ai/2025/04/researchers-find-ai-is-pretty-bad-at-debugging-but-theyre-working-on-it/
