@@ -1,3 +1,5 @@
+https://hackaday.com/2025/04/06/command-and-conquer-ported-to-the-pi-pico-2/
+
 https://www.hackster.io/news/three-chips-should-be-enough-for-anyone-d2be5b1bce83
 
 https://daniel.haxx.se/blog/2025/04/07/writing-c-for-curl/
