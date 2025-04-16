@@ -70,6 +70,8 @@ https://herman.bearblog.dev/the-great-scrape/
 
 https://gerrymcgovern.com/data-centers-contain-90-crap-data/
 
+https://tldr.nettime.org/@asrg/113867412641585520
+
 https://adactio.com/journal/21831
 
 https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/
