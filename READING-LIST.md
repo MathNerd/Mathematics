@@ -1,3 +1,7 @@
+https://arstechnica.com/ai/2025/04/researchers-find-ai-is-pretty-bad-at-debugging-but-theyre-working-on-it/
+
+https://www.microsoft.com/en-us/research/blog/debug-gym-an-environment-for-ai-coding-tools-to-learn-how-to-debug-code-like-programmers/
+
 https://arstechnica.com/ai/2025/04/researchers-concerned-to-find-ai-models-hiding-their-true-reasoning-processes/
 
 https://hackaday.com/2025/04/12/the-incomplete-json-pretty-printer-brought-to-you-by-vibes/
