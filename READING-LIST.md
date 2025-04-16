@@ -1,6 +1,6 @@
 
 
-https://www.lesswrong.com/posts/4mvphwx5pdsZLMmpY/recent-ai-model-progress-feels-mostly-like-bullshit# Reading List
+https://www.lesswrong.com/posts/4mvphwx5pdsZLMmpY/recent-ai-model-progress-feels-mostly-like-bullshit
 
 https://buttondown.com/hillelwayne/archive/programming-ais-worry-me/
 
