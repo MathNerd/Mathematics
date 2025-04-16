@@ -65,3 +65,7 @@ https://gerrymcgovern.com/data-centers-contain-90-crap-data/
 https://adactio.com/journal/21831
 
 https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/
+
+https://arstechnica.com/ai/2025/03/you-can-now-download-the-source-code-that-sparked-the-ai-boom/
+
+https://en.m.wikipedia.org/wiki/Fiber_bundle
