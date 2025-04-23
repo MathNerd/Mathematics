@@ -1,4 +1,32 @@
 
+https://marcusb.org/hacks/quixotic.html
+
+https://codeberg.org/MikeCoats/poison-the-wellms
+
+https://codeberg.org/konterfai/konterfai
+
+https://github.com/Fingel/django-llm-poison
+
+https://algorithmic-sabotage.github.io/asrg/posts/sabot-in-the-age-of-ai/
+
+https://thedabbler.patatas.ca/pages/poison-as-praxis.html
+
+https://starvector.github.io
+
+https://huggingface.co/datasets/starvector/svg-stack
+
+https://github.com/paulengstler/syncity
+
+https://florian-berger.de/en/articles/creating-simple-svg-from-python/
+
+https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html
+
+https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths
+
+https://github.com/mozman/svgwrite
+
+https://bbycroft.net/llm
+
 https://github.com/elder-plinius/L1B3RT4S
 
 https://github.com/jsoulier/blocks
