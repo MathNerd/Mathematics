@@ -1,4 +1,12 @@
 
+https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset
+
+https://huggingface.co/spaces/Stable-X/Hi3DGen
+
+https://www.w3schools.com/sql/sql_injection.asp
+
+https://huggingface.co/spaces/enzostvs/deepsite
+
 https://jank-lang.org/blog/2025-03-28-error-reporting/
 
 https://github.com/redorav/hlslpp
