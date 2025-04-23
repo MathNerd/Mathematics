@@ -95,3 +95,37 @@ https://en.m.wikipedia.org/wiki/Fiber_bundle
 https://www.quantamagazine.org/a-new-proof-smooths-out-the-math-of-melting-20250331/
 
 https://webglfundamentals.org/
+
+https://craftofcoding.wordpress.com/2025/02/10/reflections-on-25-years-in-academia/
+
+# Fortran
+
+## Random
+
+https://craftofcoding.wordpress.com/2017/02/01/real-random-numbers-in-fortran/
+
+https://gcc.gnu.org/onlinedocs/gfortran/RANDOM_005fNUMBER.html
+
+https://masuday.github.io/fortran_tutorial/random.html
+
+https://cyber.dabamos.de/programming/modernfortran/random-numbers.html
+
+https://fortran-lang.discourse.group/t/generating-random-values-from-0-to-100/3903
+
+http://www.owlnet.rice.edu/~ceng303/manuals/fortran/FORA_1_3.html
+
+https://faculty.cs.niu.edu/~hutchins/csci297p2/webpages/random.htm
+
+## Unsigned
+
+https://fortran-lang.discourse.group/t/unsigned-integer-data-type-in-modern-fortran/1285
+
+https://fortran-lang.discourse.group/t/module-for-dealing-with-unsigned-integers-in-standard-fortran/1242
+
+https://stackoverflow.com/questions/41891046/are-unsigned-integers-standard-in-fortran
+
+https://gcc.gnu.org/onlinedocs/gfortran/Unsigned-integers.html
+
+
+
+
