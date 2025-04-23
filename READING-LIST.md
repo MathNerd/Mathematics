@@ -1,4 +1,10 @@
 
+https://stackoverflow.com/questions/58684315/shadertoy-fragcoord-vs-iresolution-vs-fragcolor
+
+https://mini.gmshaders.com/p/radiance-cascades
+
+https://www.worldscientific.com/area/algebra-related?twclid=2-6uxtmnjd79cwuym9nhvwy7786&utm_medium=cluster-elvin-04042025-Combinatorics-Books&utm_source=twitter
+
 https://www.hackster.io/patrick-fitzgerald2/risc-v-assembly-language-with-ripes-online-simulator-016d06
 
 https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html
