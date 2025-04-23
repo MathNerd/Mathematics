@@ -1,4 +1,6 @@
 
+https://linuxgizmos.com/title-low-cost-luckfox-pico-pi-boards-offer-linux-development-with-ubuntu-support/
+
 https://stackoverflow.com/questions/58684315/shadertoy-fragcoord-vs-iresolution-vs-fragcolor
 
 https://mini.gmshaders.com/p/radiance-cascades
@@ -107,6 +109,8 @@ https://hackaday.com/2025/04/12/the-incomplete-json-pretty-printer-brought-to-yo
 
 https://hackaday.com/2025/04/12/vibe-check-false-packages-a-new-llm-security-risk/
 
+# Research
+
 https://arxiv.org/abs/2502.13295
 
 https://arxiv.org/abs/2405.14860
@@ -116,6 +120,10 @@ https://arxiv.org/abs/2504.02827
 https://arxiv.org/abs/2504.01995
 
 https://arxiv.org/abs/2311.09783
+
+# AI
+
+https://algorithmic-sabotage.github.io/asrg/trapping-ai/
 
 https://garymarcus.substack.com/p/deep-learning-deep-scandal
 
