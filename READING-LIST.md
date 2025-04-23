@@ -1,4 +1,12 @@
 
+https://arstechnica.com/ai/2025/04/researchers-concerned-to-find-ai-models-hiding-their-true-reasoning-processes/
+
+https://arstechnica.com/information-technology/2025/04/researchers-claim-breakthrough-in-fight-against-ais-frustrating-security-hole/
+
+https://repomix.com
+
+https://small-js.org/Home/Home.html
+
 https://www.anthropic.com/engineering/claude-code-best-practices
 
 https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/
