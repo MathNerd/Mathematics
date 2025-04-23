@@ -1,4 +1,20 @@
 
+https://www.hackster.io/patrick-fitzgerald2/risc-v-assembly-language-with-ripes-online-simulator-016d06
+
+https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html
+
+https://stackoverflow.com/questions/11854847/how-can-i-display-an-image-from-a-file-in-jupyter-notebook
+
+https://www.w3schools.com/python/python_tuples_update.asp
+
+https://numpy.org/doc/stable/reference/generated/numpy.flip.html
+
+https://www.w3schools.com/python/ref_list_reverse.asp
+
+https://en.cppreference.com/w/c/23
+
+https://ampcode.com/how-to-build-an-agent
+
 https://arstechnica.com/ai/2025/04/researchers-concerned-to-find-ai-models-hiding-their-true-reasoning-processes/
 
 https://arstechnica.com/information-technology/2025/04/researchers-claim-breakthrough-in-fight-against-ais-frustrating-security-hole/
