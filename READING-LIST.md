@@ -1,3 +1,30 @@
+
+https://www.anthropic.com/engineering/claude-code-best-practices
+
+https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/
+
+https://openai.com/index/faulty-reward-functions/
+
+https://www.interconnects.ai/p/openais-o3-over-optimization-is-back#footnote-anchor-2-161647005
+
+https://philiplaine.com/posts/getting-forked-by-microsoft/
+
+https://keivan.io/the-day-appget-died/
+
+https://clojure.org/guides/getting_started
+
+https://codapi.org/odin/
+
+https://github.com/sqlc-dev/sqlc
+
+https://htmx.org/essays/vendoring/
+
+https://www.geeksforgeeks.org/plotting-sine-and-cosine-graph-using-matloplib-in-python/
+
+https://blend2d.com
+
+https://www.hyrumslaw.com
+
 https://www.w3schools.com/dsa/index.php
 
 https://en.wikipedia.org/wiki/Digital_signature
@@ -49,6 +76,8 @@ https://arstechnica.com/ai/2025/04/researchers-concerned-to-find-ai-models-hidin
 https://hackaday.com/2025/04/12/the-incomplete-json-pretty-printer-brought-to-you-by-vibes/
 
 https://hackaday.com/2025/04/12/vibe-check-false-packages-a-new-llm-security-risk/
+
+https://arxiv.org/abs/2502.13295
 
 https://arxiv.org/abs/2405.14860
 
