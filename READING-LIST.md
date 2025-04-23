@@ -1,4 +1,8 @@
 
+https://jank-lang.org/blog/2025-03-28-error-reporting/
+
+https://github.com/redorav/hlslpp
+
 https://obfuscator.io
 
 https://linuxgizmos.com/title-low-cost-luckfox-pico-pi-boards-offer-linux-development-with-ubuntu-support/
