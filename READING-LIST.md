@@ -123,6 +123,8 @@ https://arxiv.org/abs/2311.09783
 
 # AI
 
+https://tzovar.as/algorithmic-sabotage-ssg/
+
 https://algorithmic-sabotage.github.io/asrg/trapping-ai/
 
 https://garymarcus.substack.com/p/deep-learning-deep-scandal
