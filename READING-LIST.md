@@ -1,4 +1,6 @@
 
+https://obfuscator.io
+
 https://linuxgizmos.com/title-low-cost-luckfox-pico-pi-boards-offer-linux-development-with-ubuntu-support/
 
 https://stackoverflow.com/questions/58684315/shadertoy-fragcoord-vs-iresolution-vs-fragcolor
@@ -124,6 +126,8 @@ https://arxiv.org/abs/2311.09783
 # AI
 
 https://tzovar.as/algorithmic-sabotage-ssg/
+
+https://tzovar.as/algorithmic-sabotage-ii/
 
 https://algorithmic-sabotage.github.io/asrg/trapping-ai/
 
