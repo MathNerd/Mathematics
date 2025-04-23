@@ -1,4 +1,16 @@
 
+https://github.com/elder-plinius/L1B3RT4S
+
+https://github.com/jsoulier/blocks
+
+https://codeberg.org/timmc/marko/
+
+https://github.com/JasonLovesDoggo/caddy-defender
+
+https://git.rys.io/libre/markov-tarpit
+
+https://github.com/gw1urf/spigot
+
 https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset
 
 https://huggingface.co/spaces/Stable-X/Hi3DGen
