@@ -1,5 +1,32 @@
 # Books
 
+
+
+
+https://nostarch.com/data-structures-fun-way
+
+https://nostarch.com/nature-code
+
+https://nostarch.com/practical-deep-learning-python-2E
+
+https://nostarch.com/data-structures-and-algorithms-javascript
+
+https://nostarch.com/math-hacks-scratch
+
+https://nostarch.com/graph-algorithms-fun-way
+
+https://pragprog.com/titles/d-qtmart/the-art-of-functional-programming/
+
+https://pragprog.com/titles/bhtmux3/tmux-3/
+
+https://pragprog.com/titles/apdiag/creating-software-with-modern-diagramming-techniques/
+
+https://pragprog.com/titles/jwpython/a-common-sense-guide-to-data-structures-and-algorithms-in-python-volume-1/
+
+https://leanpub.com/algebra-driven-design
+
+https://www.amazon.com/Mathematics-Generic-Programming-Alexander-Stepanov/dp/0321942043
+
 https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/?_encoding=UTF8&pd_rd_w=6gJKP&content-id=amzn1.sym.cf86ec3a-68a6-43e9-8115-04171136930a&pf_rd_p=cf86ec3a-68a6-43e9-8115-04171136930a&pf_rd_r=132-5679136-8921855&pd_rd_wg=q7q3z&pd_rd_r=ec87df11-84ef-45c3-804c-73c3d79a1a76&ref_=aufs_ap_sc_dsk
 
 https://bookstore.ams.org/view?ProductCode=TEXT/73
