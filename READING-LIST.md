@@ -1,4 +1,25 @@
 
+
+
+
+https://futurism.com/ai-researchers-tech-industry-dead-end
+
+https://pshapira.net/2024/03/31/delving-into-delve/
+
+https://www.404media.co/people-are-using-ai-to-create-influencers-with-down-syndrome-who-sell-nudes/
+
+https://stackoverflow.com/questions/63885152/matplotlib-plotting-is-not-working-in-google-colab
+
+https://ezyang.github.io/ai-blindspots/
+
+https://thelibre.news/foss-infrastructure-is-under-attack-by-ai-companies/
+
+https://blog.cloudflare.com/ai-labyrinth/
+
+https://iocaine.madhouse-project.org
+
+https://zadzmo.org/code/nepenthes/
+
 https://marcusb.org/hacks/quixotic.html
 
 https://codeberg.org/MikeCoats/poison-the-wellms
