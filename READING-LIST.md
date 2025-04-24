@@ -1,4 +1,18 @@
 
+https://computationalthinking.mit.edu/Fall23/
+
+https://armorpaint.org
+
+https://github.com/armory3d/armortools
+
+https://www.zbrushcentral.com/t/texturing-world-of-warcraft-legion/337017
+
+https://b3d.interplanety.org/en/how-to-calculate-the-bounding-sphere-for-selected-objects/
+
+https://github.com/scala-native/scala-native
+
+https://metalbyexample.com/mesh-shaders/
+
 https://80.lv/articles/discussing-the-possibilities-and-drawbacks-of-unreal-engine-5-s-nanite/
 
 https://thebookofshaders.com
