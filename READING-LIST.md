@@ -158,7 +158,8 @@ https://www.routledge.com/An-Elementary-Transition-to-Abstract-Mathematics/Effin
 
 https://link.springer.com/book/10.1007/978-0-8176-8325-2
 
-https://link.springer.com/book/10.1007/978-3-030-09068-5
+
+https://link.springer.com/book/10.1007/978-3-319-74748-4
 
 https://link.springer.com/book/10.1007/978-3-030-73718-4
 
