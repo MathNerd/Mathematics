@@ -1,4 +1,20 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.sidefx.com/docs/houdini/vex/ocl.html
+
+https://immersivemath.com/ila/index.html
+
 https://computationalthinking.mit.edu/Fall23/
 
 https://armorpaint.org
