@@ -1,13 +1,24 @@
 
 
+https://news.ycombinator.com/item?id=32687071
 
+https://github.com/arrayfire/arrayfire
 
+https://www.gingerbill.org/article/2018/09/05/exceptions-and-why-odin-will-never-have-them/
 
+https://learn.unity.com/course/dots-best-practices?uv=2022.3
 
+https://github.com/intel/intel-one-mono
 
+https://gpuopen.com/vulkan-memory-allocator/
 
+https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator?tab=readme-ov-file
 
+https://guillaumeblanc.github.io/ozz-animation/
 
+https://github.com/nfrechette/acl
+
+https://github.com/ziglang/zig/issues/16278
 
 https://okmij.org/ftp/tagless-final/Algebra.html
 
