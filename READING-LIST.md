@@ -300,6 +300,8 @@ https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 https://faultlore.com/blah/c-isnt-a-language/
 
+https://faultlore.com/blah/c-isnt-a-language/
+
 https://github.com/slint-ui/slint/tree/master
 
 http://fragmentbuffer.com/gpu-performance-for-game-artists/
