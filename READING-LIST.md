@@ -6,9 +6,9 @@ https://www.amazon.com/dp/1838985093/ref=sspa_dk_detail_3?psc=1&pd_rd_i=18389850
 
 # Assorted
 
+https://www.gamedeveloper.com/art/2d-game-art-for-programmers---back-with-a-bang-
 
-
-
+https://www.scanslibrary.com/collection/beech-forest
 
 https://80.lv/articles/how-to-texture-a-large-scale-scene-using-the-layer-system-in-unreal-engine/
 
