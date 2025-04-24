@@ -6,6 +6,22 @@ https://www.amazon.com/dp/1838985093/ref=sspa_dk_detail_3?psc=1&pd_rd_i=18389850
 
 # Assorted
 
+
+
+
+
+https://80.lv/articles/how-to-texture-a-large-scale-scene-using-the-layer-system-in-unreal-engine/
+
+https://www.artstation.com/artwork/3ExXBJ
+
+https://assetstore.unity.com/packages/2d/textures-materials/ultra-pack-textures-268491
+
+https://www.ralfj.de/blog/2018/07/24/pointers-and-bytes.html
+
+https://www.ralfj.de/blog/2020/12/14/provenance.html
+
+https://learn.microsoft.com/en-us/cpp/standard-library/charconv-functions?view=msvc-170
+
 https://google.github.io/comprehensive-rust/
 
 https://news.ycombinator.com/item?id=32687071
