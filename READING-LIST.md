@@ -1,5 +1,21 @@
 # Books
 
+https://www.amazon.com/dp/B095H8N9J5/ref=mes-dp?_encoding=UTF8&pd_rd_w=6sini&content-id=amzn1.sym.6253d2a1-ab36-46e7-be6f-d7b8ec8d5319&pf_rd_p=6253d2a1-ab36-46e7-be6f-d7b8ec8d5319&pf_rd_r=MP3VH4KZGN58GVMNBY7X&pd_rd_wg=9Xps6&pd_rd_r=764b0b33-40df-4675-b599-1b2c250523c2
+
+https://www.amazon.com/dp/B0C37V5V56/ref=sspa_dk_detail_0?psc=1&pd_rd_i=B0C37V5V56&pd_rd_w=MzSsq&content-id=amzn1.sym.0d1092dc-81bb-493f-8769-d5c802257e94&pf_rd_p=0d1092dc-81bb-493f-8769-d5c802257e94&pf_rd_r=G0T8MNGF62FJZB7M96ZD&pd_rd_wg=3cns3&pd_rd_r=2611c572-2712-4aa1-9fe2-043a0b4f0421&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWwy
+
+https://www.amazon.com/Linear-Geometric-Algebra-Alan-Macdonald/dp/1453854932
+
+https://www.manning.com/books/math-for-programmers?manning_source=marketplace&manning_medium=search-result-shallow&manning_term=Math
+
+https://www.manning.com/books/inside-deep-learning?manning_source=marketplace&manning_medium=search-result-shallow&manning_term=Math
+
+https://www.manning.com/books/natural-language-processing-in-action-second-edition?manning_source=marketplace&manning_medium=search-result-shallow&manning_term=Math
+
+https://www.manning.com/books/grokking-machine-learning?manning_source=marketplace&manning_medium=search-result-shallow&manning_term=Math
+
+https://www.manning.com/books/classic-game-programming-on-the-nes?manning_source=marketplace&manning_medium=search-result-shallow&manning_term=Math
+
 https://www.manning.com/books/learn-concurrent-programming-with-go
 
 https://www.amazon.com/Schaums-Outline-Calculus-Seventh-Mendelson/dp/126425833X/ref=pd_rhf_dp_s_pd_sbs_rvi_d_sccl_1_4/139-0966509-3810959?pd_rd_w=TPB2B&content-id=amzn1.sym.a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_p=a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_r=KHZFBDQ0X13VEN772PF2&pd_rd_wg=NUSJI&pd_rd_r=858f0c53-65d0-403f-8818-c0ba13d7a61e&pd_rd_i=126425833X&psc=1
