@@ -18,6 +18,41 @@ https://www.amazon.com/Python-Chemists-Christian-Hill/dp/1009102044/ref=sr_1_35?
 
 https://www.amazon.com/Bayesian-Analysis-Python-Practical-probabilistic/dp/1805127160/ref=sr_1_37?crid=3RX5ATNA3YA0Z&dib=eyJ2IjoiMSJ9.jkr3KrLF7xJLowO-Hm7u_WrczCC589OstebXoyXtuRT-3mqAigJFs-XrRGGfJWQ5182Q56AB76_M82KpFiyXiwTEq8Tp4GSDYgpKtM2D4pHZbH3p-NyLBurLC68PguEb0MMiLTKE-2l0I2XHsL8m2tmUj4PwxkrlTmwDoocdzm_aEt2i7jbZwWhiqYi1llGEIevCylxOHcsdS8p2b6p4xparQzqjetTNByV4Se74GI8.9-66qt2nqc3nUaayxTB-xrqP5q9TjW5r0E8iyL63hnY&dib_tag=se&keywords=python+math&qid=1745459128&s=books&sprefix=python+math%2Cstripbooks-intl-ship%2C205&sr=1-37
 
+https://www.amazon.com/Complex-Network-Analysis-Python-Recognize-ebook/dp/B079ZN9K5M/ref=sr_1_39?crid=3RX5ATNA3YA0Z&dib=eyJ2IjoiMSJ9.jkr3KrLF7xJLowO-Hm7u_WrczCC589OstebXoyXtuRT-3mqAigJFs-XrRGGfJWQ5182Q56AB76_M82KpFiyXiwTEq8Tp4GSDYgpKtM2D4pHZbH3p-NyLBurLC68PguEb0MMiLTKE-2l0I2XHsL8m2tmUj4PwxkrlTmwDoocdzm_aEt2i7jbZwWhiqYi1llGEIevCylxOHcsdS8p2b6p4xparQzqjetTNByV4Se74GI8.9-66qt2nqc3nUaayxTB-xrqP5q9TjW5r0E8iyL63hnY&dib_tag=se&keywords=python+math&qid=1745459128&s=books&sprefix=python+math%2Cstripbooks-intl-ship%2C205&sr=1-39
+
+https://www.amazon.com/Introduction-Learning-Neural-Networks-PythonTM/dp/0323909337/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1704537686&sr=1-2
+
+https://www.amazon.com/Undergraduate-Analysis-Textbook-Aisling-McCluskey/dp/0198817576
+
+https://link.springer.com/book/10.1007/978-1-4614-7946-8
+
+https://link.springer.com/book/10.1007/978-3-319-74073-7
+
+https://link.springer.com/book/10.1007/978-3-030-81588-2
+
+https://link.springer.com/book/9783031810756
+
+https://link.springer.com/book/10.1007/978-3-030-42221-9
+
+https://link.springer.com/book/10.1007/978-3-031-73434-2
+
+https://pragprog.com/titles/uboop/from-objects-to-functions/
+
+https://pragprog.com/titles/swdddf/domain-modeling-made-functional/
+
+https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201
+
+https://www.manning.com/books/grokking-simplicity
+
+https://www.manning.com/books/grokking-functional-programming
+
+https://leanpub.com/discrete-math
+
+https://leanpub.com/fp-made-easier
+
+https://www.amazon.com/Programming-Logic-Design-MindTap-Course-dp-0357880870/dp/0357880870/ref=dp_ob_title_bk
+
+
 # Assorted
 
 https://www.sciencedirect.com/science/article/pii/S0022314X12001552?ref=pdf_download&fr=RR-2&rr=8406b382281b09c7
