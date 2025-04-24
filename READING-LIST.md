@@ -1,5 +1,45 @@
 # Books
 
+https://www.manning.com/books/learn-concurrent-programming-with-go
+
+https://www.amazon.com/Schaums-Outline-Calculus-Seventh-Mendelson/dp/126425833X/ref=pd_rhf_dp_s_pd_sbs_rvi_d_sccl_1_4/139-0966509-3810959?pd_rd_w=TPB2B&content-id=amzn1.sym.a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_p=a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_r=KHZFBDQ0X13VEN772PF2&pd_rd_wg=NUSJI&pd_rd_r=858f0c53-65d0-403f-8818-c0ba13d7a61e&pd_rd_i=126425833X&psc=1
+
+https://www.amazon.com/Practical-Julia-Lee-Phillips/dp/1718502761/ref=sr_1_1?crid=QV7THU1RIKIU&keywords=julia+programming&qid=1702895287&s=books&sprefix=julia+programming%2Cstripbooks-intl-ship%2C210&sr=1-1
+
+https://www.amazon.com/Network-Programming-Go-Adam-Woodbeck/dp/1718500882/ref=sr_1_1?crid=1DNAS6I0J0DTR&keywords=network+programming+in+go&qid=1702894240&sprefix=network+programming+in+go%2Caps%2C260&sr=8-1
+
+https://www.manning.com/books/machine-learning-algorithms-in-depth?manning_source=marketplace&manning_medium=catalogV2
+
+https://www.manning.com/books/math-and-architectures-of-deep-learning?manning_source=marketplace&manning_medium=catalogV2
+
+https://www.manning.com/books/data-oriented-programming
+
+https://www.manning.com/books/advanced-algorithms-and-data-structures
+
+https://www.manning.com/books/geometry-for-programmers
+
+https://www.manning.com/books/tiny-c-projects
+
+https://www.manning.com/books/100-go-mistakes-and-how-to-avoid-them?manning_source=marketplace&manning_medium=catalogV2
+
+https://www.manning.com/books/grokking-functional-programming?manning_source=marketplace&manning_medium=productpage-youmightlike
+
+https://www.manning.com/books/grokking-algorithms-second-edition
+
+https://link.springer.com/book/10.1007/978-3-030-03241-8
+
+https://leanpub.com/algebra-driven-design
+
+https://www.amazon.com/Functions-Matrices-Computation-Applied-Mathematics/dp/0898716462
+
+https://pragprog.com/titles/rshaskell/effective-haskell/
+
+https://www.amazon.com/Introduction-Mathematical-Analysis-Satish-Shirali/dp/1842658476
+
+https://pragprog.com/titles/cbrain/c-brain-teasers/
+
+https://pragprog.com/titles/jwpython/a-common-sense-guide-to-data-structures-and-algorithms-in-python-volume-1/
+
 https://www.amazon.com/Build-Large-Language-Model-Scratch/dp/1633437167/ref=pd_bxgy_d_sccl_2/147-3055499-3042539?pd_rd_w=K0IE9&content-id=amzn1.sym.dcf559c6-d374-405e-a13e-133e852d81e1&pf_rd_p=dcf559c6-d374-405e-a13e-133e852d81e1&pf_rd_r=QD9G791H80VYZA3FTYWA&pd_rd_wg=bBMzz&pd_rd_r=899d41b8-9cba-41ce-af7b-e4badd529f70&pd_rd_i=1633437167&psc=1
 
 https://www.amazon.com/Natural-Language-Processing-Transformers-Revised/dp/1098136799/ref=pd_bxgy_d_sccl_1/147-3055499-3042539?pd_rd_w=K0IE9&content-id=amzn1.sym.dcf559c6-d374-405e-a13e-133e852d81e1&pf_rd_p=dcf559c6-d374-405e-a13e-133e852d81e1&pf_rd_r=QD9G791H80VYZA3FTYWA&pd_rd_wg=bBMzz&pd_rd_r=899d41b8-9cba-41ce-af7b-e4badd529f70&pd_rd_i=1098136799&psc=1
