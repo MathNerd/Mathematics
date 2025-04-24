@@ -6,6 +6,18 @@ https://www.amazon.com/dp/1838985093/ref=sspa_dk_detail_3?psc=1&pd_rd_i=18389850
 
 https://www.amazon.com/Essential-Calculus-Practice-Workbook-Solutions/dp/1941691242/ref=pd_rhf_dp_s_pd_sbs_rvi_d_sccl_2_3/132-5679136-8921855?pd_rd_w=JmsNK&content-id=amzn1.sym.a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_p=a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_r=XR6NN4QRTEXZM1FAY0HF&pd_rd_wg=yZDeI&pd_rd_r=db4f9118-2102-45fd-8c67-31927a95cb7a&pd_rd_i=1941691242&psc=1
 
+https://www.amazon.com/Complex-Variables-Applications-Brown-Churchill/dp/0073383171
+
+https://github.com/winitzki/sofp
+
+https://www.amazon.com/Understanding-Analysis-Undergraduate-Texts-Mathematics/dp/1493927116
+
+https://www.amazon.com/stores/author/B00EWB0HO2/allbooks?ingress=0&visitId=a7722ff7-22e8-4025-b8d1-3a486ccc9950&ref_=sr_ntt_srch_lnk_1
+
+https://www.amazon.com/Python-Chemists-Christian-Hill/dp/1009102044/ref=sr_1_35?crid=3RX5ATNA3YA0Z&keywords=python+math&qid=1704496312&s=books&sprefix=python+math%2Cstripbooks-intl-ship%2C205&sr=1-35
+
+https://www.amazon.com/Bayesian-Analysis-Python-Practical-probabilistic/dp/1805127160/ref=sr_1_37?crid=3RX5ATNA3YA0Z&dib=eyJ2IjoiMSJ9.jkr3KrLF7xJLowO-Hm7u_WrczCC589OstebXoyXtuRT-3mqAigJFs-XrRGGfJWQ5182Q56AB76_M82KpFiyXiwTEq8Tp4GSDYgpKtM2D4pHZbH3p-NyLBurLC68PguEb0MMiLTKE-2l0I2XHsL8m2tmUj4PwxkrlTmwDoocdzm_aEt2i7jbZwWhiqYi1llGEIevCylxOHcsdS8p2b6p4xparQzqjetTNByV4Se74GI8.9-66qt2nqc3nUaayxTB-xrqP5q9TjW5r0E8iyL63hnY&dib_tag=se&keywords=python+math&qid=1745459128&s=books&sprefix=python+math%2Cstripbooks-intl-ship%2C205&sr=1-37
+
 # Assorted
 
 https://www.sciencedirect.com/science/article/pii/S0022314X12001552?ref=pdf_download&fr=RR-2&rr=8406b382281b09c7
