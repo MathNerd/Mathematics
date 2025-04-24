@@ -9,7 +9,7 @@
 
 
 
-
+https://okmij.org/ftp/tagless-final/Algebra.html
 
 https://www.sidefx.com/docs/houdini/vex/ocl.html
 
