@@ -185,7 +185,7 @@ https://www.amazon.com/Programmers-Guide-Computer-Science-self-taught/dp/1951204
 
 https://www.amazon.com/Programmers-Guide-Computer-Science-Vol-ebook/dp/B082K7X28P
 
-https://www.routledge.com/Garbage-Collection-Handbook-The-Art-of-Automatic-Memory-Management/Jones-Hosking-Moss/p/book/9781032218037
+https://www.routledge.com/The-Garbage-Collection-Handbook-The-Art-of-Automatic-Memory-Management/Jones-Hosking-Moss/p/book/9781032231785
 
 https://pragprog.com/titles/rggo/powerful-command-line-applications-in-go/
 
