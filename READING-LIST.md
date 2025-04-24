@@ -1,4 +1,20 @@
 
+
+
+https://machinelearningmastery.com/a-gentle-introduction-to-positional-encoding-in-transformer-models-part-1/
+
+https://build-your-own.org
+
+https://github.com/libsdl-org/SDL/blob/main/examples/renderer/04-points/points.c
+
+https://www.hopsworks.ai/dictionary/llm-temperature
+
+https://polyhaven.com
+
+https://jonnys-games.itch.io/slide-in-the-woods
+
+https://github.com/pastasfuture/com.hauntedpsx.render-pipelines.psx
+
 https://www.edge.org/response-detail/26587
 
 https://pixymoon.itch.io
