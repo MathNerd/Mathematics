@@ -1,4 +1,11 @@
 
+
+https://www.modular.com/blog/democratizing-ai-compute-part-5-what-about-cuda-c-alternatives?utm_source=x&utm_campaign=community
+
+https://github.com/EnzeD/dogfight3/blob/main/js/core/EventBus.js
+
+https://google-research.github.io/self-organising-systems/difflogic-ca/
+
 https://www.theswaddle.com/what-the-dead-internet-theory-predicted-about-the-future-of-digital-life
 
 https://machinelearningmastery.com/a-gentle-introduction-to-positional-encoding-in-transformer-models-part-1/
