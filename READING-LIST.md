@@ -52,6 +52,7 @@ https://leanpub.com/fp-made-easier
 
 https://www.amazon.com/Programming-Logic-Design-MindTap-Course-dp-0357880870/dp/0357880870/ref=dp_ob_title_bk
 
+https://pragprog.com/titles/gwpy3/practical-programming-third-edition/
 
 # Assorted
 
