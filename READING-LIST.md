@@ -1,5 +1,7 @@
 # Books
 
+https://link.springer.com/book/10.1007/978-3-030-73718-4
+
 https://link.springer.com/book/10.1007/978-3-030-52815-7
 
 https://www.amazon.com/dp/B0C37V5V56/ref=sspa_dk_detail_0?psc=1&pd_rd_i=B0C37V5V56&pd_rd_w=MzSsq&content-id=amzn1.sym.0d1092dc-81bb-493f-8769-d5c802257e94&pf_rd_p=0d1092dc-81bb-493f-8769-d5c802257e94&pf_rd_r=G0T8MNGF62FJZB7M96ZD&pd_rd_wg=3cns3&pd_rd_r=2611c572-2712-4aa1-9fe2-043a0b4f0421&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWwy
@@ -174,9 +176,7 @@ https://www.worldscientific.com/worldscibooks/10.1142/9808
 
 https://link.springer.com/book/10.1007/978-3-030-56174-1
 
-https://bookstore.ams.org/view?ProductCode=AMSTEXT/24
-
-https://link.springer.com/book/10.1007/978-1-4471-2530-3
+https://bookstore.ams.org/view?ProductCode=AMSTEXT/2
 
 https://www.amazon.com/Programmers-Guide-Computer-Science-self-taught/dp/195120400X
 
