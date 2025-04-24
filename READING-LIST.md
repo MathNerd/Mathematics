@@ -1,4 +1,11 @@
 
+https://www.edge.org/response-detail/26587
+
+https://pixymoon.itch.io
+
+https://seliel-the-shaper.itch.io/summer-forest
+
+https://seliel-the-shaper.itch.io/gentle-forest
 
 https://futurism.com/pinterest-ai-slop
 
