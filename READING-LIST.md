@@ -1,6 +1,6 @@
 
 
-
+https://futurism.com/pinterest-ai-slop
 
 https://futurism.com/ai-researchers-tech-industry-dead-end
 
