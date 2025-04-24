@@ -1,5 +1,27 @@
 
+https://80.lv/articles/discussing-the-possibilities-and-drawbacks-of-unreal-engine-5-s-nanite/
 
+https://thebookofshaders.com
+
+https://docs.godotengine.org/en/stable/tutorials/shaders/screen-reading_shaders.html#depth-texture
+
+https://www.gdcvault.com/play/1012264/Shading-a-Bigger-Better-Sequel
+
+https://ecl.common-lisp.dev/static/manual/
+
+https://www.piston.rs
+
+https://enkimute.github.io/LookMaNoMatrices/
+
+https://github.com/doitsujin/dxvk
+
+https://eliemichel.github.io/LearnWebGPU/
+
+https://dawn.googlesource.com/dawn
+
+https://github.com/kool-engine/kool?tab=readme-ov-file
+
+https://github.com/korlibs/korge
 
 https://www.artstation.com/artwork/blqmBr
 
