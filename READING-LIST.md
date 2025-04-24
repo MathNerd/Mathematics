@@ -176,7 +176,7 @@ https://www.worldscientific.com/worldscibooks/10.1142/9808
 
 https://link.springer.com/book/10.1007/978-3-030-56174-1
 
-https://bookstore.ams.org/view?ProductCode=AMSTEXT/2
+https://bookstore.ams.org/view?ProductCode=AMSTEXT/24
 
 https://www.amazon.com/Programmers-Guide-Computer-Science-self-taught/dp/195120400X
 
