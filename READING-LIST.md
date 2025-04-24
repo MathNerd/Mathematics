@@ -4,7 +4,13 @@ https://www.amazon.com/Data-Parallel-Programming-Accelerated-Systems/dp/14842969
 
 https://www.amazon.com/dp/1838985093/ref=sspa_dk_detail_3?psc=1&pd_rd_i=1838985093&pd_rd_w=43hWo&content-id=amzn1.sym.0d1092dc-81bb-493f-8769-d5c802257e94&pf_rd_p=0d1092dc-81bb-493f-8769-d5c802257e94&pf_rd_r=1CWW9SV5M6KMGVMN9C4K&pd_rd_wg=aW4uB&pd_rd_r=c30f52e5-2053-4a9f-a9b2-3279d2861c38&s=books&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWwy
 
+https://www.amazon.com/Essential-Calculus-Practice-Workbook-Solutions/dp/1941691242/ref=pd_rhf_dp_s_pd_sbs_rvi_d_sccl_2_3/132-5679136-8921855?pd_rd_w=JmsNK&content-id=amzn1.sym.a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_p=a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_r=XR6NN4QRTEXZM1FAY0HF&pd_rd_wg=yZDeI&pd_rd_r=db4f9118-2102-45fd-8c67-31927a95cb7a&pd_rd_i=1941691242&psc=1
+
 # Assorted
+
+https://www.sciencedirect.com/science/article/pii/S0022314X12001552?ref=pdf_download&fr=RR-2&rr=8406b382281b09c7
+
+https://cl.desmos.com/t/how-can-i-graph-a-piecewise-function-in-desmos/4874
 
 https://www.gamedeveloper.com/art/2d-game-art-for-programmers---back-with-a-bang-
 
