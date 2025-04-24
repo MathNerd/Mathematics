@@ -3,6 +3,20 @@
 
 
 
+https://www.amazon.com/dp/1835460828/ref=sspa_dk_detail_2?psc=1&pd_rd_i=1835460828&pd_rd_w=2Ws4E&content-id=amzn1.sym.7446a9d1-25fe-4460-b135-a60336bad2c9&pf_rd_p=7446a9d1-25fe-4460-b135-a60336bad2c9&pf_rd_r=QD9G791H80VYZA3FTYWA&pd_rd_wg=bBMzz&pd_rd_r=899d41b8-9cba-41ce-af7b-e4badd529f70&s=books&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw
+
+https://www.amazon.com/Transformers-Natural-Language-Processing-Computer-dp-1805128728/dp/1805128728/ref=dp_ob_title_bk
+
+https://artofproblemsolving.com/store/online
+
+https://pragprog.com/titles/jwpython2/a-common-sense-guide-to-data-structures-and-algorithms-in-python-volume-2/
+
+https://nostarch.com/introcomputerorgforarm
+
+https://nostarch.com/computerarchitecture
+
+https://nostarch.com/how-ai-works
+
 https://nostarch.com/data-structures-fun-way
 
 https://nostarch.com/nature-code
