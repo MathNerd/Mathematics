@@ -18,11 +18,11 @@ https://www.manning.com/books/classic-game-programming-on-the-nes?manning_source
 
 https://www.manning.com/books/learn-concurrent-programming-with-go
 
-https://www.amazon.com/Schaums-Outline-Calculus-Seventh-Mendelson/dp/126425833X/ref=pd_rhf_dp_s_pd_sbs_rvi_d_sccl_1_4/139-0966509-3810959?pd_rd_w=TPB2B&content-id=amzn1.sym.a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_p=a089f039-4dde-401a-9041-8b534ae99e65&pf_rd_r=KHZFBDQ0X13VEN772PF2&pd_rd_wg=NUSJI&pd_rd_r=858f0c53-65d0-403f-8818-c0ba13d7a61e&pd_rd_i=126425833X&psc=1
+https://www.mhprofessional.com/schaum-s-outline-of-calculus-seventh-edition-9781264258338-usa-group
 
-https://www.amazon.com/Practical-Julia-Lee-Phillips/dp/1718502761/ref=sr_1_1?crid=QV7THU1RIKIU&keywords=julia+programming&qid=1702895287&s=books&sprefix=julia+programming%2Cstripbooks-intl-ship%2C210&sr=1-1
+https://nostarch.com/practical-julia
 
-https://www.amazon.com/Network-Programming-Go-Adam-Woodbeck/dp/1718500882/ref=sr_1_1?crid=1DNAS6I0J0DTR&keywords=network+programming+in+go&qid=1702894240&sprefix=network+programming+in+go%2Caps%2C260&sr=8-1
+https://nostarch.com/network-programming-go
 
 https://www.manning.com/books/machine-learning-algorithms-in-depth?manning_source=marketplace&manning_medium=catalogV2
 
