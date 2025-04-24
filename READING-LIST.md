@@ -70,6 +70,7 @@ https://www.amazon.com/Algebraic-Curves-Dolciani-Mathematical-Expositions/dp/088
 
 https://www.amazon.com/Elementary-Algebraic-Geometry-Second-Mathematics/dp/0486786080
 
+https://www.amazon.com/Sink-Float-Problems-Mathematical-Expositions/dp/0883853396
 
 # Assorted
 
