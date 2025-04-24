@@ -126,15 +126,15 @@ https://bookstore.ams.org/view?ProductCode=TEXT/72
 
 https://bookstore.ams.org/view?ProductCode=CLRM/69
 
-https://www.amazon.com/Sage-Undergraduates-Gregory-V-Bard/dp/1470411113/ref=sr_1_4?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-4
+https://bookstore.ams.org/mbk-87
 
-https://www.amazon.com/Computational-Mathematics-SageMath-P-Zimmermann/dp/161197545X/ref=sr_1_1?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-1
+https://epubs.siam.org/doi/10.1137/1.9781611975468
 
-https://www.amazon.com/Gentle-Introduction-Group-Theory/dp/9819901464/ref=sr_1_9?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-9
+https://link.springer.com/book/10.1007/978-981-99-0147-0
 
-https://www.amazon.com/Pythagorean-Introduction-Number-Theory-Undergraduate/dp/3030026035/ref=sr_1_5?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-5
+https://link.springer.com/book/10.1007/978-3-030-02604-2
 
-https://www.amazon.com/Short-Book-Long-Sums-Undergraduate/dp/3031375564/ref=sr_1_10?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-10
+https://link.springer.com/book/10.1007/978-3-031-37557-6
 
 https://link.springer.com/book/10.1007/978-1-4842-9885-5
 
