@@ -1,5 +1,9 @@
 # Books
 
+https://www.worldscientific.com/worldscibooks/10.1142/12539
+
+https://www.worldscientific.com/worldscibooks/10.1142/12898
+
 https://link.springer.com/book/10.1007/978-3-030-73718-4
 
 https://link.springer.com/book/10.1007/978-3-030-52815-7
