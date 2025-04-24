@@ -56,13 +56,13 @@ https://pragprog.com/titles/cbrain/c-brain-teasers/
 
 https://pragprog.com/titles/jwpython/a-common-sense-guide-to-data-structures-and-algorithms-in-python-volume-1/
 
-https://www.amazon.com/Build-Large-Language-Model-Scratch/dp/1633437167/ref=pd_bxgy_d_sccl_2/147-3055499-3042539?pd_rd_w=K0IE9&content-id=amzn1.sym.dcf559c6-d374-405e-a13e-133e852d81e1&pf_rd_p=dcf559c6-d374-405e-a13e-133e852d81e1&pf_rd_r=QD9G791H80VYZA3FTYWA&pd_rd_wg=bBMzz&pd_rd_r=899d41b8-9cba-41ce-af7b-e4badd529f70&pd_rd_i=1633437167&psc=1
+https://www.manning.com/books/build-a-large-language-model-from-scratch
 
-https://www.amazon.com/Natural-Language-Processing-Transformers-Revised/dp/1098136799/ref=pd_bxgy_d_sccl_1/147-3055499-3042539?pd_rd_w=K0IE9&content-id=amzn1.sym.dcf559c6-d374-405e-a13e-133e852d81e1&pf_rd_p=dcf559c6-d374-405e-a13e-133e852d81e1&pf_rd_r=QD9G791H80VYZA3FTYWA&pd_rd_wg=bBMzz&pd_rd_r=899d41b8-9cba-41ce-af7b-e4badd529f70&pd_rd_i=1098136799&psc=1
+https://www.oreilly.com/library/view/natural-language-processing/9781098136789/
 
-https://www.amazon.com/dp/1835460828/ref=sspa_dk_detail_2?psc=1&pd_rd_i=1835460828&pd_rd_w=2Ws4E&content-id=amzn1.sym.7446a9d1-25fe-4460-b135-a60336bad2c9&pf_rd_p=7446a9d1-25fe-4460-b135-a60336bad2c9&pf_rd_r=QD9G791H80VYZA3FTYWA&pd_rd_wg=bBMzz&pd_rd_r=899d41b8-9cba-41ce-af7b-e4badd529f70&s=books&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw
+https://www.packtpub.com/en-us/product/generative-ai-foundations-in-python-9781835460825
 
-https://www.amazon.com/Transformers-Natural-Language-Processing-Computer-dp-1805128728/dp/1805128728/ref=dp_ob_title_bk
+https://www.packtpub.com/en-us/product/transformers-for-natural-language-processing-and-computer-vision-9781805128724
 
 https://artofproblemsolving.com/store/online
 
