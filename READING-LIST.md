@@ -74,6 +74,14 @@ https://www.amazon.com/Sink-Float-Problems-Mathematical-Expositions/dp/088385339
 
 # Assorted
 
+https://gist.github.com/silvesthu/505cf0cbf284bb4b971f6834b8fec93d
+
+https://gpuopen.com/presentations/2019/nordic-game-2019-triangles-are-precious.pdf
+
+https://developer.nvidia.com/content/life-triangle-nvidias-logical-pipeline
+
+https://xol.io/blah/introducing-vcc/
+
 https://teachyourselfcs.com/#math
 
 https://www.sciencedirect.com/science/article/pii/S0022314X12001552?ref=pdf_download&fr=RR-2&rr=8406b382281b09c7
