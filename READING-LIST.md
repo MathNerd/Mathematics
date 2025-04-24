@@ -72,7 +72,21 @@ https://www.amazon.com/Elementary-Algebraic-Geometry-Second-Mathematics/dp/04867
 
 https://www.amazon.com/Sink-Float-Problems-Mathematical-Expositions/dp/0883853396
 
+https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
+
 # Assorted
+
+
+
+http://fragmentbuffer.com/gpu-performance-for-game-artists/
+
+https://github.com/ChessMax/awesome-programming-languages
+
+https://math-wiki.com/index.php?title=חתכי_דדקינד&fbclid=IwAR1nJDu4LOd5QyCFq9JwQivac4RFc5ZWQFsA8hzHm_8Y-XvLQ-bD3ZYtXsc_aem_AW1PGwZbsOncR5LO4TzYk7P0sD1jJAIHKFHXf3iHUfX8ImwkZH247IkUGZ6_A43egUw
+
+https://opengameart.org/content/zelda-like-tilesets-and-sprites
+
+https://ambientcg.com
 
 https://shady-gang.github.io/vcc/
 
