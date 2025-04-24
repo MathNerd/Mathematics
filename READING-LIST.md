@@ -74,6 +74,8 @@ https://www.amazon.com/Sink-Float-Problems-Mathematical-Expositions/dp/088385339
 
 # Assorted
 
+https://shady-gang.github.io/vcc/
+
 https://gist.github.com/silvesthu/505cf0cbf284bb4b971f6834b8fec93d
 
 https://gpuopen.com/presentations/2019/nordic-game-2019-triangles-are-precious.pdf
