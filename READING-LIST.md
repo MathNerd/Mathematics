@@ -1,5 +1,61 @@
 # Books
 
+https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/?_encoding=UTF8&pd_rd_w=6gJKP&content-id=amzn1.sym.cf86ec3a-68a6-43e9-8115-04171136930a&pf_rd_p=cf86ec3a-68a6-43e9-8115-04171136930a&pf_rd_r=132-5679136-8921855&pd_rd_wg=q7q3z&pd_rd_r=ec87df11-84ef-45c3-804c-73c3d79a1a76&ref_=aufs_ap_sc_dsk
+
+https://bookstore.ams.org/view?ProductCode=TEXT/73
+
+https://bookstore.ams.org/view?ProductCode=TEXT/52
+
+https://bookstore.ams.org/view?ProductCode=CLRM-PWW-SET
+
+https://bookstore.ams.org/view?ProductCode=TEXT/64
+
+https://bookstore.ams.org/view?ProductCode=DOL/57
+
+https://bookstore.ams.org/view?ProductCode=CAR/37
+
+https://bookstore.ams.org/view?ProductCode=TEXT/70
+
+https://bookstore.ams.org/view?ProductCode=TEXT/71
+
+https://bookstore.ams.org/view?ProductCode=TEXT/65
+
+https://bookstore.ams.org/view?ProductCode=AMSTEXT/39
+
+https://bookstore.ams.org/view?ProductCode=AMSTEXT/27
+
+https://bookstore.ams.org/view?ProductCode=TEXT/72
+
+https://bookstore.ams.org/view?ProductCode=CLRM/69
+
+https://www.amazon.com/Sage-Undergraduates-Gregory-V-Bard/dp/1470411113/ref=sr_1_4?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-4
+
+https://www.amazon.com/Computational-Mathematics-SageMath-P-Zimmermann/dp/161197545X/ref=sr_1_1?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-1
+
+https://www.amazon.com/Gentle-Introduction-Group-Theory/dp/9819901464/ref=sr_1_9?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-9
+
+https://www.amazon.com/Pythagorean-Introduction-Number-Theory-Undergraduate/dp/3030026035/ref=sr_1_5?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-5
+
+https://www.amazon.com/Short-Book-Long-Sums-Undergraduate/dp/3031375564/ref=sr_1_10?crid=3V6DSJHS1GL9I&keywords=Sagemath&qid=1707169864&sprefix=sage+mach%2Caps%2C208&sr=8-10
+
+https://link.springer.com/book/10.1007/978-1-4842-9885-5
+
+https://link.springer.com/book/10.1007/978-1-4842-8795-8
+
+https://link.springer.com/book/10.1007/978-1-4842-9259-4
+
+https://link.springer.com/book/10.1007/978-1-4842-9660-8
+
+https://link.springer.com/book/10.1007/978-1-4842-9389-8
+
+https://link.springer.com/book/10.1007/978-1-4842-9274-7
+
+https://link.springer.com/book/10.1007/978-1-4842-8731-6
+
+https://www.amazon.com/Essential-Effects-Water-Fire-Wind/dp/1138101079/ref=sr_1_1?crid=3UXMAHVMJNAK&keywords=essential+effects+water+fire+wind+and+more&qid=1706818461&sprefix=Essential+effects%2Caps%2C279&sr=8-1
+
+https://www.math.columbia.edu/department/pinkham/Optimizationbook.pdf
+
 https://www.amazon.com/Elementary-Transition-Abstract-Mathematics-Textbooks-ebook/dp/B07Z6SML7J/ref=sr_1_50?dib=eyJ2IjoiMSJ9.iEZSfrsJDRYyji_2vSc3dl1ouENsVFtG0dgHIGSjaLsUu-jP_ZfDbIEce9_uEhHrL3Ee8wrQQ55UF-tmgK7bFj4QrkwB5uIavlD0ZsKNoFKLlYqzPd_Bf1YYC43C3FI9E2GMTmIbvcEPgTw69d83A45lAMcz0ngLU3xnnK_a5ko.XdkDPF4aW5ObBRrM0oTF2pGNPZrN3BPglnmZx9JZfqA&dib_tag=se&keywords=abstract+Vector+Spaces&qid=1705679047&s=books&sr=1-50
 
 https://www.amazon.com/Concise-Introduction-Linear-Algebra-ebook/dp/B00AVS5QVE/ref=sr_1_83?crid=LKSDUT8VZPQB&dib=eyJ2IjoiMSJ9.8SIUYX2M8MlJcjLxQbB9DhdUAgTfwCJt1WVqyz0VBwNcP8059RrhJ_ch6NHyoh_i2BPkdTMZ477IGgZ6Ksl11n413ZjLaieFD3ODrLgNEtawvycGAyU3kt6GJn0rsWRZSPPQM0cPSZteOVFGSSzS_54sCP7Gpm-WQPqNq2eEAlE.EbyH2VijwhQcYYHv9VjVntdoGInxzi0hHdm4etr7Rtc&dib_tag=se&keywords=abstract+Vector+Spaces&qid=1705678919&s=books&sprefix=abstrac+vector+spaces%2Cstripbooks-intl-ship%2C280&sr=1-83
@@ -159,6 +215,8 @@ https://www.amazon.com/Sink-Float-Problems-Mathematical-Expositions/dp/088385339
 https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 # Assorted
+
+https://faultlore.com/blah/c-isnt-a-language/
 
 https://github.com/slint-ui/slint/tree/master
 
