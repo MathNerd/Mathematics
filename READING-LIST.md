@@ -1,5 +1,26 @@
 
 
+
+https://www.artstation.com/artwork/blqmBr
+
+https://laion.ai/blog/laion-5b/
+
+https://blogs.scientificamerican.com/guest-blog/how-to-draw-with-math/
+
+https://fstar-lang.org
+
+https://kompute.cc/overview/shaders-to-headers.html
+
+https://world.hey.com/dhh/finding-the-last-editor-dae701cc
+
+https://web.archive.org/web/20180831113114/https://www.gamasutra.com/view/news/325547/Tuning_Dead_Cells_to_appeal_to_players_both_fast_and_slow.php
+
+https://web.archive.org/web/20180828210442/http://www.gamasutra.com/blogs/RyanClark/20150908/253087/The_5_Myths_of_the_Indiepocalypse.php
+
+https://doc.cat-v.org/programming/worse_is_better
+
+https://www.kenney.nl/assets
+
 https://www.modular.com/blog/democratizing-ai-compute-part-5-what-about-cuda-c-alternatives?utm_source=x&utm_campaign=community
 
 https://github.com/EnzeD/dogfight3/blob/main/js/core/EventBus.js
