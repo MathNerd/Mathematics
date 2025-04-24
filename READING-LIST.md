@@ -54,7 +54,26 @@ https://www.amazon.com/Programming-Logic-Design-MindTap-Course-dp-0357880870/dp/
 
 https://pragprog.com/titles/gwpy3/practical-programming-third-edition/
 
+https://pragprog.com/titles/fbmach/genetic-algorithms-and-machine-learning-for-programmers/
+
+https://www.amazon.com/Algebraic-Geometry-Arithmetic-Graduate-Mathematics/dp/0199202494
+
+https://link.springer.com/book/10.1007/978-3-658-30733-2
+
+https://math216.wordpress.com/2023/07/31/july-2023-version-content-now-complete-including-index/#comments
+
+https://www.amazon.com/Undergraduate-Commutative-Algebra-Mathematical-Society/dp/0521458897
+
+https://www.amazon.com/Ideals-Varieties-Algorithms-Computational-Undergraduate-dp-3319167200/dp/3319167200/ref=dp_ob_title_bk
+
+https://www.amazon.com/Algebraic-Curves-Dolciani-Mathematical-Expositions/dp/0883853531
+
+https://www.amazon.com/Elementary-Algebraic-Geometry-Second-Mathematics/dp/0486786080
+
+
 # Assorted
+
+https://teachyourselfcs.com/#math
 
 https://www.sciencedirect.com/science/article/pii/S0022314X12001552?ref=pdf_download&fr=RR-2&rr=8406b382281b09c7
 
