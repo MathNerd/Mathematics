@@ -1,5 +1,5 @@
 
-
+https://www.theswaddle.com/what-the-dead-internet-theory-predicted-about-the-future-of-digital-life
 
 https://machinelearningmastery.com/a-gentle-introduction-to-positional-encoding-in-transformer-models-part-1/
 
