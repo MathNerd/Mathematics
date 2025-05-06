@@ -318,6 +318,24 @@ https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 # Assorted
 
+https://www.worldscientific.com/area/probability-statistics?twclid=2-6jbkaap5ogeydupi4bz0iufay&utm_campaign=cluster-elvin-17042025-Jeffrey-S-Rosenthal-books&utm_medium=cpc&utm_source=twitter
+
+https://www.pixquare.art/
+
+https://www.forbes.com/sites/tonybradley/2025/04/24/one-prompt-can-bypass-every-major-llms-safeguards/
+
+https://www.theregister.com/2025/04/23/whats_worth_teaching_when_ai/
+
+https://arstechnica.com/gadgets/2025/04/review-ryzen-ai-cpu-makes-this-the-fastest-the-framework-laptop-13-has-ever-been/
+
+https://www.phoronix.com/review/orange-pi-rv2-benchmarks/2
+
+https://wasmer.io/posts/announcing-wasmer-6-closer-to-native-speeds
+
+https://www.quora.com/If-linear-algebra-is-a-thing-is-it-possible-for-quadratic-cubic-etc-algebra-to-exist
+
+https://www.phoronix.com/news/Linus-Torvalds-Anti-Case-Fold
+
 https://arstechnica.com/ai/2025/04/new-study-shows-why-simulated-reasoning-ai-models-dont-yet-live-up-to-their-billing/#comments
 
 https://arstechnica.com/information-technology/2024/07/google-ai-earns-silver-medal-equivalent-at-international-mathematical-olympiad/
