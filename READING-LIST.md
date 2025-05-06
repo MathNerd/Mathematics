@@ -328,6 +328,16 @@ https://www.worldscientific.com/worldscibooks/10.1142/8808#t=aboutBook
 
 # Assorted
 
+https://matklad.github.io/2025/04/19/things-zig-comptime-wont-do.html
+
+https://simonwillison.net/2025/Apr/21/ai-assisted-search/
+
+https://newatlas.com/mobile-technology/dasung-paperlike-103-60hz-eink-monitor/
+
+http://xahlee.info/math/Truchet_tiles.html
+
+https://www.psypost.org/llm-red-teamers-people-are-hacking-ai-chatbots-just-for-fun-and-now-researchers-have-catalogued-35-jailbreak-techniques/#google_vignette
+
 https://www.worldscientific.com/area/algebra-related?twclid=257byunp4fyuccbioowyzgc4u3&utm_campaign=cluster-elvin-18042025-Algebra-%26-Related-Titles&utm_medium=cpc&utm_source=twitter
 
 https://world.hey.com/dhh/we-ll-always-need-junior-programmers-69ddb4a1
