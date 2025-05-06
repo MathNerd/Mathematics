@@ -318,6 +318,15 @@ https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 # Assorted
 
+
+https://garymarcus.substack.com/p/why-do-large-language-models-hallucinate
+
+https://minimaxir.com/2025/05/llm-use/
+
+https://minimaxir.com/2025/01/write-better-code/
+
+https://www.cnx-software.com/2025/05/05/banana-pi-bpi-cm6-is-an-octa-core-risc-v-system-on-module-compatible-with-raspberry-pi-cm5-carrier-boards/
+
 https://faultlore.com/blah/c-isnt-a-language/
 
 https://faultlore.com/blah/c-isnt-a-language/
