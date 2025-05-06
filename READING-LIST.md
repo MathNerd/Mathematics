@@ -318,6 +318,18 @@ https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 # Assorted
 
+https://socket.io/
+
+https://www.sciencealert.com/a-strange-phrase-keeps-turning-up-in-scientific-papers-but-why
+
+https://orca-app.dev/
+
+https://arstechnica.com/security/2025/04/ai-generated-code-could-be-a-disaster-for-the-software-supply-chain-heres-why/
+
+https://www.pcgamer.com/games/battle-royale/ai-is-going-to-become-more-and-more-difficult-to-detect-fortnite-has-no-plans-to-clean-up-increasing-number-of-ai-thumbnails-cluttering-up-user-generated-experiences/
+
+https://lewiscampbell.tech/blog/250430.html
+
 https://newatlas.com/mobile-technology/boox-tab-x-c-13-inch-color-epaper/
 
 https://swesmith.com/
