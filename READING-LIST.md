@@ -318,6 +318,14 @@ https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 # Assorted
 
+https://www.freecodecamp.org/news/learn-college-calculus-and-implement-with-python/
+
+https://www.notebookcheck.net/Muse-Pi-Pro-New-Raspberry-Pi-rival-comes-with-RISC-V-SoC-M-2-and-PCIe.1006187.0.html
+
+https://harmful.cat-v.org/software/OO_programming/why_oo_sucks
+
+https://phys.org/news/2025-05-mathematician-algebra-oldest-problem-intriguing.html
+
 https://www.phoronix.com/review/orange-pi-rv2-benchmarks/6
 
 https://wezterm.org/
