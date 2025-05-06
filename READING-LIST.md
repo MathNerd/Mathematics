@@ -318,6 +318,16 @@ https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 # Assorted
 
+https://newatlas.com/mobile-technology/boox-tab-x-c-13-inch-color-epaper/
+
+https://swesmith.com/
+
+https://www.phoronix.com/news/Bytedance-Faster-Linux-IPC-RPAL
+
+https://techcrunch.com/2025/04/30/jetbrains-releases-mellum-an-open-ai-coding-model/
+
+https://www.infoworld.com/article/3973973/gcc-15-compilers-arrive-with-rust-c-c-plus-plus-and-cobol-enhancements.html
+
 https://www.freecodecamp.org/news/learn-college-calculus-and-implement-with-python/
 
 https://www.notebookcheck.net/Muse-Pi-Pro-New-Raspberry-Pi-rival-comes-with-RISC-V-SoC-M-2-and-PCIe.1006187.0.html
