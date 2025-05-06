@@ -318,6 +318,14 @@ https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 # Assorted
 
+https://arstechnica.com/ai/2025/04/new-study-shows-why-simulated-reasoning-ai-models-dont-yet-live-up-to-their-billing/#comments
+
+https://arstechnica.com/information-technology/2024/07/google-ai-earns-silver-medal-equivalent-at-international-mathematical-olympiad/
+
+https://magazine.sebastianraschka.com/p/state-of-llm-reasoning-and-inference-scaling
+
+https://garymarcus.substack.com/p/reports-of-llms-mastering-math-have
+
 https://socket.io/
 
 https://www.sciencealert.com/a-strange-phrase-keeps-turning-up-in-scientific-papers-but-why
