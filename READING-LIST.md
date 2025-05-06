@@ -318,6 +318,13 @@ https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
 # Assorted
 
+https://www.phoronix.com/review/orange-pi-rv2-benchmarks/6
+
+https://wezterm.org/
+
+https://www.worldscientific.com/area/computation-modeling?twclid=2-dc8s7n41gh2er3hmpp1ly4v6&utm_campaign=cluster-elvin-25042025-Math-Modeling-%26-Computation&utm_medium=cpc&utm_source=twitter
+
+https://hackaday.com/2025/04/30/layout-a-pcb-with-tscircuit/
 
 https://garymarcus.substack.com/p/why-do-large-language-models-hallucinate
 
