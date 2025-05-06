@@ -328,6 +328,18 @@ https://www.worldscientific.com/worldscibooks/10.1142/8808#t=aboutBook
 
 # Assorted
 
+https://arstechnica.com/information-technology/2025/04/researchers-claim-breakthrough-in-fight-against-ais-frustrating-security-hole/
+
+https://transluce.org/investigating-o3-truthfulness
+
+https://arstechnica.com/ai/2025/04/cursor-ai-support-bot-invents-fake-policy-and-triggers-user-uproar/
+
+https://news.mit.edu/2025/making-ai-generated-code-more-accurate-0418
+
+https://www.interconnects.ai/p/openais-o3-over-optimization-is-back
+
+https://liliputing.com/pine64-starpro64-single-board-pc-with-a-risc-v-processor-and-20-tops-npu-arrives-this-month/
+
 https://matklad.github.io/2025/04/19/things-zig-comptime-wont-do.html
 
 https://simonwillison.net/2025/Apr/21/ai-assisted-search/
