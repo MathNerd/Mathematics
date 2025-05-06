@@ -316,7 +316,21 @@ https://www.amazon.com/Sink-Float-Problems-Mathematical-Expositions/dp/088385339
 
 https://www.amazon.com/Red-Book-Varieties-Schemes-Mathematics/dp/354063293X
 
+https://www.worldscientific.com/worldscibooks/10.1142/q0009#t=aboutBook
+
+https://www.worldscientific.com/worldscibooks/10.1142/10861#t=aboutBook
+
+https://www.worldscientific.com/worldscibooks/10.1142/12338#t=aboutBook
+
+https://www.worldscientific.com/worldscibooks/10.1142/13408#t=aboutBook
+
+https://www.worldscientific.com/worldscibooks/10.1142/8808#t=aboutBook
+
 # Assorted
+
+https://www.worldscientific.com/area/algebra-related?twclid=257byunp4fyuccbioowyzgc4u3&utm_campaign=cluster-elvin-18042025-Algebra-%26-Related-Titles&utm_medium=cpc&utm_source=twitter
+
+https://world.hey.com/dhh/we-ll-always-need-junior-programmers-69ddb4a1
 
 https://www.worldscientific.com/area/probability-statistics?twclid=2-6jbkaap5ogeydupi4bz0iufay&utm_campaign=cluster-elvin-17042025-Jeffrey-S-Rosenthal-books&utm_medium=cpc&utm_source=twitter
 
